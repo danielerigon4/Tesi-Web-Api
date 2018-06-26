@@ -1,0 +1,46 @@
+\babel@toc {italian}{}
+\babel@toc {italian}{}
+\contentsline {section}{\numberline {1}Overview}{3}{section.1}
+\contentsline {section}{\numberline {2}Concetti e utilizzo del service worker}{3}{section.2}
+\contentsline {section}{\numberline {3}Registrazione}{3}{section.3}
+\contentsline {section}{\numberline {4}Impostare i service worker}{3}{section.4}
+\contentsline {subsection}{\numberline {4.1}Scarica, installa e attiva}{4}{subsection.4.1}
+\contentsline {section}{\numberline {5}Casi d'uso}{4}{section.5}
+\contentsline {section}{\numberline {6}Architettura di base}{5}{section.6}
+\contentsline {section}{\numberline {7}Specifiche}{5}{section.7}
+\contentsline {subsection}{\numberline {7.1}Metodi}{5}{subsection.7.1}
+\contentsline {subsubsection}{\numberline {7.1.1}Cache}{5}{subsubsection.7.1.1}
+\contentsline {subsubsection}{\numberline {7.1.2}CacheStorage}{7}{subsubsection.7.1.2}
+\contentsline {subsubsection}{\numberline {7.1.3}Client}{7}{subsubsection.7.1.3}
+\contentsline {subsubsection}{\numberline {7.1.4}Clients}{7}{subsubsection.7.1.4}
+\contentsline {subsubsection}{\numberline {7.1.5}ExtendableEvent}{7}{subsubsection.7.1.5}
+\contentsline {subsubsection}{\numberline {7.1.6}ExtendableMessageEvent}{7}{subsubsection.7.1.6}
+\contentsline {subsubsection}{\numberline {7.1.7}FetchEvent}{7}{subsubsection.7.1.7}
+\contentsline {subsubsection}{\numberline {7.1.8}InstallEvent}{7}{subsubsection.7.1.8}
+\contentsline {subsubsection}{\numberline {7.1.9}NavigationPreloadManager}{7}{subsubsection.7.1.9}
+\contentsline {subsubsection}{\numberline {7.1.10}Navigator.serviceWorker}{7}{subsubsection.7.1.10}
+\contentsline {subsubsection}{\numberline {7.1.11}NotificationEvent}{7}{subsubsection.7.1.11}
+\contentsline {subsubsection}{\numberline {7.1.12}ServiceWorker}{7}{subsubsection.7.1.12}
+\contentsline {subsubsection}{\numberline {7.1.13}ServiceWorkerContainer}{8}{subsubsection.7.1.13}
+\contentsline {subsubsection}{\numberline {7.1.14}ServiceWorkerGlobalScope}{8}{subsubsection.7.1.14}
+\contentsline {subsubsection}{\numberline {7.1.15}ServiceWorkerMessageEvent}{8}{subsubsection.7.1.15}
+\contentsline {subsubsection}{\numberline {7.1.16}ServiceWorkerRegistration}{8}{subsubsection.7.1.16}
+\contentsline {subsubsection}{\numberline {7.1.17}ServiceWorkerState}{8}{subsubsection.7.1.17}
+\contentsline {subsubsection}{\numberline {7.1.18}SyncEvent}{8}{subsubsection.7.1.18}
+\contentsline {subsubsection}{\numberline {7.1.19}SyncManager}{8}{subsubsection.7.1.19}
+\contentsline {subsubsection}{\numberline {7.1.20}WindowClient}{8}{subsubsection.7.1.20}
+\contentsline {subsection}{\numberline {7.2}Promises}{8}{subsection.7.2}
+\contentsline {subsection}{\numberline {7.3}Implementazione Service Worker}{10}{subsection.7.3}
+\contentsline {subsubsection}{\numberline {7.3.1}Registrazione Service Worker}{10}{subsubsection.7.3.1}
+\contentsline {subsubsection}{\numberline {7.3.2}Perch\IeC {\`e} il Service Worker non si registra}{10}{subsubsection.7.3.2}
+\contentsline {subsubsection}{\numberline {7.3.3}Installare e attivare: popolare la cache}{11}{subsubsection.7.3.3}
+\contentsline {subsubsection}{\numberline {7.3.4}Risposte personalizzate alle richieste}{12}{subsubsection.7.3.4}
+\contentsline {subsubsection}{\numberline {7.3.5}Ripristino delle richieste non riuscite}{13}{subsubsection.7.3.5}
+\contentsline {subsubsection}{\numberline {7.3.6}Aggiornamento del Service Worker}{14}{subsubsection.7.3.6}
+\contentsline {subsubsection}{\numberline {7.3.7}Cancellare vecchie cache}{14}{subsubsection.7.3.7}
+\contentsline {subsubsection}{\numberline {7.3.8}Strumenti di sviluppo}{15}{subsubsection.7.3.8}
+\contentsline {section}{\numberline {8}Demo Service Worker}{15}{section.8}
+\contentsline {section}{\numberline {9}Esempio offline}{17}{section.9}
+\contentsline {section}{\numberline {10}Compatibilit\IeC {\`a} web}{18}{section.10}
+\contentsline {subsection}{\numberline {10.1}Desktop}{18}{subsection.10.1}
+\contentsline {subsection}{\numberline {10.2}Mobile}{18}{subsection.10.2}
