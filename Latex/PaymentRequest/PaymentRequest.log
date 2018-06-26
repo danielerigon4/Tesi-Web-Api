@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.6.25)  25 JUN 2018 14:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.6.25)  26 JUN 2018 10:05
 entering extended mode
-**./Geolocation.tex
-(Geolocation.tex
+**./PaymentRequest.tex
+(PaymentRequest.tex
 LaTeX2e <2017-04-15>
 Babel <3.18> and hyphenation patterns for 75 language(s) loaded.
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\article.cls
@@ -631,8 +631,8 @@ Package graphics Info: Driver file: pdftex.def on input line 99.
 )
 \Gin@req@height=\dimen120
 \Gin@req@width=\dimen121
-) (Geolocation.aux)
-\openout1 = `Geolocation.aux'.
+) (PaymentRequest.aux)
+\openout1 = `PaymentRequest.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 87.
 LaTeX Font Info:    ... okay on input line 87.
@@ -669,9 +669,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 87.
 LaTeX Info: Redefining \pageref on input line 87.
 LaTeX Info: Redefining \nameref on input line 87.
- (Geolocation.out) (Geolocation.out)
+ (PaymentRequest.out) (PaymentRequest.out)
 \@outlinefile=\write3
-\openout3 = `Geolocation.out'.
+\openout3 = `PaymentRequest.out'.
 
 
 *geometry* driver: auto-detecting
@@ -771,74 +771,111 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 91.
 
-(Geolocation.toc
+(PaymentRequest.toc
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 5.
+(Font)              <10> on input line 4.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 5.
+(Font)              <7> on input line 4.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 5.
+(Font)              <5> on input line 4.
 )
 \tf@toc=\write4
-\openout4 = `Geolocation.toc'.
+\openout4 = `PaymentRequest.toc'.
 
  [1
 
 {C:/Users/Daniele/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 104.
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 105.
+
+
+("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\omslmr.fd"
+File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 105.
+
+[2]
+<./images/SchemaPayment.png, id=180, 639.89063pt x 456.95718pt>
+File: ./images/SchemaPayment.png Graphic file (type png)
+<use ./images/SchemaPayment.png>
+Package pdftex.def Info: ./images/SchemaPayment.png  used on input line 131.
+(pdftex.def)             Requested size: 455.24411pt x 325.10426pt.
+ [3] [4 <./images/SchemaPayment.png>] [5] [6] [7] [8]
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 282.
 
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <8> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 112.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 295.
 
-[2]
-<./images/img.png, id=97, 1028.34187pt x 578.16pt>
-File: ./images/img.png Graphic file (type png)
-<use ./images/img.png>
-Package pdftex.def Info: ./images/img.png  used on input line 152.
-(pdftex.def)             Requested size: 455.24411pt x 255.95268pt.
- [3 <./images/img.png>]
-<./images/web1.png, id=123, 1028.34187pt x 578.16pt>
-File: ./images/web1.png Graphic file (type png)
-<use ./images/web1.png>
-Package pdftex.def Info: ./images/web1.png  used on input line 226.
-(pdftex.def)             Requested size: 455.24411pt x 255.95268pt.
- [4]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 243.
- [5 <./images/web1.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 243.
- (Geolocation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 243.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 243.
-Package rerunfilecheck Info: File `Geolocation.out' has not changed.
-(rerunfilecheck)             Checksum: 5C6B0BC5BE0ECF1157228D32217F16E6;846.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 243.
+[9] [10] [11] [12] [13]
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 511.
+
+[14]
+<./images/wallet1.png, id=427, 225.84375pt x 221.32687pt>
+File: ./images/wallet1.png Graphic file (type png)
+<use ./images/wallet1.png>
+Package pdftex.def Info: ./images/wallet1.png  used on input line 562.
+(pdftex.def)             Requested size: 455.24411pt x 446.19864pt.
+ [15] [16 <./images/wallet1.png>]
+<./images/wallet2.png, id=471, 184.5294pt x 180.675pt>
+File: ./images/wallet2.png Graphic file (type png)
+<use ./images/wallet2.png>
+Package pdftex.def Info: ./images/wallet2.png  used on input line 593.
+(pdftex.def)             Requested size: 455.24411pt x 445.80319pt.
+<./images/wallet3.png, id=472, 184.5294pt x 180.675pt>
+File: ./images/wallet3.png Graphic file (type png)
+<use ./images/wallet3.png>
+Package pdftex.def Info: ./images/wallet3.png  used on input line 599.
+(pdftex.def)             Requested size: 455.24411pt x 445.80319pt.
+ [17] [18 <./images/wallet2.png>] [19 <./images/wallet3.png>] [20]
+<./images/Compatibilita1.png, id=586, 971.12813pt x 143.03438pt>
+File: ./images/Compatibilita1.png Graphic file (type png)
+<use ./images/Compatibilita1.png>
+Package pdftex.def Info: ./images/Compatibilita1.png  used on input line 694.
+(pdftex.def)             Requested size: 455.24411pt x 67.04936pt.
+<./images/Compatibilita2.png, id=587, 971.12813pt x 118.94438pt>
+File: ./images/Compatibilita2.png Graphic file (type png)
+<use ./images/Compatibilita2.png>
+Package pdftex.def Info: ./images/Compatibilita2.png  used on input line 700.
+(pdftex.def)             Requested size: 455.24411pt x 55.75684pt.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 706.
+ [21 <./images/Compatibilita1.png> <./images/Compatibilita2.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 706.
+ (PaymentRequest.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 706.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 706.
+Package rerunfilecheck Info: File `PaymentRequest.out' has not changed.
+(rerunfilecheck)             Checksum: D93A49B9483F8D5F30538323789E8777;2581.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 706.
  ) 
 Here is how much of TeX's memory you used:
- 8844 strings out of 493305
- 126853 string characters out of 3128932
- 341554 words of memory out of 3000000
- 12176 multiletter control sequences out of 15000+200000
+ 9215 strings out of 493305
+ 133040 string characters out of 3128932
+ 448811 words of memory out of 3000000
+ 12261 multiletter control sequences out of 15000+200000
  51158 words of font info for 45 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 28i,6n,40p,936b,1183s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 28i,7n,40p,939b,1149s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Daniele/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.
-enc}<C:/Users/Daniele/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/l
-mbx10.pfb><C:/Users/Daniele/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
-c/lm/lmbx12.pfb><C:/Users/Daniele/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
-/public/lm/lmr10.pfb><C:/Users/Daniele/AppData/Local/Programs/MiKTeX 2.9/fonts/
-type1/public/lm/lmr12.pfb><C:/Users/Daniele/AppData/Local/Programs/MiKTeX 2.9/f
-onts/type1/public/lm/lmr17.pfb><C:/Users/Daniele/AppData/Local/Programs/MiKTeX 
-2.9/fonts/type1/public/lm/lmr8.pfb><C:/Users/Daniele/AppData/Local/Programs/MiK
-TeX 2.9/fonts/type1/public/lm/lmtk10.pfb><C:/Users/Daniele/AppData/Local/Progra
-ms/MiKTeX 2.9/fonts/type1/public/lm/lmtt10.pfb><C:/Users/Daniele/AppData/Local/
-Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtt8.pfb>
-Output written on Geolocation.pdf (5 pages, 404016 bytes).
+enc}{C:/Users/Daniele/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-m
+athsy.enc}<C:/Users/Daniele/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
+c/lm/lmbx10.pfb><C:/Users/Daniele/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
+/public/lm/lmbx12.pfb><C:/Users/Daniele/AppData/Local/Programs/MiKTeX 2.9/fonts
+/type1/public/lm/lmr10.pfb><C:/Users/Daniele/AppData/Local/Programs/MiKTeX 2.9/
+fonts/type1/public/lm/lmr12.pfb><C:/Users/Daniele/AppData/Local/Programs/MiKTeX
+ 2.9/fonts/type1/public/lm/lmr17.pfb><C:/Users/Daniele/AppData/Local/Programs/M
+iKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Users/Daniele/AppData/Local/Progra
+ms/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Daniele/AppData/Local/
+Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtk10.pfb><C:/Users/Daniele/AppData/
+Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtt8.pfb>
+Output written on PaymentRequest.pdf (21 pages, 499399 bytes).
 PDF statistics:
- 234 PDF objects out of 1000 (max. 8388607)
- 101 named destinations out of 1000 (max. 500000)
- 107 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 705 PDF objects out of 1000 (max. 8388607)
+ 380 named destinations out of 1000 (max. 500000)
+ 287 words of extra memory for PDF output out of 10000 (max. 10000000)
 
