@@ -1,3 +1,4 @@
+%da https://blog.angular-university.io/service-workers/ e https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API
 \documentclass[italian]{article}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -91,20 +92,38 @@
 \pagebreak
 
 \section{Overview}
-I service worker agiscono essenzialmente come server proxy che si trovano tra le applicazioni Web, il browser e la rete (se disponibile). Sono pensati, tra le altre cose, per consentire la creazione di esperienze offline efficaci, intercettare le richieste di rete e intraprendere azioni appropriate in base al fatto che la rete sia disponibile e aggiornare le risorse che risiedono sul server. Consentiranno inoltre l'accesso alle notifiche push e alle API di sincronizzazione in background.
+Un Service Worker è come un processo daemon di sfondo che si trova tra la nostra applicazione Web e la rete, intercettando tutte le richieste HTTP effettuate dall'applicazione.
+
+Il Service Worker non ha accesso diretto al DOM. In realtà, la stessa istanza di Service Worker è condivisa tra più schede della stessa applicazione e può intercettare le richieste di tutte quelle schede.
+
+Si noti che per motivi di sicurezza il Service Worker non può vedere le richieste fatte da altre applicazioni Web in esecuzione nello stesso browser e funziona solo su HTTPS (eccetto su localhost, a fini di sviluppo).
+
+In breve: un Service Worker è un proxy di rete, eseguito all'interno del browser stesso!
+
+Il codice per il Service Worker viene scaricato periodicamente dal nostro sito Web e viene implementato un intero processo di gestione del ciclo di vita.
+
+È il browser che in qualsiasi momento deciderà se il Service Worker dovrebbe essere in esecuzione, questo è così per risparmiare risorse, specialmente sui dispositivi mobili.
+
+Quindi, se non facciamo alcuna richiesta HTTP per un po 'o non riceviamo alcuna notifica, è possibile che il browser spenga il Service Worker.
+
+Se attiviamo una richiesta HTTP che deve essere gestita dal Service Worker, il browser la attiverà di nuovo, nel caso in cui non fosse ancora in esecuzione. Quindi vedere il Service Worker fermato in Dev Tools non significa necessariamente che qualcosa è rotto.
+
+L'operaio di servizio in grado di intercettare le richieste HTTP effettuate da tutte le schede del browser che abbiamo aperto per un dato dominio e il percorso URL (che percorso è chiamato il Servizio Worker ambito ).
+
+D'altra parte, non può accedere al DOM di nessuna di queste schede del browser, ma può accedere alle API del browser come ad esempio l' API di archiviazione cache.
+
+
+%I service worker agiscono essenzialmente come server proxy che si trovano tra le applicazioni Web, il browser e la rete (se disponibile). Sono pensati, tra le altre cose, per consentire la creazione di esperienze offline efficaci, intercettare le richieste di rete e intraprendere azioni appropriate in base al fatto che la rete sia disponibile e aggiornare le risorse che risiedono sul server. Consentiranno inoltre l'accesso alle notifiche push e alle API di sincronizzazione in background.
 
 Un problema prioritario con cui gli utenti Web hanno sofferto per anni è la perdita di connettività. La migliore app web al mondo fornirà un'esperienza utente terribile se non puoi scaricarlo. Ci sono stati vari tentativi di creare tecnologie per risolvere questo problema, come mostra la nostra pagina Offline , e alcuni dei problemi sono stati risolti. Ma il problema principale è che non esiste ancora un buon meccanismo di controllo generale per il caching delle risorse e le richieste di rete personalizzate. 
 
-Il precedente tentativo - AppCache - sembrava essere una buona idea perché ti permetteva di specificare le risorse in modo molto semplice. Tuttavia, ha fatto molte supposizioni su quello che stavi cercando di fare e poi si è rotto in modo orribile quando la tua app non ha seguito esattamente queste ipotesi
-
 I lavoratori del servizio dovrebbero finalmente risolvere questi problemi. La sintassi del service worker è più complessa di quella di AppCache, ma il compromesso è che è possibile utilizzare JavaScript per controllare i comportamenti impliciti di AppCache con un grado di granularità fine, che consente di gestire questo problema e molti altri ancora. Utilizzando un operatore del servizio, puoi facilmente impostare un'app per utilizzare prima le risorse memorizzate nella cache, fornendo così un'esperienza predefinita anche offline, prima di ottenere più dati dalla rete (comunemente nota come Prima non in linea ). Questo è già disponibile con le app native, che è uno dei motivi principali per cui le app native vengono spesso scelte su app web.
 
-\section{Concetti e utilizzo del service worker}
 Un lavoratore di servizio è un lavoratore guidato da eventi registrato su un'origine e un percorso. Prende la forma di un file JavaScript in grado di controllare la pagina web / sito a cui è associato, intercettare e modificare le richieste di navigazione e risorse e memorizzare le risorse in modo granulare per darti il controllo completo su come si comporta la tua app in determinate situazioni , (il più ovvio è quando la rete non è disponibile.)
 
 Un addetto al servizio viene eseguito in un contesto di lavoro: non ha quindi accesso a DOM e viene eseguito su un thread diverso dal JavaScript principale che alimenta la tua app, quindi non si blocca. È progettato per essere completamente asincrono; di conseguenza, le API come XHR sincrono e localStorage non possono essere utilizzate all'interno di un operatore di servizio.
 
-Gli addetti all'assistenza funzionano solo su HTTPS, per motivi di sicurezza. Avendo modificato le richieste di rete, gli attacchi spalancati agli uomini nel mezzo sarebbero davvero pessimi. In Firefox, anche le API di Service Worker sono nascoste e non possono essere utilizzate quando l'utente è in modalità di navigazione privata .
+Gli addetti all'assistenza funzionano solo su HTTPS, per motivi di sicurezza. Avendo modificato le richieste di rete, gli attacchi spalancati agli uomini nel mezzo sarebbero davvero pessimi. In Firefox, anche le API di Service Worker sono nascoste e non possono essere utilizzate quando l'utente è in modalità di navigazione privata.
 
 \section{Registrazione}
 Un addetto all'assistenza viene prima registrato utilizzando il ServiceWorkerContainer.register()metodo. In caso di esito positivo, l'addetto all'assistenza verrà scaricato sul client e tenterà l'installazione / attivazione (vedere di seguito) per gli URL a cui l'utente ha avuto accesso all'interno dell'intera origine o all'interno di un sottoinsieme specificato dall'utente.
@@ -180,11 +199,194 @@ Con gli operatori di servizio, i seguenti passaggi vengono generalmente osservat
 	\label{fig:Ciclo di vita del Service Worker}
 \end{figure}
 
-
+\newpage
 \section{Specifiche}
-\subsection{Metodi}
+\subsection{Interfacce}
 \subsubsection{Cache}
 Rappresenta le coppie di archiviazione Request/ Responseoggetto che vengono memorizzate nella cache come parte del ServiceWorkerciclo di vita.
+L' Cacheinterfaccia fornisce un meccanismo di archiviazione per coppie Request/ Responseoggetto che vengono memorizzate nella cache, ad esempio come parte del ServiceWorkerciclo di vita. Si noti che l' Cacheinterfaccia è esposta agli ambiti con finestre e ai lavoratori. Non è necessario utilizzarlo in combinazione con gli addetti all'assistenza, anche se è definito nelle specifiche dell'operatore di servizio.
+
+Un'origine può avere più Cacheoggetti con nome . Sei responsabile dell'implementazione di come il tuo script (ad esempio in a ServiceWorker) gestisce gli Cacheaggiornamenti. Gli articoli in a Cachenon vengono aggiornati se non richiesto esplicitamente; non scadono se non vengono cancellati. Utilizzare CacheStorage.open()per aprire un Cacheoggetto con nome specifico e quindi chiamare uno dei Cachemetodi per mantenere il Cache.
+
+Sei anche responsabile della cancellazione periodica delle voci della cache. Ogni browser ha un limite rigido alla quantità di memoria cache che può essere utilizzata da una determinata origine. Le stime sull'utilizzo della quota cache sono disponibili tramite l' StorageEstimateAPI. Il browser fa del suo meglio per gestire lo spazio su disco, ma può eliminare la memoria cache per un'origine. Il browser eliminerà generalmente tutti i dati per un'origine o nessuno dei dati per un'origine. Assicurati di creare una versione delle cache per nome e usa le cache solo dalla versione dello script su cui possono operare in sicurezza.
+\title{\textbf{Metodi}}
+\begin{itemize}
+	\item \textbf{Cache.match(request, options)}\\
+	Restituisce un Promiseche si risolve nella risposta associata alla prima richiesta di corrispondenza Cachenell'oggetto.\\
+	\title{\textbf{Request}}\\
+	Il Requesttentativo di trovare nel Cache. Questo può essere un   Requestoggetto o un URL.\\
+	\title{\textbf{Options}}\\
+	Un oggetto che imposta le opzioni per l' matchoperazione. Le opzioni disponibili sono:
+	ignoreSearch: A Booleanche specifica se ignorare la stringa di query nell'URL. Ad esempio, se impostato true sulla  ?value=barparte di http://foo.com/?value=barsarebbe ignorato quando si esegue una corrispondenza. Si imposta automaticamente su false.
+	ignoreMethod: A Booleanche, se impostato su true, impedisce alle operazioni di abbinamento di convalidare il metodo (normalmente solo e sono consentiti). Per impostazione predefinita .Request httpGETHEADfalse
+	ignoreVary: A Booleanche, quando impostato, trueindica all'operazione di abbinamento di non eseguire la VARYcorrispondenza dell'intestazione, ovvero se l'URL corrisponde otterrete una corrispondenza indipendentemente dal fatto che l' Responseoggetto abbia VARYun'intestazione. Si imposta automaticamente su false.
+	cacheName: A DOMStringche rappresenta una cache specifica da cercare all'interno. Si noti che questa opzione è ignorata da Cache.match().\\
+	\title{\textbf{Valore di ritorno}}\\
+	A Promiseche risolve il primo Responseche corrisponde alla richiesta o undefinedse non viene trovata alcuna corrispondenza.\\
+	\title{\textbf{Esempio}}\\
+	Questo esempio usa una cache per fornire i dati selezionati quando una richiesta fallisce. Una catch()clausola viene attivata quando la chiamata fetch()genera un'eccezione. All'interno della catch()clausola,  match()viene utilizzato per restituire la risposta corretta.
+	
+	In questo esempio, verranno memorizzati nella cache solo i documenti HTML recuperati con il verbo HTTP GET. Se la nostra if()condizione è falsa, allora questo gestore di fetch non intercetterà la richiesta. Se ci sono altri gestori di fetch registrati, avranno la possibilità di chiamare event.respondWith(). Se nessun operatore di Fetch chiama event.respondWith(), la richiesta verrà gestita dal browser come se non ci fosse alcun intervento da parte dei service worker. Se  fetch() restituisce una risposta HTTP valida con un codice di risposta nell'intervallo 4xx o 5xx,  catch() NON verrà richiamato.
+	\pagebreak
+	\begin{lstlisting}
+	self.addEventListener('fetch', function(event) {
+		// We only want to call event.respondWith() if this is a GET request for an HTML document.
+		if (event.request.method === 'GET' &&
+		event.request.headers.get('accept').indexOf('text/html') !== -1) {
+			console.log('Handling fetch event for', event.request.url);
+			event.respondWith(
+				fetch(event.request).catch(function(e) {
+					console.error('Fetch failed; returning offline page instead.', e);
+					return caches.open(OFFLINE_CACHE).then(function(cache){
+						return cache.match(OFFLINE_URL);
+					});
+				})
+			);
+		}
+	});
+	\end{lstlisting} 
+	\title{\textbf{Compatibilità}}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=1\linewidth]{c1}
+		\caption{Compatibilità cache.match()}
+		\label{fig:Compatibilità cache.match()}
+	\end{figure}
+
+
+
+	\item \textbf{Cache.matchAll(request, options)}
+	Restituisce un Promiseche si risolve in una matrice di tutte le richieste corrispondenti Cachenell'oggetto.\\
+	\title{\textbf{Request}}\\
+	La Request che stai tentando di trovare nella Cache.\\
+	\title{\textbf{Options}}\\
+	Un oggetto opzioni che consente di impostare opzioni di controllo specifiche per la corrispondenza eseguita matchnell'operazione. Le opzioni disponibili sono:
+	\begin{itemize}
+	\item ignoreSearch: A Booleanche specifica se il processo di corrispondenza deve ignorare la stringa di query nell'URL. Se impostato su true, la  ?value=barparte di http://foo.com/?value=barsarebbe ignorata quando si esegue una corrispondenza. Si imposta automaticamente su false.
+	\item ignoreMethod: A Booleanche, se impostato su true, impedisce alle operazioni di abbinamento di convalidare il metodo (normalmente solo e sono consentiti). Per impostazione predefinita .Request httpGETHEADfalse
+	\item ignoreVary: A Booleanche, quando impostato, trueindica all'operazione di abbinamento di non eseguire la VARYcorrispondenza dell'intestazione, cioè se l'URL corrisponde otterrete una corrispondenza indipendentemente Responsedall'oggetto che ha VARYun'intestazione o meno. Si imposta automaticamente su false.
+	\item cacheName: A DOMStringche rappresenta una cache specifica da cercare all'interno. Si noti che questa opzione è ignorata da Cache.matchAll().
+	\end{itemize}
+	\title{\textbf{Valore di ritorno}}\\
+	Una Promise che si risolve in una matrice di tutte le richieste di corrispondenza Cachenell'oggetto.
+	\title{\textbf{Esempio}}\\
+	\begin{lstlisting}
+		caches.open('v1').then(function(cache) {
+			cache.matchAll('/images/').then(function(response) {
+				response.forEach(function(element, index, array) {
+					cache.delete(element);
+				});
+			});
+		})
+	\end{lstlisting}
+	\title{\textbf{Compatibilità}}\\
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=1\linewidth]{c2}
+		\caption{Compatibilità cache.matchAll()}
+		\label{fig:Compatibilità cache.matchAll()}
+	\end{figure}
+	
+	
+	
+	
+	
+	\item \textbf{Cache.add(request)}
+	Prende un URL, lo recupera e aggiunge l'oggetto di risposta risultante alla cache specificata. Questo è funzionalmente equivalente a chiamare fetch(), quindi utilizzare put()per aggiungere i risultati alla cache.\\
+	\title{\textbf{Request}}\\
+	La richiesta che si desidera aggiungere alla cache. Questo può essere un   Requestoggetto o un URL.
+	\title{\textbf{Valore di ritorno}}\\
+	A Promise che si risolve con void.\\
+	\title{\textbf{Esempio}}\\
+	Questo blocco di codice attende l'attivazione di una InstallEventchiamata, quindi le chiamate waitUntil()per gestire il processo di installazione per l'app. Questo consiste nel chiamare CacheStorage.openper creare una nuova cache, quindi utilizzare Cache.addper aggiungere una risorsa ad essa.
+	\begin{lstlisting}
+	this.addEventListener('install', function(event) {
+		event.waitUntil(
+			caches.open('v1').then(function(cache) {
+				return cache.add('/sw-test/index.html');
+			})
+		);
+	});
+	\end{lstlisting}
+	\title{\textbf{Compatibilità}}\\
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=1\linewidth]{c3}
+		\caption{Compatibilità cache.add()}
+		\label{fig:Compatibilità cache.add()}
+	\end{figure}
+	
+	\pagebreak
+	
+	\item \textbf{Cache.addAll(requests)}
+	Il addAll()metodo Cachedell'interfaccia utilizza una matrice di URL, li recupera e aggiunge gli oggetti di risposta risultanti alla cache specificata. Gli oggetti richiesta creati durante il recupero diventano chiavi per le operazioni di risposta memorizzate. \\
+	\title{\textbf{Request}}\\
+	Una serie di URL di stringa che si desidera recuperare e aggiungere alla cache.\\
+	\title{\textbf{Valore di ritorno}}\\
+	A Promise che si risolve con void. \\
+	\title{\textbf{Esempio}}\\
+	Questo blocco di codice attende l'attivazione di un codice InstallEvent, quindi viene eseguito waitUntil()per gestire il processo di installazione dell'app. Questo consiste nel chiamare CacheStorage.openper creare una nuova cache, quindi utilizzare addAll()per aggiungere una serie di risorse ad esso.
+	\begin{lstlisting}
+	this.addEventListener('install', function(event) {
+		event.waitUntil(
+			caches.open('v1').then(function(cache) {
+				return cache.addAll([
+					'/sw-test/',
+					'/sw-test/index.html',
+					'/sw-test/style.css',
+					'/sw-test/app.js',
+					'/sw-test/image-list.js',
+					'/sw-test/star-wars-logo.jpg',
+					'/sw-test/gallery/',
+					'/sw-test/gallery/bountyHunters.jpg',
+					'/sw-test/gallery/myLittleVader.jpg',
+					'/sw-test/gallery/snowTroopers.jpg'
+				]);
+			})
+		);
+	});
+	\end{lstlisting}
+	\title{\textbf{Compatibilità}}\\
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=1\linewidth]{c4}
+		\caption{Compatibilità cache.addAll()}
+		\label{fig:Compatibilità cache.addAll()}
+	\end{figure}
+	
+	\pagebreak
+	
+	
+	\item \textbf{Cache.put(request, response)}
+	Accetta sia una richiesta che la sua risposta e la aggiunge alla cache fornita.\\
+	\title{\textbf{Request}}\\
+	\title{\textbf{Valore di ritorno}}\\
+	\title{\textbf{Esempio}}\\
+	\title{\textbf{Compatibilità}}\\
+	
+	
+	
+	\item \textbf{Cache.delete(request, options)}
+	Trova la Cache voce la cui chiave è la richiesta, restituendo una Promiseche risolve truese una Cachevoce corrispondente viene trovata ed eliminata. Se non Cacheviene trovata alcuna voce, la promessa si risolve a  false.\\
+	\title{\textbf{Request}}\\
+	\title{\textbf{Valore di ritorno}}\\
+	\title{\textbf{Esempio}}\\
+	\title{\textbf{Compatibilità}}\\
+	
+	
+	
+	\item \textbf{Cache.keys(request, options)}
+	Restituisce un Promise che si risolve in un array di Cachechiavi.\\
+	\title{\textbf{Request}}\\
+	\title{\textbf{Valore di ritorno}}\\
+	\title{\textbf{Esempio}}\\
+	\title{\textbf{Compatibilità}}\\
+	
+	
+	
+\end{itemize}
+
+
 \subsubsection{CacheStorage}
 Rappresenta la memoria per gli Cacheoggetti. Fornisce una directory principale di tutte le cache nominate a cui ServiceWorkerpuò accedere e mantiene una mappatura dei nomi delle stringhe agli Cacheoggetti corrispondenti .
 \subsubsection{Client}
@@ -606,19 +808,210 @@ Le promesse si risolvono solo con un singolo argomento, quindi se vuoi risolvere
 Questo può sembrare un po 'strano all'inizio, ma questo è il modo in cui le promesse funzionano.
 \end{itemize}
 \section{Esempio offline}
-inserire la demo offline
-\url{https://developer.mozilla.org/en-US/Apps/Fundamentals/Offline}
+%inserire la demo offline
+%\url{https://developer.mozilla.org/en-US/Apps/Fundamentals/Offline}
+Ecco un riepilogo del progetto che stiamo per implementare:
+\begin{itemize}
+\item stiamo andando a scaricare lo script Worker di servizio dal server
+\item faremo in modo che il browser installi e attivi il worker del servizio in background il più tardi possibile nel tempo di bootstrap dell'applicazione, per non interrompere l'esperienza utente iniziale
+\item sullo sfondo, l'addetto all'assistenza sta scaricando l'intera applicazione Web (ovvero HTML, CSS e Javascript), la versione e la conserverà per un secondo momento
+\item solo la volta successiva che l'utente arriva al sito, l'addetto all'assistenza sta per dare il via (più su questo più avanti)
+\item questa volta l'utente visita il sito, l'applicazione NON scaricherà HTML, CSS e Javascript dalla rete - il Service Worker servirà i file memorizzati nella cache che aveva conservato per un secondo momento
+\item Questa seconda volta, l'avvio dell'applicazione sarà molto più veloce
+\item L'utente avrà almeno un'applicazione funzionante, anche se la rete non funziona
+\end{itemize}
+E questo è come avere un proxy di rete nel browser ci permette di avere applicazioni web installabili! Questo è tutto compatibile al 100x100 con i pulsanti Indietro e Aggiorna.
+
+
+\subsection{Registrazione del Service Worker}
+Il nostro punto di partenza è una semplice pagina Bootstrap HTML, CSS e Javascript , che utilizzava alcuni bundle CSS e Javascript molto comuni.
+
+Trasformeremo questa semplice pagina in uno sfondo PWA scaricabile e installabile, e lo stesso design si applica a un'applicazione a singola pagina: dopo tutto è solo HTML, CSS e Javascript!
+
+Promemoria: il codice per l'applicazione di esempio è disponibile qui: \url{https://github.com/angular-university/service-workers-guide}
+
+Il primo passo per trasformare questo sito Web standard in un PWA scaricabile è aggiungere un operatore del servizio tramite uno script di registrazione:
+\begin{lstlisting}
+	<!-- commonly used JS bundles -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
+	<script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+	...
+	
+	<!-- register the Service Worker -->
+	<script src="sw-register.js"></script>
+\end{lstlisting}
+Lo script di registrazione:
+\begin{lstlisting}
+	/*stiamo controllando se il browser supporta i lavoratori del servizio, cercando la serviceWorkerproprieta navigatornell'oggetto globale. se il browser non supporta i SW, allora tutto funzionera ancora, e solo che nessuna installazione verra eseguita in background, quindi eseguiamo il fallback su uno scenario di applicazione Web normale*/
+
+	if ('serviceWorker' in navigator) {
+		window.addEventListener('load',  () => {
+			navigator.serviceWorker.register('/sw.js', {
+				scope: '/'
+			})
+			.then(registration => {
+				console.log("Service Worker registration completed ...");
+			});
+		});
+	}
+\end{lstlisting}
+
+%\title{\textbf{Perchè ritardare la registrazione del Service Worker}}\\
+Anche se rileviamo che il browser supporta i Service Worker, non registreremo ancora un SW immediatamente! In questo caso, stiamo aspettando l'event load della pagina .
+
+L' evento load viene attivato solo quando viene caricata l'intera pagina, comprese le risorse collegate come immagini, CSS e Javascript e ciò può richiedere molto tempo.
+
+Ci sono un paio di motivi per cui vogliamo ritardare la registrazione del Service Worker: vogliamo evitare di causare l'interruzione dell'esperienza utente iniziale, poiché l'applicazione viene caricata per la prima volta.
+
+I browser eseguono solo una quantità limitata di richieste HTTP allo stesso tempo e la capacità della rete è tale. Il Service Worker potrebbe o non potrebbe fare richieste di rete separate che possono interferire con quelle necessarie per mostrare all'utente il contenuto iniziale.
+
+Ciò significa che il ritardo nella registrazione di Service Worker impedisce al Service Worker di degradare l'esperienza utente iniziale. Invece, il Service Worker aspetterà che l'applicazione si avvii e quindi verrà installata in background.
+
+Si noti che nel caso di un'applicazione a singola pagina, potremmo voler ritardare ulteriormente la registrazione e attendere oltre l'evento load.
+
+La chiave è capire che nel caso di un Service Worker che esegue il download e l'installazione, vogliamo registrarlo il più tardi possibile, per evitare di rovinare l'esperienza dell'utente.
+
+Un altro motivo per ritardare la registrazione di questo tipo di Service Worker è avere un comportamento coerente dell'applicazione. Ricordiamo che il Service Worker servirà spesso l'intera applicazione stessa!
+
+Quindi vogliamo evitare una situazione in cui:
+\begin{itemize}
+\item alcune delle risorse CSS e JS della pagina sono state fornite dall'operatore del servizio
+\item mentre altri provenivano dalla rete
+\end{itemize}
+Se alcune delle richieste iniziali di una pagina provengono dalla rete, vogliamo essere sicuri che anche tutti i pacchetti rimanenti siano stati caricati dalla rete, per coerenza.
+
+Nel caso del download e dell'installazione dell'applicazione, vogliamo evitare di cadere in una situazione in cui attiviamo un Service Worker nel mezzo dell'avvio di una pagina.
+
+Questo perché, a seconda delle condizioni di cronometraggio, potremmo casualmente cadere in una situazione difficile da riprodurre in cui la pagina è rotta a causa di una combinazione imprevedibile di risorse HTML / CSS / JS, alcuni provenienti dalla rete e gli altri da una sorta di cache che il Service Worker sta usando.
+
+Nella prossima volta che visiteremo questa pagina il Service Worker sarà attivo, quindi caricheremo tutte le risorse dal Service Worker, anziché dalla rete.
+
+Ciò significa che di nuovo avremo un insieme coerente di pacchetti , tutti provenienti da una cache e corrispondenti a una determinata versione dell'applicazione.
+
+Nell'esempio sopra, al momento della registrazione, quando l'evento loadsi innesca, chiameremo register()e identificheremo il file sw.jscome uno script di Service Worker.
+
+Il browser quindi scaricherà il sw.jsfile e lo realizzerà creando un'istantanea di tutti i byte contenuti in questo file. In futuro, anche se cambia una singola cifra, il browser considererà che esiste una versione completamente nuova del Service Worker.
+
+La scope del service worker determina quale set di richieste HTTP può essere intercettato dal Service Worker, oppure no . In questo caso, l'ambito è '/', il che significa che il nostro Service Worker sarà in grado di intercettare tutte le richieste HTTP effettuate da questa applicazione.
+
+Se invece l'ambito fosse /api, l'operatore del servizio non sarebbe in grado di intercettare una richiesta come ad esempio /bundles/app.css, ma sarebbe comunque in grado di intercettare una richiesta API REST come /api/courses.
+
+E possibile avere service worker multipli nella stessa pagina(Service Worker ID), ciò significa che è possibile avere più operatori di servizio in esecuzione sulla stessa pagina, ma su diversi ambiti!
+
+Se un Service Worker avesse un identificativo univoco, sarebbe la combinazione del dominio di origine e del percorso dell'ambito.
+
+E questo come il browser determina se due diversi script corrispondono a due versioni diverse dello stesso Service Worker (e non basate sul mantenimento dello stesso sw.jsnome di file SW ).
+
+Se due script di Service Worker hanno lo stesso percorso di ambito e anche un byte di differenza, il browser li considera due versioni dello stesso SW e installa la versione più recente in background.
+
+Nota inoltre che non si possono collocare i Service Worker in una cartella qualsiasi, ma la posizione del sw.jsfile è importante: se questo file sarebbe stato posto in una cartella /service-worker/sw.js, allora sarebbe non essere in grado di intercettare le richieste come /bundles/app.csso /api/courses.
+
+Invece, l'ambito massimo delle richieste HTTP che il Service Worker potrebbe intercettare, sarebbero tutte le richieste a partire da /service-worker, la cartella su cui è scritto lo script!
+
+Detto questo, potremmo, ad esempio, registrare diversi operatori del servizio per diversi ambiti: un addetto al servizio per tutte le /bundlesrichieste e un altro per tutte le /apirichieste.
+
+Per implementare il download e l'installazione, useremo l'ambito di root e useremo solo un Service Worker.
+
+\subsection{Installazione del Service Worker}
+Quando il browser identifica una nuova versione di Service Worker per un dato ambito, attiverà la fase di installazione, che si tradurrà nell'emissione installdell'evento Lifecycle.
+
+Si noti che le specifiche di Service Worker non definiscono cosa accade esattamente nella fase di installazione. Spetta a noi implementarlo, ascoltando l' installevento sw.js.
+
+Dopo l'installazione arriva l'attivazione, e quindi l'intercettazione della rete è pronta per essere utilizzata! Capiamo esattamente come funzionano le fasi di installazione e attivazione, sulla base sw.js dell'esempio di Hello World Service Worker. Il codice seguente è in realtà l'implementazione di un semplice intercettore HTTP di registrazione e lo svilupperemo per implementare il download e l'installazione dell'applicazione.
+\begin{lstlisting}
+	const VERSION = 'v1';
+	/*stiamo usando un riferimento a self: questo significa il contesto globale corrente in cui viene eseguito il codice, che sarebbe ad esempio il windowse questo dovesse essere eseguito a livello dell'applicazione
+	Tuttavia, in questo caso, selfpunta al contesto globale di Service Worker.
+	Ci stiamo iscrivendo a installed activateeventi e registriamo la loro presenza sulla console
+	ogni dichiarazione di registrazione e preceduta dalla versione di Service Worker, questo ci aiutera a capire come funzionano piu versioni.
+	le fasi di installazione e attivazione passano entrambe una Promessa waitUntil(), proprio ora questo e solo per mostrare come faremmo operazioni asincrone in queste fasi
+	se la promessa e passata a waitUntil()risolversi con successo, allora la fase di installazione / attivazione e stata completata con successo
+	se invece la promessa viene respinta, la fase di installazione / attivazione fallisce e la fase successiva non verra attivata.
+	ci siamo anche iscritti fetchall'evento. Usandolo, stiamo intercettando tutte le richieste HTTP fatte dall'applicazione
+	L'evento fetch ha un metodo chiamato respondWith(), che accetta come argomento anche una promessa
+	La promessa che passiamo ha bisogno di restituire (quando risolto) la risposta alla richiesta HTTP.
+	*/
+	
+	self.addEventListener('install', event => {
+		log("INSTALLING ");
+		const installCompleted = Promise.resolve()
+		.then(() => log("INSTALLED"));
+		event.waitUntil(installCompleted);
+	});
+	
+	self.addEventListener('activate', event => {
+		log("ACTIVATING");
+		const activationCompleted = Promise.resolve()
+		.then((activationCompleted) => log("ACTIVATED"));
+		
+		event.waitUntil(activationCompleted);
+	});
+	
+	// handling service worker installation
+	self.addEventListener('fetch', event => {
+		log("HTTP call intercepted - " + event.request.url);
+		return event.respondWith(fetch(event.request.url));
+	});
+	
+	
+	// each logging line will be prepended with the service worker version
+	function log(message) {
+		console.log(VERSION, message);
+	}
+\end{lstlisting}
+
+\subsubsection{Fetch per intercettare le richieste HTTP}
+Diamo ora uno sguardo più da vicino al callback fetch dell'evento, che contiene la funzionalità di registrazione HTTP.
+
+Come possiamo vedere, questo fetch callback restituirà la risposta effettiva della chiamata HTTP respondWith() e la risposta può essere calcolata in modo asincrono passando una Promessa a respondWith().
+
+Nota: il codice dell'applicazione non è a conoscenza di dove proviene questa risposta: se dalla rete o dal Service Worker
+
+Possiamo prendere la risposta passata respondWith()da qualsiasi luogo, ad esempio:
+\begin{itemize}
+\item possiamo inoltrare la chiamata alla rete e rispedire la risposta della rete
+\item oppure possiamo recuperare la risposta da Cache Storage
+possiamo anche costruire un Response()oggetto manualmente
+\end{itemize}
+
+In questo caso, ecco cosa stiamo facendo:
+\begin{itemize}
+\item stiamo registrando l'URL della richiesta intercettata
+\item quindi inoltriamo la richiesta HTTP alla rete utilizzando l'API Fetch
+\item fetch() restituirà una Promessa, che se risolta consegnerà la risposta di rete, o fallirà in caso di un errore di rete fatale
+\item si noti che fetch()verrà generato un errore solo se la rete è inattiva o se si verifica qualche altra condizione irreversibile come un errore DNS. Ad esempio, un codice di stato HTTP di 500 Errore interno server non causerebbe la promessa di errore di recupero
+\item quindi passiamo la fetch()promessa che emetterà la risposta della rete a respondWith()
+\end{itemize}
+Questa risposta passata respondWith()verrà quindi passata all'applicazione! Come possiamo vedere, questo Service Worker funge da proxy di registrazione.
+
+Dal punto di vista dell'applicazione, questa risposta fornita dal Service Worker è indistinguibile da una chiamata effettuata se il Service Worker non era presente, l'unico effetto collaterale è la registrazione nella console.
+
+Esaminiamo quindi l'output della console:
+\begin{lstlisting}
+	v1 INSTALLING 
+	v1 INSTALLED
+	v1 ACTIVATING
+	v1 ACTIVATED
+	Service Worker registration completed ...
+\end{lstlisting}
+Ed ecco il nostro Service Worker in esecuzione in Chrome Dev Tools:
+
+
+
+
+
+
 \pagebreak
 \section{Compatibilità web}
 \subsection{Desktop}
-\begin{figure}
+\begin{figure}[h]
 	\centering
 	\includegraphics[width=1\linewidth]{CompWeb}
 	\caption{Compatibilità web}
 	\label{fig:Compatibilità web}
 \end{figure}
 \subsection{Mobile}
-\begin{figure}
+\begin{figure}[h]
 	\centering
 	\includegraphics[width=1\linewidth]{CompMobile}
 	\caption{Compatibilità mobile}

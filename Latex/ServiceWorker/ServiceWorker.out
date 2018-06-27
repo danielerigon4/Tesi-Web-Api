@@ -1,44 +1,45 @@
 \BOOKMARK [1][-]{section.1}{Overview}{}% 1
-\BOOKMARK [1][-]{section.2}{Concetti e utilizzo del service worker}{}% 2
-\BOOKMARK [1][-]{section.3}{Registrazione}{}% 3
-\BOOKMARK [1][-]{section.4}{Impostare i service worker}{}% 4
-\BOOKMARK [2][-]{subsection.4.1}{Scarica, installa e attiva}{section.4}% 5
-\BOOKMARK [1][-]{section.5}{Casi d'uso}{}% 6
-\BOOKMARK [1][-]{section.6}{Architettura di base}{}% 7
-\BOOKMARK [1][-]{section.7}{Specifiche}{}% 8
-\BOOKMARK [2][-]{subsection.7.1}{Metodi}{section.7}% 9
-\BOOKMARK [3][-]{subsubsection.7.1.1}{Cache}{subsection.7.1}% 10
-\BOOKMARK [3][-]{subsubsection.7.1.2}{CacheStorage}{subsection.7.1}% 11
-\BOOKMARK [3][-]{subsubsection.7.1.3}{Client}{subsection.7.1}% 12
-\BOOKMARK [3][-]{subsubsection.7.1.4}{Clients}{subsection.7.1}% 13
-\BOOKMARK [3][-]{subsubsection.7.1.5}{ExtendableEvent}{subsection.7.1}% 14
-\BOOKMARK [3][-]{subsubsection.7.1.6}{ExtendableMessageEvent}{subsection.7.1}% 15
-\BOOKMARK [3][-]{subsubsection.7.1.7}{FetchEvent}{subsection.7.1}% 16
-\BOOKMARK [3][-]{subsubsection.7.1.8}{InstallEvent}{subsection.7.1}% 17
-\BOOKMARK [3][-]{subsubsection.7.1.9}{NavigationPreloadManager}{subsection.7.1}% 18
-\BOOKMARK [3][-]{subsubsection.7.1.10}{Navigator.serviceWorker}{subsection.7.1}% 19
-\BOOKMARK [3][-]{subsubsection.7.1.11}{NotificationEvent}{subsection.7.1}% 20
-\BOOKMARK [3][-]{subsubsection.7.1.12}{ServiceWorker}{subsection.7.1}% 21
-\BOOKMARK [3][-]{subsubsection.7.1.13}{ServiceWorkerContainer}{subsection.7.1}% 22
-\BOOKMARK [3][-]{subsubsection.7.1.14}{ServiceWorkerGlobalScope}{subsection.7.1}% 23
-\BOOKMARK [3][-]{subsubsection.7.1.15}{ServiceWorkerMessageEvent}{subsection.7.1}% 24
-\BOOKMARK [3][-]{subsubsection.7.1.16}{ServiceWorkerRegistration}{subsection.7.1}% 25
-\BOOKMARK [3][-]{subsubsection.7.1.17}{ServiceWorkerState}{subsection.7.1}% 26
-\BOOKMARK [3][-]{subsubsection.7.1.18}{SyncEvent}{subsection.7.1}% 27
-\BOOKMARK [3][-]{subsubsection.7.1.19}{SyncManager}{subsection.7.1}% 28
-\BOOKMARK [3][-]{subsubsection.7.1.20}{WindowClient}{subsection.7.1}% 29
-\BOOKMARK [2][-]{subsection.7.2}{Promises}{section.7}% 30
-\BOOKMARK [2][-]{subsection.7.3}{Implementazione Service Worker}{section.7}% 31
-\BOOKMARK [3][-]{subsubsection.7.3.1}{Registrazione Service Worker}{subsection.7.3}% 32
-\BOOKMARK [3][-]{subsubsection.7.3.2}{Perch\350 il Service Worker non si registra}{subsection.7.3}% 33
-\BOOKMARK [3][-]{subsubsection.7.3.3}{Installare e attivare: popolare la cache}{subsection.7.3}% 34
-\BOOKMARK [3][-]{subsubsection.7.3.4}{Risposte personalizzate alle richieste}{subsection.7.3}% 35
-\BOOKMARK [3][-]{subsubsection.7.3.5}{Ripristino delle richieste non riuscite}{subsection.7.3}% 36
-\BOOKMARK [3][-]{subsubsection.7.3.6}{Aggiornamento del Service Worker}{subsection.7.3}% 37
-\BOOKMARK [3][-]{subsubsection.7.3.7}{Cancellare vecchie cache}{subsection.7.3}% 38
-\BOOKMARK [3][-]{subsubsection.7.3.8}{Strumenti di sviluppo}{subsection.7.3}% 39
-\BOOKMARK [1][-]{section.8}{Demo Service Worker}{}% 40
-\BOOKMARK [1][-]{section.9}{Esempio offline}{}% 41
-\BOOKMARK [1][-]{section.10}{Compatibilit\340 web}{}% 42
-\BOOKMARK [2][-]{subsection.10.1}{Desktop}{section.10}% 43
-\BOOKMARK [2][-]{subsection.10.2}{Mobile}{section.10}% 44
+\BOOKMARK [1][-]{section.2}{Registrazione}{}% 2
+\BOOKMARK [1][-]{section.3}{Impostare i service worker}{}% 3
+\BOOKMARK [2][-]{subsection.3.1}{Scarica, installa e attiva}{section.3}% 4
+\BOOKMARK [1][-]{section.4}{Casi d'uso}{}% 5
+\BOOKMARK [1][-]{section.5}{Architettura di base}{}% 6
+\BOOKMARK [1][-]{section.6}{Specifiche}{}% 7
+\BOOKMARK [2][-]{subsection.6.1}{Interfacce}{section.6}% 8
+\BOOKMARK [3][-]{subsubsection.6.1.1}{Cache}{subsection.6.1}% 9
+\BOOKMARK [3][-]{subsubsection.6.1.2}{CacheStorage}{subsection.6.1}% 10
+\BOOKMARK [3][-]{subsubsection.6.1.3}{Client}{subsection.6.1}% 11
+\BOOKMARK [3][-]{subsubsection.6.1.4}{Clients}{subsection.6.1}% 12
+\BOOKMARK [3][-]{subsubsection.6.1.5}{ExtendableEvent}{subsection.6.1}% 13
+\BOOKMARK [3][-]{subsubsection.6.1.6}{ExtendableMessageEvent}{subsection.6.1}% 14
+\BOOKMARK [3][-]{subsubsection.6.1.7}{FetchEvent}{subsection.6.1}% 15
+\BOOKMARK [3][-]{subsubsection.6.1.8}{InstallEvent}{subsection.6.1}% 16
+\BOOKMARK [3][-]{subsubsection.6.1.9}{NavigationPreloadManager}{subsection.6.1}% 17
+\BOOKMARK [3][-]{subsubsection.6.1.10}{Navigator.serviceWorker}{subsection.6.1}% 18
+\BOOKMARK [3][-]{subsubsection.6.1.11}{NotificationEvent}{subsection.6.1}% 19
+\BOOKMARK [3][-]{subsubsection.6.1.12}{ServiceWorker}{subsection.6.1}% 20
+\BOOKMARK [3][-]{subsubsection.6.1.13}{ServiceWorkerContainer}{subsection.6.1}% 21
+\BOOKMARK [3][-]{subsubsection.6.1.14}{ServiceWorkerGlobalScope}{subsection.6.1}% 22
+\BOOKMARK [3][-]{subsubsection.6.1.15}{ServiceWorkerMessageEvent}{subsection.6.1}% 23
+\BOOKMARK [3][-]{subsubsection.6.1.16}{ServiceWorkerRegistration}{subsection.6.1}% 24
+\BOOKMARK [3][-]{subsubsection.6.1.17}{ServiceWorkerState}{subsection.6.1}% 25
+\BOOKMARK [3][-]{subsubsection.6.1.18}{SyncEvent}{subsection.6.1}% 26
+\BOOKMARK [3][-]{subsubsection.6.1.19}{SyncManager}{subsection.6.1}% 27
+\BOOKMARK [3][-]{subsubsection.6.1.20}{WindowClient}{subsection.6.1}% 28
+\BOOKMARK [2][-]{subsection.6.2}{Promises}{section.6}% 29
+\BOOKMARK [2][-]{subsection.6.3}{Implementazione Service Worker}{section.6}% 30
+\BOOKMARK [3][-]{subsubsection.6.3.1}{Registrazione Service Worker}{subsection.6.3}% 31
+\BOOKMARK [3][-]{subsubsection.6.3.2}{Perch\350 il Service Worker non si registra}{subsection.6.3}% 32
+\BOOKMARK [3][-]{subsubsection.6.3.3}{Installare e attivare: popolare la cache}{subsection.6.3}% 33
+\BOOKMARK [3][-]{subsubsection.6.3.4}{Risposte personalizzate alle richieste}{subsection.6.3}% 34
+\BOOKMARK [3][-]{subsubsection.6.3.5}{Ripristino delle richieste non riuscite}{subsection.6.3}% 35
+\BOOKMARK [3][-]{subsubsection.6.3.6}{Aggiornamento del Service Worker}{subsection.6.3}% 36
+\BOOKMARK [3][-]{subsubsection.6.3.7}{Cancellare vecchie cache}{subsection.6.3}% 37
+\BOOKMARK [3][-]{subsubsection.6.3.8}{Strumenti di sviluppo}{subsection.6.3}% 38
+\BOOKMARK [1][-]{section.7}{Demo Service Worker}{}% 39
+\BOOKMARK [1][-]{section.8}{Esempio offline}{}% 40
+\BOOKMARK [2][-]{subsection.8.1}{Registrazione del Service Worker}{section.8}% 41
+\BOOKMARK [2][-]{subsection.8.2}{Installazione del Service Worker}{section.8}% 42
+\BOOKMARK [1][-]{section.9}{Compatibilit\340 web}{}% 43
+\BOOKMARK [2][-]{subsection.9.1}{Desktop}{section.9}% 44
+\BOOKMARK [2][-]{subsection.9.2}{Mobile}{section.9}% 45
