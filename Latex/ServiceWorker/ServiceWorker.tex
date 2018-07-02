@@ -92,52 +92,27 @@
 \pagebreak
 
 \section{Overview}
-Un Service Worker è come un processo daemon di sfondo che si trova tra la nostra applicazione Web e la rete, intercettando tutte le richieste HTTP effettuate dall'applicazione.
+Un Service Worker è come un processo daemon che si trova tra la nostra applicazione Web e la rete, intercettando tutte le richieste HTTP effettuate dall'applicazione. Il Service Worker non ha accesso diretto al DOM. In realtà, la stessa istanza di Service Worker è condivisa tra più schede della stessa applicazione e può intercettare le richieste di tutte quelle schede; per motivi di sicurezza il Service Worker non può vedere le richieste fatte da altre applicazioni Web in esecuzione nello stesso browser e funziona solo su HTTPS (e localhost a fini di sviluppo).
 
-Il Service Worker non ha accesso diretto al DOM. In realtà, la stessa istanza di Service Worker è condivisa tra più schede della stessa applicazione e può intercettare le richieste di tutte quelle schede.
+Quindi in sostanza un Service Worker è un proxy di rete, eseguito all'interno del browser stesso, che si trova tra le applicazioni web, il browser e la rete(se disponibile). I service worker sono pensati per consentire la creazione di esperienze offline efficaci, intercettare le richieste di rete e intraprendere azioni appropriate in base al fatto che la rete sia disponibile o meno e aggiornare le risorse che risiedono sul server, oltre a consentire l'accesso alle notifiche push e alle API di sincronizzazione in background.
 
-Si noti che per motivi di sicurezza il Service Worker non può vedere le richieste fatte da altre applicazioni Web in esecuzione nello stesso browser e funziona solo su HTTPS (eccetto su localhost, a fini di sviluppo).
+È il browser che in qualsiasi momento deciderà se il Service Worker dovrebbe essere o meno in esecuzione: questo per risparmiare risorse, specialmente sui dispositivi mobili. Per questo può essere che se non facciamo alcuna richiesta HTTP per un certo periodo di tempo o non riceviamo alcuna notifica per un po' è possibile che il browser spenga il Service Worker. Se attiviamo una richiesta HTTP che deve essere gestita dal Service Worker, il browser la attiverà di nuovo, nel caso in cui non fosse ancora in esecuzione. Quindi vedere il Service Worker bloccato in Dev Tools non significa necessariamente che qualcosa è rotto o non va.
 
-In breve: un Service Worker è un proxy di rete, eseguito all'interno del browser stesso!
+Il service worker può intercettare le richieste HTTP effettuate da tutte le schede del browser che sono aperte per un dato dominio e il percorso URL (tale percorso è chiamato Servizio Worker path). D'altra parte, non può accedere al DOM di nessuna di queste schede del browser, ma può accedere alle API del browser (come ad esempio la Cache Storage API).
 
-Il codice per il Service Worker viene scaricato periodicamente dal nostro sito Web e viene implementato un intero processo di gestione del ciclo di vita.
-
-È il browser che in qualsiasi momento deciderà se il Service Worker dovrebbe essere in esecuzione, questo è così per risparmiare risorse, specialmente sui dispositivi mobili.
-
-Quindi, se non facciamo alcuna richiesta HTTP per un po 'o non riceviamo alcuna notifica, è possibile che il browser spenga il Service Worker.
-
-Se attiviamo una richiesta HTTP che deve essere gestita dal Service Worker, il browser la attiverà di nuovo, nel caso in cui non fosse ancora in esecuzione. Quindi vedere il Service Worker fermato in Dev Tools non significa necessariamente che qualcosa è rotto.
-
-L'operaio di servizio in grado di intercettare le richieste HTTP effettuate da tutte le schede del browser che abbiamo aperto per un dato dominio e il percorso URL (che percorso è chiamato il Servizio Worker ambito ).
-
-D'altra parte, non può accedere al DOM di nessuna di queste schede del browser, ma può accedere alle API del browser come ad esempio l' API di archiviazione cache.
-
-
-%I service worker agiscono essenzialmente come server proxy che si trovano tra le applicazioni Web, il browser e la rete (se disponibile). Sono pensati, tra le altre cose, per consentire la creazione di esperienze offline efficaci, intercettare le richieste di rete e intraprendere azioni appropriate in base al fatto che la rete sia disponibile e aggiornare le risorse che risiedono sul server. Consentiranno inoltre l'accesso alle notifiche push e alle API di sincronizzazione in background.
-
-Un problema prioritario con cui gli utenti Web hanno sofferto per anni è la perdita di connettività. La migliore app web al mondo fornirà un'esperienza utente terribile se non puoi scaricarlo. Ci sono stati vari tentativi di creare tecnologie per risolvere questo problema, come mostra la nostra pagina Offline , e alcuni dei problemi sono stati risolti. Ma il problema principale è che non esiste ancora un buon meccanismo di controllo generale per il caching delle risorse e le richieste di rete personalizzate. 
-
-I lavoratori del servizio dovrebbero finalmente risolvere questi problemi. La sintassi del service worker è più complessa di quella di AppCache, ma il compromesso è che è possibile utilizzare JavaScript per controllare i comportamenti impliciti di AppCache con un grado di granularità fine, che consente di gestire questo problema e molti altri ancora. Utilizzando un operatore del servizio, puoi facilmente impostare un'app per utilizzare prima le risorse memorizzate nella cache, fornendo così un'esperienza predefinita anche offline, prima di ottenere più dati dalla rete (comunemente nota come Prima non in linea ). Questo è già disponibile con le app native, che è uno dei motivi principali per cui le app native vengono spesso scelte su app web.
-
-Un lavoratore di servizio è un lavoratore guidato da eventi registrato su un'origine e un percorso. Prende la forma di un file JavaScript in grado di controllare la pagina web / sito a cui è associato, intercettare e modificare le richieste di navigazione e risorse e memorizzare le risorse in modo granulare per darti il controllo completo su come si comporta la tua app in determinate situazioni , (il più ovvio è quando la rete non è disponibile.)
-
-Un addetto al servizio viene eseguito in un contesto di lavoro: non ha quindi accesso a DOM e viene eseguito su un thread diverso dal JavaScript principale che alimenta la tua app, quindi non si blocca. È progettato per essere completamente asincrono; di conseguenza, le API come XHR sincrono e localStorage non possono essere utilizzate all'interno di un operatore di servizio.
-
-Gli addetti all'assistenza funzionano solo su HTTPS, per motivi di sicurezza. Avendo modificato le richieste di rete, gli attacchi spalancati agli uomini nel mezzo sarebbero davvero pessimi. In Firefox, anche le API di Service Worker sono nascoste e non possono essere utilizzate quando l'utente è in modalità di navigazione privata.
+Un Service Worker è un lavoratore guidato da eventi registrato su un'origine e un path. Esso prende la forma di un file JavaScript in grado di controllare la pagina web a cui è associato, intercettare e modificare le richieste di navigazione e memorizzare le risorse per dare il controllo completo su come si comporta l'app in determinate situazioni, ad esempio quando la rete non è disponibile.
 
 \section{Registrazione}
-Un addetto all'assistenza viene prima registrato utilizzando il ServiceWorkerContainer.register()metodo. In caso di esito positivo, l'addetto all'assistenza verrà scaricato sul client e tenterà l'installazione / attivazione (vedere di seguito) per gli URL a cui l'utente ha avuto accesso all'interno dell'intera origine o all'interno di un sottoinsieme specificato dall'utente.
+Un addetto all'assistenza viene prima registrato utilizzando il metodo ServiceWorkerContainer.register(). In caso di esito positivo, il Service Worker verrà scaricato sul client e tenterà l'installazione / attivazione per gli URL a cui l'utente ha avuto accesso all'interno dell'intera origine o all'interno di un sottoinsieme specificato dall'utente.
 
 \section{Impostare i service worker}
-Molte funzionalità dei lavoratori del servizio ora sono abilitate di default nelle versioni più recenti dei browser di supporto. Se tuttavia trovi che il codice demo non funziona nelle tue versioni installate, potresti dover abilitare un pref:
+Molte funzionalità dei Service Worker oggi sono abilitate di default nelle versioni più recenti dei browser. Se il codice demo seguente non funziona bisogna abilitare un pref:
 \begin{itemize}
-\item Firefox: vai su \url{about:config} e imposta  dom.serviceWorkers.enabled su true; riavvia il browser.
-\item Chrome : vai a  \url{chrome://flags} e accendi  experimental-web-platform-features; riavvia browser
-\item Opera : vai a \url{opera://flags} e attiva  Support for ServiceWorker; riavvia il browser.
-\item Microsoft Edge : vai a  \url{about:flags} e spunta  Enable service workers; riavvia il browser.
+\item Firefox: su \url{about:config} impostare dom.serviceWorkers.enabled su true; riavvia il browser.
+\item Chrome : su \url{chrome://flags} accendere  experimental-web-platform-features; riavvia browser
+\item Opera : su \url{opera://flags} attivare Support for ServiceWorker; riavvia il browser.
+\item Microsoft Edge : su \url{about:flags} spuntare  Enable service workers; riavvia il browser.
 \end{itemize}
-Dovrai anche servire il tuo codice tramite HTTPS: gli addetti all'assistenza sono costretti a utilizzare HTTPS per motivi di sicurezza. GitHub è quindi un buon posto per ospitare esperimenti, in quanto supporta HTTPS. Al fine di facilitare lo sviluppo locale,  localhost è considerato un'origine sicura anche dai browser.
-
 
 \subsection{Scarica, installa e attiva}
 A questo punto, il tuo operatore di servizio osserverà il seguente ciclo di vita:
@@ -146,61 +121,45 @@ A questo punto, il tuo operatore di servizio osserverà il seguente ciclo di vit
 \item Installare
 \item Attivare
 \end{itemize}
-L'addetto all'assistenza viene scaricato immediatamente quando un utente accede per la prima volta a un sito / una pagina controllata dal lavoratore.
+Il Service Worker viene scaricato immediatamente quando un utente accede per la prima volta a un sito, o una pagina, controllata dal Service Worker, e sarà poi scaricato periodicamente ogni tot periodo di tempo.
 
-Successivamente, viene scaricato ogni 24 ore circa. Esso può essere scaricato più di frequente, ma deve essere scaricato ogni 24 ore per impedire l'esecuzione di cattivi da essere fastidioso per troppo tempo.
-
-L'installazione viene tentata quando il file scaricato viene trovato nuovo - diverso da un lavoratore del servizio esistente (confrontato in termini di byte) o il primo operatore di servizio rilevato per questa pagina / sito.
-
-Se questa è la prima volta che un operatore di servizio viene reso disponibile, viene tentata l'installazione, quindi, dopo un'installazione corretta, viene attivata.
-
-Se è disponibile un operatore di servizio esistente, la nuova versione viene installata in background, ma non ancora attivata - a questo punto viene chiamata l' operatore in attesa . Si attiva solo quando non ci sono più pagine caricate che stanno ancora utilizzando il vecchio servizio di assistenza. Non appena non ci sono più pagine da caricare, il nuovo lavoratore di servizio si attiva (diventando il lavoratore attivo ). L'attivazione può avvenire prima utilizzando ServiceWorkerGlobalScope.skipWaiting()e le pagine esistenti possono essere richieste dal lavoratore attivo che utilizza Clients.claim().
-
-Puoi ascoltare per il InstallEvent; un'azione standard è quella di preparare il tuo operatore di servizio all'utilizzo quando questo si attiva, ad esempio creando una cache utilizzando l'API di archiviazione integrata e inserendo risorse al suo interno che ti serviranno per eseguire la tua app offline.
-
-C'è anche un activateevento. Il punto in cui questo evento si attiva è generalmente un buon momento per ripulire le vecchie cache e altre cose associate alla versione precedente del proprio addetto all'assistenza.
-
-Il tuo addetto all'assistenza può rispondere alle richieste utilizzando l' FetchEventevento. È possibile modificare la risposta a queste richieste nel modo desiderato, utilizzando il FetchEvent.respondWithmetodo.
+L'installazione viene tentata quando il file nuovo che è stato scaricato risulta diverso da un Service Worker esistente, o risulta essere diverso dal primo Service Worker rilevato per quella pagina/sito. Se è la prima volta che un Service Worker viene reso disponibile viene tentata l'installazione e, dopo un'installazione corretta, viene attivato. Se è disponibile un Service Worker esistente, la nuova versione viene installata in background, ma non ancora attivata; si attiva solo quando non ci sono più pagine caricate che stanno ancora utilizzando il vecchio Service Worker. Non appena non ci sono più pagine da caricare, il nuovo Service Worker si attiva.
 
 \section{Casi d'uso}
-Gli addetti all'assistenza sono anche destinati a essere utilizzati per cose come:
+I Service Worker sono anche destinati a essere utilizzati per cose come:
 \begin{itemize}
-\item Sincronizzazione dei dati in background
-\item Rispondendo alle richieste di risorse da altre origini
-\item Ricezione di aggiornamenti centralizzati a dati costosi da calcolare come la geolocalizzazione o il giroscopio, in modo che più pagine possano utilizzare un set di dati
-\item Compilazione lato client e gestione delle dipendenze di CoffeeScript, meno, moduli CJS / AMD, ecc. Per scopi di sviluppo
-\item Ganci per servizi in background
-\item Modelli personalizzati basati su determinati pattern URL
-\item Miglioramenti delle prestazioni, ad esempio prelettura delle risorse che l'utente probabilmente avrà bisogno nel prossimo futuro, come le prossime foto in un album fotografico.
+\item Sincronizzazione dei dati in background;
+\item Rispondere alle richieste di risorse da altre origini;
+\item Ricezione di aggiornamenti centralizzati a dati costosi da calcolare in modo che più pagine possano utilizzare un set di dati;
+\item Modelli personalizzati basati su determinati pattern URL;
+\item Miglioramenti delle prestazioni, ad esempio prelettura delle risorse che l'utente probabilmente avrà bisogno nel prossimo futuro.
 \end{itemize}
-In futuro, gli addetti all'assistenza saranno in grado di fare una serie di altre cose utili per la piattaforma web che la avvicineranno alla praticabilità delle app native. È interessante notare che altre specifiche possono e cominceranno a utilizzare il contesto di servizio, ad esempio:
+Altre specifiche sono utilizzate dal Service Context, ad esempio:
 \begin{itemize}
-\item Sincronizzazione in background : avvia un operatore di servizio anche quando nessun utente si trova sul sito, quindi le cache possono essere aggiornate, ecc.
-\item Reagire per inviare messaggi : Avviate un addetto all'assistenza per inviare agli utenti un messaggio per comunicare loro che sono disponibili nuovi contenuti.
-\item Reagendo a un'ora e data particolari
-\item Entrando in una geo-recinzione
+\item Sincronizzazione in background : avvia un operatore di servizio anche quando nessun utente si trova sul sito, quindi le cache possono essere aggiornate, ecc;
+\item Reagire per inviare messaggi : si può avviare un Service Worker per inviare agli utenti un messaggio per comunicare loro che sono disponibili nuovi contenuti;
+\item Reagendo ad orari e date particolari.
 \end{itemize}
 
 \section{Architettura di base}
-Con gli operatori di servizio, i seguenti passaggi vengono generalmente osservati per l'impostazione di base:
+Per quanto riguarda i Service Worker generalmente vengono eseguiti questi passaggi per l'impostazione di base:
 \begin{itemize}
-\item L'URL dell'operatore di servizio viene recuperato e registrato tramite serviceWorkerContainer.register().
-\item In caso di esito positivo, l'addetto all'assistenza viene eseguito in a ServiceWorkerGlobalScope; questo è fondamentalmente un tipo speciale di contesto di lavoro, che scappa dal thread di esecuzione dello script principale, senza accesso DOM.
-\item Il lavoratore del servizio è ora pronto per elaborare gli eventi.
-\item L'installazione del lavoratore viene tentata quando si accede successivamente alle pagine controllate dal personale dell'assistenza. Un evento di installazione è sempre il primo inviato a un operatore del servizio (questo può essere utilizzato per avviare il processo di compilazione di un IndexedDB e la memorizzazione nella cache delle risorse del sito). Questo è in realtà lo stesso tipo di procedura di installazione di un'applicazione nativa o di Firefox OS, rendendo tutto disponibile per l'uso offline.
-\item Al termine del oninstallgestore, il lavoratore del servizio è considerato installato.
-\item Il prossimo è l'attivazione. Quando il worker del servizio è installato, riceve quindi un evento di attivazione. L'uso principale di onactivateè per la pulizia delle risorse utilizzate nelle versioni precedenti di uno script di servizio.
-\item L'addetto all'assistenza ora controllerà le pagine, ma solo quelle aperte dopo il register()successo. cioè un documento inizia la vita con o senza un operatore del servizio e lo mantiene per tutta la sua durata. Quindi i documenti dovranno essere ricaricati per essere effettivamente controllati.
+\item L'URL del Service Worker viene recuperato e registrato tramite serviceWorkerContainer.register();
+\item In caso di esito positivo, il Service Worker viene eseguito in un ServiceWorkerGlobalScope, ovvero un tipo speciale di Service Context che scappa dal thread di esecuzione dello script principale senza accesso DOM.
+\item Il Service Worker ora è pronto per elaborare gli eventi;
+\item L'installazione del Service Worker viene tentata quando si accede successivamente alle pagine. Un evento di installazione è sempre il primo inviato a un Service Worker;
+\item Quando il Service Worker  è considerato installato, il passo successivo è l'attivazione; quindi quando il Service Worker è installato riceve un evento di attivazione. L'uso principale di onactivate è per la pulizia delle risorse utilizzate nelle versioni precedenti di uno script di servizio.
 \end{itemize}
-\begin{figure}
+\begin{figure}[h]
 	\centering
-	\includegraphics[width=1\linewidth]{SwLifecycle}
+	\includegraphics[width=0.6\linewidth]{SwLifecycle}
 	\caption{Ciclo di vita del Service Worker}
 	\label{fig:Ciclo di vita del Service Worker}
 \end{figure}
-
+\pagebreak
 \newpage
 \section{Specifiche}
+%VEDERE SE DESCRIVERE I METODI, O FARE SOLO ELENCO, O NON FARLO PROPRIO
 \subsection{Interfacce}
 \subsubsection{Cache}
 Rappresenta le coppie di archiviazione Request/ Responseoggetto che vengono memorizzate nella cache come parte del ServiceWorkerciclo di vita.
@@ -726,21 +685,19 @@ Firefox ha anche iniziato a implementare alcuni strumenti utili relativi ai lavo
 \item Il pulsante "Dimentica", disponibile nelle opzioni di personalizzazione di Firefox, può essere usato per cancellare i lavoratori del servizio e le loro ca
 \end{itemize}
 \section{Demo Service Worker}
-Preso da \url{https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers}
-Per dimostrare solo le basi della registrazione e dell'installazione di un addetto al servizio, abbiamo creato una semplice demo chiamata sw-test (codice sorgente: \url{https://github.com/mdn/sw-test/} , demo: \url{https://mdn.github.io/sw-test/}) , che è una semplice galleria di immagini Lego Star Wars. Utilizza una funzione alimentata da promessa per leggere i dati di immagine da un oggetto JSON e caricare le immagini utilizzando Ajax, prima di visualizzare le immagini su una riga lungo la pagina. Abbiamo mantenuto le cose statiche e semplici per ora. Registra, installa e attiva anche un operatore di servizio e, quando più delle specifiche sono supportate dai browser, memorizzerà nella cache tutti i file necessari, in modo che funzionino offline!
+%Preso da \url{https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers}
+Questa demo chiamata sw-test, una semplice galleria di immagini, mostra le basi della registrazione e dell'installazione di un Service Worker (codice sorgente: \url{https://github.com/mdn/sw-test/} , demo: \url{https://mdn.github.io/sw-test/}). 
 
-
-
-L'unica cosa che chiameremo qui è la promessa 
-
+La demo utilizza una funzione alimentata da promise per leggere i dati di immagine da un oggetto JSON e caricare le immagini utilizzando Ajax, prima di visualizzare le immagini su una riga lungo la pagina. Inoltre memorizzerà nella cache tutti i file necessari in modo che funzionino offline.
+\begin{itemize}
+\item L'unica cosa che chiameremo qui è la promessa 
 \begin{lstlisting}
 	function imgLoad(imgJSON) {
 		// return a promise for an image loading
 		return new Promise(function(resolve, reject) {
 			var request = new XMLHttpRequest();
 			request.open('GET', imgJSON.url);
-			request.responseType = 'blob';
-			
+			request.responseType = 'blob';	
 			request.onload = function() {
 				if (request.status == 200) {
 					var arrayResponse = [];
@@ -751,18 +708,15 @@ L'unica cosa che chiameremo qui è la promessa
 					reject(Error('Image didn\'t load successfully; error code:' + request.statusText));
 				}
 			};
-			
 			request.onerror = function() {
 				reject(Error('There was a network error.'));
-			};
-			
+			};		
 			// Send the request
 			request.send();
 		});
 	}
 \end{lstlisting}
 
-\begin{itemize}
 \item Passiamo in un frammento JSON contenente tutti i dati per una singola immagine
 \begin{lstlisting}
 	var Path = 'gallery/';
@@ -788,7 +742,7 @@ L'unica cosa che chiameremo qui è la promessa
 		},
 	]};
 \end{lstlisting}
-Questo perché tutti i dati per ogni risoluzione di promessa devono essere passati con la promessa, in quanto è asincrono. Se hai appena passato l'url e poi hai provato ad accedere agli altri elementi nel JSON separatamente quando il for()loop è stato ripetuto in seguito, non funzionerebbe, poiché la promessa non si risolverebbe nello stesso momento delle iterazioni sono in corso (questo è un processo sincrono).
+Passiamo un JSON perché tutti gli elementi per ogni primse risolta devono essere passati con la promise in quanto è asincrono. Se è appena stato passato l'url e poi si è provato ad accedere agli altri elementi nel JSON separatamente quando il for() loop è stato ripetuto in seguito, non funzionerebbe, poiché la promessa non si risolverebbe nello stesso momento in cui le iterazioni sono in corso (questo è un processo sincrono).
 \item In realtà risolviamo la promessa con un array, dato che vogliamo rendere disponibile il blob dell'immagine caricata alla funzione di risoluzione più avanti nel codice, ma anche il nome dell'immagine, i crediti e il testo alternativo. 
 
 \begin{lstlisting}
@@ -797,40 +751,35 @@ Questo perché tutti i dati per ogni risoluzione di promessa devono essere passa
 	arrayResponse[1] = imgJSON;
 	resolve(arrayResponse);
 \end{lstlisting}
-Le promesse si risolvono solo con un singolo argomento, quindi se vuoi risolvere con più valori, devi usare un array / oggetto.
-\item Per accedere ai valori promessi risolti, accediamo quindi a questa funzione come ti aspetteresti. 
+Le promesse si risolvono solo con un singolo argomento, quindi se si vuole risolvere con più valori si deve usare un array/oggetto.
+\item Per accedere ai valori promessi risolti si accede alla funzione:
 \begin{lstlisting}
 	var imageURL = window.URL.createObjectURL(arrayResponse[0]);	
 	myImage.src = imageURL;
 	myImage.setAttribute('alt', arrayResponse[1].alt);
 	myCaption.innerHTML = '<strong>' + arrayResponse[1].name + '</strong>: Taken by ' + arrayResponse[1].credit;
 \end{lstlisting}
-Questo può sembrare un po 'strano all'inizio, ma questo è il modo in cui le promesse funzionano.
-\end{itemize}
-\section{Esempio offline}
-%inserire la demo offline
-%\url{https://developer.mozilla.org/en-US/Apps/Fundamentals/Offline}
-Ecco un riepilogo del progetto che stiamo per implementare:
-\begin{itemize}
-\item stiamo andando a scaricare lo script Worker di servizio dal server
-\item faremo in modo che il browser installi e attivi il worker del servizio in background il più tardi possibile nel tempo di bootstrap dell'applicazione, per non interrompere l'esperienza utente iniziale
-\item sullo sfondo, l'addetto all'assistenza sta scaricando l'intera applicazione Web (ovvero HTML, CSS e Javascript), la versione e la conserverà per un secondo momento
-\item solo la volta successiva che l'utente arriva al sito, l'addetto all'assistenza sta per dare il via (più su questo più avanti)
-\item questa volta l'utente visita il sito, l'applicazione NON scaricherà HTML, CSS e Javascript dalla rete - il Service Worker servirà i file memorizzati nella cache che aveva conservato per un secondo momento
-\item Questa seconda volta, l'avvio dell'applicazione sarà molto più veloce
-\item L'utente avrà almeno un'applicazione funzionante, anche se la rete non funziona
-\end{itemize}
-E questo è come avere un proxy di rete nel browser ci permette di avere applicazioni web installabili! Questo è tutto compatibile al 100x100 con i pulsanti Indietro e Aggiorna.
 
+\end{itemize}
+\pagebreak
+\section{Esempio offline}
+%Demo offline
+%\url{https://developer.mozilla.org/en-US/Apps/Fundamentals/Offline}
+%Il codice per l'applicazione di esempio è disponibile qui: \url{https://github.com/angular-university/service-workers-guide}
+Ecco un riepilogo del progetto che implementato:
+\begin{itemize}
+\item si scarica lo script Service Worker dal server;
+\item si farà in modo che il browser installi e attivi il Service Worker in background il più tardi possibile per non interrompere l'esperienza utente iniziale;
+\item in background il Service Worker starà scaricando l'intera applicazione Web (HTML, CSS e Javascript) che conserverà per utilizzarla in un secondo momento;
+\item la volta successiva che l'utente arriverà al sito il Service Worker userà l'applicazione Web conservata in precedenza; quando questa volta l'utente visiterà il sito l'applicazione non scaricherà HTML, CSS e Javascript dalla rete ma il Service Worker userà i file memorizzati nella cache che aveva conservato per un secondo momento. Di conseguenza, questa seconda volta l'avvio dell'applicazione sarà molto più veloce. Inoltre l'utente avrà l'applicazione funzionante anche se la rete non funziona
+\end{itemize}
+
+Questo  meccanismo è come avere un proxy di rete nel browser che ci permette di avere applicazioni web installabili.
 
 \subsection{Registrazione del Service Worker}
-Il nostro punto di partenza è una semplice pagina Bootstrap HTML, CSS e Javascript , che utilizzava alcuni bundle CSS e Javascript molto comuni.
+Il punto di partenza è una pagina Bootstrap HTML, CSS e Javascript che utilizzava alcuni bundle CSS e Javascript molto comuni; la trasformeremo in un PWA scaricabile e installabile e lo stesso ragionamento si applica a un'applicazione a singola pagina.
 
-Trasformeremo questa semplice pagina in uno sfondo PWA scaricabile e installabile, e lo stesso design si applica a un'applicazione a singola pagina: dopo tutto è solo HTML, CSS e Javascript!
-
-Promemoria: il codice per l'applicazione di esempio è disponibile qui: \url{https://github.com/angular-university/service-workers-guide}
-
-Il primo passo per trasformare questo sito Web standard in un PWA scaricabile è aggiungere un operatore del servizio tramite uno script di registrazione:
+Il primo passo per trasformare questo sito Web standard in un PWA scaricabile è aggiungere un Service Worker tramite uno script di registrazione:
 \begin{lstlisting}
 	<!-- commonly used JS bundles -->
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
@@ -856,69 +805,43 @@ Lo script di registrazione:
 	}
 \end{lstlisting}
 
-%\title{\textbf{Perchè ritardare la registrazione del Service Worker}}\\
-Anche se rileviamo che il browser supporta i Service Worker, non registreremo ancora un SW immediatamente! In questo caso, stiamo aspettando l'event load della pagina .
+\title{\textbf{Perchè ritardare la registrazione del Service Worker}}\\
+Anche se rileviamo che il browser supporta i Service Worker non registreremo i Service Worker immediatamente: in questo caso stiamo aspettando l'event load della pagina che viene attivato solo quando viene caricata l'intera pagina, comprese le risorse collegate come immagini, CSS e Javascript e ciò può richiedere molto tempo. Nel caso di un'applicazione a singola pagina, potremmo voler ritardare ulteriormente la registrazione e attendere oltre l'evento load.
 
-L' evento load viene attivato solo quando viene caricata l'intera pagina, comprese le risorse collegate come immagini, CSS e Javascript e ciò può richiedere molto tempo.
+I due motivi per cui vogliamo ritardare la registrazione del Service Worker sono:
+\begin{itemize}
+\item  evitare di degradare o interrompere l'esperienza utente iniziale poiché l'applicazione viene caricata per la prima volta.
 
-Ci sono un paio di motivi per cui vogliamo ritardare la registrazione del Service Worker: vogliamo evitare di causare l'interruzione dell'esperienza utente iniziale, poiché l'applicazione viene caricata per la prima volta.
+Poichè i browser eseguono solo una quantità limitata di richieste HTTP allo stesso tempo, e la capacità della rete è anch'essa limitata, il Service Worker potrebbe o non potrebbe fare richieste di rete separate che possono interferire con quelle necessarie per mostrare all'utente il contenuto iniziale.
 
-I browser eseguono solo una quantità limitata di richieste HTTP allo stesso tempo e la capacità della rete è tale. Il Service Worker potrebbe o non potrebbe fare richieste di rete separate che possono interferire con quelle necessarie per mostrare all'utente il contenuto iniziale.
+Quindi per favorire l'esperienza utente il Service Worker aspetterà che l'applicazione si avvii e verrà installata in background.
 
-Ciò significa che il ritardo nella registrazione di Service Worker impedisce al Service Worker di degradare l'esperienza utente iniziale. Invece, il Service Worker aspetterà che l'applicazione si avvii e quindi verrà installata in background.
-
-Si noti che nel caso di un'applicazione a singola pagina, potremmo voler ritardare ulteriormente la registrazione e attendere oltre l'evento load.
-
-La chiave è capire che nel caso di un Service Worker che esegue il download e l'installazione, vogliamo registrarlo il più tardi possibile, per evitare di rovinare l'esperienza dell'utente.
-
-Un altro motivo per ritardare la registrazione di questo tipo di Service Worker è avere un comportamento coerente dell'applicazione. Ricordiamo che il Service Worker servirà spesso l'intera applicazione stessa!
+\item avere un comportamento coerente dell'applicazione. 
 
 Quindi vogliamo evitare una situazione in cui:
 \begin{itemize}
-\item alcune delle risorse CSS e JS della pagina sono state fornite dall'operatore del servizio
-\item mentre altri provenivano dalla rete
+\item alcune delle risorse CSS e JS della pagina sono state fornite dal Service Worker;
+\item mentre altri provenivano dalla rete.
 \end{itemize}
 Se alcune delle richieste iniziali di una pagina provengono dalla rete, vogliamo essere sicuri che anche tutti i pacchetti rimanenti siano stati caricati dalla rete, per coerenza.
 
-Nel caso del download e dell'installazione dell'applicazione, vogliamo evitare di cadere in una situazione in cui attiviamo un Service Worker nel mezzo dell'avvio di una pagina.
+Nel caso del download e dell'installazione dell'applicazione, vogliamo evitare di cadere in una situazione in cui attiviamo un Service Worker nel mezzo dell'avvio di una pagina in base a quanto etto prima sull'esperienza utente.
 
-Questo perché, a seconda delle condizioni di cronometraggio, potremmo casualmente cadere in una situazione difficile da riprodurre in cui la pagina è rotta a causa di una combinazione imprevedibile di risorse HTML / CSS / JS, alcuni provenienti dalla rete e gli altri da una sorta di cache che il Service Worker sta usando.
+La prossima volta che visiteremo la pagina il Service Worker sarà attivo quindi caricheremo tutte le risorse dal Service Worker anziché dalla rete, ciò significa che avremo un insieme coerente di pacchetti, tutti provenienti da una cache e corrispondenti a una determinata versione dell'applicazione.
 
-Nella prossima volta che visiteremo questa pagina il Service Worker sarà attivo, quindi caricheremo tutte le risorse dal Service Worker, anziché dalla rete.
+E possibile avere service worker multipli nella stessa pagina (Service Worker ID), ciò significa che è possibile avere più Service Worker in esecuzione sulla stessa pagina, ma su diversi ambiti, quindi potremmo registrare diversi Service Worker per diversi ambiti.
 
-Ciò significa che di nuovo avremo un insieme coerente di pacchetti , tutti provenienti da una cache e corrispondenti a una determinata versione dell'applicazione.
-
-Nell'esempio sopra, al momento della registrazione, quando l'evento loadsi innesca, chiameremo register()e identificheremo il file sw.jscome uno script di Service Worker.
-
-Il browser quindi scaricherà il sw.jsfile e lo realizzerà creando un'istantanea di tutti i byte contenuti in questo file. In futuro, anche se cambia una singola cifra, il browser considererà che esiste una versione completamente nuova del Service Worker.
-
-La scope del service worker determina quale set di richieste HTTP può essere intercettato dal Service Worker, oppure no . In questo caso, l'ambito è '/', il che significa che il nostro Service Worker sarà in grado di intercettare tutte le richieste HTTP effettuate da questa applicazione.
-
-Se invece l'ambito fosse /api, l'operatore del servizio non sarebbe in grado di intercettare una richiesta come ad esempio /bundles/app.css, ma sarebbe comunque in grado di intercettare una richiesta API REST come /api/courses.
-
-E possibile avere service worker multipli nella stessa pagina(Service Worker ID), ciò significa che è possibile avere più operatori di servizio in esecuzione sulla stessa pagina, ma su diversi ambiti!
-
-Se un Service Worker avesse un identificativo univoco, sarebbe la combinazione del dominio di origine e del percorso dell'ambito.
-
-E questo come il browser determina se due diversi script corrispondono a due versioni diverse dello stesso Service Worker (e non basate sul mantenimento dello stesso sw.jsnome di file SW ).
-
-Se due script di Service Worker hanno lo stesso percorso di ambito e anche un byte di differenza, il browser li considera due versioni dello stesso SW e installa la versione più recente in background.
-
-Nota inoltre che non si possono collocare i Service Worker in una cartella qualsiasi, ma la posizione del sw.jsfile è importante: se questo file sarebbe stato posto in una cartella /service-worker/sw.js, allora sarebbe non essere in grado di intercettare le richieste come /bundles/app.csso /api/courses.
-
-Invece, l'ambito massimo delle richieste HTTP che il Service Worker potrebbe intercettare, sarebbero tutte le richieste a partire da /service-worker, la cartella su cui è scritto lo script!
-
-Detto questo, potremmo, ad esempio, registrare diversi operatori del servizio per diversi ambiti: un addetto al servizio per tutte le /bundlesrichieste e un altro per tutte le /apirichieste.
-
-Per implementare il download e l'installazione, useremo l'ambito di root e useremo solo un Service Worker.
+%Se un Service Worker avesse un identificativo univoco, sarebbe la combinazione del dominio di origine e del percorso dell'ambito.
+\end{itemize}
 
 \subsection{Installazione del Service Worker}
-Quando il browser identifica una nuova versione di Service Worker per un dato ambito, attiverà la fase di installazione, che si tradurrà nell'emissione installdell'evento Lifecycle.
+Quando il browser identifica una nuova versione di Service Worker per un dato ambito attiverà la fase di installazione, successivamente quella di attivazione: ora l'intercettazione della rete è pronta per essere utilizzata.
 
-Si noti che le specifiche di Service Worker non definiscono cosa accade esattamente nella fase di installazione. Spetta a noi implementarlo, ascoltando l' installevento sw.js.
-
-Dopo l'installazione arriva l'attivazione, e quindi l'intercettazione della rete è pronta per essere utilizzata! Capiamo esattamente come funzionano le fasi di installazione e attivazione, sulla base sw.js dell'esempio di Hello World Service Worker. Il codice seguente è in realtà l'implementazione di un semplice intercettore HTTP di registrazione e lo svilupperemo per implementare il download e l'installazione dell'applicazione.
+Col seguente codice, che è l'implementazione di un semplice intercettore HTTP di registrazione, cerchiamo di spiegare come funzionano le fasi di installazione e attivazione, e lo svilupperemo per implementare il download e l'installazione dell'applicazione.
+\pagebreak
 \begin{lstlisting}
+/*SPIEGARE BENE STA PARTE*/
+
 	const VERSION = 'v1';
 	/*stiamo usando un riferimento a self: questo significa il contesto globale corrente in cui viene eseguito il codice, che sarebbe ad esempio il windowse questo dovesse essere eseguito a livello dell'applicazione
 	Tuttavia, in questo caso, selfpunta al contesto globale di Service Worker.
@@ -963,7 +886,7 @@ Dopo l'installazione arriva l'attivazione, e quindi l'intercettazione della rete
 \subsubsection{Fetch per intercettare le richieste HTTP}
 Diamo ora uno sguardo più da vicino al callback fetch dell'evento, che contiene la funzionalità di registrazione HTTP.
 
-Come possiamo vedere, questo fetch callback restituirà la risposta effettiva della chiamata HTTP respondWith() e la risposta può essere calcolata in modo asincrono passando una Promessa a respondWith().
+Come possiamo vedere, questo fetch callback restituirà la risposta effettiva della chiamata HTTP respondWith() e la risposta può essere calcolata in modo asincrono passando una promise a respondWith().
 
 Nota: il codice dell'applicazione non è a conoscenza di dove proviene questa risposta: se dalla rete o dal Service Worker
 
@@ -995,12 +918,528 @@ Esaminiamo quindi l'output della console:
 	Service Worker registration completed ...
 \end{lstlisting}
 Ed ecco il nostro Service Worker in esecuzione in Chrome Dev Tools:
+\begin{figure}
+	\centering
+	\includegraphics[width=1\linewidth]{DevTools}
+	\caption{Service Worker in esecuzione in Chrome Dev Tools}
+	\label{fig:Service Worker in esecuzione in Chrome Dev Tools}
+\end{figure}
+Nota: sebbene stiamo registrando gli eventi di installazione e attivazione ma non è stata registrata alcuna richiesta HTTP sulla console, quindi sembrerebbe che l'evento fetch non sembri funzionare, anche se il Service Worker è attivo .
+
+Ma se apriamo un'altra scheda o aggiorniamo la stessa scheda, ecco cosa abbiamo:
+\begin{lstlisting}
+	v1 HTTP call intercepted - getbootstrap.com/dist/css/bootstrap.min.css
+	v1 HTTP call intercepted - localhost:8080/carousel.css
+	v1 HTTP call intercepted - code.jquery.com/jquery-3.2.1.slim.min.js
+	v1 HTTP call intercepted - getbootstrap.com/js/vendor/popper.min.js
+	v1 HTTP call intercepted - getbootstrap.com/dist/js/bootstrap.min.js
+	... other intercepted CSS/Js bundles
+	v1 HTTP call intercepted - localhost:8080/sw-register.js
+	Service Worker registration completed ...
+\end{lstlisting}
+Quindi il Service Worker ha iniziato a intercettare le richieste HTTP solo dopo aver ricaricato la pagina e questo accade di default per garantire coerenza.
 
 
+Simulando il comportamento normale dell'utente, cosa succede se apriamo altre schede del browser della stessa applicazione?
+\begin{lstlisting}
+v1 HTTP call intercepted - getbootstrap.com/dist/css/bootstrap.min.css
+... the same HTTP requests, all served by version 1
+Service Worker registration completed ...
+\end{lstlisting}
+Vedremo che questa pagina viene servita dallo stesso SW v1! 
+Nota: la registrazione della console è condivisa tra le schede.
+
+Se si aggiorna l'applicazione un paio di volte e poi si torna ad un'altra scheda, si vedranno le richieste HTTP registrate che sono state fatte nell'altra scheda. Questo perchè abbiamo lo stesso Service Worker che intercetta le richieste da tutte le schede.
 
 
+Per capire meglio il ciclo di vita del lavoratore del servizio, vediamo ora cosa succede se modifichiamo qualcosa nel codice del lavoratore del servizio. Ad esempio, modifica il numero di versione in v2.
 
+Si noti che non è necessario modificare il nome del file sw.jsper notificare al browser che è disponibile una nuova versione dell'operatore del servizio.
 
+Il browser vedrà che entrambe le versioni sono collegate all'ambito /e se c'è anche un solo carattere di differenza tra le due versioni, il browser installerà la nuova versione.
+
+Proviamo quindi a installare v2, ancora con più schede aperte. Se cambiamo il numero di versione dello script SW in v2 e apriamo un'altra scheda, ecco cosa vediamo in Dev Tools:
+\begin{figure}
+	\centering
+	\includegraphics[width=1\linewidth]{DevTools2}
+	\caption{Nuova versione Service Worker in esecuzione in Chrome Dev Tools}
+	\label{fig:Nuova versione Service Worker in esecuzione in Chrome Dev Tools}
+\end{figure}
+Come possiamo vedere, la nuova versione di Service Worker non viene immediatamente applicata, è in una sorta di stato di attesa!
+
+E se guardiamo la console, ora abbiamo:
+
+\begin{lstlisting}
+	v1 HTTP call intercepted - getbootstrap.com/dist/css/bootstrap.min.css
+	v1 HTTP call intercepted - localhost:8080/carousel.css
+	... the same requests as before still being intercepted by v1
+	Service Worker registration completed ...
+	v2 INSTALLING 
+	v2 INSTALLED
+\end{lstlisting}
+Ci sono un paio di cose che sono molto interessanti in questo registro:
+\begin{itemize}
+\item la versione v1 non è stata ancora installata, o addirittura attivata
+\item sembra che la versione v1 sia rimasta attiva durante l'intero processo di aggiornamento, perché ha mantenuto l'intercettazione delle richieste HTTP
+\item tutte le richieste sono ancora intercettate da v1
+\item La versione v2 è stata installata in background, ma non attivata!
+\item La versione v2 è ora in attesa
+\end{itemize}
+Allora perchè la nuova versione v2 è installata ma non attivata?
+Una ragione è che abbiamo aperto più schede e vogliamo mostrare all'utente un'esperienza coerente. Sarebbe difficile per l'utente avere due schede aperte che eseguono versioni diverse della stessa applicazione.
+E poiché i lavoratori del Servizio intercettano e modificano le richieste HTTP, due diverse versioni del lavoratore del servizio potrebbero significare due diverse versioni dell'applicazione stessa!
+
+Quindi in che modo il browser gestirà questa nuova versione del service worker?
+
+Il browser sta per andare avanti e svolgere alcuna installazione operazioni come  download o una pagina offine in fase di installazione di v2, ma il browser non attiva v2 finché ci sono più schede aperte ancora in esecuzione v1.
+
+Cerchiamo di capire perché in questa fase con v2 già installato, perché v1 sia ancora in esecuzione, e perché v2 non è ancora attivo.
+
+Abbiamo aggiornato la nostra scheda singola eseguendo v1, ma ancora v2 non è stato attivato (è stato installato in background, ma non attivato). Questo perché, dal punto di vista del browser, la pagina corrente rimane attiva fino al completamento dell'aggiornamento, e solo allora la pagina viene scambiata quando abbiamo almeno ricevuto le intestazioni di risposta dal server. Poiché la pagina è stata mantenuta durante una parte del processo di aggiornamento, l'unico modo per garantire la coerenza è mantenerlo attivo per tutto il processo. Dopodiché, poiché abbiamo mantenuto attivo il Service worker v1 durante l'aggiornamento, per impostazione predefinita vogliamo mantenerlo in esecuzione anche dopo il completamento dell'aggiornamento, il che spiega perché V1 è ancora attivo dopo il completamento dell'aggiornamento della pagina.
+
+Per attivare la nuova versione di Service Worker V2 un modo potrebbe essere quello di riprodurre la normale esperienza utente: chiudiamo tutte le schede che eseguono il service worker v1 e apriamo una nuova scheda.
+
+Se guardiamo all'output della console, ora abbiamo:
+\begin{lstlisting}
+v2 ACTIVATING
+v2 ACTIVATED
+v2 HTTP call intercepted - localhost:8080
+v2 HTTP call intercepted - getbootstrap.com/dist/css/bootstrap.min.css
+... the same list of requests, all intercepted by v2
+\end{lstlisting}
+Come possiamo vedere, questa volta il browser ha attivato Service Worker v2 che aveva precedentemente installato in background e v2 ha intercettato tutte le richieste di rete da questa pagina, il che significa che V2 è ora attivo.
+%\\
+%\textbf{Riassumendo}
+\\
+\subsection{Riepilogo del ciclo di vita del Service Worker}
+Possiamo vedere che, anche se un po 'complicato a prima vista, il modo in cui funziona il ciclo di vita del Service Worker ha molto senso. Il ciclo di vita è tutto su:
+\begin{itemize}
+\item mostra solo una versione dell'applicazione per l'utente
+\item non disturbare l'esperienza dell'utente
+\item non ritardare l'avvio dell'applicazione
+\item per impostazione predefinita, evitando errori di versione tra la pagina e il Service Worker (Quest'ultimo punto è particolarmente importante per il caso di utilizzo di download e installazione che stiamo per esaminare.)
+\end{itemize}
+
+Ricordiamo che uno dei casi di utilizzo comune di Service Workers è quello di memorizzare nella cache l' intera applicazione , vale a dire letteralmente tutto l'HTML, CSS e Javascript!
+
+\subsection{Cache Storage API}
+\url{https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage}
+Tutti questi file sono depositati dal Service Worker nella cache storage API.
+Al momento dell'installazione, Service Worker preleverà dalla rete tutti i bundle che insieme costituiscono una determinata versione dell'applicazione, quindi li memorizzerà nella cache del browser nota come Cache Storage .
+
+Come l'API di Service Worker, anche Cache Storage è basato su Promise e molto facile da usare. Prendiamo quindi questa API e usiamola per implementare la fase di installazione del caso d'uso Download and Install.
+\subsubsection{Implementazione del download dell'applicazione in background}
+Iniziamo quindi ad adattare l'esempio dell'intercettore di registrazione mondiale Hello e ad estenderlo con le funzionalità di installazione in background.
+
+La prima cosa che faremo è scaricare tutti i file Javascript e CSS in background durante la fase di installazione e aggiungeremo tali file direttamente a Cache Storage:
+
+\begin{lstlisting}
+	const VERSION = 'v3';
+
+	self.addEventListener('install', event => event.waitUntil(installServiceWorker()));
+	async function installServiceWorker() {
+		log("Service Worker installation started ");
+		const cache = await caches.open(getCacheName());
+		return cache.addAll([
+			'/',
+			'carousel.css',
+			'http://getbootstrap.com/dist/css/bootstrap.min.css',
+			'https://code.jquery.com/jquery-3.2.1.slim.min.js',
+			'http://getbootstrap.com/assets/js/vendor/popper.min.js',
+			'http://getbootstrap.com/dist/js/bootstrap.min.js',
+			'http://getbootstrap.com/assets/js/vendor/holder.min.js'
+		]);
+	}
+\end{lstlisting}
+Di nuovo in questo esempio sta succedendo molto, quindi scomporlo passo dopo passo:
+\begin{itemize}
+\item la prima cosa che stiamo facendo è ottenere un riferimento a una cache aperta, utilizzando la caches.open()quale restituisce una Promessa
+\item stiamo aggiungendo un numero di versione al nome della cache, il che significa che quando verranno rilasciate nuove versioni, verranno create nuove cache
+\item Quindi stiamo facendo una serie di richieste HTTP per recuperare tutti i file che rendono una determinata versione dell'applicazione
+\item Stiamo quindi aggiungendo tutti questi file direttamente alla memoria cache
+\item la chiave della cache è l'oggetto Request utilizzato per effettuare la richiesta HTTP
+\item i valori memorizzati nella cache sono gli oggetti di risposta HTTP stessi, che possiamo servire direttamente all'applicazione
+\item la addAll()chiamata restituisce una Promessa, che verrà risolta correttamente se tutte le richieste HTTP effettuate per caricare ciascun file funzionano
+\end{itemize}
+Nel nostro caso, il download di tutti i file ha funzionato, il che significa che la fase di installazione è terminata con successo! Vediamo ora cosa abbiamo memorizzato in Cache Storage, utilizzando gli strumenti di sviluppo di Chrome:
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\linewidth]{CacheStorage}
+	\caption{Cache Storage}
+	\label{fig:Cache Storage}
+\end{figure}
+Come possiamo vedere, tutti i pacchetti di applicazioni sono stati scaricati in background e l'applicazione è pronta per essere servita dalla cache!
+
+Ma prima di farlo, andiamo avanti e prima cancelliamo tutte le versioni precedenti dell'applicazione da Cache Storage.
+\subsubsection{Eliminazione delle versioni precedenti dell'applicazione}
+Il momento migliore per eliminare le versioni precedenti dell'applicazione è il momento di attivazione di Service Worker, perché questo è l'unico momento in cui possiamo essere sicuri che l'utente non stia più utilizzando la versione dell'applicazione precedente in nessuna delle schede del browser.
+
+In questo modo possiamo eliminare le versioni precedenti dell'applicazione al momento di attivazione:
+\begin{lstlisting}
+	self.addEventListener('activate', () => activateSW());
+	async function activateSW() {
+		log('Service Worker activated');
+		const cacheKeys = await caches.keys();	
+		cacheKeys.forEach(cacheKey => {
+			if (cacheKey !== getCacheName() ) {
+				caches.delete(cacheKey);
+			}
+		});
+	}
+\end{lstlisting}
+Come possiamo vedere, stiamo collegando tutti i nomi di cache disponibili in Cache Storage e cancellando tutte le cache che non corrispondono alla versione dell'applicazione corrente (che è V3).
+\subsubsection{Elaborare l'applicazione dalla cache con una Cache Then Network Strategy}
+L'ultimo passaggio necessario per l'implementazione del download e dell'installazione dell'applicazione consiste nel servire direttamente i bundle dell'applicazione da Cache Storage e, se necessario, effettuare il fallback sulla rete:
+\begin{lstlisting}
+	self.addEventListener('fetch', event => event.respondWith(cacheThenNetwork(event)));
+	async function cacheThenNetwork(event) {
+		const cache = await caches.open(getCacheName());
+		const cachedResponse = await cache.match(event.request);
+		if (cachedResponse) {
+			log('Serving From Cache: ' + event.request.url);
+			return cachedResponse;
+		}
+		const networkResponse = await fetch(event.request);
+		log('Calling network: ' + event.request.url);	
+		return networkResponse;
+	}
+\end{lstlisting}
+Analizziamo questo esempio per vedere come viene applicata la strategia Cache Then Network:
+\begin{itemize}
+\item stiamo intercettando tutte le chiamate HTTP fatte dall'applicazione, all'interno di una funzione asincrona
+\item la funzione asincrona restituirà sempre una Promessa a respondWith(), esplicitamente come valore di ritorno, o avvolgendo in modo trasparente il valore restituito in una Promessa
+\item all'interno della funzione asincrona, iniziamo aprendo la cache che corrisponde alla versione dell'applicazione corrente
+\item stiamo quindi andando a interrogare la cache, per vedere se c'è una risposta HTTP che corrisponda alla richiesta HTTP fatta dall'applicazione
+\item la chiamata a match()restituisce anche una promessa, quindi aspetteremo il risultato prima di continuare
+\item se è stata trovata una corrispondenza, significa che la richiesta fatta dall'applicazione è stata trovata nella cache, quindi restituiamo direttamente la risposta HTTP respondWith()
+\item si noti che non è necessario restituire una Promessa dal metodo asincrono, se restituiamo un valore esso verrà implicitamente avvolto in una Promessa dal meccanismo asincrono / attesa
+\item se non viene trovata alcuna corrispondenza, lasceremo passare la richiesta alla rete attendendo il risultato di una fetch()chiamata
+\item quindi registreremo la richiesta che è stata inoltrata alla rete e restituiremo il risultato della fetch()chiamata all'applicazione
+\end{itemize}
+Con questa soluzione, qualsiasi richiesta effettuata dall'applicazione per caricare i pacchetti memorizzati nella cache verrà fornita da Cache Storage, mentre altre richieste, come ad esempio una chiamata API REST /api/courses, continueranno a passare alla rete.
+
+E con questo ultimo passaggio, abbiamo una soluzione completa per il download e l'installazione in background della nostra applicazione web! Quindi proviamolo.
+\subsubsection{Nuova versione dell'applicazione}
+Per vedere il meccanismo di download e installazione in azione, apriamo una nuova scheda nella nostra applicazione di esempio e vediamo che ora sta eseguendo la versione V3 del Service Worker, che implementa la funzionalità di download e installazione.
+\begin{lstlisting}
+	
+	
+	
+	const VERSION = 'v3';
+	
+	
+	self.addEventListener('install', event => event.waitUntil(installServiceWorker()));
+	
+	
+	async function installServiceWorker() {
+	
+	log("Service Worker installation started ");
+	
+	const cache = await caches.open(getCacheName());
+	
+	return cache.addAll([
+	'/',
+	'carousel.css',
+	'http://getbootstrap.com/dist/css/bootstrap.min.css',
+	'https://code.jquery.com/jquery-3.2.1.slim.min.js',
+	'http://getbootstrap.com/assets/js/vendor/popper.min.js',
+	'http://getbootstrap.com/dist/js/bootstrap.min.js',
+	'http://getbootstrap.com/assets/js/vendor/holder.min.js'
+	]);
+	}
+	
+	self.addEventListener('activate', () => activateSW());
+	
+	
+	async function activateSW() {
+	
+	log('Service Worker activated');
+	
+	const cacheKeys = await caches.keys();
+	
+	cacheKeys.forEach(cacheKey => {
+	if (cacheKey !== getCacheName() ) {
+	caches.delete(cacheKey);
+	}
+	});
+	
+	}
+	
+	
+	self.addEventListener('fetch', event => event.respondWith(cacheThenNetwork(event)));
+	
+	
+	
+	async function cacheThenNetwork(event) {
+	
+	const cache = await caches.open(getCacheName());
+	
+	const cachedResponse = await cache.match(event.request);
+	
+	if (cachedResponse) {
+	log('Serving From Cache: ' + event.request.url);
+	return cachedResponse;
+	}
+	
+	const networkResponse = await fetch(event.request);
+	
+	log('Calling network: ' + event.request.url);
+	
+	return networkResponse;
+	
+	
+	}
+	
+	
+	
+	
+	
+	
+	function getCacheName() {
+	return "app-cache-" + VERSION;
+	}
+	
+	
+	function log(message, ...data) {
+	if (data.length > 0) {
+	console.log(VERSION, message, data);
+	}
+	else {
+	console.log(VERSION, message);
+	}
+	}
+\end{lstlisting}
+Ed ecco l'attuale output della console:
+\begin{lstlisting}
+v3 Serving From Cache: bootstrap.min.css
+v3 Serving From Cache: carousel.css
+v3 Serving From Cache: jquery-3.2.1.slim.min.js
+v3 Serving From Cache: popper.min.js
+v3 Serving From Cache: bootstrap.min.js
+...
+\end{lstlisting}
+Come possiamo vedere, tutti i pacchetti CSS e Javascript provengono direttamente da Cache Storage e non dalla rete, come previsto. Cosa succederebbe ora se avessimo una nuova versione dell'applicazione?
+
+Immagina di aver apportato un sacco di modifiche all'applicazione, come cambiare il suo design o applicare un nuovo tema.
+
+In che modo l'utente otterrà la nuova versione v4, se la versione v3 viene ancora servita ogni volta direttamente dalla cache?
+
+Per attivare l'installazione della versione V4, la prima cosa che dobbiamo fare è anche fare una piccola modifica al Service Worker, ad esempio incrementando il numero di versione:
+
+\begin{lstlisting}
+	const VERSION =  ' v4 ' ;
+\end{lstlisting}
+Ora chiudiamo tutte le schede tranne una e aggiorna il browser. Ecco cosa avremmo sulla console:
+\begin{lstlisting}
+	v3 Serving From Cache: bootstrap.min.css
+	v3 Serving From Cache: carousel.css
+	....
+	v4 Service Worker installation started 
+\end{lstlisting}
+Come possiamo vedere, V3 del Service Worker (e dell'applicazione) è ancora attivo e funzionante, come previsto. Ciò significa che la versione dell'applicazione è stata servita da Service Worker v3, il che significa che i bundle provengono tutti dalla cache denominata app-cache-v3.
+
+Ma possiamo vedere anche che la versione V4 è stata installata in background. Diamo un'occhiata a ciò che abbiamo nella scheda Service Worker:
+\begin{figure}
+	\centering
+	\includegraphics[width=1\linewidth]{v41}
+	\caption{v4 in attesa di essere attivata}
+	\label{fig:v4 in attesa di essere attivata}
+\end{figure}
+Come possiamo vedere, la versione V4 è in attesa di essere attivata. Ma i bundle di V4, che potrebbero corrispondere a una versione completamente diversa dell'intera applicazione Web, sono ora pronti per essere utilizzati.
+
+Per confermare questo, diamo un'occhiata al contenuto di Cache Storage:
+\begin{figure}
+	\centering
+	\includegraphics[width=1\linewidth]{v42}
+	\caption{Contenuto Cache Storage}
+	\label{fig:Contenuto Cache Storage}
+\end{figure}
+Come possiamo vedere, Cache Storage contiene due versioni dell'applicazione in questa fase:
+\begin{itemize}
+\item versione v3, che viene ancora offerta all'utente
+\item versione v4, che è stata scaricata in background ed è pronta per essere utilizzata non appena tutte le schede della versione v3 sono chiuse
+\end{itemize}
+Per attivare la versione v4, simuliamo alcune normali interazioni con l'utente. L'utente alla fine chiuderebbe tutte le schede del browser con la versione v3, quindi tornerà in seguito all'applicazione.
+
+In quel momento, il browser attiverà la versione V4 e servirà i file corrispondenti dalla cache:
+\begin{lstlisting}
+v4 Service Worker activated
+v4 Serving From Cache: bootstrap.min.css
+v4 Serving From Cache: carousel.css
+\end{lstlisting}
+E con questo, l'intero ciclo di vita è completato e l'utente ha ora una versione aggiornata dell'applicazione scaricata e installata nel browser.
+
+La nuova versione dell'applicazione è stata scaricata e installata in background, senza interferire con la normale esperienza utente. Questo è in realtà ancora meglio delle installazioni mobili native!
+
+\subsubsection{Personalizzazione del comportamento del ciclo di vita del service worker}
+Quello che abbiamo descritto finora è stato il comportamento predefinito del ciclo di vita del Service Worker, che ha molto senso nel contesto del caso di utilizzo di Donwload e installazione.
+
+Vediamo ora come possiamo personalizzare il ciclo di vita, se necessario , per adattarlo meglio agli altri casi di utilizzo PWA.
+
+Si noti che la modifica del comportamento del ciclo di vita del Service Worker sebbene sia allettante, non è realmente raccomandata, come vedremo.
+\\
+\textbf{Saltare la fase di attesa (e potenziali problemi che potrebbe causare)}
+\\
+Ad esempio, potremmo saltare completamente la fase di attesa del ciclo di vita del lavoratore del servizio, chiamando l' skipWaiting()API alla fine della fase di installazione:
+\begin{lstlisting}
+	async function installServiceWorker() {
+	
+	log("Service Worker installation started ");
+	
+	const cache = await caches.open(getCacheName());
+	
+	await cache.addAll([
+	'/',
+	'carousel.css',
+	'http://getbootstrap.com/dist/css/bootstrap.min.css',
+	'https://code.jquery.com/jquery-3.2.1.slim.min.js',
+	'http://getbootstrap.com/assets/js/vendor/popper.min.js',
+	'http://getbootstrap.com/dist/js/bootstrap.min.js',
+	'http://getbootstrap.com/assets/js/vendor/holder.min.js'
+	]);
+	
+	return self.skipWaiting();
+	}
+\end{lstlisting}
+
+In questo esempio, siamo in attesa che i file vengano scaricati e installati, e quindi chiameremo self.skipWaiting(), che restituirà una Promessa.
+
+Ciò causerà il saltare della fase in attesa del ciclo di vita e l'attivazione immediata della nuova versione di Service Worker.
+
+Ciò significa che se l'utente apre una nuova scheda, la nuova versione sarebbe attiva e potrebbe causare incoerenze tra le schede. Nella maggior parte dei casi, è meglio non saltare la fase di attesa ed evitare quegli scenari inconsistenti di progettazione.
+
+Ciò non significa, tuttavia, che l'utilizzo skipWaiting()della nuova versione di Service Worker possa intercettare immediatamente le richieste dalla scheda in esecuzione.
+
+\textbf{Accogliendo la pagina corrente con clients.claim()}
+Abbiamo visto ad esempio che la prima volta che viene caricata una pagina con un Service Worker, il Service Worker verrà installato e attivato , ma in qualche modo non sarà in grado ancora di intercettare le richieste di rete effettuate dalla pagina.
+
+Dovremmo aggiornare la pagina in modo che il nuovo Service Worker avvii le richieste di intercettazione.
+
+Ancora una volta, questo è per coerenza: se le richieste iniziali di una pagina non sono state fornite da un Service Worker, per impostazione predefinita nessuna delle richieste HTTP effettuate da quella pagina dopo l'avvio verrà servita anche dal Service Worker.
+
+Ma possiamo cambiare questo, facendo in modo che il Service Worker richieda tutte le schede dell'applicazione attive al momento di attivazione:
+\begin{lstlisting}
+	async function activateSW() {
+	
+	log('Service Worker activated');
+	
+	const cacheKeys = await caches.keys();
+	
+	cacheKeys.forEach(cacheKey => {
+	if (cacheKey !== getCacheName() ) {
+	caches.delete(cacheKey);
+	}
+	});
+	
+	return self.clients.claim();
+	}
+\end{lstlisting}
+La chiamata claim()consentirà al servizio di lavoro attivato di avviare immediatamente le richieste di intercettazione (incluso Ajax) dalla pagina in esecuzione (così come altre schede aperte), senza dover attendere una ricarica.
+
+Questa attivazione anticipata del Service Worker comporta il rischio di un'incoerenza: potremmo finire con una pagina servita dalla versione v4 per avere le richieste HTTP di runtime intercettate da Service Worker v5.
+
+Ma per alcuni casi d'uso, questa attivazione anticipata è ciò di cui abbiamo bisogno: immagina un secondo operatore in servizio su scope /apiche memorizza nella cache i dati dell'applicazione su IndexedDB: potremmo voler attivarlo il prima possibile, per memorizzare i dati dell'applicazione nel minor tempo possibile.
+
+\textbf{Aggiornamento manuale di un service worker}
+Per impostazione predefinita, il browser controllerà la navigazione dell'utente se è disponibile una nuova versione di Service Worker sul server pronta per essere installata.
+
+Se per qualche ragione, abbiamo un'applicazione che rimarrà aperta per un lungo periodo di tempo (come un PWA installato nella schermata Home dell'utente), possiamo controllare manualmente se c'è una nuova versione del Service Worker usando il oggetto di registrazione come questo:
+\begin{lstlisting}
+navigator.serviceWorker.register('/sw-download-install.js', {
+scope: '/'
+})
+.then(registration => {
+
+console.log("Service Worker registration completed ...");
+
+// periodically check (each hour) if there is a new version of the Service Worker
+setInterval(() => {
+
+registration.update();
+
+}, 3600000);
+
+});
+\end{lstlisting}
+Se una nuova versione dell'operatore del servizio è disponibile sul server, la chiamata update()attiva attiverà una nuova installazione in background.
+
+Questo controllo periodico di solito non è necessario, poiché il browser effettuerà questo controllo molto spesso con la navigazione di ciascun utente o con altri eventi, come ad esempio se viene ricevuta una notifica Push.
+
+Un buon scenario quando vorremmo verificare se c'è una nuova versione è: cosa succede se la versione che stiamo eseguendo ha un bug? Parliamo poi di cosa succede se qualcosa va storto con l'applicazione.
+\subsubsection{Protezione del browser integrata contro i Service Worker guasti}
+Come puoi immaginare, la memorizzazione nella cache dell'applicazione sul computer dell'utente e l'aggiramento della rete sono un po 'pericolosi: cosa accadrebbe se la versione scaricata accidentalmente dall'utente avesse un errore?
+
+Ci sono un paio di protezioni del browser integrate contro questo.
+
+Ad esempio, il Service Worker non si intercetterà mai da solo!
+
+Significa che il file sw.jsche passiamo serviceWorker.register('sw.js')non sarà mai intercettato da un fetchevento.
+
+Tuttavia, questo non si applica allo script di registrazione di Service Worker sw-register.js, quindi è necessario assicurarsi che non lo memorizziamo mai.
+
+\textbf{Operatori di servizio e normale memorizzazione nella cache del browser}
+Il meccanismo di cache del browser standard basato sull'intestazione Cache-Controlè molto facile da utilizzare in modo improprio, a causa della natura confusa delle sue opzioni di configurazione.
+
+Per evitare tali problemi, è consigliabile familiarizzarsi con alcune pratiche ottimali di memorizzazione nella cache comuni , poiché ciò sarà di aiuto con qualsiasi applicazione in generale, non solo con le PWA.
+
+Gli errori commessi nella creazione di Cache-Controlintestazioni per la nostra applicazione saranno problematici nella produzione anche se non eseguiamo un PWA, ma l'utilizzo di un Service Worker renderà questi problemi molto peggiori.
+
+Potremmo imbattersi in una situazione in cui abbiamo memorizzato nella cache il sw.jsfile di Service Worker nella cache del browser standard, perché è stato fornito con Cache-Controlun'intestazione che conferisce al file una lunga durata.
+
+Diciamo che è sw.jsstato servito con una durata della cache di un mese:
+\begin{lstlisting}
+Cache-Control: max-age=2592000
+\end{lstlisting}
+Il browser in effetti memorizzerà l'intestazione nella cache, ma poiché il file è un Service Worker lo memorizzerà nella cache solo per un tempo massimo di 24 ore invece di 1 mese!
+
+Questa è una grande precauzione, tuttavia il sito Web potrebbe essere interrotto per un giorno intero prima che una patch possa essere installata. La soluzione più semplice e sicura è non memorizzare mai nel cache il file worker del servizio o il suo script di registrazione.
+
+\textbf{Evitare di memorizzare nella cache il file Service Worker}
+Questo può essere garantito dal server contrassegnando esplicitamente questi file come immediatamente scaduti:
+\begin{lstlisting}
+Cache-Control: max-age=0
+\end{lstlisting}
+E a proposito della normale cache del browser, che dire delle intestazioni di cache per i bundle CSS e JS?
+
+\subsubsection{Precauzioni riguardanti l'uso della cache del browser e dei lavoratori del servizio}
+I bundle CSS / Js archiviati in Cache Storage verranno caricati dalla rete e questi bundle potrebbero o non potrebbero essere offerti con Cache-Controlun'intestazione, il che significa che potenzialmente abbiamo due cache in azione, che potrebbero interferire tra loro.
+
+Ciò potrebbe portare a scenari di problemi, come ad esempio una nuova versione di Service Worker viene installata, ma tenta di caricare una nuova versione di un file bundle JS, che non ha cambiato il nome del file!
+
+Ma il file viene memorizzato nella cache nella normale cache del browser e la versione antica viene accidentalmente ancora servita al Service Worker.
+
+Ciò significa che l'installazione dell'operatore del servizio viene completata correttamente, ma in Cache Storage è ora disponibile la versione errata di uno dei bundle, il che significa che l'installazione dell'applicazione è danneggiata.
+
+Quindi, come evitiamo di imbattersi in questi scenari? Il più semplice è applicare le stesse politiche di caching che faremmo per un'applicazione non PWA: diversi tipi di file richiedono strategie di caching diverse.
+\textbf{Cache-Control per i pacchetti CSS / JS}
+Per CSS e JS bundle, il più semplice è quello di aggiungere al nome del file un hash del contenuto del file, o di un numero di versione, come ad esempio: bootstrap.v4.min.css.
+
+Quindi, per questi file, possiamo scegliere un'età massima molto lunga, in sostanza dichiarandoli immutabili e memorizzandoli nella cache per sempre:
+\begin{lstlisting}
+	Cache-Control: max-age=31536000
+\end{lstlisting}
+Se è disponibile una nuova versione del file, il nome del file cambierà (questo potrebbe essere applicato dal sistema di generazione) e la nuova versione verrà scaricata e memorizzata nella cache.
+
+Ciò eviterà molti problemi di memorizzazione nella cache comuni per entrambi i browser che supportano i Service Worker e quelli che non lo fanno.
+\textbf{Caricamento di pacchetti di risorse da domini di terze parti}
+In questo esempio, abbiamo scaricato tutti i bundle dal nostro dominio locale. Ma se volessimo caricare i bundle CSS e JS da altri domini di terze parti all'interno del lavoratore del servizio, come ad esempio da un CDN?
+
+Questo è possibile, ma il dominio di terze parti consente di eseguire tale richiesta di origine incrociata, proprio come qualsiasi altra richiesta CORS.
+
+Questo può essere fatto servendo il file bundle con questa intestazione:
+\begin{lstlisting}
+access-control-allow-origin: https://yourdomain.com
+\end{lstlisting}
+Se stiamo servendo questi file bundle da un CDN come Amazon Cloudfront, e vogliamo che i file siano caricabili tramite una richiesta di origine incrociata proveniente da qualsiasi dominio e non solo https://yourdomain.com, possiamo invece utilizzare questa intestazione:
+\begin{lstlisting}
+access-control-allow-origin: *
+\end{lstlisting}
+\subsection{conclusioni}
+Come possiamo vedere, tutte le molteplici funzionalità PWA e le relative API PWA hanno più senso se le guardiamo insieme e nel contesto di un caso d'uso specifico, anziché in isolamento.
+
+Possiamo fare molto di più del caso d'uso di download e installazione che abbiamo trattato, questo è stato solo un esempio che sembra essere il miglior punto di partenza per capire perché il ciclo di vita del Service Worker è stato progettato così com'era.
+
+La filosofia di base delle specifiche di Service Worker consiste nel mettere queste capacità di proxy di rete nelle mani degli sviluppatori, in modo da poter implementare molti diversi casi e modelli di utilizzo PWA, anziché fornire solo una serie di modelli offline predefiniti (come era il caso di Application Cache).
 \pagebreak
 \section{Compatibilità web}
 \subsection{Desktop}
