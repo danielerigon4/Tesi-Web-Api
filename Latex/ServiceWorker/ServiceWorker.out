@@ -46,11 +46,8 @@
 \BOOKMARK [3][-]{subsubsection.8.4.1}{Implementazione del download dell'applicazione in background}{subsection.8.4}% 46
 \BOOKMARK [3][-]{subsubsection.8.4.2}{Eliminazione delle versioni precedenti dell'applicazione}{subsection.8.4}% 47
 \BOOKMARK [3][-]{subsubsection.8.4.3}{Elaborare l'applicazione dalla cache con una Cache Then Network Strategy}{subsection.8.4}% 48
-\BOOKMARK [3][-]{subsubsection.8.4.4}{Nuova versione dell'applicazione}{subsection.8.4}% 49
-\BOOKMARK [3][-]{subsubsection.8.4.5}{Personalizzazione del comportamento del ciclo di vita del service worker}{subsection.8.4}% 50
-\BOOKMARK [3][-]{subsubsection.8.4.6}{Protezione del browser integrata contro i Service Worker guasti}{subsection.8.4}% 51
-\BOOKMARK [3][-]{subsubsection.8.4.7}{Precauzioni riguardanti l'uso della cache del browser e dei lavoratori del servizio}{subsection.8.4}% 52
-\BOOKMARK [2][-]{subsection.8.5}{conclusioni}{section.8}% 53
-\BOOKMARK [1][-]{section.9}{Compatibilit\340 web}{}% 54
-\BOOKMARK [2][-]{subsection.9.1}{Desktop}{section.9}% 55
-\BOOKMARK [2][-]{subsection.9.2}{Mobile}{section.9}% 56
+\BOOKMARK [3][-]{subsubsection.8.4.4}{Prova nuova versione dell'applicazione}{subsection.8.4}% 49
+\BOOKMARK [2][-]{subsection.8.5}{conclusioni}{section.8}% 50
+\BOOKMARK [1][-]{section.9}{Compatibilit\340 web}{}% 51
+\BOOKMARK [2][-]{subsection.9.1}{Desktop}{section.9}% 52
+\BOOKMARK [2][-]{subsection.9.2}{Mobile}{section.9}% 53

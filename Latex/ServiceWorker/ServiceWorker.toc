@@ -44,15 +44,12 @@
 \contentsline {subsection}{\numberline {8.2}Installazione del Service Worker}{22}{subsection.8.2}
 \contentsline {subsubsection}{\numberline {8.2.1}Fetch per intercettare le richieste HTTP}{23}{subsubsection.8.2.1}
 \contentsline {subsection}{\numberline {8.3}Riepilogo del ciclo di vita del Service Worker}{26}{subsection.8.3}
-\contentsline {subsection}{\numberline {8.4}Cache Storage API}{27}{subsection.8.4}
-\contentsline {subsubsection}{\numberline {8.4.1}Implementazione del download dell'applicazione in background}{27}{subsubsection.8.4.1}
+\contentsline {subsection}{\numberline {8.4}Cache Storage API}{26}{subsection.8.4}
+\contentsline {subsubsection}{\numberline {8.4.1}Implementazione del download dell'applicazione in background}{26}{subsubsection.8.4.1}
 \contentsline {subsubsection}{\numberline {8.4.2}Eliminazione delle versioni precedenti dell'applicazione}{28}{subsubsection.8.4.2}
 \contentsline {subsubsection}{\numberline {8.4.3}Elaborare l'applicazione dalla cache con una Cache Then Network Strategy}{28}{subsubsection.8.4.3}
-\contentsline {subsubsection}{\numberline {8.4.4}Nuova versione dell'applicazione}{29}{subsubsection.8.4.4}
-\contentsline {subsubsection}{\numberline {8.4.5}Personalizzazione del comportamento del ciclo di vita del service worker}{32}{subsubsection.8.4.5}
-\contentsline {subsubsection}{\numberline {8.4.6}Protezione del browser integrata contro i Service Worker guasti}{34}{subsubsection.8.4.6}
-\contentsline {subsubsection}{\numberline {8.4.7}Precauzioni riguardanti l'uso della cache del browser e dei lavoratori del servizio}{35}{subsubsection.8.4.7}
-\contentsline {subsection}{\numberline {8.5}conclusioni}{36}{subsection.8.5}
-\contentsline {section}{\numberline {9}Compatibilit\IeC {\`a} web}{37}{section.9}
-\contentsline {subsection}{\numberline {9.1}Desktop}{37}{subsection.9.1}
-\contentsline {subsection}{\numberline {9.2}Mobile}{37}{subsection.9.2}
+\contentsline {subsubsection}{\numberline {8.4.4}Prova nuova versione dell'applicazione}{29}{subsubsection.8.4.4}
+\contentsline {subsection}{\numberline {8.5}conclusioni}{31}{subsection.8.5}
+\contentsline {section}{\numberline {9}Compatibilit\IeC {\`a} web}{32}{section.9}
+\contentsline {subsection}{\numberline {9.1}Desktop}{32}{subsection.9.1}
+\contentsline {subsection}{\numberline {9.2}Mobile}{32}{subsection.9.2}
