@@ -1,55 +1,17 @@
 \babel@toc {italian}{}
 \babel@toc {italian}{}
-\contentsline {section}{\numberline {1}Overview}{3}{section.1}
-\contentsline {section}{\numberline {2}Registrazione}{3}{section.2}
-\contentsline {section}{\numberline {3}Impostare i service worker}{3}{section.3}
-\contentsline {subsection}{\numberline {3.1}Scarica, installa e attiva}{3}{subsection.3.1}
-\contentsline {section}{\numberline {4}Casi d'uso}{4}{section.4}
-\contentsline {section}{\numberline {5}Architettura di base}{4}{section.5}
-\contentsline {section}{\numberline {6}Specifiche}{5}{section.6}
-\contentsline {subsection}{\numberline {6.1}Interfacce}{5}{subsection.6.1}
-\contentsline {subsubsection}{\numberline {6.1.1}Cache}{5}{subsubsection.6.1.1}
-\contentsline {subsubsection}{\numberline {6.1.2}CacheStorage}{10}{subsubsection.6.1.2}
-\contentsline {subsubsection}{\numberline {6.1.3}Client}{10}{subsubsection.6.1.3}
-\contentsline {subsubsection}{\numberline {6.1.4}Clients}{10}{subsubsection.6.1.4}
-\contentsline {subsubsection}{\numberline {6.1.5}ExtendableEvent}{11}{subsubsection.6.1.5}
-\contentsline {subsubsection}{\numberline {6.1.6}ExtendableMessageEvent}{11}{subsubsection.6.1.6}
-\contentsline {subsubsection}{\numberline {6.1.7}FetchEvent}{11}{subsubsection.6.1.7}
-\contentsline {subsubsection}{\numberline {6.1.8}InstallEvent}{11}{subsubsection.6.1.8}
-\contentsline {subsubsection}{\numberline {6.1.9}NavigationPreloadManager}{11}{subsubsection.6.1.9}
-\contentsline {subsubsection}{\numberline {6.1.10}Navigator.serviceWorker}{11}{subsubsection.6.1.10}
-\contentsline {subsubsection}{\numberline {6.1.11}NotificationEvent}{11}{subsubsection.6.1.11}
-\contentsline {subsubsection}{\numberline {6.1.12}ServiceWorker}{11}{subsubsection.6.1.12}
-\contentsline {subsubsection}{\numberline {6.1.13}ServiceWorkerContainer}{11}{subsubsection.6.1.13}
-\contentsline {subsubsection}{\numberline {6.1.14}ServiceWorkerGlobalScope}{11}{subsubsection.6.1.14}
-\contentsline {subsubsection}{\numberline {6.1.15}ServiceWorkerMessageEvent}{11}{subsubsection.6.1.15}
-\contentsline {subsubsection}{\numberline {6.1.16}ServiceWorkerRegistration}{12}{subsubsection.6.1.16}
-\contentsline {subsubsection}{\numberline {6.1.17}ServiceWorkerState}{12}{subsubsection.6.1.17}
-\contentsline {subsubsection}{\numberline {6.1.18}SyncEvent}{12}{subsubsection.6.1.18}
-\contentsline {subsubsection}{\numberline {6.1.19}SyncManager}{12}{subsubsection.6.1.19}
-\contentsline {subsubsection}{\numberline {6.1.20}WindowClient}{12}{subsubsection.6.1.20}
-\contentsline {subsection}{\numberline {6.2}Promises}{12}{subsection.6.2}
-\contentsline {subsection}{\numberline {6.3}Implementazione Service Worker}{13}{subsection.6.3}
-\contentsline {subsubsection}{\numberline {6.3.1}Registrazione Service Worker}{13}{subsubsection.6.3.1}
-\contentsline {subsubsection}{\numberline {6.3.2}Perch\IeC {\`e} il Service Worker non si registra}{14}{subsubsection.6.3.2}
-\contentsline {subsubsection}{\numberline {6.3.3}Installare e attivare: popolare la cache}{15}{subsubsection.6.3.3}
-\contentsline {subsubsection}{\numberline {6.3.4}Risposte personalizzate alle richieste}{15}{subsubsection.6.3.4}
-\contentsline {subsubsection}{\numberline {6.3.5}Ripristino delle richieste non riuscite}{17}{subsubsection.6.3.5}
-\contentsline {subsubsection}{\numberline {6.3.6}Aggiornamento del Service Worker}{18}{subsubsection.6.3.6}
-\contentsline {subsubsection}{\numberline {6.3.7}Cancellare vecchie cache}{18}{subsubsection.6.3.7}
-\contentsline {subsubsection}{\numberline {6.3.8}Strumenti di sviluppo}{19}{subsubsection.6.3.8}
-\contentsline {section}{\numberline {7}Demo Service Worker}{19}{section.7}
-\contentsline {section}{\numberline {8}Esempio offline}{21}{section.8}
-\contentsline {subsection}{\numberline {8.1}Registrazione del Service Worker}{21}{subsection.8.1}
-\contentsline {subsection}{\numberline {8.2}Installazione del Service Worker}{22}{subsection.8.2}
-\contentsline {subsubsection}{\numberline {8.2.1}Fetch per intercettare le richieste HTTP}{23}{subsubsection.8.2.1}
-\contentsline {subsection}{\numberline {8.3}Riepilogo del ciclo di vita del Service Worker}{26}{subsection.8.3}
-\contentsline {subsection}{\numberline {8.4}Cache Storage API}{26}{subsection.8.4}
-\contentsline {subsubsection}{\numberline {8.4.1}Implementazione del download dell'applicazione in background}{26}{subsubsection.8.4.1}
-\contentsline {subsubsection}{\numberline {8.4.2}Eliminazione delle versioni precedenti dell'applicazione}{28}{subsubsection.8.4.2}
-\contentsline {subsubsection}{\numberline {8.4.3}Elaborare l'applicazione dalla cache con una Cache Then Network Strategy}{28}{subsubsection.8.4.3}
-\contentsline {subsubsection}{\numberline {8.4.4}Prova nuova versione dell'applicazione}{29}{subsubsection.8.4.4}
-\contentsline {subsection}{\numberline {8.5}conclusioni}{31}{subsection.8.5}
-\contentsline {section}{\numberline {9}Compatibilit\IeC {\`a} web}{32}{section.9}
-\contentsline {subsection}{\numberline {9.1}Desktop}{32}{subsection.9.1}
-\contentsline {subsection}{\numberline {9.2}Mobile}{32}{subsection.9.2}
+\contentsline {section}{\numberline {1}Overview}{2}{section.1}
+\contentsline {subsection}{\numberline {1.1}Impostare i service worker}{2}{subsection.1.1}
+\contentsline {section}{\numberline {2}Architettura di base}{2}{section.2}
+\contentsline {subsection}{\numberline {2.1}Casi d'uso}{3}{subsection.2.1}
+\contentsline {section}{\numberline {3}Ciclo di vita di un Service Worker}{4}{section.3}
+\contentsline {subsection}{\numberline {3.1}Registrazione}{4}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Installazione}{5}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Attivazione}{5}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Fetch}{6}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.5}Aggiornare il Service Worker}{6}{subsection.3.5}
+\contentsline {subsection}{\numberline {3.6}Disintallare il Service Worker}{6}{subsection.3.6}
+\contentsline {section}{\numberline {4}Compatibilit\IeC {\`a} web}{7}{section.4}
+\contentsline {subsection}{\numberline {4.1}Desktop}{7}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Mobile}{7}{subsection.4.2}
+\contentsline {section}{\numberline {5}Conclusioni}{7}{section.5}

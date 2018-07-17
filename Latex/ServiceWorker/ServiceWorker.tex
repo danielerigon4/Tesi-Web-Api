@@ -92,63 +92,31 @@
 \pagebreak
 
 \section{Overview}
-Un Service Worker è come un processo daemon che si trova tra la nostra applicazione Web e la rete, intercettando tutte le richieste HTTP effettuate dall'applicazione. Il Service Worker non ha accesso diretto al DOM. In realtà, la stessa istanza di Service Worker è condivisa tra più schede della stessa applicazione e può intercettare le richieste di tutte quelle schede; per motivi di sicurezza il Service Worker non può vedere le richieste fatte da altre applicazioni Web in esecuzione nello stesso browser e funziona solo su HTTPS (e localhost a fini di sviluppo).
+Un service worker è uno script Javascript, che utilizza gli oggetti Promise per poter eseguire operazioni in modalità asincrona (quindi non bloccanti), che il browser avvia in background separato dalla pagina, pertanto non può modificarne gli elementi come i normali script (non ha accesso al DOM) ma può comunicare con essi mediante “messaggi”.
 
-Quindi in sostanza un Service Worker è un proxy di rete, eseguito all'interno del browser stesso, che si trova tra le applicazioni web, il browser e la rete(se disponibile). I service worker sono pensati per consentire la creazione di esperienze offline efficaci, intercettare le richieste di rete e intraprendere azioni appropriate in base al fatto che la rete sia disponibile o meno e aggiornare le risorse che risiedono sul server, oltre a consentire l'accesso alle notifiche push e alle API di sincronizzazione in background.
+Un Service Worker si trova tra la nostra applicazione Web e la rete e, come un server proxy, può intercettare tutte le richieste a pagine web e file statici e rispondere secondo politiche che siamo noi stessi a decidere.
+
+I service worker sono pensati per consentire la creazione di esperienze offline efficaci, intercettare le richieste di rete e intraprendere azioni appropriate in base al fatto che la rete sia disponibile o meno e aggiornare le risorse che risiedono sul server, oltre a consentire l'accesso alle notifiche push e alle API di sincronizzazione in background.
 
 È il browser che in qualsiasi momento deciderà se il Service Worker dovrebbe essere o meno in esecuzione: questo per risparmiare risorse, specialmente sui dispositivi mobili. Per questo può essere che se non facciamo alcuna richiesta HTTP per un certo periodo di tempo o non riceviamo alcuna notifica per un po' è possibile che il browser spenga il Service Worker. Se attiviamo una richiesta HTTP che deve essere gestita dal Service Worker, il browser la attiverà di nuovo, nel caso in cui non fosse ancora in esecuzione. Quindi vedere il Service Worker bloccato in Dev Tools non significa necessariamente che qualcosa è rotto o non va.
 
-Il service worker può intercettare le richieste HTTP effettuate da tutte le schede del browser che sono aperte per un dato dominio e il percorso URL (tale percorso è chiamato Servizio Worker path). D'altra parte, non può accedere al DOM di nessuna di queste schede del browser, ma può accedere alle API del browser (come ad esempio la Cache Storage API).
-
-Un Service Worker è un lavoratore guidato da eventi registrato su un'origine e un path. Esso prende la forma di un file JavaScript in grado di controllare la pagina web a cui è associato, intercettare e modificare le richieste di navigazione e memorizzare le risorse per dare il controllo completo su come si comporta l'app in determinate situazioni, ad esempio quando la rete non è disponibile.
-
-\section{Registrazione}
-Un addetto all'assistenza viene prima registrato utilizzando il metodo ServiceWorkerContainer.register(). In caso di esito positivo, il Service Worker verrà scaricato sul client e tenterà l'installazione / attivazione per gli URL a cui l'utente ha avuto accesso all'interno dell'intera origine o all'interno di un sottoinsieme specificato dall'utente.
-
-\section{Impostare i service worker}
+\subsection{Impostare i service worker}
 Molte funzionalità dei Service Worker oggi sono abilitate di default nelle versioni più recenti dei browser. Se il codice demo seguente non funziona bisogna abilitare un pref:
 \begin{itemize}
-\item Firefox: su \url{about:config} impostare dom.serviceWorkers.enabled su true; riavvia il browser.
-\item Chrome : su \url{chrome://flags} accendere  experimental-web-platform-features; riavvia browser
-\item Opera : su \url{opera://flags} attivare Support for ServiceWorker; riavvia il browser.
-\item Microsoft Edge : su \url{about:flags} spuntare  Enable service workers; riavvia il browser.
-\end{itemize}
-
-\subsection{Scarica, installa e attiva}
-A questo punto, il tuo operatore di servizio osserverà il seguente ciclo di vita:
-\begin{itemize}
-\item Scaricare
-\item Installare
-\item Attivare
-\end{itemize}
-Il Service Worker viene scaricato immediatamente quando un utente accede per la prima volta a un sito, o una pagina, controllata dal Service Worker, e sarà poi scaricato periodicamente ogni tot periodo di tempo.
-
-L'installazione viene tentata quando il file nuovo che è stato scaricato risulta diverso da un Service Worker esistente, o risulta essere diverso dal primo Service Worker rilevato per quella pagina/sito. Se è la prima volta che un Service Worker viene reso disponibile viene tentata l'installazione e, dopo un'installazione corretta, viene attivato. Se è disponibile un Service Worker esistente, la nuova versione viene installata in background, ma non ancora attivata; si attiva solo quando non ci sono più pagine caricate che stanno ancora utilizzando il vecchio Service Worker. Non appena non ci sono più pagine da caricare, il nuovo Service Worker si attiva.
-
-\section{Casi d'uso}
-I Service Worker sono anche destinati a essere utilizzati per cose come:
-\begin{itemize}
-\item Sincronizzazione dei dati in background;
-\item Rispondere alle richieste di risorse da altre origini;
-\item Ricezione di aggiornamenti centralizzati a dati costosi da calcolare in modo che più pagine possano utilizzare un set di dati;
-\item Modelli personalizzati basati su determinati pattern URL;
-\item Miglioramenti delle prestazioni, ad esempio prelettura delle risorse che l'utente probabilmente avrà bisogno nel prossimo futuro.
-\end{itemize}
-Altre specifiche sono utilizzate dal Service Context, ad esempio:
-\begin{itemize}
-\item Sincronizzazione in background : avvia un operatore di servizio anche quando nessun utente si trova sul sito, quindi le cache possono essere aggiornate, ecc;
-\item Reagire per inviare messaggi : si può avviare un Service Worker per inviare agli utenti un messaggio per comunicare loro che sono disponibili nuovi contenuti;
-\item Reagendo ad orari e date particolari.
+	\item Firefox: su \url{about:config} impostare dom.serviceWorkers.enabled su true; riavvia il browser.
+	\item Chrome : su \url{chrome://flags} accendere  experimental-web-platform-features; riavvia browser
+	\item Opera : su \url{opera://flags} attivare Support for ServiceWorker; riavvia il browser.
+	\item Microsoft Edge : su \url{about:flags} spuntare  Enable service workers; riavvia il browser.
 \end{itemize}
 
 \section{Architettura di base}
 Per quanto riguarda i Service Worker generalmente vengono eseguiti questi passaggi per l'impostazione di base:
 \begin{itemize}
-\item L'URL del Service Worker viene recuperato e registrato tramite serviceWorkerContainer.register();
-\item In caso di esito positivo, il Service Worker viene eseguito in un ServiceWorkerGlobalScope, ovvero un tipo speciale di Service Context che scappa dal thread di esecuzione dello script principale senza accesso DOM.
-\item Il Service Worker ora è pronto per elaborare gli eventi;
-\item L'installazione del Service Worker viene tentata quando si accede successivamente alle pagine. Un evento di installazione è sempre il primo inviato a un Service Worker;
-\item Quando il Service Worker  è considerato installato, il passo successivo è l'attivazione; quindi quando il Service Worker è installato riceve un evento di attivazione. L'uso principale di onactivate è per la pulizia delle risorse utilizzate nelle versioni precedenti di uno script di servizio.
+	\item L'URL del Service Worker viene recuperato e registrato tramite serviceWorkerContainer.register();
+	\item In caso di esito positivo, il Service Worker viene eseguito in un ServiceWorkerGlobalScope, ovvero un tipo speciale di Service Context che scappa dal thread di esecuzione dello script principale senza accesso DOM.
+	\item Il Service Worker ora è pronto per elaborare gli eventi;
+	\item L'installazione del Service Worker viene tentata quando si accede successivamente alle pagine. Un evento di installazione è sempre il primo inviato a un Service Worker;
+	\item Quando il Service Worker  è considerato installato, il passo successivo è l'attivazione; quindi quando il Service Worker è installato riceve un evento di attivazione. L'uso principale di onactivate è per la pulizia delle risorse utilizzate nelle versioni precedenti di uno script di servizio.
 \end{itemize}
 \begin{figure}[h]
 	\centering
@@ -158,481 +126,117 @@ Per quanto riguarda i Service Worker generalmente vengono eseguiti questi passag
 \end{figure}
 \pagebreak
 \newpage
-\section{Specifiche}
-%VEDERE SE DESCRIVERE I METODI, O FARE SOLO ELENCO, O NON FARLO PROPRIO
-\subsection{Interfacce}
-\subsubsection{Cache}
-Rappresenta le coppie di archiviazione Request/ Responseoggetto che vengono memorizzate nella cache come parte del ServiceWorkerciclo di vita.
-L' Cacheinterfaccia fornisce un meccanismo di archiviazione per coppie Request/ Responseoggetto che vengono memorizzate nella cache, ad esempio come parte del ServiceWorkerciclo di vita. Si noti che l' Cacheinterfaccia è esposta agli ambiti con finestre e ai lavoratori. Non è necessario utilizzarlo in combinazione con gli addetti all'assistenza, anche se è definito nelle specifiche dell'operatore di servizio.
 
-Un'origine può avere più Cacheoggetti con nome . Sei responsabile dell'implementazione di come il tuo script (ad esempio in a ServiceWorker) gestisce gli Cacheaggiornamenti. Gli articoli in a Cachenon vengono aggiornati se non richiesto esplicitamente; non scadono se non vengono cancellati. Utilizzare CacheStorage.open()per aprire un Cacheoggetto con nome specifico e quindi chiamare uno dei Cachemetodi per mantenere il Cache.
-
-Sei anche responsabile della cancellazione periodica delle voci della cache. Ogni browser ha un limite rigido alla quantità di memoria cache che può essere utilizzata da una determinata origine. Le stime sull'utilizzo della quota cache sono disponibili tramite l' StorageEstimateAPI. Il browser fa del suo meglio per gestire lo spazio su disco, ma può eliminare la memoria cache per un'origine. Il browser eliminerà generalmente tutti i dati per un'origine o nessuno dei dati per un'origine. Assicurati di creare una versione delle cache per nome e usa le cache solo dalla versione dello script su cui possono operare in sicurezza.
-\title{\textbf{Metodi}}
+\subsection{Casi d'uso}
+I Service Worker sono anche destinati a essere utilizzati per cose come:
 \begin{itemize}
-	\item \textbf{Cache.match(request, options)}\\
-	Restituisce un Promiseche si risolve nella risposta associata alla prima richiesta di corrispondenza Cachenell'oggetto.\\
-	\title{\textbf{Request}}\\
-	Il Requesttentativo di trovare nel Cache. Questo può essere un   Requestoggetto o un URL.\\
-	\title{\textbf{Options}}\\
-	Un oggetto che imposta le opzioni per l' matchoperazione. Le opzioni disponibili sono:
-	ignoreSearch: A Booleanche specifica se ignorare la stringa di query nell'URL. Ad esempio, se impostato true sulla  ?value=barparte di http://foo.com/?value=barsarebbe ignorato quando si esegue una corrispondenza. Si imposta automaticamente su false.
-	ignoreMethod: A Booleanche, se impostato su true, impedisce alle operazioni di abbinamento di convalidare il metodo (normalmente solo e sono consentiti). Per impostazione predefinita .Request httpGETHEADfalse
-	ignoreVary: A Booleanche, quando impostato, trueindica all'operazione di abbinamento di non eseguire la VARYcorrispondenza dell'intestazione, ovvero se l'URL corrisponde otterrete una corrispondenza indipendentemente dal fatto che l' Responseoggetto abbia VARYun'intestazione. Si imposta automaticamente su false.
-	cacheName: A DOMStringche rappresenta una cache specifica da cercare all'interno. Si noti che questa opzione è ignorata da Cache.match().\\
-	\title{\textbf{Valore di ritorno}}\\
-	A Promiseche risolve il primo Responseche corrisponde alla richiesta o undefinedse non viene trovata alcuna corrispondenza.\\
-	\title{\textbf{Esempio}}\\
-	Questo esempio usa una cache per fornire i dati selezionati quando una richiesta fallisce. Una catch()clausola viene attivata quando la chiamata fetch()genera un'eccezione. All'interno della catch()clausola,  match()viene utilizzato per restituire la risposta corretta.
-	
-	In questo esempio, verranno memorizzati nella cache solo i documenti HTML recuperati con il verbo HTTP GET. Se la nostra if()condizione è falsa, allora questo gestore di fetch non intercetterà la richiesta. Se ci sono altri gestori di fetch registrati, avranno la possibilità di chiamare event.respondWith(). Se nessun operatore di Fetch chiama event.respondWith(), la richiesta verrà gestita dal browser come se non ci fosse alcun intervento da parte dei service worker. Se  fetch() restituisce una risposta HTTP valida con un codice di risposta nell'intervallo 4xx o 5xx,  catch() NON verrà richiamato.
-	\pagebreak
-	\begin{lstlisting}
-	self.addEventListener('fetch', function(event) {
-		// We only want to call event.respondWith() if this is a GET request for an HTML document.
-		if (event.request.method === 'GET' &&
-		event.request.headers.get('accept').indexOf('text/html') !== -1) {
-			console.log('Handling fetch event for', event.request.url);
-			event.respondWith(
-				fetch(event.request).catch(function(e) {
-					console.error('Fetch failed; returning offline page instead.', e);
-					return caches.open(OFFLINE_CACHE).then(function(cache){
-						return cache.match(OFFLINE_URL);
-					});
-				})
-			);
-		}
-	});
-	\end{lstlisting} 
-	\title{\textbf{Compatibilità}}
-	\begin{figure}[h]
-		\centering
-		\includegraphics[width=1\linewidth]{c1}
-		\caption{Compatibilità cache.match()}
-		\label{fig:Compatibilità cache.match()}
-	\end{figure}
-
-
-
-	\item \textbf{Cache.matchAll(request, options)}
-	Restituisce un Promiseche si risolve in una matrice di tutte le richieste corrispondenti Cachenell'oggetto.\\
-	\title{\textbf{Request}}\\
-	La Request che stai tentando di trovare nella Cache.\\
-	\title{\textbf{Options}}\\
-	Un oggetto opzioni che consente di impostare opzioni di controllo specifiche per la corrispondenza eseguita matchnell'operazione. Le opzioni disponibili sono:
-	\begin{itemize}
-	\item ignoreSearch: A Booleanche specifica se il processo di corrispondenza deve ignorare la stringa di query nell'URL. Se impostato su true, la  ?value=barparte di http://foo.com/?value=barsarebbe ignorata quando si esegue una corrispondenza. Si imposta automaticamente su false.
-	\item ignoreMethod: A Booleanche, se impostato su true, impedisce alle operazioni di abbinamento di convalidare il metodo (normalmente solo e sono consentiti). Per impostazione predefinita .Request httpGETHEADfalse
-	\item ignoreVary: A Booleanche, quando impostato, trueindica all'operazione di abbinamento di non eseguire la VARYcorrispondenza dell'intestazione, cioè se l'URL corrisponde otterrete una corrispondenza indipendentemente Responsedall'oggetto che ha VARYun'intestazione o meno. Si imposta automaticamente su false.
-	\item cacheName: A DOMStringche rappresenta una cache specifica da cercare all'interno. Si noti che questa opzione è ignorata da Cache.matchAll().
-	\end{itemize}
-	\title{\textbf{Valore di ritorno}}\\
-	Una Promise che si risolve in una matrice di tutte le richieste di corrispondenza Cachenell'oggetto.
-	\title{\textbf{Esempio}}\\
-	\begin{lstlisting}
-		caches.open('v1').then(function(cache) {
-			cache.matchAll('/images/').then(function(response) {
-				response.forEach(function(element, index, array) {
-					cache.delete(element);
-				});
-			});
-		})
-	\end{lstlisting}
-	\title{\textbf{Compatibilità}}\\
-	\begin{figure}[h]
-		\centering
-		\includegraphics[width=1\linewidth]{c2}
-		\caption{Compatibilità cache.matchAll()}
-		\label{fig:Compatibilità cache.matchAll()}
-	\end{figure}
-	
-	
-	
-	
-	
-	\item \textbf{Cache.add(request)}
-	Prende un URL, lo recupera e aggiunge l'oggetto di risposta risultante alla cache specificata. Questo è funzionalmente equivalente a chiamare fetch(), quindi utilizzare put()per aggiungere i risultati alla cache.\\
-	\title{\textbf{Request}}\\
-	La richiesta che si desidera aggiungere alla cache. Questo può essere un   Requestoggetto o un URL.
-	\title{\textbf{Valore di ritorno}}\\
-	A Promise che si risolve con void.\\
-	\title{\textbf{Esempio}}\\
-	Questo blocco di codice attende l'attivazione di una InstallEventchiamata, quindi le chiamate waitUntil()per gestire il processo di installazione per l'app. Questo consiste nel chiamare CacheStorage.openper creare una nuova cache, quindi utilizzare Cache.addper aggiungere una risorsa ad essa.
-	\begin{lstlisting}
-	this.addEventListener('install', function(event) {
-		event.waitUntil(
-			caches.open('v1').then(function(cache) {
-				return cache.add('/sw-test/index.html');
-			})
-		);
-	});
-	\end{lstlisting}
-	\title{\textbf{Compatibilità}}\\
-	\begin{figure}[h]
-		\centering
-		\includegraphics[width=1\linewidth]{c3}
-		\caption{Compatibilità cache.add()}
-		\label{fig:Compatibilità cache.add()}
-	\end{figure}
-	
-	\pagebreak
-	
-	\item \textbf{Cache.addAll(requests)}
-	Il addAll()metodo Cachedell'interfaccia utilizza una matrice di URL, li recupera e aggiunge gli oggetti di risposta risultanti alla cache specificata. Gli oggetti richiesta creati durante il recupero diventano chiavi per le operazioni di risposta memorizzate. \\
-	\title{\textbf{Request}}\\
-	Una serie di URL di stringa che si desidera recuperare e aggiungere alla cache.\\
-	\title{\textbf{Valore di ritorno}}\\
-	A Promise che si risolve con void. \\
-	\title{\textbf{Esempio}}\\
-	Questo blocco di codice attende l'attivazione di un codice InstallEvent, quindi viene eseguito waitUntil()per gestire il processo di installazione dell'app. Questo consiste nel chiamare CacheStorage.openper creare una nuova cache, quindi utilizzare addAll()per aggiungere una serie di risorse ad esso.
-	\begin{lstlisting}
-	this.addEventListener('install', function(event) {
-		event.waitUntil(
-			caches.open('v1').then(function(cache) {
-				return cache.addAll([
-					'/sw-test/',
-					'/sw-test/index.html',
-					'/sw-test/style.css',
-					'/sw-test/app.js',
-					'/sw-test/image-list.js',
-					'/sw-test/star-wars-logo.jpg',
-					'/sw-test/gallery/',
-					'/sw-test/gallery/bountyHunters.jpg',
-					'/sw-test/gallery/myLittleVader.jpg',
-					'/sw-test/gallery/snowTroopers.jpg'
-				]);
-			})
-		);
-	});
-	\end{lstlisting}
-	\title{\textbf{Compatibilità}}\\
-	\begin{figure}[h]
-		\centering
-		\includegraphics[width=1\linewidth]{c4}
-		\caption{Compatibilità cache.addAll()}
-		\label{fig:Compatibilità cache.addAll()}
-	\end{figure}
-	
-	\pagebreak
-	
-	
-	\item \textbf{Cache.put(request, response)}
-	Accetta sia una richiesta che la sua risposta e la aggiunge alla cache fornita.\\
-	\title{\textbf{Request}}\\
-	\title{\textbf{Valore di ritorno}}\\
-	\title{\textbf{Esempio}}\\
-	\title{\textbf{Compatibilità}}\\
-	
-	
-	
-	\item \textbf{Cache.delete(request, options)}
-	Trova la Cache voce la cui chiave è la richiesta, restituendo una Promiseche risolve truese una Cachevoce corrispondente viene trovata ed eliminata. Se non Cacheviene trovata alcuna voce, la promessa si risolve a  false.\\
-	\title{\textbf{Request}}\\
-	\title{\textbf{Valore di ritorno}}\\
-	\title{\textbf{Esempio}}\\
-	\title{\textbf{Compatibilità}}\\
-	
-	
-	
-	\item \textbf{Cache.keys(request, options)}
-	Restituisce un Promise che si risolve in un array di Cachechiavi.\\
-	\title{\textbf{Request}}\\
-	\title{\textbf{Valore di ritorno}}\\
-	\title{\textbf{Esempio}}\\
-	\title{\textbf{Compatibilità}}\\
-	
-	
-	
+	\item Sincronizzazione dei dati in background;
+	\item Rispondere alle richieste di risorse da altre origini;
+	\item Ricezione di aggiornamenti centralizzati a dati costosi da calcolare in modo che più pagine possano utilizzare un set di dati;
+	\item Modelli personalizzati basati su determinati pattern URL;
+	\item Miglioramenti delle prestazioni, ad esempio prelettura delle risorse che l'utente probabilmente avrà bisogno nel prossimo futuro.
+\end{itemize}
+Altre specifiche sono utilizzate dal Service Context, ad esempio:
+\begin{itemize}
+	\item Sincronizzazione in background : avvia un operatore di servizio anche quando nessun utente si trova sul sito, quindi le cache possono essere aggiornate, ecc;
+	\item Reagire per inviare messaggi : si può avviare un Service Worker per inviare agli utenti un messaggio per comunicare loro che sono disponibili nuovi contenuti;
+	\item Reagendo ad orari e date particolari.
 \end{itemize}
 
-
-\subsubsection{CacheStorage}
-Rappresenta la memoria per gli Cacheoggetti. Fornisce una directory principale di tutte le cache nominate a cui ServiceWorkerpuò accedere e mantiene una mappatura dei nomi delle stringhe agli Cacheoggetti corrispondenti .
-\subsubsection{Client}
-Rappresenta l'ambito di un client worker del servizio. Un client worker del servizio è un documento in un contesto browser o a SharedWorker, che è controllato da un lavoratore attivo.
-\subsubsection{Clients}
-Rappresenta un contenitore per un elenco di Clientoggetti; il modo principale per accedere ai client worker del servizio attivo all'origine corrente.
-\subsubsection{ExtendableEvent}
-Estende la durata installe gli activateeventi inviati sul ServiceWorkerGlobalScope, come parte del ciclo di vita del lavoratore del servizio. Ciò garantisce che nessun evento funzionale (come FetchEvent) venga inviato a ServiceWorker, fino a quando non aggiorna gli schemi di database, e cancella le voci obsolete della cache, ecc.
-\subsubsection{ExtendableMessageEvent}
-L'oggetto evento di un messageevento attivato su un operatore di servizio (quando un messaggio di canale viene ricevuto ServiceWorkerGlobalScopeda un altro contesto) estende la durata di tali eventi.
-\subsubsection{FetchEvent}
-Il parametro passato al ServiceWorkerGlobalScope.onfetchgestore, FetchEventrappresenta un'azione di recupero che viene inviata su ServiceWorkerGlobalScopea ServiceWorker. Contiene informazioni sulla richiesta e sulla risposta risultante e fornisce il FetchEvent.respondWith()metodo, che ci consente di fornire una risposta arbitraria alla pagina controllata.
-\subsubsection{InstallEvent}
-Il parametro passato al oninstallgestore, l' InstallEventinterfaccia rappresenta un'azione di installazione che viene inviata su ServiceWorkerGlobalScopea ServiceWorker. Fin da bambino ExtendableEvent, garantisce che eventi funzionali come quelli FetchEventnon vengano inviati durante l'installazione.
-\subsubsection{NavigationPreloadManager}
-Fornisce metodi per la gestione del pre-caricamento delle risorse con un operatore di servizio.
-\subsubsection{Navigator.serviceWorker}
-Restituisce un ServiceWorkerContaineroggetto, che fornisce accesso alla registrazione, rimozione, aggiornamento e comunicazione con gli ServiceWorkeroggetti per il documento associato .
-\subsubsection{NotificationEvent}
-Il parametro passato al onnotificationclickgestore, l' NotificationEventinterfaccia rappresenta un evento di notifica che viene inviato su ServiceWorkerGlobalScopea ServiceWorker.
-\subsubsection{ServiceWorker}
-Rappresenta un addetto all'assistenza. È possibile associare più contesti di navigazione (ad es. Pagine, lavoratori, ecc.) Allo stesso ServiceWorkeroggetto.
-\subsubsection{ServiceWorkerContainer}
-Fornisce un oggetto che rappresenta il lavoratore del servizio come un'unità generale nell'ecosistema di rete, incluse le strutture per registrare, annullare la registrazione e aggiornare i lavoratori del servizio e accedere allo stato dei lavoratori dei servizi e alle loro registrazioni.
-\subsubsection{ServiceWorkerGlobalScope}
-Rappresenta il contesto di esecuzione globale di un operatore di servizio.
-\subsubsection{ServiceWorkerMessageEvent}
-Rappresenta un messaggio inviato a ServiceWorkerGlobalScope. Nota che questa interfaccia è deprecata nei browser moderni. I messaggi di service worker ora utilizzano l' MessageEventinterfaccia, per coerenza con le altre funzionalità di messaggistica web.
-\subsubsection{ServiceWorkerRegistration}
-Rappresenta una registrazione di lavoratore di servizio.
-\subsubsection{ServiceWorkerState}
-Associata al suo ServiceWorkerstato.
-\subsubsection{SyncEvent}
-L'interfaccia SyncEvent rappresenta un'azione di sincronizzazione inviata su ServiceWorkerGlobalScopeun ServiceWorker.
-\subsubsection{SyncManager}
-Fornisce un'interfaccia per la registrazione e l'elenco delle registrazioni di sincronizzazione.
-\subsubsection{WindowClient}
-Rappresenta l'ambito di un client worker del servizio che è un documento in un contesto browser, controllato da un lavoratore attivo. Questo è un tipo speciale di Clientoggetto, con alcuni metodi e proprietà aggiuntivi disponibili.
-
-\subsection{Promises}
-Le promesse sono un ottimo meccanismo per eseguire operazioni asincrone, con il successo che dipende l'una dall'altra. Questo è fondamentale per il modo in cui i lavoratori del servizio lavorano. 
-
-Le promesse possono fare molte cose, ma per ora, tutto quello che dovete sapere è che se qualcosa restituisce una promessa, è possibile collegare .then()fino alla fine e includere i callback al suo interno per il successo, il fallimento, ecc, o è possibile inserire .catch()sul fine se si desidera includere un callback di errore.
-
-Confrontiamo una struttura di callback sincrono tradizionale con il suo equivalente di promessa asincrona.
+\section{Ciclo di vita di un Service Worker}
+Il ciclo di vita di un service worker è composto da quattro fasi:
 \begin{itemize}
-\item sincrona 
-\begin{lstlisting}
-	try {
-		var value = myFunction();
-		console.log(value);
-	} catch(err) {
-		console.log(err);
-	}
-\end{lstlisting}
-dobbiamo attendere myFunction()l'esecuzione e il ritorno valueprima che possa essere eseguito qualsiasi altro codice
-\item  asincrona
-\begin{lstlisting}
-	myFunction().then(function(value) {
-		console.log(value);
-	}).catch(function(err) {
-			console.log(err);
-		});
-\end{lstlisting}
-myFunction()restituisce una promessa value, quindi il resto del codice può continuare a essere in esecuzione. Quando la promessa si risolve, il codice interno thenverrà eseguito in modo asincrono. 
+\item Registrazione: il service worker viene scaricato dal browser, analizzato ed eseguito;
+\item Installazione: il service worker viene installato;
+\item Attivazione: il service worker è pronto ed è in grado di poter controllare gli eventi generati dal client;
+\item Fetch: evento generato dal client. Il service worker è in grado di intercettare le richieste e rispondere secondo le opportune strategie di caching. 
 \end{itemize}
-Ora per un esempio reale: cosa accadrebbe se volessimo caricare le immagini in modo dinamico, ma volevamo assicurarci che le immagini fossero caricate prima di provare a visualizzarle? Questa è una cosa standard da voler fare, ma può essere un po 'un dolore. Possiamo usare .onloadsolo per visualizzare l'immagine dopo che è stata caricata, ma per quanto riguarda gli eventi che iniziano a verificarsi prima di iniziare ad ascoltarli? Potremmo provare a aggirare questo usando.complete, ma non è ancora infallibile, e per quanto riguarda le immagini multiple? è ancora sincrono, quindi blocca il thread principale. 
 
-\begin{lstlisting}
-	function imgLoad(url) {
-		return new Promise(function(resolve, reject) {      
-			var request = new XMLHttpRequest();
-			request.open('GET', url);
-			request.responseType = 'blob';
-			
-			request.onload = function() {
-			if (request.status == 200) {
-				resolve(request.response);
-			} else {
-					reject(Error('Image didn\'t load successfully; error code:' + request.statusText));
-				}
-		};	
-		request.onerror = function() {
-			reject(Error('There was a network error.'));
-		};	
-		request.send();
-		});
-	}
-\end{lstlisting}
-Restituiamo una nuova promessa usando il Promise()costruttore, che prende come argomento una funzione di callback con resolvee rejectparametri. Da qualche parte nella funzione, dobbiamo definire cosa accade per la promessa di risolvere con successo o essere respinto - in questo caso restituire uno stato 200 OK o meno - e quindi chiamare resolvesu successo, o rejectin caso di fallimento. Il resto del contenuto di questa funzione è roba XHR abbastanza standard, quindi per ora non ci preoccuperemo di questo.
+\subsection{Registrazione}
 
-Quando veniamo a chiamare la imgLoad()funzione, la chiamiamo con l'url dell'immagine che vogliamo caricare, come ci si potrebbe aspettare, ma il resto del codice è un po 'diverso:
+Come prima cosa bisogna comunicare al browser l’esistenza di un service worker all’interno del sito web. Un Service Worker viene prima registrato utilizzando il metodo ServiceWorker.register(), e per farlo basta inserire su tutte le pagine del sito uno script come il seguente:
 \begin{lstlisting}
-	var body = document.querySelector('body');
-	var myImage = new Image();
-	
-	imgLoad('myLittleVader.jpg').then(function(response) {
-			var imageURL = window.URL.createObjectURL(response);
-			myImage.src = imageURL;
-			body.appendChild(myImage);
-		}, function(Error) {
-			console.log(Error);
-	});
-\end{lstlisting}
-Alla fine della chiamata di funzione, concateniamo il then()metodo di promessa , che contiene due funzioni: la prima viene eseguita quando la promessa si risolve e il secondo viene chiamato quando la promessa viene respinta. Nel caso risolto, mostriamo l'immagine all'interno myImagee la aggiungiamo al corpo (l'argomento è request.responsecontenuto nel resolvemetodo della promessa ); nel caso rifiutato restituiamo un errore alla console.
-Tutto ciò avviene in modo asincrono.
-
-\subsection{Implementazione Service Worker}
-\subsubsection{Registrazione Service Worker}
-Punto di partenza per l'utilizzo dei lavoratori del servizio
-\begin{lstlisting}
-if ('serviceWorker' in navigator) {
-	navigator.serviceWorker.register('/sw-test/sw.js', {scope: '/sw-test/'})
-	.then(function(reg) {
-		// registration worked
-		console.log('Registration succeeded. Scope is ' + reg.scope);
-	}).catch(function(error) {
-		// registration failed
-		console.log('Registration failed with ' + error);
-	});
+if ('serviceWorker' in navigator) { // Path che contiene il service worker navigator.serviceWorker.register('/service-worker.js').then(function(registration) { console.log('Service worker installato correttamente, ecco lo scope:', registration.scope); }).catch(function(error) { console.log('Installazione service worker fallita:', error); });
 }
 \end{lstlisting}
-\begin{itemize}
-\item Il blocco esterno esegue un test di rilevamento delle funzionalità per assicurarsi che i lavoratori del servizio siano supportati prima di provare a registrarne uno.
-\item Successivamente, usiamo la funzione ServiceWorkerContainer.register() per registrare il lavoratore del servizio per questo sito, che è solo un file JavaScript che risiede all'interno della nostra app (notare che questo è l'URL del file relativo all'origine, non il file JS che lo fa riferimento).
-\item Il scopeparametro è facoltativo e può essere utilizzato per specificare il sottoinsieme del contenuto che si desidera controllare. In questo caso, abbiamo specificato ' /sw-test/', che significa tutto il contenuto sotto l'origine dell'app. Se lo lasci fuori, verrà comunque impostato su questo valore, ma lo abbiamo specificato qui a scopo illustrativo.
-\item La .then()funzione di promessa viene utilizzata per collegare un caso di successo alla nostra struttura di promessa. Quando la promessa si risolve correttamente, il codice al suo interno viene eseguito.
-\item Infine, concateniamo una .catch()funzione alla fine che verrà eseguita se la promessa viene rifiutata.
-\end{itemize}
-In questo modo viene registrato un operatore di servizio, che viene eseguito in un contesto di lavoro e pertanto non ha accesso a DOM. Esegui quindi il codice nel worker di servizio al di fuori delle tue normali pagine per controllarne il caricamento. 
+Il codice inizia controllando il supporto da parte del browser verificando la presenza di navigator.serviceWorker. Se supportato il service worker viene registrato per mezzo di navigator.serviceWorker.register che restituisce un oggetto Promise il quale si risolve con successo a registrazione avvenuta correttamente.
+service-worker.js è il file Javascript residente nella root del sito web e che contiene il codice del service worker, il cui codice è:
+\begin{lstlisting}
+// Evento install
+self.addEventListener('install', event => { // Codice da eseguire su installazione console.log("Service Worker Installato");
+});
+// Evento activate
+self.addEventListener('activate', event => { // Codice da eseguire su attivazione console.log("Service Worker Attivo");
+});
+// Evento fetch
+self.addEventListener('fetch', event => { // Codice da eseguire su fetch di risorse console.log("Richiesta URL: "+event.request.url);
+});
+\end{lstlisting}
 
-Un singolo operatore di servizio può controllare molte pagine. Ogni volta che viene caricata una pagina all'interno dell'oscilloscopio, l'addetto all'assistenza viene installato su quella pagina e opera su di esso. Tenete presente, quindi, che è necessario stare attenti con le variabili globali nello script di service worker: ogni pagina non ha il proprio worker univoco.
+In questo modo viene registrato un Service Worker il quale al momento non fa nulla di interessante, viene semplicemente installato e ad ogni richiesta stampa in console un messaggio con la URL che il browser tenta di scaricare dal server web. Per controllare il caricamento di un Service Worker il codice di questo deve essere eseguito al di fuori delle normali pagine.
 
-\subsubsection{Perchè il Service Worker non si registra}
-Questo potrebbe essere per i seguenti motivi:
+Possono esserci diversi motivi per cui il Service Worker non si registra:
 \begin{itemize}
-\item Non stai eseguendo la tua applicazione tramite HTTPS.
-\item Il percorso del file worker del servizio non è scritto correttamente: deve essere scritto in relazione all'origine, non alla directory radice dell'app.
-\item Il lavoratore del servizio a cui si riferisce ha un'origine diversa da quella della tua app. Anche questo non è permesso.
-\end{itemize}
-Inoltre:
-\begin{itemize}
-	\item L'addetto all'assistenza catturerà solo le richieste dei client nell'ambito dell'operatore del servizio.
-	\item L'ambito massimo per un addetto all'assistenza è la posizione del lavoratore.
-	\item Se il tuo server worker è attivo su un client servito con l' Service-Worker-Allowedintestazione, puoi specificare un elenco di scope massimi per quel worker.
-	\item In Firefox, le API di Service Worker sono nascoste e non possono essere utilizzate quando l'utente è in modalità di navigazione privata .
+	\item Non si sta eseguendo l'applicazione tramite HTTPS;
+	\item Il path del Service Worker non è scritto correttamente: deve essere scritto in relazione all'origine, non alla directory radice dell'app;
+	\item Il Service Worker a cui ci si riferisce ha un'origine diversa da quella della tua app.
 \end{itemize}
 
-\subsubsection{Installare e attivare: popolare la cache}
-Dopo aver registrato l'addetto all'assistenza, il browser tenterà di eseguire l'installazione, quindi attiverà l'addetto all'assistenza per la pagina / il sito. 
+\subsection{Installazione}
+Il Service Worker viene scaricato immediatamente quando un utente accede per la prima volta a un sito, o una pagina, controllata dal Service Worker, e sarà poi scaricato periodicamente ogni tot periodo di tempo.
 
-L'evento di installazione viene generato quando un'installazione viene completata correttamente. L'evento di installazione viene generalmente utilizzato per popolare le funzionalità di memorizzazione nella cache offline del browser con le risorse necessarie per eseguire la tua app offline. Per fare ciò, utilizziamo la nuovissima API di storage di Service Worker: cache- una soluzione globale per l'addetto all'assistenza che ci consente di archiviare le risorse fornite dalle risposte e adattate alle loro richieste. Questa API funziona in modo simile alla cache standard del browser, ma è specifica per il tuo dominio. Persiste finché non lo dici a ... di nuovo, hai il pieno controllo.
+L'installazione viene tentata quando il file nuovo che è stato scaricato risulta diverso da un Service Worker esistente, o risulta essere diverso dal primo Service Worker rilevato per quella pagina/sito. Se è la prima volta che un Service Worker viene reso disponibile viene tentata l'installazione e, dopo un'installazione corretta, viene attivato. Se è disponibile un Service Worker esistente, la nuova versione viene installata in background, ma non ancora attivata; si attiva solo quando non ci sono più pagine caricate che stanno ancora utilizzando il vecchio Service Worker. Non appena non ci sono più pagine da caricare, il nuovo Service Worker si attiva.
 
-
-Iniziamo questa sezione esaminando un esempio di codice:
+Conseguentemente all’installazione viene richiamato l’evento install. Tale evento consente di effettuare il precaching, ovvero inserire in cache pagine e file statici del sito web prima di intercettarne le richieste. Per farlo occorre utilizzare gli oggetti Promise event e cache come segue:
 \begin{lstlisting}
-	self.addEventListener('install', function(event) {
-		event.waitUntil(
-			caches.open('v1').then(function(cache) {
-				return cache.addAll([
-					'/sw-test/',
-					'/sw-test/index.html',
-					'/sw-test/style.css',
-					'/sw-test/app.js',
-					'/sw-test/image-list.js',
-					'/sw-test/star-wars-logo.jpg',
-					'/sw-test/gallery/',
-					'/sw-test/gallery/bountyHunters.jpg',
-					'/sw-test/gallery/myLittleVader.jpg',
-					'/sw-test/gallery/snowTroopers.jpg'
-				]);
-			})
-		);
+	'use strict';
+	// Array di configurazione del service worker
+	var config = {
+	version: 'versionesw1::',
+	// Risorse da inserire in cache immediatamente - Precaching
+	staticCacheItems: [ '/wp-includes/js/jquery/jquery.js', '/wp-content/themes/miotema/logo.png', '/wp-content/themes/miotema/fonts/opensans.woff', '/wp-content/themes/miotema/fonts/fontawesome-webfont.woff2',
+	],
+	};
+	// Funzione che restituisce una stringa da utilizzare come chiave per la cache
+	function cacheName (key, opts) { return `${opts.version}${key}`;
+	}
+	// Evento install
+	self.addEventListener('install', event => { event.waitUntil( // Inserisco in cache le URL configurate in config.staticCacheItems caches.open( cacheName('static', config) ).then(cache => cache.addAll(config.staticCacheItems)) // self.skipWaiting() evita l'attesa, il che significa che il service worker si attivera immediatamente non appena conclusa l'installazione .then( () => self.skipWaiting() ) ); console.log("Service Worker Installato");
 	});
 \end{lstlisting}
-\begin{itemize}
-	\item Qui aggiungiamo un installlistener di eventi al worker del servizio (da qui self) e quindi concateniamo un ExtendableEvent.waitUntil()metodo sull'evento - questo garantisce che l'addetto al servizio non si installi finché il codice interno non si waitUntil()è verificato correttamente.
-	\item All'interno waitUntil()utilizziamo il caches.open()metodo per creare una nuova cache chiamata v1, che sarà la versione 1 della nostra cache delle risorse del sito. Ciò restituisce una promessa per una cache creata; una volta risolti, chiamiamo una funzione che richiama addAll()la cache creata, che per il suo parametro prende una matrice di URL relativi all'origine a tutte le risorse che si desidera memorizzare nella cache.
-	\item Se la promessa viene respinta, l'installazione non riesce e l'operatore non farà nulla. Questo è ok, in quanto è possibile correggere il codice e riprovare la prossima volta che si verifica la registrazione.
-	\item Dopo una corretta installazione, l'operatore di servizio si attiva. Questo non ha un uso distinto la prima volta che il tuo operatore di servizio viene installato / attivato, ma significa di più quando il lavoratore del servizio viene aggiornato 
-\end{itemize}
+Se si decidesse di aggiungere/eliminare nuove risorse da inserire in cache, bisognerà avere l’accortezza di cambiare il nome della versione del service worker ed eliminare dalla cache le risorse già presenti.
+Una cosa molto importante da sapere è che le risorse da inserire in cache in fase di precaching devono esistere realmente sul server web altrimenti il service worker genererà un errore fatale e l’installazione non andrà a buon fine. 
+Il metodo skipWaiting() consente al service worker di passare allo stato di attivazione ad installazione conclusa e quindi essere subito operativo.
 
-\subsubsection{Risposte personalizzate alle richieste}
-Ora hai memorizzato nella cache le tue risorse del sito, devi dire ai lavoratori del servizio di fare qualcosa con il contenuto della cache. Questo è facilmente fatto con l'evento fetch.
-Un evento fetch si attiva ogni volta che viene recuperata qualsiasi risorsa controllata da un operatore del servizio, che include i documenti all'interno dell'ambito specificato e tutte le risorse a cui si fa riferimento in tali documenti
+\subsection{Attivazione}
+Una volta installato, il service worker passa nello stato di attivazione. Se la pagina al momento è controllata da un altro service worker, l’attuale passa in uno stato di attesa per poi diventare operativo al prossimo caricamento di pagina, quando il vecchio service worker viene sostituito.
 
-Puoi collegare un fetchlistener di eventi all'operatore del servizio, quindi chiamare il respondWith()metodo sull'evento per dirottare le nostre risposte HTTP e aggiornarle. Potremmo iniziare semplicemente rispondendo con la risorsa il cui url corrisponde a quello della richiesta di rete, in ogni caso:
+Questo per essere sicuri che solo un service worker (o una sola versione di service worker) per volta possa essere eseguito nello stesso contesto temporale.
 
-\begin{lstlisting}
-	self.addEventListener('fetch', function(event) {
-		event.respondWith(
-			caches.match(event.request)
-		);
-	});
-\end{lstlisting}
-caches.match(event.request)ci consente di abbinare ogni risorsa richiesta dalla rete con la risorsa equivalente disponibile nella cache, se è disponibile una corrispondente. La corrispondenza viene eseguita tramite url e vari header, proprio come con le normali richieste HTTP.
+A service worker attivato, viene richiamato l’evento activate, l’evento ideale per svuotare la cache obsoleta dell’eventuale precedente versione di service worker. Dopodiché il service worker sarà in grado di effettuare fetching di risorse o restare in attesa di altri eventi.
 
-Diamo un'occhiata ad alcune altre opzioni che abbiamo quando dobbiamo modificare le nostre risposte HTTP:
-\begin{itemize}
-	\item Il Response()costruttore ti consente di creare una risposta personalizzata. In questo caso, stiamo solo restituendo una semplice stringa di testo:
-	\begin{lstlisting}
-		new Response('Hello from your friendly neighbourhood service worker!');
-	\end{lstlisting}
-	\item Un Response() più complesso mostra che puoi opzionalmente passare una serie di intestazioni con la tua risposta, emulando intestazioni di risposta HTTP standard. Qui stiamo solo dicendo al browser qual è il tipo di contenuto della nostra risposta sintetica:
-	\begin{lstlisting}
-		new Response('<p>Hello from your friendly neighbourhood service worker!</p>', {
-			headers: { 'Content-Type': 'text/html' }
-		});
-	\end{lstlisting}
-	\item Se non è stata trovata una corrispondenza nella cache, è possibile indicare al browser semplicemente fetchla richiesta di rete predefinita per tale risorsa, per ottenere la nuova risorsa dalla rete, se disponibile:
-	\begin{lstlisting}
-		fetch(event.request);
-	\end{lstlisting}
-	\item Se non è stata trovata una corrispondenza nella cache e la rete non è disponibile, è possibile semplicemente abbinare la richiesta con una sorta di pagina di fallback predefinita come risposta usando match(), come questo:
-	\begin{lstlisting}
-		caches.match('/fallback.html');
-	\end{lstlisting}
-	\item È possibile recuperare molte informazioni su ciascuna richiesta chiamando i parametri Requestdell'oggetto restituito da FetchEvent:
-	\begin{lstlisting}
-		event.request.url
-		event.request.method
-		event.request.headers
-		event.request.body
-	\end{lstlisting}
-\end{itemize}
+Di default il nuovo service worker diventa operativo al refresh della pagina o dopo aver richiamato il metodo clients.claim(). Fino a quel momento le eventuali richieste non saranno intercettate. 
 
-\subsubsection{Ripristino delle richieste non riuscite}
-Quindi caches.match(event.request)è grandioso quando c'è una corrispondenza nella cache dei lavoratori del servizio, ma per quanto riguarda i casi in cui non c'è una corrispondenza? Se non avessimo fornito alcun tipo di gestione degli errori, la nostra promessa sarebbe stata risolta undefinede non avremmo ricevuto nulla.
-
-Fortunatamente la struttura basata sulle promesse dei lavoratori rende banale la possibilità di fornire ulteriori opzioni per il successo. Potremmo fare questo:
-\begin{lstlisting}
-	self.addEventListener('fetch', function(event) {
-		event.respondWith(
-			caches.match(event.request).then(function(response) {
-				return response || fetch(event.request);
-			})
-		);
-	});
-\end{lstlisting}
-Se le risorse non sono nella cache, viene richiesta dalla rete.
-
-Se fossimo davvero intelligenti, non richiederemo solo la risorsa dalla rete; vorremmo anche salvarlo nella cache in modo che anche le richieste successive per quella risorsa possano essere recuperate offline! Ciò significherebbe che se venissero aggiunte immagini extra alla galleria di Star Wars, la nostra app potrebbe automaticamente prenderle e memorizzarle nella cache. Il seguente avrebbe fatto il trucco:
-\begin{lstlisting}
-	self.addEventListener('fetch', function(event) {
-		event.respondWith(
-			caches.match(event.request).then(function(resp) {
-				return resp || fetch(event.request).then(function(response) {
-					return caches.open('v1').then(function(cache) {
-						cache.put(event.request, response.clone());
-						return response;
-					});  
-				});
-			})
-		);
-	});
-\end{lstlisting}
-Qui restituiamo la richiesta di rete predefinita con return fetch(event.request), che restituisce una promessa. Quando questa promessa viene risolta, rispondiamo eseguendo una funzione che utilizza la nostra cache caches.open('v1'); anche questo restituisce una promessa. Quando quella promessa si risolve, cache.put()viene utilizzato per aggiungere la risorsa alla cache. La risorsa viene prelevata event.requeste la risposta viene quindi clonata response.clone()e aggiunta alla cache. Il clone viene messo nella cache e la risposta originale viene restituita al browser per essere data alla pagina che l'ha chiamata.
-
-La clonazione della risposta è necessaria perché i flussi di richiesta e di risposta possono essere letti solo una volta. Per restituire la risposta al browser e inserirla nella cache, dobbiamo clonarla. Quindi l'originale viene restituito al browser e il clone viene inviato alla cache. Ciascuno viene letto una volta.
-
-L'unico problema che abbiamo ora è che se la richiesta non corrisponde a nulla nella cache e la rete non è disponibile, la nostra richiesta continuerà a fallire. Forniamo un fallback di default in modo che qualunque cosa accada, l'utente otterrà almeno qualcosa:
+Di seguito un codice di esempio eseguito al verificarsi dell’evento activate. Il codice effettua il purge della cache di versioni del service worker diverse dall’attuale e successivamente  richiama clients.claim() per poter intercettare le richieste fin da subito.
 
 \begin{lstlisting}
-	selfs.addEventListener('fetch', function(event) {
-		event.respondWith(
-			caches.match(event.request).then(function(resp) {
-				return resp || fetch(event.request).then(function(response) {
-				let responseClone = response.clone();
-				caches.open('v1').then(function(cache) {
-					cache.put(event.request, responseClone);
-				});
-					
-					return response;
-				});
-			}).catch(function() {
-					return caches.match('/sw-test/gallery/myLittleVader.jpg');
-				})
-		);
+	self.addEventListener('activate', event => { // Questa funzione elimina dalla cache tutte le risorse la cui chiave non contiene il nome della versione // impostata sul config di questo service worker function clearCacheIfDifferent(event, opts) { return caches.keys().then(cacheKeys => { var oldCacheKeys = cacheKeys.filter(key => key.indexOf(opts.version) !== 0); var deletePromises = oldCacheKeys.map(oldKey => caches.delete(oldKey)); return Promise.all(deletePromises); }); }
+	event.waitUntil( // Se la versione del service worker cambia, svuoto la cache clearCacheIfDifferent(event, config) // Con self.clients.claim() consento al service worker di poter intercettare le richieste (fetch) fin da subito piuttosto che attendere il refresh della pagina .then( () => self.clients.claim() ) ); console.log("Service Worker Avviato");
 	});
 \end{lstlisting}
-Abbiamo optato per questa immagine di fallback perché gli unici aggiornamenti che potrebbero fallire sono le nuove immagini, dato che tutto il resto dipende dall'installazione nel installlistener di eventi che abbiamo visto in precedenza.
+
+\subsection{Fetch}
+Grazie all’evento fetch il service worker potrà agire da proxy tra l’applicazione web e la rete.
+
+Il service worker intercetterà ogni richiesta HTTP del browser e sarà in grado di rispondere a quest’ultimo prendendo la risorsa dalla cache piuttosto che scaricarla dalla rete o applicando le più disparate strategie di caching.
+
+Grazie all’evento fetch il service worker diventa un vero e proprio strumento per migliorare le performance di caricamento di un sito web.
 
 
-\subsubsection{Aggiornamento del Service Worker}
-Se l'addetto all'assistenza è già stato installato, ma una nuova versione dell'operatore è disponibile per l'aggiornamento o il caricamento della pagina, la nuova versione viene installata sullo sfondo, ma non ancora attivata. Si attiva solo quando non ci sono più pagine caricate che stanno ancora utilizzando il vecchio servizio di assistenza. Non appena non ci sono più pagine di questo tipo ancora caricate, il nuovo operatore di servizio si attiva.
+\subsection{Aggiornare il Service Worker}
+Se il Service Worker è già stato installato, ma una nuova versione è disponibile per l'aggiornamento o il caricamento della pagina, la nuova versione viene installata in background ma non sarà ancora attivata. Si attiva solo quando non ci sono più pagine caricate che stanno ancora utilizzando il vecchio servizio. Non appena non ci sono più pagine di questo tipo ancora caricate, il nuovo Service Worker si attiverà.
 
-Si dovrà aggiornare il listener install di eventi nel nuovo operatore di servizio a qualcosa di simile a questo:
+Si dovrà aggiornare il listener install di eventi nel nuovo Service Worker, similmente a questo:
 \begin{lstlisting}
 self.addEventListener('install', function(event) {
 	event.waitUntil(
@@ -650,552 +254,19 @@ self.addEventListener('install', function(event) {
 	);
 });
 \end{lstlisting}
-Mentre ciò accade, la versione precedente è ancora responsabile per i recuperi. La nuova versione si sta installando in background. Stiamo chiamando la nuova cache v2, quindi la v1cache precedente non è disturbata.
-
+Mentre accade questo è ancora la versione precedente (v1) quella responsabile per i recuperi, mentre la nuova versione (v2) si sta installando in background.
 Quando nessuna pagina sta utilizzando la versione corrente, il nuovo operatore si attiva e diventa responsabile dei recuperi.
 
-\subsubsection{Cancellare vecchie cache}
-Si ha a disposizione anche un evento activate. Questo è generalmente usato per fare cose che avrebbero rotto la versione precedente mentre era ancora in esecuzione, ad esempio per liberarsi di vecchie cache. Ciò è utile anche per rimuovere i dati che non sono più necessari per evitare di riempire troppo spazio su disco - ogni browser ha un limite rigido alla quantità di memoria cache che un determinato operatore di servizio può utilizzare. Il browser fa del suo meglio per gestire lo spazio su disco, ma può eliminare la memoria cache per un'origine. Il browser eliminerà generalmente tutti i dati per un'origine o nessuno dei dati per un'origine.
+\subsection{Disintallare il Service Worker}
 
-Le promesse passate waitUntil()blocceranno altri eventi fino al completamento, quindi puoi essere certo che l'operazione di pulizia sarà completata quando avrai il tuo primo fetchevento sulla nuova cache.
-
-\begin{lstlisting}
-	self.addEventListener('activate', function(event) {
-		var cacheWhitelist = ['v2'];
-		
-		event.waitUntil(
-			caches.keys().then(function(keyList) {
-				return Promise.all(keyList.map(function(key) {
-					if (cacheWhitelist.indexOf(key) === -1) {
-						return caches.delete(key);
-					}
-				}));
-			})
-		);
-	});
-\end{lstlisting}
-
-\subsubsection{Strumenti di sviluppo}
-Chrome ha \url{chrome://inspect/#service-workers}, che mostra l'attività corrente del lavoratore di servizio e l'archiviazione su un dispositivo, e \url{chrome://serviceworker-internals}, che mostra più dettagli e consente di avviare / arrestare / eseguire il debug del processo di lavoro. In futuro avranno modalità di throttling / offline per simulare connessioni cattive o inesistenti, che sarà davvero una buona cosa.
-
-Firefox ha anche iniziato a implementare alcuni strumenti utili relativi ai lavoratori del servizio:
-\begin{itemize}
-\item Puoi navigare per \url{about:debugging} vedere quali SW sono registrati e aggiornarli / rimuoverli.
-\item Durante il test è possibile aggirare la restrizione HTTPS selezionando l'opzione "Abilita i lavoratori del servizio su HTTP (quando la cassetta degli attrezzi è aperta)" nelle impostazioni degli Strumenti per sviluppatori di Firefox .
-\item Il pulsante "Dimentica", disponibile nelle opzioni di personalizzazione di Firefox, può essere usato per cancellare i lavoratori del servizio e le loro ca
-\end{itemize}
-\section{Demo Service Worker}
-%Preso da \url{https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers}
-Questa demo chiamata sw-test, una semplice galleria di immagini, mostra le basi della registrazione e dell'installazione di un Service Worker (codice sorgente: \url{https://github.com/mdn/sw-test/} , demo: \url{https://mdn.github.io/sw-test/}). 
-
-La demo utilizza una funzione alimentata da promise per leggere i dati di immagine da un oggetto JSON e caricare le immagini utilizzando Ajax, prima di visualizzare le immagini su una riga lungo la pagina. Inoltre memorizzerà nella cache tutti i file necessari in modo che funzionino offline.
-\begin{itemize}
-\item L'unica cosa che chiameremo qui è la promessa 
-\begin{lstlisting}
-	function imgLoad(imgJSON) {
-		// return a promise for an image loading
-		return new Promise(function(resolve, reject) {
-			var request = new XMLHttpRequest();
-			request.open('GET', imgJSON.url);
-			request.responseType = 'blob';	
-			request.onload = function() {
-				if (request.status == 200) {
-					var arrayResponse = [];
-					arrayResponse[0] = request.response;
-					arrayResponse[1] = imgJSON;
-					resolve(arrayResponse);
-				} else {
-					reject(Error('Image didn\'t load successfully; error code:' + request.statusText));
-				}
-			};
-			request.onerror = function() {
-				reject(Error('There was a network error.'));
-			};		
-			// Send the request
-			request.send();
-		});
-	}
-\end{lstlisting}
-
-\item Passiamo in un frammento JSON contenente tutti i dati per una singola immagine
-\begin{lstlisting}
-	var Path = 'gallery/';
-	
-	var Gallery = { 'images' : [	
-		{
-			'name'  : 'Darth Vader',
-			'alt' : 'A Black Clad warrior lego toy',
-			'url': 'gallery/myLittleVader.jpg',
-			'credit': '<a href="https://www.flickr.com/photos/legofenris/">legOfenris</a>, published under a <a href="https://creativecommons.org/licenses/by-nc-nd/2.0/">Attribution-NonCommercial-NoDerivs 2.0 Generic</a> license.'
-		},	
-		{
-			'name'  : 'Snow Troopers',
-			'alt' : 'Two lego solders in white outfits walking across an icy plain',
-			'url': 'gallery/snowTroopers.jpg',
-			'credit': '<a href="https://www.flickr.com/photos/legofenris/">legOfenris</a>, published under a <a href="https://creativecommons.org/licenses/by-nc-nd/2.0/">Attribution-NonCommercial-NoDerivs 2.0 Generic</a> license.'
-		},	
-		{
-			'name'  : 'Bounty Hunters',
-			'alt' : 'A group of bounty hunters meeting, aliens and humans in costumes.',
-			'url': 'gallery/bountyHunters.jpg',
-			'credit': '<a href="https://www.flickr.com/photos/legofenris/">legOfenris</a>, published under a <a href="https://creativecommons.org/licenses/by-nc-nd/2.0/">Attribution-NonCommercial-NoDerivs 2.0 Generic</a> license.'
-		},
-	]};
-\end{lstlisting}
-Passiamo un JSON perché tutti gli elementi per ogni primse risolta devono essere passati con la promise in quanto è asincrono. Se è appena stato passato l'url e poi si è provato ad accedere agli altri elementi nel JSON separatamente quando il for() loop è stato ripetuto in seguito, non funzionerebbe, poiché la promessa non si risolverebbe nello stesso momento in cui le iterazioni sono in corso (questo è un processo sincrono).
-\item In realtà risolviamo la promessa con un array, dato che vogliamo rendere disponibile il blob dell'immagine caricata alla funzione di risoluzione più avanti nel codice, ma anche il nome dell'immagine, i crediti e il testo alternativo. 
+Rimuovere/disinstallare un service worker è un’operazione piuttosto semplice. È possibile eseguirla manualmente dal proprio browser oppure inserendo un semplice script al posto di quello di registrazione del service worker:
 
 \begin{lstlisting}
-	var arrayResponse = [];
-	arrayResponse[0] = request.response;
-	arrayResponse[1] = imgJSON;
-	resolve(arrayResponse);
+	navigator.serviceWorker.getRegistrations().then(function(registrations) { for(let registration of registrations) { registration.unregister() }
+	})
 \end{lstlisting}
-Le promesse si risolvono solo con un singolo argomento, quindi se si vuole risolvere con più valori si deve usare un array/oggetto.
-\item Per accedere ai valori promessi risolti si accede alla funzione:
-\begin{lstlisting}
-	var imageURL = window.URL.createObjectURL(arrayResponse[0]);	
-	myImage.src = imageURL;
-	myImage.setAttribute('alt', arrayResponse[1].alt);
-	myCaption.innerHTML = '<strong>' + arrayResponse[1].name + '</strong>: Taken by ' + arrayResponse[1].credit;
-\end{lstlisting}
+Naturalmente è necessario che la pagina contenente il codice di disinstallazione venga visitata dal browser. È possibile procedere anche alla rimozione manuale su Google Chrome semplicemente aprendo la DevTools e cliccando prima su Application e successivamente su Service Workers. Accanto al service worker sarà presente un link dal nome Unregister. Non resta che cliccarci sopra per disinstallare e rimuovere il service worker in via definitiva.
 
-\end{itemize}
-\pagebreak
-\section{Esempio offline}
-%Demo offline
-%\url{https://developer.mozilla.org/en-US/Apps/Fundamentals/Offline}
-%Il codice per l'applicazione di esempio è disponibile qui: \url{https://github.com/angular-university/service-workers-guide}
-Ecco un riepilogo del progetto che implementato:
-\begin{itemize}
-\item si scarica lo script Service Worker dal server;
-\item si farà in modo che il browser installi e attivi il Service Worker in background il più tardi possibile per non interrompere l'esperienza utente iniziale;
-\item in background il Service Worker starà scaricando l'intera applicazione Web (HTML, CSS e Javascript) che conserverà per utilizzarla in un secondo momento;
-\item la volta successiva che l'utente arriverà al sito il Service Worker userà l'applicazione Web conservata in precedenza; quando questa volta l'utente visiterà il sito l'applicazione non scaricherà HTML, CSS e Javascript dalla rete ma il Service Worker userà i file memorizzati nella cache che aveva conservato per un secondo momento. Di conseguenza, questa seconda volta l'avvio dell'applicazione sarà molto più veloce. Inoltre l'utente avrà l'applicazione funzionante anche se la rete non funziona
-\end{itemize}
-
-Questo  meccanismo è come avere un proxy di rete nel browser che ci permette di avere applicazioni web installabili.
-
-\subsection{Registrazione del Service Worker}
-Il punto di partenza è una pagina Bootstrap HTML, CSS e Javascript che utilizzava alcuni bundle CSS e Javascript molto comuni; la trasformeremo in un PWA scaricabile e installabile e lo stesso ragionamento si applica a un'applicazione a singola pagina.
-
-Il primo passo per trasformare questo sito Web standard in un PWA scaricabile è aggiungere un Service Worker tramite uno script di registrazione:
-\begin{lstlisting}
-	<!-- commonly used JS bundles -->
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
-	<script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
-	...
-	
-	<!-- register the Service Worker -->
-	<script src="sw-register.js"></script>
-\end{lstlisting}
-Lo script di registrazione:
-\begin{lstlisting}
-	/*stiamo controllando se il browser supporta i lavoratori del servizio, cercando la serviceWorkerproprieta navigatornell'oggetto globale. se il browser non supporta i SW, allora tutto funzionera ancora, e solo che nessuna installazione verra eseguita in background, quindi eseguiamo il fallback su uno scenario di applicazione Web normale*/
-
-	if ('serviceWorker' in navigator) {
-		window.addEventListener('load',  () => {
-			navigator.serviceWorker.register('/sw.js', {
-				scope: '/'
-			})
-			.then(registration => {
-				console.log("Service Worker registration completed ...");
-			});
-		});
-	}
-\end{lstlisting}
-
-\title{\textbf{Perchè ritardare la registrazione del Service Worker}}\\
-Anche se rileviamo che il browser supporta i Service Worker non registreremo i Service Worker immediatamente: in questo caso stiamo aspettando l'event load della pagina che viene attivato solo quando viene caricata l'intera pagina, comprese le risorse collegate come immagini, CSS e Javascript e ciò può richiedere molto tempo. Nel caso di un'applicazione a singola pagina, potremmo voler ritardare ulteriormente la registrazione e attendere oltre l'evento load.
-
-I due motivi per cui vogliamo ritardare la registrazione del Service Worker sono:
-\begin{itemize}
-\item  evitare di degradare o interrompere l'esperienza utente iniziale poiché l'applicazione viene caricata per la prima volta.
-
-Poichè i browser eseguono solo una quantità limitata di richieste HTTP allo stesso tempo, e la capacità della rete è anch'essa limitata, il Service Worker potrebbe o non potrebbe fare richieste di rete separate che possono interferire con quelle necessarie per mostrare all'utente il contenuto iniziale.
-
-Quindi per favorire l'esperienza utente il Service Worker aspetterà che l'applicazione si avvii e verrà installata in background.
-
-\item avere un comportamento coerente dell'applicazione. 
-
-Quindi vogliamo evitare una situazione in cui:
-\begin{itemize}
-\item alcune delle risorse CSS e JS della pagina sono state fornite dal Service Worker;
-\item mentre altri provenivano dalla rete.
-\end{itemize}
-Se alcune delle richieste iniziali di una pagina provengono dalla rete, vogliamo essere sicuri che anche tutti i pacchetti rimanenti siano stati caricati dalla rete, per coerenza.
-
-Nel caso del download e dell'installazione dell'applicazione, vogliamo evitare di cadere in una situazione in cui attiviamo un Service Worker nel mezzo dell'avvio di una pagina in base a quanto etto prima sull'esperienza utente.
-
-La prossima volta che visiteremo la pagina il Service Worker sarà attivo quindi caricheremo tutte le risorse dal Service Worker anziché dalla rete, ciò significa che avremo un insieme coerente di pacchetti, tutti provenienti da una cache e corrispondenti a una determinata versione dell'applicazione.
-
-E possibile avere service worker multipli nella stessa pagina (Service Worker ID), ciò significa che è possibile avere più Service Worker in esecuzione sulla stessa pagina, ma su diversi ambiti, quindi potremmo registrare diversi Service Worker per diversi ambiti.
-
-%Se un Service Worker avesse un identificativo univoco, sarebbe la combinazione del dominio di origine e del percorso dell'ambito.
-\end{itemize}
-
-\subsection{Installazione del Service Worker}
-Quando il browser identifica una nuova versione di Service Worker per un dato ambito attiverà la fase di installazione, successivamente quella di attivazione: ora l'intercettazione della rete è pronta per essere utilizzata.
-
-Col seguente codice, che è l'implementazione di un semplice intercettore HTTP di registrazione, cerchiamo di spiegare come funzionano le fasi di installazione e attivazione, e lo svilupperemo per implementare il download e l'installazione dell'applicazione.
-\pagebreak
-\begin{lstlisting}
-/*SPIEGARE BENE STA PARTE*/
-
-	const VERSION = 'v1';
-	/*stiamo usando un riferimento a self: questo significa il contesto globale corrente in cui viene eseguito il codice, che sarebbe ad esempio il windowse questo dovesse essere eseguito a livello dell'applicazione
-	Tuttavia, in questo caso, selfpunta al contesto globale di Service Worker.
-	Ci stiamo iscrivendo a installed activateeventi e registriamo la loro presenza sulla console
-	ogni dichiarazione di registrazione e preceduta dalla versione di Service Worker, questo ci aiutera a capire come funzionano piu versioni.
-	le fasi di installazione e attivazione passano entrambe una Promessa waitUntil(), proprio ora questo e solo per mostrare come faremmo operazioni asincrone in queste fasi
-	se la promessa e passata a waitUntil()risolversi con successo, allora la fase di installazione / attivazione e stata completata con successo
-	se invece la promessa viene respinta, la fase di installazione / attivazione fallisce e la fase successiva non verra attivata.
-	ci siamo anche iscritti fetchall'evento. Usandolo, stiamo intercettando tutte le richieste HTTP fatte dall'applicazione
-	L'evento fetch ha un metodo chiamato respondWith(), che accetta come argomento anche una promessa
-	La promessa che passiamo ha bisogno di restituire (quando risolto) la risposta alla richiesta HTTP.
-	*/
-	
-	self.addEventListener('install', event => {
-		log("INSTALLING ");
-		const installCompleted = Promise.resolve()
-		.then(() => log("INSTALLED"));
-		event.waitUntil(installCompleted);
-	});
-	
-	self.addEventListener('activate', event => {
-		log("ACTIVATING");
-		const activationCompleted = Promise.resolve()
-		.then((activationCompleted) => log("ACTIVATED"));
-		
-		event.waitUntil(activationCompleted);
-	});
-	
-	// handling service worker installation
-	self.addEventListener('fetch', event => {
-		log("HTTP call intercepted - " + event.request.url);
-		return event.respondWith(fetch(event.request.url));
-	});
-	
-	
-	// each logging line will be prepended with the service worker version
-	function log(message) {
-		console.log(VERSION, message);
-	}
-\end{lstlisting}
-
-\subsubsection{Fetch per intercettare le richieste HTTP}
-Diamo uno sguardo più da vicino alla callback dell'evento fetch che contiene la funzionalità di registrazione HTTP. Come possiamo vedere, questo callback fetch restituirà la risposta effettiva della chiamata HTTP usando respondWith(), e la risposta può essere calcolata in modo asincrono passando una promise a respondWith().
-
-Il codice dell'applicazione non è a conoscenza di dove proviene questa risposta, se dalla rete o dal Service Worker. Infatti possiamo prendere la risposta passata a respondWith() da qualsiasi luogo, ad esempio:
-\begin{itemize}
-\item possiamo inoltrare la chiamata alla rete e rispedire la risposta alla rete;
-\item possiamo recuperare la risposta dal Cache Storage;
-\item possiamo costruire un oggetto response() manualmente. 
-	In questo caso, ecco cosa stiamo facendo:
-	\begin{itemize}
-	\item stiamo registrando l'URL della richiesta intercettata
-	\item inoltriamo la richiesta HTTP alla rete utilizzando la Fetch API
-	\item fetch() restituirà una promise che, se risolta, consegnerà la risposta di rete, o fallirà in caso di un errore di rete fatale. Si noti che fetch() genererà un errore solo se la rete è inattiva o se si verifica qualche altra condizione irreversibile come un errore DNS.
-	\item passiamo la promise fetch() che emetterà la risposta della rete a respondWith()
-	\end{itemize}
-\end{itemize}
-
-Questa risposta passata respondWith() verrà passata all'applicazione. Si nota che questo Service Worker funge da proxy di registrazione.
-
-Questa risposta fornita dal Service Worker è indistinguibile da una chiamata effettuata se il Service Worker non era presente, l'unico effetto collaterale è la registrazione nella console.
-
-Esaminando l'output della console:
-\begin{lstlisting}
-	v1 INSTALLING 
-	v1 INSTALLED
-	v1 ACTIVATING
-	v1 ACTIVATED
-	Service Worker registration completed ...
-\end{lstlisting}
-Il nostro Service Worker in esecuzione in Chrome Dev Tools:
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=1\linewidth]{DevTools}
-	\caption{Service Worker in esecuzione in Chrome Dev Tools}
-	\label{fig:Service Worker in esecuzione in Chrome Dev Tools}
-\end{figure}\\
-Nota: stiamo registrando gli eventi di installazione e attivazione ma non è stata registrata alcuna richiesta HTTP sulla console, questo significa che sembrerebbe che l'evento fetch non sembri funzionare anche se il Service Worker è attivo. Ma se apriamo un'altra scheda o aggiorniamo la stessa scheda, ecco cosa abbiamo:
-\begin{lstlisting}
-	v1 HTTP call intercepted - getbootstrap.com/dist/css/bootstrap.min.css
-	v1 HTTP call intercepted - localhost:8080/carousel.css
-	v1 HTTP call intercepted - code.jquery.com/jquery-3.2.1.slim.min.js
-	v1 HTTP call intercepted - getbootstrap.com/js/vendor/popper.min.js
-	v1 HTTP call intercepted - getbootstrap.com/dist/js/bootstrap.min.js
-	... other intercepted CSS/Js bundles
-	v1 HTTP call intercepted - localhost:8080/sw-register.js
-	Service Worker registration completed ...
-\end{lstlisting}
-Quindi il Service Worker ha iniziato a intercettare le richieste HTTP solo dopo aver ricaricato la pagina e questo accade di default per garantire il concetto di coerenza spiegato in precedenza.
-
-Se volessimo simulare il normale comportamento dell'utente, e aprissimo altre schede del browser della stessa applicazione, vedremo che questa pagina viene servita dallo stesso Service Worker v1.
-\begin{lstlisting}
-v1 HTTP call intercepted - getbootstrap.com/dist/css/bootstrap.min.css
-... the same HTTP requests, all served by version 1
-Service Worker registration completed ...
-\end{lstlisting}
-Se si aggiornasse l'applicazione un paio di volte e poi si tornasse ad un'altra scheda, si vedranno le richieste HTTP registrate che sono state fatte nell'altra scheda. Questo perchè abbiamo lo stesso Service Worker che intercetta le richieste da tutte le schede.
-
-Per capire meglio il ciclo di vita del Service Worker vediamo cosa succede se modifichiamo qualcosa nel codice del Service Worker(modifichiamo il numero di versione in v2). In questo caso il browser vedrà entrambe le versioni e se c'è anche un solo carattere di differenza tra le due versioni installerà la nuova versione.
-
-Per installare v2, ancora con più schede aperte, cambiamo il numero di versione dello Service Worker script in v2 e apriamo un'altra scheda. In Dev Tools possiamo vedere che la nuova versione del Service Worker non viene immediatamente applicata, ma è in una sorta di stato d'attesa.
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=1\linewidth]{DevTools2}
-	\caption{Nuova versione Service Worker in esecuzione in Chrome Dev Tools}
-	\label{fig:Nuova versione Service Worker in esecuzione in Chrome Dev Tools}
-\end{figure}\\
-E nella console abbiamo:
-\begin{lstlisting}
-	v1 HTTP call intercepted - getbootstrap.com/dist/css/bootstrap.min.css
-	v1 HTTP call intercepted - localhost:8080/carousel.css
-	... the same requests as before still being intercepted by v1
-	Service Worker registration completed ...
-	v2 INSTALLING 
-	v2 INSTALLED
-\end{lstlisting}
-Bisogna notare un po' di cose interessanti:
-\begin{itemize}
-\item v1 non è stata installata/attivata nuovamente;
-\item sembra che v1 sia rimasta attiva durante l'intero processo di aggiornamento perché ha continuato a intercettare le richieste HTTP. Quindi tutte le richieste sono ancora intercettate da v1;
-\item v2 è stata installata ma non attivata, quindi è in attesa. Questo perchè abbiamo aperto più schede e vogliamo mostrare all'utente un'esperienza coerente. Sarebbe difficile per l'utente avere due schede aperte che eseguono versioni diverse della stessa applicazione, e poiché i Service Worker intercettano e modificano le richieste HTTP, due diverse versioni del Service Worker potrebbero significare due diverse versioni dell'applicazione stessa.
-\end{itemize}
-
-Quindi in che modo il browser gestirà questa nuova versione del service worker?
-
-Il browser, per gestire una nuova versione del Service Worker, ovvero v2, continuerà a svolgere le sue operazioni ma non attiverà v2 finché ci saranno più schede aperte con v1 ancora in esecuzione, sempre per il concetto della coerenza. Nel dettaglio: abbiamo aggiornato la nostra scheda singola eseguendo v1, ma ancora v2 non è stato attivato (è stato installato ma non attivato). Questo perché la pagina corrente rimane attiva fino al completamento dell'aggiornamento, e solo allora la pagina viene scambiata. Poiché abbiamo mantenuto attivo v1 durante l'aggiornamento, vogliamo mantenerlo in esecuzione anche dopo il completamento dell'aggiornamento, il che spiega perché v1 è ancora attivo dopo il completamento dell'aggiornamento della pagina.
-
-Per attivare  V2 un modo potrebbe essere quello di riprodurre la normale esperienza utente: chiudiamo tutte le schede che eseguono v1 e apriamo una nuova scheda. In questo modo, se guardiamo all'output della console abbiamo:
-\begin{lstlisting}
-v2 ACTIVATING
-v2 ACTIVATED
-v2 HTTP call intercepted - localhost:8080
-v2 HTTP call intercepted - getbootstrap.com/dist/css/bootstrap.min.css
-... the same list of requests, all intercepted by v2
-\end{lstlisting}
-Questa volta il browser ha attivato v2 che aveva precedentemente installato in background e v2 ha intercettato tutte le richieste di rete da questa pagina, quindi ora V2 è attivo.
-\subsection{Riepilogo del ciclo di vita del Service Worker}
-\begin{itemize}
-\item mostra solo una versione dell'applicazione per l'utente
-\item non disturbare l'esperienza dell'utente
-\item non ritardare l'avvio dell'applicazione
-\item mantenere la coerenza dell'applicazione
-\end{itemize}
-
-Uno dei casi di utilizzo comune dei Service Workers è quello di memorizzare nella cache l'intera applicazione (HTML, CSS e Javascript) e questo avviene tramite la Cache Storage API.
-
-\subsection{Cache Storage API}
-%\url{https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage}
-Tutti i file sono depositati dal Service Worker nella cache storage API. Al momento dell'installazione il Service Worker preleverà dalla rete tutti i bundle che costituiscono una determinata versione dell'applicazione e li memorizzerà nella cache del browser (la Cache Storage).
-
-Come l'API del Service Worker, anche Cache Storage è basato su Promise. 
-Proviamo ad usare questa API per implementare la fase di installazione del caso d'uso di Download and Install.
-\subsubsection{Implementazione del download dell'applicazione in background}
-Iniziamo ad adattare l'esempio dell'intercettore di registrazione Hello World e ad estenderlo con le funzionalità di installazione in background.
-La prima cosa che faremo è scaricare tutti i file Javascript e CSS in background durante la fase di installazione e aggiungeremo tali file direttamente a Cache Storage:
-\pagebreak
-\begin{lstlisting}
-	const VERSION = 'v3';
-	self.addEventListener('install', event => event.waitUntil(installServiceWorker()));
-	async function installServiceWorker() {
-		log("Service Worker installation started ");
-		const cache = await caches.open(getCacheName());
-		return cache.addAll([
-			'/',
-			'carousel.css',
-			'http://getbootstrap.com/dist/css/bootstrap.min.css',
-			'https://code.jquery.com/jquery-3.2.1.slim.min.js',
-			'http://getbootstrap.com/assets/js/vendor/popper.min.js',
-			'http://getbootstrap.com/dist/js/bootstrap.min.js',
-			'http://getbootstrap.com/assets/js/vendor/holder.min.js'
-		]);
-	}
-\end{lstlisting}
-Cosa succede nel codice:
-\begin{itemize}
-\item la prima cosa che stiamo facendo è ottenere un riferimento a una cache aperta, utilizzando la caches.open(), che restituisce una Promise;
-\item stiamo aggiungendo un numero di versione al nome della cache, il che significa che quando verranno rilasciate nuove versioni verranno create nuove cache;
-\item stiamo facendo una serie di richieste HTTP per recuperare tutti i file che rendono una determinata versione dell'applicazione, e li stiamo aggiungendo tutti direttamente alla memoria cache;
-\item la chiave della cache è l'oggetto Request utilizzato per effettuare la richiesta HTTP;
-\item i valori memorizzati nella cache sono gli oggetti di risposta HTTP stessi, che possiamo servire direttamente all'applicazione;
-\item la chiamata addAll() restituisce una promise, che verrà risolta correttamente se tutte le richieste HTTP effettuate per caricare ciascun file funzionano.
-\end{itemize}
-Nel nostro caso, il download di tutti i file ha funzionato, il che significa che la fase di installazione è terminata con successo. Utilizzando gli strumenti di sviluppo di Chrome possiamo vedere che tutti i pacchetti di applicazioni sono stati scaricati in background e l'applicazione è pronta per essere servita dalla cache, in quanto abbiamo memorizzato tutto in Cache Storage.
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.8\linewidth]{CacheStorage}
-	\caption{Cache Storage}
-	\label{fig:Cache Storage}
-\end{figure}\\
-
-Nota: bisogna cancellare tutte le versioni precedenti dell'applicazione da Cache Storage prima di memorizzare tutti i nuovi dati.
-
-\subsubsection{Eliminazione delle versioni precedenti dell'applicazione}
-Il momento migliore per eliminare le versioni precedenti dell'applicazione è il momento di attivazione di Service Worker, questo perchè è l'unico momento in cui possiamo essere sicuri che l'utente non stia più utilizzando la versione dell'applicazione precedente in nessuna delle schede del browser.
-Colleghiamo quindi tutti i nomi di cache disponibili in Cache Storage e cancelliamo tutte le cache che non corrispondono alla versione dell'applicazione corrente (v3) in questo modo:
-\begin{lstlisting}
-	self.addEventListener('activate', () => activateSW());
-	async function activateSW() {
-		log('Service Worker activated');
-		const cacheKeys = await caches.keys();	
-		cacheKeys.forEach(cacheKey => {
-			if (cacheKey !== getCacheName() ) {
-				caches.delete(cacheKey);
-			}
-		});
-	}
-\end{lstlisting}
-
-\subsubsection{Elaborare l'applicazione dalla cache con una Cache Then Network Strategy}
-%spiegazione Cache then network strategy https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/#cache-then-network
-L'ultimo passaggio necessario per l'implementazione del download e dell'installazione dell'applicazione consiste nel servire direttamente i bundle dell'applicazione da Cache Storage e, se necessario, effettuare il fallback (funzione che mantiene sotto osservazione la qualità della linea e riduce automaticamente la velocità di trasmissione in caso di errori eccessivi) sulla rete:
-\begin{lstlisting}
-	self.addEventListener('fetch', event => event.respondWith(cacheThenNetwork(event)));
-	async function cacheThenNetwork(event) {
-		const cache = await caches.open(getCacheName());
-		const cachedResponse = await cache.match(event.request);
-		if (cachedResponse) {
-			log('Serving From Cache: ' + event.request.url);
-			return cachedResponse;
-		}
-		const networkResponse = await fetch(event.request);
-		log('Calling network: ' + event.request.url);	
-		return networkResponse;
-	}
-\end{lstlisting}
-Analizziamo questo esempio per vedere come viene applicata la strategia Cache Then Network:
-\begin{itemize}
-\item stiamo intercettando tutte le chiamate HTTP fatte dall'applicazione all'interno di una funzione asincrona, la quale restituirà sempre una promise a respondWith();
-\item all'interno della funzione asincrona, iniziamo aprendo la cache che corrisponde alla versione dell'applicazione corrente, quindi interroghiamo la cache per vedere se c'è una risposta HTTP che corrisponda alla richiesta HTTP fatta dall'applicazione;
-\item la chiamata a match() restituisce una promise, quindi bisognerà aspettare il risultato prima di continuare;
-\item se è stata trovata una corrispondenza, significa che la richiesta fatta dall'applicazione è stata trovata nella cache, quindi restituiamo direttamente la risposta HTTP respondWith();
-\item se non viene trovata alcuna corrispondenza, lasceremo passare la richiesta alla rete attendendo il risultato di una chiamata fetch();
-\item a queso punto registreremo la richiesta che è stata inoltrata alla rete e restituiremo il risultato della chiamata fetch() all'applicazione.
-\end{itemize}
-Con questa soluzione, qualsiasi richiesta effettuata dall'applicazione per caricare i pacchetti memorizzati nella cache verrà fornita da Cache Storage mentre altre richieste continueranno a passare alla rete.
-
-Con questo ultimo passaggio abbiamo una soluzione completa per il download e l'installazione in background della nostra applicazione web che sarà provato in seguito.
-\subsubsection{Prova nuova versione dell'applicazione}
-Per vedere il meccanismo di download e installazione in azione, apriamo una nuova scheda nella nostra applicazione di esempio e vediamo che ora sta eseguendo la versione V3 del Service Worker, che implementa la funzionalità di download e installazione.
-\begin{lstlisting}
-	const VERSION = 'v3';
-	self.addEventListener('install', event => event.waitUntil(installServiceWorker()));
-	async function installServiceWorker() {
-		log("Service Worker installation started ");
-		const cache = await caches.open(getCacheName());
-		return cache.addAll([
-			'/',
-			'carousel.css',
-			'http://getbootstrap.com/dist/css/bootstrap.min.css',
-			'https://code.jquery.com/jquery-3.2.1.slim.min.js',
-			'http://getbootstrap.com/assets/js/vendor/popper.min.js',
-			'http://getbootstrap.com/dist/js/bootstrap.min.js',
-			'http://getbootstrap.com/assets/js/vendor/holder.min.js'
-		]);
-	}
-	self.addEventListener('activate', () => activateSW());
-	async function activateSW() {
-		log('Service Worker activated');
-		const cacheKeys = await caches.keys();
-		cacheKeys.forEach(cacheKey => {
-			if (cacheKey !== getCacheName() ) {
-				caches.delete(cacheKey);
-			}
-		});
-	}
-	self.addEventListener('fetch', event => event.respondWith(cacheThenNetwork(event)));
-	async function cacheThenNetwork(event) {
-		const cache = await caches.open(getCacheName());
-		const cachedResponse = await cache.match(event.request);
-		if (cachedResponse) {
-			log('Serving From Cache: ' + event.request.url);
-			return cachedResponse;
-		}	
-		const networkResponse = await fetch(event.request);	
-		log('Calling network: ' + event.request.url);	
-		return networkResponse;	
-	}	
-	function getCacheName() {
-		return "app-cache-" + VERSION;
-	}
-	function log(message, ...data) {
-		if (data.length > 0) {
-			console.log(VERSION, message, data);
-		}
-		else {
-			console.log(VERSION, message);
-		}
-	}
-\end{lstlisting}
-\pagebreak
-E l'output della console sarà:
-\begin{lstlisting}
-v3 Serving From Cache: bootstrap.min.css
-v3 Serving From Cache: carousel.css
-v3 Serving From Cache: jquery-3.2.1.slim.min.js
-v3 Serving From Cache: popper.min.js
-v3 Serving From Cache: bootstrap.min.js
-...
-\end{lstlisting}
-Come possiamo vedere, tutti i pacchetti CSS e Javascript provengono direttamente da Cache Storage e non dalla rete. Nel casoavessimo una nuova versione (v4) dell'applicazione, vediamo in che modo potremo ottenerla se v3 viene ancora servita ogni volta direttamente dalla cache.
-
-Per attivare l'installazione di v4 per prima cosa dobbiamo modificare il Service Worker, ad esempio incrementando il numero di versione:
-
-\begin{lstlisting}
-	const VERSION =  ' v4 ' ;
-\end{lstlisting}
-Ora chiudiamo tutte le schede tranne una e aggiorniamo il browser. Sulla console:
-\begin{lstlisting}
-	v3 Serving From Cache: bootstrap.min.css
-	v3 Serving From Cache: carousel.css
-	....
-	v4 Service Worker installation started 
-\end{lstlisting}
-Possiamo vedere che v3 è ancora attivo e funzionante, questo significa che la versione dell'applicazione è stata servita da v3, quindi i bundle provengono tutti dalla cache denominata app-cache-v3.
-Possiamo anche vedere che v4 è stata installata in background.
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=1\linewidth]{v41}
-	\caption{v4 in attesa di essere attivata}
-	\label{fig:v4 in attesa di essere attivata}
-\end{figure}\\
-Come possiamo vedere, v4 è in attesa di essere attivata. Ma i bundle di V4, che potrebbero corrispondere a una versione completamente diversa dell'intera applicazione Web, sono ora pronti per essere utilizzati.
-
-Per dare conferma a questo vediamo il contenuto di Cache Storage:
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=1\linewidth]{v42}
-	\caption{Contenuto Cache Storage}
-	\label{fig:Contenuto Cache Storage}
-\end{figure}\\
-\pagebreak
-\\
-Come possiamo vedere, Cache Storage contiene due versioni dell'applicazione in questa fase:
-\begin{itemize}
-\item v3, che viene ancora offerta all'utente;
-\item v4, che è stata scaricata in background ed è pronta per essere utilizzata non appena tutte le schede della versione v3 saranno chiuse.
-\end{itemize}
-Per attivare v4 simuliamo alcune normali interazioni con l'utente. L'utente alla fine chiuderebbe tutte le schede del browser con la versione v3, quindi tornerà in seguito all'applicazione.
-
-In quel momento, il browser attiverà v4 e servirà i file corrispondenti dalla cache:
-\begin{lstlisting}
-v4 Service Worker activated
-v4 Serving From Cache: bootstrap.min.css
-v4 Serving From Cache: carousel.css
-\end{lstlisting}
-E con questo, l'intero ciclo di vita è completato e l'utente ha ora una versione aggiornata dell'applicazione scaricata e installata nel browser.
-
-La nuova versione dell'applicazione è stata scaricata e installata in background senza interferire con la normale esperienza utente, rispettando l'idea di coerenza spiegata in precedenza.
-
-\subsection{conclusioni}
-è possibile fare molto di più del caso d'uso di download e installazione che abbiamo trattato, questo è stato solo un esempio per capire perché il ciclo di vita del Service Worker è stato progettato così.
-
-La filosofia di base delle specifiche dei Service Worker consiste nel mettere queste capacità di proxy di rete nelle mani degli sviluppatori, in modo da poter implementare molti diversi casi e modelli di utilizzo PWA, anziché fornire solo una serie di modelli offline predefiniti.
-\pagebreak
 \section{Compatibilità web}
 \subsection{Desktop}
 \begin{figure}[h]
@@ -1211,4 +282,7 @@ La filosofia di base delle specifiche dei Service Worker consiste nel mettere qu
 	\caption{Compatibilità mobile}
 	\label{fig:Compatibilità mobile}
 \end{figure}
+
+\section{Conclusioni}
+Se realizzati da un esperto i service worker possono rendere la navigazione del sito web molto ma molto veloce. Grazie alla loro implementazione esterna, non richiedono modifica alcuna al sito web, motivo per cui sono molto apprezzati nel ramo delle web performance.
 \end{document}

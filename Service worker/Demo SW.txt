@@ -1,0 +1,78 @@
+\section{Demo Service Worker}
+%Preso da \url{https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers}
+Questa demo chiamata sw-test, una semplice galleria di immagini, mostra le basi della registrazione e dell'installazione di un Service Worker (codice sorgente: \url{https://github.com/mdn/sw-test/} , demo: \url{https://mdn.github.io/sw-test/}). 
+
+La demo utilizza una funzione alimentata da promise per leggere i dati di immagine da un oggetto JSON e caricare le immagini utilizzando Ajax, prima di visualizzare le immagini su una riga lungo la pagina. Inoltre memorizzerà nella cache tutti i file necessari in modo che funzionino offline.
+\begin{itemize}
+\item L'unica cosa che chiameremo qui è la promessa 
+\begin{lstlisting}
+	function imgLoad(imgJSON) {
+		// return a promise for an image loading
+		return new Promise(function(resolve, reject) {
+			var request = new XMLHttpRequest();
+			request.open('GET', imgJSON.url);
+			request.responseType = 'blob';	
+			request.onload = function() {
+				if (request.status == 200) {
+					var arrayResponse = [];
+					arrayResponse[0] = request.response;
+					arrayResponse[1] = imgJSON;
+					resolve(arrayResponse);
+				} else {
+					reject(Error('Image didn\'t load successfully; error code:' + request.statusText));
+				}
+			};
+			request.onerror = function() {
+				reject(Error('There was a network error.'));
+			};		
+			// Send the request
+			request.send();
+		});
+	}
+\end{lstlisting}
+
+\item Passiamo in un frammento JSON contenente tutti i dati per una singola immagine
+\begin{lstlisting}
+	var Path = 'gallery/';
+	
+	var Gallery = { 'images' : [	
+		{
+			'name'  : 'Darth Vader',
+			'alt' : 'A Black Clad warrior lego toy',
+			'url': 'gallery/myLittleVader.jpg',
+			'credit': '<a href="https://www.flickr.com/photos/legofenris/">legOfenris</a>, published under a <a href="https://creativecommons.org/licenses/by-nc-nd/2.0/">Attribution-NonCommercial-NoDerivs 2.0 Generic</a> license.'
+		},	
+		{
+			'name'  : 'Snow Troopers',
+			'alt' : 'Two lego solders in white outfits walking across an icy plain',
+			'url': 'gallery/snowTroopers.jpg',
+			'credit': '<a href="https://www.flickr.com/photos/legofenris/">legOfenris</a>, published under a <a href="https://creativecommons.org/licenses/by-nc-nd/2.0/">Attribution-NonCommercial-NoDerivs 2.0 Generic</a> license.'
+		},	
+		{
+			'name'  : 'Bounty Hunters',
+			'alt' : 'A group of bounty hunters meeting, aliens and humans in costumes.',
+			'url': 'gallery/bountyHunters.jpg',
+			'credit': '<a href="https://www.flickr.com/photos/legofenris/">legOfenris</a>, published under a <a href="https://creativecommons.org/licenses/by-nc-nd/2.0/">Attribution-NonCommercial-NoDerivs 2.0 Generic</a> license.'
+		},
+	]};
+\end{lstlisting}
+Passiamo un JSON perché tutti gli elementi per ogni primse risolta devono essere passati con la promise in quanto è asincrono. Se è appena stato passato l'url e poi si è provato ad accedere agli altri elementi nel JSON separatamente quando il for() loop è stato ripetuto in seguito, non funzionerebbe, poiché la promessa non si risolverebbe nello stesso momento in cui le iterazioni sono in corso (questo è un processo sincrono).
+\item In realtà risolviamo la promessa con un array, dato che vogliamo rendere disponibile il blob dell'immagine caricata alla funzione di risoluzione più avanti nel codice, ma anche il nome dell'immagine, i crediti e il testo alternativo. 
+\pagebreak
+\begin{lstlisting}
+	var arrayResponse = [];
+	arrayResponse[0] = request.response;
+	arrayResponse[1] = imgJSON;
+	resolve(arrayResponse);
+\end{lstlisting}
+Le promesse si risolvono solo con un singolo argomento, quindi se si vuole risolvere con più valori si deve usare un array/oggetto.
+\item Per accedere ai valori promessi risolti si accede alla funzione:
+\begin{lstlisting}
+	var imageURL = window.URL.createObjectURL(arrayResponse[0]);	
+	myImage.src = imageURL;
+	myImage.setAttribute('alt', arrayResponse[1].alt);
+	myCaption.innerHTML = '<strong>' + arrayResponse[1].name + '</strong>: Taken by ' + arrayResponse[1].credit;
+\end{lstlisting}
+
+\end{itemize}
+\pagebreak
