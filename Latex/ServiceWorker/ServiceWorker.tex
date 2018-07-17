@@ -267,6 +267,136 @@ Rimuovere/disinstallare un service worker è un’operazione piuttosto semplice.
 \end{lstlisting}
 Naturalmente è necessario che la pagina contenente il codice di disinstallazione venga visitata dal browser. È possibile procedere anche alla rimozione manuale su Google Chrome semplicemente aprendo la DevTools e cliccando prima su Application e successivamente su Service Workers. Accanto al service worker sarà presente un link dal nome Unregister. Non resta che cliccarci sopra per disinstallare e rimuovere il service worker in via definitiva.
 
+\section{Strategie di caching}
+Diverse sono le strategie che possono essere adottate per migliorare le performance di un sito web mediante i service worker. A seconda del contesto e del modello di business del sito è possibile adottare una strategia piuttosto che l’altra.
+
+È importante sottolineare che il service worker non utilizza cache a meno che non siamo noi a dirlo, quindi di default il comportamento nella fase di fetch delle risorse sarà quello nativo del browser.
+
+Di seguito l’elenco completo delle strategie con esempi di codice di implementazione. 
+\subsection{Network first}
+Questa strategia mira ad avere un contenuto sempre fresco scaricandolo dalla rete, fornendo la copia in cache solo in caso di problemi di connettività (ad esempio in caso di connessione offline).
+\begin{lstlisting}
+self.addEventListener('fetch', function(event) { event.respondWith( fetch(event.request).catch(function() { return caches.match(event.request); }) );
+});
+\end{lstlisting}
+Una modifica interessante in questo caso potrebbe essere quella di aggiornare la copia in cache quando la risorsa viene scaricata dalla rete, cosicché in caso di errori di connessione viene restituita la copia più giovane.
+\begin{lstlisting}
+self.addEventListener('fetch', function(event) { event.respondWith( fetch(event.request).then(function(response) { cache.put(event.request, response.clone()); return response; }).catch(function() { return caches.match(event.request); }) );
+});
+\end{lstlisting}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\linewidth]{Strategia1}
+	\caption{Network first}
+	\label{fig: Network first}
+\end{figure}
+\pagebreak
+\subsection{Cache first}
+Chiamata anche cache, falling back to network, questa strategia verifica se la risorsa è disponibile in cache. Se così fosse viene restituita la copia in cache. In caso contrario la risorsa viene scaricata dalla rete.
+\begin{lstlisting}
+self.addEventListener('fetch', function(event) {
+	event.respondWith(
+	caches.match(event.request).then(function(response) {
+		return response || fetch(event.request);
+	})
+	);
+});
+\end{lstlisting}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\linewidth]{Strategia2}
+	\caption{Cache First}
+	\label{fig: Cache First}
+\end{figure}
+\pagebreak
+\subsection{Network only}
+È la strategia più banale in quanto viene simulato il normale comportamento del browser, ovvero scaricare le risorse direttamente dalla rete.
+
+Per applicare  questa strategia basta non inserire alcuna riga di codice all’interno dell’evento fetch:
+\begin{lstlisting}
+self.addEventListener('fetch', function(event) {});
+\end{lstlisting}
+o al limite inserire semplicemente la seguente riga:
+\begin{lstlisting}
+self.addEventListener('fetch', function(event) {
+	event.respondWith(fetch(event.request));
+});
+\end{lstlisting}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\linewidth]{Strategia3}
+	\caption{Network only}
+	\label{fig: Network only}
+\end{figure}
+\pagebreak
+\subsection{Cache only}
+Esattamente opposta alla strategia network only, in questo caso il service worker risponde solo con elementi conservati in cache. In caso di MISS la risposta restituita al browser simulerà l’errore di connessione.
+\begin{lstlisting}
+self.addEventListener('fetch', function(event) {
+	event.respondWith(caches.match(event.request));
+});
+\end{lstlisting}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\linewidth]{Strategia4}
+	\caption{Cache Only}
+	\label{fig: Cache Only}
+\end{figure}
+\pagebreak
+\subsection{Fastest}
+Questa strategia mira a fornire all’utente la risposta più veloce. Il service worker avvia contemporaneamente una richiesta in cache ed una in rete. La prima che risponde verrà restituita all’utente.
+
+Questa soluzione può essere l’ideale per quei dispositivi con vecchi hard drive dove la lettura da disco può addirittura rivelarsi più lenta del fetch dalla rete. Per i dispositivi moderni è meglio utilizzare la strategia cache then network.
+
+Siccome il service worker può ritornare un solo Promise, occorre realizzare una funzione a cui passare un array di oggetti Promise, in questo caso cache e fetch, e risolverli quasi contemporaneamente ritornando quello che si risolve per primo.
+\begin{lstlisting}
+function promiseAny(promises) { return new Promise((resolve, reject) => { promises = promises.map(p => Promise.resolve(p)); promises.forEach(p => p.then(resolve)); promises.reduce((a, b) => a.catch(() => b)).catch(() => reject(Error("All failed"))); });
+};
+self.addEventListener('fetch', function(event) { event.respondWith( promiseAny([caches.match(event.request), fetch(event.request)]) );
+});
+\end{lstlisting}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\linewidth]{Strategia5}
+	\caption{Fastest}
+	\label{fig: Fastest}
+\end{figure}
+\pagebreak
+\subsection{Cache then network}
+Questa strategia mira a fornire il contenuto dalla cache per una risposta molto rapida. Dopodiché in parallelo si avvia una richiesta in rete per scaricare una copia aggiornata della risorsa e sostituirla con quella in cache. La risorsa ricevuta dalla rete viene poi sostituita con quella presente sulla pagina.
+
+Per ottenere questo obiettivo occorre avere sia codice lato pagina che lato service worker. Questo perché il service worker deve rispondere subito e non può attendere il completamento di un secondo task senza rallentare l’intera operazione.
+
+Per ottenere qualcosa di analogo usando il solo service worker occorre utilizzare postMessage affinché la pagina comunichi al service worker la risorsa da interpellare con un secondo fetch, sia esso dalla cache o dalla rete. La complessità rimane uguale ma molto utile in caso si utilizzi il service worker per fare page caching.
+
+Di seguito il codice da inserire nella pagina:
+\begin{lstlisting}
+var networkDataReceived = false;
+var risorsa = '/data.json';
+startSpinner();
+// Richiesta di rete (intercettata dal service worker)
+var networkUpdate = fetch(risorsa).then(function(response) { return response.json();
+}).then(function(data) { networkDataReceived = true; updatePage();
+});
+// Richiesta dalla cache
+caches.match(risorsa).then(function(response) { if (!response) throw Error("No data"); return response.json();
+}).then(function(data) { // Aggiorno la pagina se il contenuto dalla rete non e' stato ancora ricevuto if (!networkDataReceived) { updatePage(data); }
+}).catch(function() { // Contenuto non presente in cache, attendo quello dalla rete return networkUpdate;
+}).catch(showErrorMessage).then(stopSpinner);
+\end{lstlisting}
+Di seguito quello del service worker:
+\begin{lstlisting}
+self.addEventListener('fetch', function(event) { event.respondWith( fetch(event.request).then(function(response) { cache.put(event.request, response.clone()); return response; }) );
+});
+\end{lstlisting}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\linewidth]{Strategia6}
+	\caption{Cache then Network}
+	\label{fig: Cache then Network}
+\end{figure}
+\pagebreak
+
 \section{Compatibilità web}
 \subsection{Desktop}
 \begin{figure}[h]

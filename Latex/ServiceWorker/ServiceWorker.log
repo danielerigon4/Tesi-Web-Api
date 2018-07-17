@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.6.25)  17 JUL 2018 15:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.6.25)  17 JUL 2018 15:22
 entering extended mode
 **./ServiceWorker.tex
 (ServiceWorker.tex
@@ -799,7 +799,7 @@ LaTeX Font Info:    Try loading font information for T1+lmtt on input line 106.
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-<./images/SwLifecycle.png, id=93, 581.17125pt x 870.25125pt>
+<./images/SwLifecycle.png, id=128, 581.17125pt x 870.25125pt>
 File: ./images/SwLifecycle.png Graphic file (type png)
 <use ./images/SwLifecycle.png>
 Package pdftex.def Info: ./images/SwLifecycle.png  used on input line 123.
@@ -818,32 +818,84 @@ bro-w-ser ve-ri-fi-can-do la pre-sen-za di na-vi-ga-tor.serviceWorker.
  []
 
 [4] [5] [6]
-<./images/CompWeb.png, id=172, 721.19438pt x 100.12407pt>
+<./images/Strategia1.png, id=207, 821.0675pt x 445.665pt>
+File: ./images/Strategia1.png Graphic file (type png)
+<use ./images/Strategia1.png>
+Package pdftex.def Info: ./images/Strategia1.png  used on input line 289.
+(pdftex.def)             Requested size: 455.24411pt x 247.09538pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[7]
+<./images/Strategia2.png, id=219, 821.0675pt x 439.6425pt>
+File: ./images/Strategia2.png Graphic file (type png)
+<use ./images/Strategia2.png>
+Package pdftex.def Info: ./images/Strategia2.png  used on input line 307.
+(pdftex.def)             Requested size: 455.24411pt x 243.75626pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[8 <./images/Strategia1.png>]
+<./images/Strategia3.png, id=234, 821.0675pt x 319.1925pt>
+File: ./images/Strategia3.png Graphic file (type png)
+<use ./images/Strategia3.png>
+Package pdftex.def Info: ./images/Strategia3.png  used on input line 327.
+(pdftex.def)             Requested size: 455.24411pt x 176.97372pt.
+ [9 <./images/Strategia2.png> <./images/Strategia3.png>]
+<./images/Strategia4.png, id=249, 821.0675pt x 321.2pt>
+File: ./images/Strategia4.png Graphic file (type png)
+<use ./images/Strategia4.png>
+Package pdftex.def Info: ./images/Strategia4.png  used on input line 341.
+(pdftex.def)             Requested size: 455.24411pt x 178.08676pt.
+ [10 <./images/Strategia4.png>]
+<./images/Strategia5.png, id=260, 821.0675pt x 464.73625pt>
+File: ./images/Strategia5.png Graphic file (type png)
+<use ./images/Strategia5.png>
+Package pdftex.def Info: ./images/Strategia5.png  used on input line 360.
+(pdftex.def)             Requested size: 455.24411pt x 257.66928pt.
+ [11 <./images/Strategia5.png>]
+<./images/Strategia6.png, id=272, 821.0675pt x 529.98pt>
+File: ./images/Strategia6.png Graphic file (type png)
+<use ./images/Strategia6.png>
+Package pdftex.def Info: ./images/Strategia6.png  used on input line 394.
+(pdftex.def)             Requested size: 455.24411pt x 293.84315pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[12]
+<./images/CompWeb.png, id=293, 721.19438pt x 100.12407pt>
 File: ./images/CompWeb.png Graphic file (type png)
 <use ./images/CompWeb.png>
-Package pdftex.def Info: ./images/CompWeb.png  used on input line 274.
+Package pdftex.def Info: ./images/CompWeb.png  used on input line 404.
 (pdftex.def)             Requested size: 455.24411pt x 63.20222pt.
-<./images/CompMobile.png, id=173, 721.94719pt x 130.23656pt>
+<./images/CompMobile.png, id=294, 721.94719pt x 130.23656pt>
 File: ./images/CompMobile.png Graphic file (type png)
 <use ./images/CompMobile.png>
-Package pdftex.def Info: ./images/CompMobile.png  used on input line 281.
+Package pdftex.def Info: ./images/CompMobile.png  used on input line 411.
 (pdftex.def)             Requested size: 455.24411pt x 82.12497pt.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 288.
- [7 <./images/CompWeb.png> <./images/CompMobile.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 288.
 
-(ServiceWorker.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 288.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 288.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 418.
+[13 <./images/Strategia6.png> <./images/CompWeb.png>] [14 <./images/CompMobile.
+png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 418.
+ (ServiceWorker.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 418.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 418.
 Package rerunfilecheck Info: File `ServiceWorker.out' has not changed.
-(rerunfilecheck)             Checksum: EA25A3AEBF25DAEFDCB12019DEA5A779;928.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 288.
+(rerunfilecheck)             Checksum: 5AEBB035D473976A4D3096B7E26D4BD9;1362.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 418.
  ) 
 Here is how much of TeX's memory you used:
- 8815 strings out of 493305
- 126655 string characters out of 3128932
- 399624 words of memory out of 3000000
- 12166 multiletter control sequences out of 15000+200000
+ 8951 strings out of 493305
+ 128810 string characters out of 3128932
+ 399837 words of memory out of 3000000
+ 12231 multiletter control sequences out of 15000+200000
  51158 words of font info for 45 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  28i,6n,40p,938b,1836s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -860,9 +912,9 @@ ms/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Daniele/AppData/Local/
 Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtk10.pfb><C:/Users/Daniele/AppData/
 Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtt10.pfb><C:/Users/Daniele/Ap
 pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtt8.pfb>
-Output written on ServiceWorker.pdf (7 pages, 374934 bytes).
+Output written on ServiceWorker.pdf (14 pages, 503795 bytes).
 PDF statistics:
- 234 PDF objects out of 1000 (max. 8388607)
- 78 named destinations out of 1000 (max. 500000)
- 136 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 373 PDF objects out of 1000 (max. 8388607)
+ 143 named destinations out of 1000 (max. 500000)
+ 222 words of extra memory for PDF output out of 10000 (max. 10000000)
 

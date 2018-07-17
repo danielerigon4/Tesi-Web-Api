@@ -11,7 +11,14 @@
 \contentsline {subsection}{\numberline {3.4}Fetch}{6}{subsection.3.4}
 \contentsline {subsection}{\numberline {3.5}Aggiornare il Service Worker}{6}{subsection.3.5}
 \contentsline {subsection}{\numberline {3.6}Disintallare il Service Worker}{6}{subsection.3.6}
-\contentsline {section}{\numberline {4}Compatibilit\IeC {\`a} web}{7}{section.4}
-\contentsline {subsection}{\numberline {4.1}Desktop}{7}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Mobile}{7}{subsection.4.2}
-\contentsline {section}{\numberline {5}Conclusioni}{7}{section.5}
+\contentsline {section}{\numberline {4}Strategie di caching}{7}{section.4}
+\contentsline {subsection}{\numberline {4.1}Network first}{7}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Cache first}{8}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Network only}{9}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Cache only}{10}{subsection.4.4}
+\contentsline {subsection}{\numberline {4.5}Fastest}{11}{subsection.4.5}
+\contentsline {subsection}{\numberline {4.6}Cache then network}{12}{subsection.4.6}
+\contentsline {section}{\numberline {5}Compatibilit\IeC {\`a} web}{13}{section.5}
+\contentsline {subsection}{\numberline {5.1}Desktop}{13}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Mobile}{13}{subsection.5.2}
+\contentsline {section}{\numberline {6}Conclusioni}{13}{section.6}
