@@ -86,158 +86,140 @@
 
 \begin{document}
 	
-	\title{Tesi - Geolocation API}
-	\maketitle
-	
-	\tableofcontents
-	\pagebreak
-	
-	
-	\section{Overview geolocation}
-	Per quanto riguarda le Geolocation Api, su un dispositivo mobile avremo un set di coordinate provenienti dal sensore GPS, mentre su un portatile potremo usare il posizionamento legato all’ip della connessione internet.
-	Le API per la geolocalizzazione permettono agli utenti di fornire la propria posizione alle applicazioni web. Per proteggere la privacy all'utente viene richiesta l'autorizzazione all'uso della posizione.
-	
-	\section{Specifiche}
-	Esistono praticamente solo due metodi a disposizione, getCurrentPosition e watchPosition (+ clearWatch), entrambi utili a ottenere la posizione corrente. 
-	La differenza tra i due va ricercata nella loro periodicità, mentre il primo metodo fornisce il dato una sola volta, il secondo si attiva automaticamente ogniqualvolta la posizione cambi, o ogni tot intervallo di tempo.
-	La sintassi per invocare questi metodi è la seguente:
-	\begin{lstlisting}[language=JavaScript]
-	navigator.geolocation.getCurrentPosition(inCasoDiSuccesso, opzInCasoDiErrore, opzioni); 
-	navigator.geolocation.watchPosition(inCasoDiSuccesso, opzInCasoDiErrore, opzioni);
-	\end{lstlisting}
+\title{Tesi - Geolocation API}
+\maketitle
 
-	\subsection{Oggetto della geolocalizzazione}
-	Le API di geolocalizzazione sono pubblicate tramite l'oggetto navigator.geolocation. Se l'oggetto esiste, il servizio di geolocalizzazione è disponibile. Per testare l'esistenza di tale oggetto:
-	\begin{lstlisting}[language=JavaScript]
-		if ("geolocation" in navigator) {
-		/* la geolocalizzazione e disponibile */
-		} else {
-		/* la geolocalizzazione NON e disponibile */
-		}
-	\end{lstlisting}
-	
-	\subsection{Metodi}
-	\subsubsection{GetCurrentPosition}
-	\begin{lstlisting}[language=JavaScript]
-	navigator.geolocation.getCurrentPosition(function(position) {
-		do_something(position.coords.latitude,position.coords.longitude);
-	});
-	\end{lstlisting}
-	\begin{flushleft}
-		L'esempio qui sopra chiama la funzione dosomething() quando la posizione viene calcolata.
-		!=
-		La funzione invocata in caso di successo con tutte le info:
-	\end{flushleft}
+\tableofcontents
 \pagebreak
-	\begin{lstlisting}
-	inCasoDiSuccesso = function(position){ 
-	alert( "Posizione delle: " + position.timestamp.getHours() + ":" +
-	position.timestamp.getMinutes() + "n" + 
-	"Accuratezza delle coordinate: " + position.coords.accuracy + " mt; n" + 
-	"Latitudine: " + position.coords.latitude + " gradi; n" + 
-	"Longitudine: " + position.coords.longitude + "gradi; n" + 
-	"Accuratezza dell'altezza: " + position.coords.altitudeAccuracy + " mt; n" + 
-	"Altezza: " + position.coords.altitude + " mt; n" + 
-	"Direzione: " + position.coords.heading + " gradin " +
-	"(0 = Nord, 90 = Ovest, 180 = Sud, 270 = Est);n" + 
-	"Velocita: " + position.coords.speed + " m/s;"
-	);
-	}
-	\end{lstlisting}
-	\begin{flushleft}
-		Nel frammento di codice appena illustrato possiamo vedere tutte le informazioni estraibili dalla struttura Position. Chiaramente, a seconda del device sul quale viene effettuata l’interrogazione, non tutte saranno sempre disponibili, in tal caso il loro valore sarà impostato a null. 
-	\end{flushleft}
-	\begin{figure}
-		\centering
-		\includegraphics[width=1\linewidth]{img}
-		\caption{Prova info Geolocation.}
-		\label{fig:Info Geolocation}
-	\end{figure}
-	\begin{flushleft}
-		In caso invece si verifichi un errore la funzione preposta deve accettare anch’essa un parametro, un oggetto di tipo PositionError  contenente un codice di errore ed un messaggio ad uso di debug, ad esempio:
-	\end{flushleft}
-	\begin{lstlisting}
-		message.opzInCasoDiErrore = function(error){ 
-		alert( "Errore " + error.code + ": " + error.message);
-		}
-	\end{lstlisting}
 
-	\subsubsection{WatchPosition}
-	Se la posizione cambia (perché il dispositivo si sposta o perché viene calcolata una posizione più accurata), si può settare una funzione che viene chiamata quando la posizione attuale si aggiorna. Basta usare la funzione watchPosition(), che ha gli stessi parametri di input di getCurrentPosition(). Questa funzione viene chiamata più volte così da permettere al browser di sapere sempre la posizione del dispositivo. La funzione di errore è opzionale come lo era per getCurrentPosition().
-	
-	\begin{lstlisting}
-	var watchID = navigator.geolocation.watchPosition(function(position) {
-		do_something(position.coords.latitude, position.coords.longitude);
-	});
-	\end{lstlisting}
-	\begin{flushleft}
-	Il metodo watchPosition() ritorna un ID numerico che può essere usato per identificare univocamente il controllo della posizione; 
-	Nota: si può usare questo valore insieme al metodo clearWatch() per fermare il controllo della posizione.
-	\end{flushleft}
-	\begin{lstlisting}
-	navigator.geolocation.clearWatch(watchID);
-	\end{lstlisting}
-	\begin{flushleft}
-	Infatti, un'invocazione del metodo watchPosition può essere successivamente interrotta utilizzando la funzione clearWatch, 
-	come nell’esempio seguente:
-	\end{flushleft}
-	\begin{lstlisting}
-	<!doctype html> 
-	<html> 
-	<head>
-	<title> Un esempio di watchPosition</title> 
-	<script> 
-	var id_watch = null;
-	
-	inCasoDiSuccesso = function(position){ 
-		document.getElementById("posizione_corrente").insertAdjacentHTML('beforeend',
-		"<li> Lat: " + position.coords.latitude + ", Lon: " + position.coords.longitude + );
-		"</li>"
-		);
+
+\section{Overview geolocation}
+La Geolocation API viene utilizzata per ottenere la posizione geografica di un utente. 
+Poiché questo può compromettere la privacy la posizione non è disponibile a meno che l'utente non la approvi: su un dispositivo mobile avremo un set di coordinate provenienti dal sensore GPS mentre su un portatile potremo usare il posizionamento legato all’ip della connessione internet.
+
+\section{Specifiche}
+
+\subsection{Oggetto della geolocalizzazione}
+Le API di geolocalizzazione sono pubblicate tramite l'oggetto navigator.geolocation. Se l'oggetto esiste, il servizio di geolocalizzazione è disponibile. Per testare l'esistenza di tale oggetto:
+\begin{lstlisting}[language=JavaScript]
+	if ("geolocation" in navigator) {
+	/* la geolocalizzazione e disponibile */
+	} else {
+	/* la geolocalizzazione NON e disponibile */
 	}
+\end{lstlisting}
+
+\subsection{Metodi}
+Ci sono solamente tre metodi a disposizione: getCurrentPosition, watchPosition e clearWatch. I primi due sono utili a ottenere la posizione corrente mentre il terzo serve ad annullare la ricerca della posizione corrente. 
+La differenza tra i primi due va ricercata nella loro periodicità, mentre il primo metodo fornisce il dato una sola volta, il secondo si attiva automaticamente ogniqualvolta la posizione cambi, o ogni tot intervallo di tempo.
+La sintassi per invocare questi metodi è la seguente:
+\begin{lstlisting}[language=JavaScript]
+navigator.geolocation.getCurrentPosition(inCasoDiSuccesso, opzInCasoDiErrore, opzioni); 
+navigator.geolocation.watchPosition(inCasoDiSuccesso, opzInCasoDiErrore, opzioni);
+\end{lstlisting}
+
+\subsubsection{GetCurrentPosition}
+\begin{lstlisting}[language=JavaScript]
+navigator.geolocation.getCurrentPosition(function(position) {
+	do_something(position.coords.latitude,position.coords.longitude);
+});
+\end{lstlisting}
+L'esempio chiama la funzione dosomething() quando la posizione viene calcolata. Un esempio concreto potrebbe essere il seguente:
+\pagebreak
+\begin{lstlisting}
+/*	Nel frammento di codice appena illustrato possiamo vedere tutte le informazioni estraibili dalla struttura Position. Chiaramente, a seconda del device sul quale viene effettuata l interrogazione, non tutte saranno sempre disponibili, in tal caso il loro valore sara impostato a null.*/
+function success(position) {
+	document.getElementById('latitude').innerHTML = position.coords.latitude;
+	document.getElementById('longitude').innerHTML = position.coords.longitude;
+	document.getElementById('position-accuracy').innerHTML = position.coords.accuracy;
 	
-	sospendiLaRicezione = function(){ 
-		navigator.geolocation.clearWatch(id_watch);
+	document.getElementById('altitude').innerHTML = position.coords.altitude ? position.coords.altitude :
+		'unavailable';
+	document.getElementById('altitude-accuracy').innerHTML = position.coords.altitudeAccuracy ? position.coords.altitudeAccuracy :
+		'unavailable';
+	document.getElementById('heading').innerHTML = position.coords.heading ? position.coords.heading :
+		'unavailable';
+	document.getElementById('speed').innerHTML = position.coords.speed ? position.coords.speed :
+		'unavailable';
+}
+\end{lstlisting}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\linewidth]{img}
+	\caption{Prova info Geolocation.}
+	\label{fig:Info Geolocation}
+\end{figure}
+In caso invece si verifichi un errore la funzione preposta deve accettare anch’essa un parametro, un oggetto di tipo PositionError  contenente un codice di errore ed un messaggio ad uso di debug, ad esempio:
+\begin{lstlisting}
+	message.opzInCasoDiErrore = function(error){ 
+	alert( "Errore " + error.code + ": " + error.message);
 	}
+\end{lstlisting}
+
+\subsubsection{WatchPosition}
+Se la posizione cambia (perché il dispositivo si sposta o perché viene calcolata una posizione più accurata), si può settare una funzione che viene chiamata quando la posizione attuale si aggiorna. Basta usare la funzione watchPosition(), che ha gli stessi parametri di input di getCurrentPosition(). Questa funzione viene chiamata più volte così da permettere al browser di sapere sempre la posizione del dispositivo. La funzione di errore è opzionale come lo era per getCurrentPosition().
+
+\begin{lstlisting}
+var watchID = navigator.geolocation.watchPosition(function(position) {
+	do_something(position.coords.latitude, position.coords.longitude);
+});
+\end{lstlisting}
+Il metodo watchPosition() ritorna un ID numerico che può essere usato per identificare univocamente il controllo della posizione; 
+\\
+Nota: si può usare questo valore insieme al metodo clearWatch() per fermare il controllo della posizione.
+\begin{lstlisting}
+navigator.geolocation.clearWatch(watchID);
+\end{lstlisting}
+Infatti, un'invocazione del metodo watchPosition può essere successivamente interrotta utilizzando la funzione clearWatch, 
+come nell’esempio seguente:
+\begin{lstlisting}
+<script> 
+var id_watch = null;
+/*some code*/
+watchId = navigator.geolocation.watchPosition(success, error, positionOptions);
+// ...
+</script> 
+\end{lstlisting}
+\subsubsection{ClearPosition}
+Viene usato il metodo clearWatch() per annullare il monitoraggio della posizione.
+\begin{lstlisting}
+navigator.geolocation.clearWatch(watchId);
+/*Il numero ID e quello restituito dal metodo watchPosition() descritto precedentemente*/
+\end{lstlisting}
+\subsection{Supporto compatibilità web}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\linewidth]{web1}
+	\caption{Browser compatibility}
+	\label{fig:Browser compatibility}
+\end{figure}
 	
-	window.onload = function(){ 
-		id_watch = navigator.geolocation.watchPosition(inCasoDiSuccesso);
-	}
-	</script> 
-	</head>
-	<body> 
-	<h1>La tua posizione attuale</h1> 
-	<menu type="toolbar">
-	<button type="button" onclick="sospendiLaRicezione()"> 
-	sospendi la ricezione di dati geospaziali
-	</button> 
-	</menu>
-	<ul id="posizione_corrente">
-	</ul> 
-	</body>
-	</html>
-	\end{lstlisting}
+\subsection{Problemi sicurezza/privacy}
+\url{https://developers.google.com/web/updates/2016/04/geolocation-on-secure-contexts-only}
+
+Può essere eseguito solo in HTTPS o localhost. Se eseguito in HTTP, o si è in una pagina HTTPS ospitata da HTTP (vedi secure context), viene gestito l'errore.
+
+(vedere se levare questa parte)
+\begin{lstlisting}
+		navigator.geolocation.getCurrentPosition(function(success) { 
+			/* Do something */ },
+			function(failure) {
+				if(failure.message.indexOf("Only secure origins are allowed") == 0) {
+					// Secure Origin issue.
+				}
+			};
+		});
+\end{lstlisting}
 	
-	\subsubsection{ClearPosition}
-	
-	\subsection{Supporto compatibilità web}
-	\begin{figure}
-		\centering
-		\includegraphics[width=1\linewidth]{web1}
-		\caption{Browser compatibility}
-		\label{fig:Browser compatibility}
-	\end{figure}
-	
-	\subsection{Problemi sicurezza/privacy}
-	\url{https://developers.google.com/web/updates/2016/04/geolocation-on-secure-contexts-only}
-	
-	\subsection{Come la geolocation api trova la posizione esatta}
-	\url{https://stackoverflow.com/questions/4213410/how-does-html5-geolocation-work}
-	
-	\subsection{Test Result}
-	\url{https://wpt.fyi/results/geolocation-API}
-	
-	\subsection{Test Repository}
-	\url{https://github.com/web-platform-tests/wpt/tree/master/geolocation-API}
+%\subsection{Come la geolocation api trova la posizione esatta}
+%\url{https://stackoverflow.com/questions/4213410/how-does-html5-geolocation-work}
+%La maggiorparte dei browser si affida alla geolocalizzazione abilitata alla rete tramite il database del servizio di localizzazione di Google.
+
+
+%\subsection{Test Result}
+%\url{https://wpt.fyi/results/geolocation-API}
+
+%\subsection{Test Repository}
+%\url{https://github.com/web-platform-tests/wpt/tree/master/geolocation-API}
 	
 \end{document}
