@@ -1,0 +1,76 @@
+\subsubsection{Gestione degli eventi e aggiornamento della richiesta di pagamento}
+	Prima che l'utente accetti di effettuare il pagamento, al sito viene data l'opportunità di aggiornare la richiesta di pagamento in risposta all'input dell'utente. Ciò può includere, ad esempio, la fornitura di ulteriori opzioni di spedizione (o la modifica dei costi), la rimozione di articoli che non possono essere spediti a un determinato indirizzo, ecc.
+	
+	\begin{lstlisting}
+		const request = new PaymentRequest(methodData, details, options);
+		// Async update to details
+		request.onshippingaddresschange = ev => {
+			ev.updateWith(checkShipping(request));
+		};
+		// Sync update to the total
+		request.onshippingoptionchange = ev => {
+			const shippingOption = shippingOptions.find(
+			option => option.id === request.id
+		);
+		const newTotal = {
+			currency: "USD",
+			label: "Total due",
+			value: calculateNewTotal(shippingOption),
+		};
+		ev.updateWith({ ...details, total: newTotal });
+		};
+		async function checkShipping(request) {
+			try {
+				const json = request.shippingAddress.toJSON();
+				await ensureCanShipTo(json);
+				const { shippingOptions, total } = await calculateShipping(json);
+				return { ...details, shippingOptions, total };
+			} catch (err) {
+				return { ...details, error: `Sorry! we can't ship to your address.` };
+			}
+		}
+	\end{lstlisting}
+	
+	\subsubsection{Segnalazione di errori}
+	Uno sviluppatore può utilizzare il shippingAddressErrors, membro del PaymentDetailsUpdate, per indicare che ci sono errori di convalida con attributi specifici di a PaymentAddress. Il shippingAddressErrors è un AddressErrorFields, i cui membri delimitano in modo specifico i campi di un indirizzo fisico errati e forniscono anche messaggi di errore utili per la visualizzazione all'utente finale.
+	
+	\begin{lstlisting}
+		request.onshippingaddresschange = ev => {
+			ev.updateWith(validateAddress(request.shippingAddress));
+		};
+		function validateAddress(shippingAddress) {
+			const error = "Can't ship to this address.";
+			const shippingAddressErrors = {
+				cityError: "FarmVille is not a real place.",
+				postalCodeError: "Unknown postal code for your country.",
+			};
+			// Empty shippingOptions implies that we can't ship
+			// to this address.
+			const shippingOptions = [];
+			return { error, shippingAddressErrors, shippingOptions };
+		}
+	\end{lstlisting}
+	
+	\subsubsection{Postare la risposta di pagamento su un server}
+	È previsto che i dati in PaymentResponse verranno reindirizzati a un server per l'elaborazione. Per rendere questo più semplice possibile, PaymentResponse fornisce un metodo toJSON() che serializza l'oggetto direttamente in JSON. Ciò rende banale il POST del JSON risultante su un server che utilizza l' API Fetch.
+	
+	\begin{lstlisting}
+		async function doPaymentRequest() {
+			const payRequest = new PaymentRequest(methodData, details, options);
+			const payResponse = await payRequest.show();
+			let result = "";
+			try {
+				const httpResponse = await fetch("/process-payment", {
+					method: "POST",
+					headers: { "Content-Type": "application/json" },
+					body: payResponse.toJSON(),
+				});
+				result = httpResponse.ok ? "success" : "fail";
+			} catch (err) {
+					console.error(err);
+					result = "fail";
+				}
+			await payResponse.complete(result);
+		}
+		doPaymentRequest();
+	\end{lstlisting}
