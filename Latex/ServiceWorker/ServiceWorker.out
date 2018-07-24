@@ -1,22 +1,22 @@
 \BOOKMARK [1][-]{section.1}{Overview}{}% 1
 \BOOKMARK [2][-]{subsection.1.1}{Impostare i service worker}{section.1}% 2
-\BOOKMARK [1][-]{section.2}{Architettura di base}{}% 3
-\BOOKMARK [2][-]{subsection.2.1}{Casi d'uso}{section.2}% 4
-\BOOKMARK [1][-]{section.3}{Ciclo di vita di un Service Worker}{}% 5
-\BOOKMARK [2][-]{subsection.3.1}{Registrazione}{section.3}% 6
-\BOOKMARK [2][-]{subsection.3.2}{Installazione}{section.3}% 7
-\BOOKMARK [2][-]{subsection.3.3}{Attivazione}{section.3}% 8
-\BOOKMARK [2][-]{subsection.3.4}{Fetch}{section.3}% 9
-\BOOKMARK [2][-]{subsection.3.5}{Aggiornare il Service Worker}{section.3}% 10
-\BOOKMARK [2][-]{subsection.3.6}{Disintallare il Service Worker}{section.3}% 11
-\BOOKMARK [1][-]{section.4}{Strategie di caching}{}% 12
-\BOOKMARK [2][-]{subsection.4.1}{Network first}{section.4}% 13
-\BOOKMARK [2][-]{subsection.4.2}{Cache first}{section.4}% 14
-\BOOKMARK [2][-]{subsection.4.3}{Network only}{section.4}% 15
-\BOOKMARK [2][-]{subsection.4.4}{Cache only}{section.4}% 16
-\BOOKMARK [2][-]{subsection.4.5}{Fastest}{section.4}% 17
-\BOOKMARK [2][-]{subsection.4.6}{Cache then network}{section.4}% 18
-\BOOKMARK [1][-]{section.5}{Compatibilit\340 web}{}% 19
-\BOOKMARK [2][-]{subsection.5.1}{Desktop}{section.5}% 20
-\BOOKMARK [2][-]{subsection.5.2}{Mobile}{section.5}% 21
-\BOOKMARK [1][-]{section.6}{Conclusioni}{}% 22
+\BOOKMARK [2][-]{subsection.1.2}{Architettura di base}{section.1}% 3
+\BOOKMARK [2][-]{subsection.1.3}{Casi d'uso}{section.1}% 4
+\BOOKMARK [1][-]{section.2}{Ciclo di vita di un Service Worker}{}% 5
+\BOOKMARK [2][-]{subsection.2.1}{Registrazione}{section.2}% 6
+\BOOKMARK [2][-]{subsection.2.2}{Installazione}{section.2}% 7
+\BOOKMARK [2][-]{subsection.2.3}{Attivazione}{section.2}% 8
+\BOOKMARK [2][-]{subsection.2.4}{Fetch}{section.2}% 9
+\BOOKMARK [2][-]{subsection.2.5}{Aggiornare il Service Worker}{section.2}% 10
+\BOOKMARK [2][-]{subsection.2.6}{Disintallare il Service Worker}{section.2}% 11
+\BOOKMARK [1][-]{section.3}{Strategie di caching}{}% 12
+\BOOKMARK [2][-]{subsection.3.1}{Network first}{section.3}% 13
+\BOOKMARK [2][-]{subsection.3.2}{Cache first}{section.3}% 14
+\BOOKMARK [2][-]{subsection.3.3}{Network only}{section.3}% 15
+\BOOKMARK [2][-]{subsection.3.4}{Cache only}{section.3}% 16
+\BOOKMARK [2][-]{subsection.3.5}{Fastest}{section.3}% 17
+\BOOKMARK [2][-]{subsection.3.6}{Cache then network}{section.3}% 18
+\BOOKMARK [1][-]{section.4}{Compatibilit\340 web}{}% 19
+\BOOKMARK [2][-]{subsection.4.1}{Desktop}{section.4}% 20
+\BOOKMARK [2][-]{subsection.4.2}{Mobile}{section.4}% 21
+\BOOKMARK [1][-]{section.5}{Conclusioni}{}% 22

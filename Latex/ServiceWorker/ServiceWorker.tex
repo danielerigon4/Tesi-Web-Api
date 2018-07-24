@@ -92,31 +92,27 @@
 \pagebreak
 
 \section{Overview}
-Un service worker è uno script Javascript, che utilizza gli oggetti Promise per poter eseguire operazioni in modalità asincrona (quindi non bloccanti), che il browser avvia in background separato dalla pagina, pertanto non può modificarne gli elementi come i normali script (non ha accesso al DOM) ma può comunicare con essi mediante “messaggi”.
-
-Un Service Worker si trova tra la nostra applicazione Web e la rete e, come un server proxy, può intercettare tutte le richieste a pagine web e file statici e rispondere secondo politiche che siamo noi stessi a decidere.
-
-I service worker sono pensati per consentire la creazione di esperienze offline efficaci, intercettare le richieste di rete e intraprendere azioni appropriate in base al fatto che la rete sia disponibile o meno e aggiornare le risorse che risiedono sul server, oltre a consentire l'accesso alle notifiche push e alle API di sincronizzazione in background.
-
-È il browser che in qualsiasi momento deciderà se il Service Worker dovrebbe essere o meno in esecuzione: questo per risparmiare risorse, specialmente sui dispositivi mobili. Per questo può essere che se non facciamo alcuna richiesta HTTP per un certo periodo di tempo o non riceviamo alcuna notifica per un po' è possibile che il browser spenga il Service Worker. Se attiviamo una richiesta HTTP che deve essere gestita dal Service Worker, il browser la attiverà di nuovo, nel caso in cui non fosse ancora in esecuzione. Quindi vedere il Service Worker bloccato in Dev Tools non significa necessariamente che qualcosa è rotto o non va.
+Un ServiceWorker è uno script Javascript che utilizza le Promises per poter eseguire operazioni in modalità asincrona nel browser, avviate in background separato dalla pagina; pertanto non possono modificarne gli elementi del DOM come i normali script ma può comunicare con essi mediante “messaggi”.
+Un ServiceWorker si trova tra la nostra applicazione Web e la rete e, come un server proxy, può intercettare tutte le richieste a pagine web e file statici e rispondere secondo politiche che siamo noi stessi a decidere.
+I ServiceWorker sono pensati per consentire la creazione di esperienze offline efficaci, intercettare le richieste di rete e intraprendere azioni appropriate in base al fatto che la rete sia disponibile o meno e aggiornare le risorse che risiedono sul server, oltre a consentire l'accesso alle notifiche push e alle API di sincronizzazione in background.
+È il browser che in qualsiasi momento deciderà se il ServiceWorker dovrebbe essere o meno in esecuzione così da risparmiare risorse, specialmente sui dispositivi mobili. Per questo può essere che se non facciamo alcuna richiesta HTTP per un certo periodo di tempo o non riceviamo alcuna notifica per un po' è possibile che il browser spenga il Service Worker. Se attiviamo una richiesta HTTP che deve essere gestita dal ServiceWorker il browser la attiverà di nuovo, nel caso in cui non fosse ancora in esecuzione. 
 
 \subsection{Impostare i service worker}
-Molte funzionalità dei Service Worker oggi sono abilitate di default nelle versioni più recenti dei browser. Se il codice demo seguente non funziona bisogna abilitare un pref:
+Molte funzionalità dei Service Worker oggi sono abilitate di default, ma nel caso non lo fossero bisogna abilitarle nel browser:
 \begin{itemize}
-	\item Firefox: su \url{about:config} impostare dom.serviceWorkers.enabled su true; riavvia il browser.
-	\item Chrome : su \url{chrome://flags} accendere  experimental-web-platform-features; riavvia browser
-	\item Opera : su \url{opera://flags} attivare Support for ServiceWorker; riavvia il browser.
-	\item Microsoft Edge : su \url{about:flags} spuntare  Enable service workers; riavvia il browser.
+	\item Firefox: su \url{about:config} impostare dom.serviceWorkers.enabled su true, riavvia il browser;
+	\item Chrome : su \url{chrome://flags} accendere  experimental-web-platform-features, riavvia browser;
+	\item Opera : su \url{opera://flags} attivare Support for ServiceWorker, riavvia il browser;
+	\item Microsoft Edge : su \url{about:flags} spuntare  Enable service workers, riavvia il browser.
 \end{itemize}
 
-\section{Architettura di base}
-Per quanto riguarda i Service Worker generalmente vengono eseguiti questi passaggi per l'impostazione di base:
+\subsection{Architettura di base}
+Per quanto riguarda i ServiceWorker generalmente vengono eseguiti questi passaggi per l'impostazione di base:
 \begin{itemize}
-	\item L'URL del Service Worker viene recuperato e registrato tramite serviceWorkerContainer.register();
-	\item In caso di esito positivo, il Service Worker viene eseguito in un ServiceWorkerGlobalScope, ovvero un tipo speciale di Service Context che scappa dal thread di esecuzione dello script principale senza accesso DOM.
-	\item Il Service Worker ora è pronto per elaborare gli eventi;
-	\item L'installazione del Service Worker viene tentata quando si accede successivamente alle pagine. Un evento di installazione è sempre il primo inviato a un Service Worker;
-	\item Quando il Service Worker  è considerato installato, il passo successivo è l'attivazione; quindi quando il Service Worker è installato riceve un evento di attivazione. L'uso principale di onactivate è per la pulizia delle risorse utilizzate nelle versioni precedenti di uno script di servizio.
+	\item L'URL del ServiceWorker viene recuperato e registrato tramite serviceWorkerContainer.register();
+	\item In caso di esito positivo il ServiceWorker viene eseguito in un ServiceWorkerGlobalScope, ovvero un tipo speciale di ServiceContext che scappa dal thread di esecuzione dello script principale senza accesso DOM. Il ServiceWorker ora è pronto per elaborare gli eventi;
+	\item L'installazione del ServiceWorker viene tentata quando si accede successivamente alle pagine: un evento di installazione è sempre il primo inviato a un ServiceWorker;
+	\item Quando il ServiceWorker è considerato installato il passo successivo è l'attivazione, quindi quando il ServiceWorker è installato riceve un evento di attivazione.
 \end{itemize}
 \begin{figure}[h]
 	\centering
@@ -124,14 +120,12 @@ Per quanto riguarda i Service Worker generalmente vengono eseguiti questi passag
 	\caption{Ciclo di vita del Service Worker}
 	\label{fig:Ciclo di vita del Service Worker}
 \end{figure}
-\pagebreak
-\newpage
 
 \subsection{Casi d'uso}
-I Service Worker sono anche destinati a essere utilizzati per cose come:
+I Service Worker sono destinati anche ad altri usi:
 \begin{itemize}
 	\item Sincronizzazione dei dati in background;
-	\item Rispondere alle richieste di risorse da altre origini;
+	\item Risposta a richieste di risorse da altre origini;
 	\item Ricezione di aggiornamenti centralizzati a dati costosi da calcolare in modo che più pagine possano utilizzare un set di dati;
 	\item Modelli personalizzati basati su determinati pattern URL;
 	\item Miglioramenti delle prestazioni, ad esempio prelettura delle risorse che l'utente probabilmente avrà bisogno nel prossimo futuro.
@@ -154,12 +148,16 @@ Il ciclo di vita di un service worker è composto da quattro fasi:
 
 \subsection{Registrazione}
 
-Come prima cosa bisogna comunicare al browser l’esistenza di un service worker all’interno del sito web. Un Service Worker viene prima registrato utilizzando il metodo ServiceWorker.register(), e per farlo basta inserire su tutte le pagine del sito uno script come il seguente:
+Come prima cosa bisogna comunicare al browser l’esistenza di un ServiceWorker all’interno del sito web. Un ServiceWorker viene prima registrato utilizzando il metodo ServiceWorker.register() e per farlo basta inserire su tutte le pagine del sito uno script come il seguente:
 \begin{lstlisting}
-if ('serviceWorker' in navigator) { // Path che contiene il service worker navigator.serviceWorker.register('/service-worker.js').then(function(registration) { console.log('Service worker installato correttamente, ecco lo scope:', registration.scope); }).catch(function(error) { console.log('Installazione service worker fallita:', error); });
+if ('serviceWorker' in navigator) { 
+	// Path che contiene il service worker navigator.serviceWorker.register('/service-worker.js').then(function(registration) { 			 		
+	console.log('Service worker installato correttamente, ecco lo scope:', registration.scope); }).catch(function(error) { 
+			console.log('Installazione service worker fallita:', error); 
+		});
 }
 \end{lstlisting}
-Il codice inizia controllando il supporto da parte del browser verificando la presenza di navigator.serviceWorker. Se supportato il service worker viene registrato per mezzo di navigator.serviceWorker.register che restituisce un oggetto Promise il quale si risolve con successo a registrazione avvenuta correttamente.
+Il codice inizia controllando il supporto da parte del browser verificando la presenza di navigator.serviceWorker. Se supportato, il ServiceWorker viene registrato per mezzo di navigator.serviceWorker.register che restituisce un oggetto Promise il quale si risolve con successo a registrazione avvenuta correttamente.
 service-worker.js è il file Javascript residente nella root del sito web e che contiene il codice del service worker, il cui codice è:
 \begin{lstlisting}
 // Evento install
@@ -173,7 +171,7 @@ self.addEventListener('fetch', event => { // Codice da eseguire su fetch di riso
 });
 \end{lstlisting}
 
-In questo modo viene registrato un Service Worker il quale al momento non fa nulla di interessante, viene semplicemente installato e ad ogni richiesta stampa in console un messaggio con la URL che il browser tenta di scaricare dal server web. Per controllare il caricamento di un Service Worker il codice di questo deve essere eseguito al di fuori delle normali pagine.
+In questo modo viene registrato un ServiceWorker il quale viene semplicemente installato e ad ogni richiesta stampa in console un messaggio con la URL che il browser tenta di scaricare dal server web. Per controllare il caricamento di un Service Worker il codice di questo deve essere eseguito al di fuori delle normali pagine.
 
 Possono esserci diversi motivi per cui il Service Worker non si registra:
 \begin{itemize}
@@ -183,11 +181,11 @@ Possono esserci diversi motivi per cui il Service Worker non si registra:
 \end{itemize}
 
 \subsection{Installazione}
-Il Service Worker viene scaricato immediatamente quando un utente accede per la prima volta a un sito, o una pagina, controllata dal Service Worker, e sarà poi scaricato periodicamente ogni tot periodo di tempo.
+Il ServiceWorker viene scaricato immediatamente quando un utente accede per la prima volta a un sito, o una pagina, controllata dal ServiceWorker, e sarà poi scaricato periodicamente ogni tot periodo di tempo.
 
-L'installazione viene tentata quando il file nuovo che è stato scaricato risulta diverso da un Service Worker esistente, o risulta essere diverso dal primo Service Worker rilevato per quella pagina/sito. Se è la prima volta che un Service Worker viene reso disponibile viene tentata l'installazione e, dopo un'installazione corretta, viene attivato. Se è disponibile un Service Worker esistente, la nuova versione viene installata in background, ma non ancora attivata; si attiva solo quando non ci sono più pagine caricate che stanno ancora utilizzando il vecchio Service Worker. Non appena non ci sono più pagine da caricare, il nuovo Service Worker si attiva.
+L'installazione viene tentata quando il file nuovo che è stato scaricato risulta diverso da un ServiceWorker esistente, o risulta essere diverso dal primo ServiceWorker rilevato per quella pagina/sito. Se è la prima volta che un ServiceWorker viene reso disponibile viene tentata l'installazione e, dopo un'installazione corretta, viene attivato. Se è disponibile un ServiceWorker esistente la nuova versione viene installata in background, ma non ancora attivata; si attiva solo quando non ci sono più pagine caricate che stanno ancora utilizzando il vecchio ServiceWorker. Non appena non ci sono più pagine da caricare il nuovo ServiceWorker si attiva.
 
-Conseguentemente all’installazione viene richiamato l’evento install. Tale evento consente di effettuare il precaching, ovvero inserire in cache pagine e file statici del sito web prima di intercettarne le richieste. Per farlo occorre utilizzare gli oggetti Promise event e cache come segue:
+Conseguentemente all’installazione viene richiamato l’evento install: tale evento consente di effettuare il precaching, ovvero inserire in cache pagine e file statici del sito web prima di intercettarne le richieste. Per farlo occorre utilizzare gli oggetti Promise event e cache come segue:
 \begin{lstlisting}
 	'use strict';
 	// Array di configurazione del service worker
@@ -204,37 +202,23 @@ Conseguentemente all’installazione viene richiamato l’evento install. Tale e
 	self.addEventListener('install', event => { event.waitUntil( // Inserisco in cache le URL configurate in config.staticCacheItems caches.open( cacheName('static', config) ).then(cache => cache.addAll(config.staticCacheItems)) // self.skipWaiting() evita l'attesa, il che significa che il service worker si attivera immediatamente non appena conclusa l'installazione .then( () => self.skipWaiting() ) ); console.log("Service Worker Installato");
 	});
 \end{lstlisting}
-Se si decidesse di aggiungere/eliminare nuove risorse da inserire in cache, bisognerà avere l’accortezza di cambiare il nome della versione del service worker ed eliminare dalla cache le risorse già presenti.
-Una cosa molto importante da sapere è che le risorse da inserire in cache in fase di precaching devono esistere realmente sul server web altrimenti il service worker genererà un errore fatale e l’installazione non andrà a buon fine. 
-Il metodo skipWaiting() consente al service worker di passare allo stato di attivazione ad installazione conclusa e quindi essere subito operativo.
+Se si decidesse di aggiungere/eliminare nuove risorse da inserire in cache bisognerà avere l’accortezza di cambiare il nome della versione del ServiceWorker ed eliminare dalla cache le risorse già presenti.
+Una cosa molto importante da sapere è che le risorse da inserire in cache in fase di precaching devono esistere realmente sul server web altrimenti il ServiceWorker genererà un errore fatale e l’installazione non andrà a buon fine. 
+Il metodo skipWaiting() consente al ServiceWorker di passare allo stato di attivazione ad installazione conclusa e quindi essere subito operativo.
 
 \subsection{Attivazione}
-Una volta installato, il service worker passa nello stato di attivazione. Se la pagina al momento è controllata da un altro service worker, l’attuale passa in uno stato di attesa per poi diventare operativo al prossimo caricamento di pagina, quando il vecchio service worker viene sostituito.
-
-Questo per essere sicuri che solo un service worker (o una sola versione di service worker) per volta possa essere eseguito nello stesso contesto temporale.
-
-A service worker attivato, viene richiamato l’evento activate, l’evento ideale per svuotare la cache obsoleta dell’eventuale precedente versione di service worker. Dopodiché il service worker sarà in grado di effettuare fetching di risorse o restare in attesa di altri eventi.
-
-Di default il nuovo service worker diventa operativo al refresh della pagina o dopo aver richiamato il metodo clients.claim(). Fino a quel momento le eventuali richieste non saranno intercettate. 
-
-Di seguito un codice di esempio eseguito al verificarsi dell’evento activate. Il codice effettua il purge della cache di versioni del service worker diverse dall’attuale e successivamente  richiama clients.claim() per poter intercettare le richieste fin da subito.
-
-\begin{lstlisting}
-	self.addEventListener('activate', event => { // Questa funzione elimina dalla cache tutte le risorse la cui chiave non contiene il nome della versione // impostata sul config di questo service worker function clearCacheIfDifferent(event, opts) { return caches.keys().then(cacheKeys => { var oldCacheKeys = cacheKeys.filter(key => key.indexOf(opts.version) !== 0); var deletePromises = oldCacheKeys.map(oldKey => caches.delete(oldKey)); return Promise.all(deletePromises); }); }
-	event.waitUntil( // Se la versione del service worker cambia, svuoto la cache clearCacheIfDifferent(event, config) // Con self.clients.claim() consento al service worker di poter intercettare le richieste (fetch) fin da subito piuttosto che attendere il refresh della pagina .then( () => self.clients.claim() ) ); console.log("Service Worker Avviato");
-	});
-\end{lstlisting}
+Una volta installato il ServiceWorker passa nello stato di attivazione. Se la pagina al momento è controllata da un altro ServiceWorker quello attuale passa in uno stato di attesa per poi diventare operativo al prossimo caricamento di pagina quando il vecchio ServiceWorker viene sostituito.
+Questo per essere sicuri che solo un ServiceWorker (o una sola versione di ServiceWorker) per volta possa essere eseguito nello stesso contesto.
+A ServiceWorker attivato viene richiamato l’evento activate, ovvero l'evento per svuotare la cache obsoleta dell’eventuale precedente versione di ServiceWorker. Dopodiché il ServiceWorker sarà in grado di effettuare il fetching di risorse o di restare in attesa di altri eventi.
+Di default il nuovo ServiceWorker diventa operativo al refresh della pagina o dopo aver richiamato il metodo clients.claim(); fino a quel momento le eventuali richieste non saranno intercettate. 
 
 \subsection{Fetch}
-Grazie all’evento fetch il service worker potrà agire da proxy tra l’applicazione web e la rete.
-
-Il service worker intercetterà ogni richiesta HTTP del browser e sarà in grado di rispondere a quest’ultimo prendendo la risorsa dalla cache piuttosto che scaricarla dalla rete o applicando le più disparate strategie di caching.
-
-Grazie all’evento fetch il service worker diventa un vero e proprio strumento per migliorare le performance di caricamento di un sito web.
-
+Grazie all’evento fetch il ServiceWorker potrà agire da proxy tra l’applicazione web e la rete.
+Il ServiceWorker intercetterà ogni richiesta HTTP del browser e sarà in grado di rispondere a quest’ultimo prendendo la risorsa dalla cache piuttosto che scaricarla dalla rete.
+Grazie all’evento fetch il ServiceWorker diventa un vero e proprio strumento per migliorare le performance di caricamento di un sito web.
 
 \subsection{Aggiornare il Service Worker}
-Se il Service Worker è già stato installato, ma una nuova versione è disponibile per l'aggiornamento o il caricamento della pagina, la nuova versione viene installata in background ma non sarà ancora attivata. Si attiva solo quando non ci sono più pagine caricate che stanno ancora utilizzando il vecchio servizio. Non appena non ci sono più pagine di questo tipo ancora caricate, il nuovo Service Worker si attiverà.
+Se il ServiceWorker è già stato installato ma una nuova versione è disponibile per l'aggiornamento o il caricamento della pagina, la nuova versione viene installata in background ma non sarà ancora attivata. Si attiva solo quando non ci sono più pagine caricate che stanno ancora utilizzando il vecchio servizio. Non appena non ci sono più pagine di questo tipo ancora caricate, il nuovo ServiceWorker si attiverà.
 
 Si dovrà aggiornare il listener install di eventi nel nuovo Service Worker, similmente a questo:
 \begin{lstlisting}
@@ -259,29 +243,42 @@ Quando nessuna pagina sta utilizzando la versione corrente, il nuovo operatore s
 
 \subsection{Disintallare il Service Worker}
 
-Rimuovere/disinstallare un service worker è un’operazione piuttosto semplice. È possibile eseguirla manualmente dal proprio browser oppure inserendo un semplice script al posto di quello di registrazione del service worker:
+Rimuovere/disinstallare un ServiceWorker è un’operazione semplice. È possibile eseguirla manualmente dal proprio browser oppure inserendo un semplice script al posto di quello di registrazione del service worker:
 
 \begin{lstlisting}
-	navigator.serviceWorker.getRegistrations().then(function(registrations) { for(let registration of registrations) { registration.unregister() }
+	navigator.serviceWorker.getRegistrations().then(function(registrations) { 		
+		for(let registration of registrations) { 
+			registration.unregister() 
+		}
 	})
 \end{lstlisting}
-Naturalmente è necessario che la pagina contenente il codice di disinstallazione venga visitata dal browser. È possibile procedere anche alla rimozione manuale su Google Chrome semplicemente aprendo la DevTools e cliccando prima su Application e successivamente su Service Workers. Accanto al service worker sarà presente un link dal nome Unregister. Non resta che cliccarci sopra per disinstallare e rimuovere il service worker in via definitiva.
+
+Naturalmente è necessario che la pagina contenente il codice di disinstallazione venga visitata dal browser, oppure è possibile rimuovere il ServiceWorker manualmente tramite DevTools.
 
 \section{Strategie di caching}
-Diverse sono le strategie che possono essere adottate per migliorare le performance di un sito web mediante i service worker. A seconda del contesto e del modello di business del sito è possibile adottare una strategia piuttosto che l’altra.
-
-È importante sottolineare che il service worker non utilizza cache a meno che non siamo noi a dirlo, quindi di default il comportamento nella fase di fetch delle risorse sarà quello nativo del browser.
-
+Diverse sono le strategie che possono essere adottate per migliorare le performance di un sito web mediante i service worker. A seconda del sito e del contesto è possibile adottare una strategia piuttosto che l’altra.
+È importante sottolineare che il ServiceWorker non utilizza cache a meno che non siamo noi a dirlo, quindi di default il comportamento nella fase di fetch delle risorse sarà quello nativo del browser.
 Di seguito l’elenco completo delle strategie con esempi di codice di implementazione. 
 \subsection{Network first}
 Questa strategia mira ad avere un contenuto sempre fresco scaricandolo dalla rete, fornendo la copia in cache solo in caso di problemi di connettività (ad esempio in caso di connessione offline).
 \begin{lstlisting}
-self.addEventListener('fetch', function(event) { event.respondWith( fetch(event.request).catch(function() { return caches.match(event.request); }) );
+self.addEventListener('fetch', function(event) { 
+		event.respondWith(fetch(event.request).catch(function() { 
+			return caches.match(event.request); 
+		}) 
+	);
 });
 \end{lstlisting}
 Una modifica interessante in questo caso potrebbe essere quella di aggiornare la copia in cache quando la risorsa viene scaricata dalla rete, cosicché in caso di errori di connessione viene restituita la copia più giovane.
 \begin{lstlisting}
-self.addEventListener('fetch', function(event) { event.respondWith( fetch(event.request).then(function(response) { cache.put(event.request, response.clone()); return response; }).catch(function() { return caches.match(event.request); }) );
+self.addEventListener('fetch', function(event){ 
+		event.respondWith(fetch(event.request).then(function(response) { 		
+			cache.put(event.request, response.clone()); 
+			return response; 
+		}).catch(function() { 
+			return caches.match(event.request); 
+		}) 
+	);
 });
 \end{lstlisting}
 \begin{figure}[h]
@@ -296,9 +293,9 @@ Chiamata anche cache, falling back to network, questa strategia verifica se la r
 \begin{lstlisting}
 self.addEventListener('fetch', function(event) {
 	event.respondWith(
-	caches.match(event.request).then(function(response) {
-		return response || fetch(event.request);
-	})
+		caches.match(event.request).then(function(response) {
+			return response || fetch(event.request);
+		})
 	);
 });
 \end{lstlisting}
@@ -330,7 +327,7 @@ self.addEventListener('fetch', function(event) {
 \end{figure}
 \pagebreak
 \subsection{Cache only}
-Esattamente opposta alla strategia network only, in questo caso il service worker risponde solo con elementi conservati in cache. In caso di MISS la risposta restituita al browser simulerà l’errore di connessione.
+Esattamente opposta alla strategia network only, in questo caso il service worker risponde solo con elementi conservati in cache. In caso di miss la risposta restituita al browser simulerà l’errore di connessione.
 \begin{lstlisting}
 self.addEventListener('fetch', function(event) {
 	event.respondWith(caches.match(event.request));
@@ -344,15 +341,19 @@ self.addEventListener('fetch', function(event) {
 \end{figure}
 \pagebreak
 \subsection{Fastest}
-Questa strategia mira a fornire all’utente la risposta più veloce. Il service worker avvia contemporaneamente una richiesta in cache ed una in rete. La prima che risponde verrà restituita all’utente.
-
+Questa strategia mira a fornire all’utente la risposta più veloce. Il ServiceWorker avvia contemporaneamente una richiesta in cache ed una in rete. La prima che risponde verrà restituita all’utente.
 Questa soluzione può essere l’ideale per quei dispositivi con vecchi hard drive dove la lettura da disco può addirittura rivelarsi più lenta del fetch dalla rete. Per i dispositivi moderni è meglio utilizzare la strategia cache then network.
-
-Siccome il service worker può ritornare un solo Promise, occorre realizzare una funzione a cui passare un array di oggetti Promise, in questo caso cache e fetch, e risolverli quasi contemporaneamente ritornando quello che si risolve per primo.
+Siccome il ServiceWorker può ritornare un solo Promise, occorre realizzare una funzione a cui passare un array di oggetti Promise, in questo caso cache e fetch, e risolverli quasi contemporaneamente ritornando quello che si risolve per primo.
 \begin{lstlisting}
-function promiseAny(promises) { return new Promise((resolve, reject) => { promises = promises.map(p => Promise.resolve(p)); promises.forEach(p => p.then(resolve)); promises.reduce((a, b) => a.catch(() => b)).catch(() => reject(Error("All failed"))); });
+function promiseAny(promises) { 
+	return new Promise((resolve, reject) => { 
+		promises = promises.map(p => Promise.resolve(p)); 
+		promises.forEach(p => p.then(resolve)); 
+		promises.reduce((a, b) => a.catch(() => b)).catch(() => reject(Error("All failed"))); 
+	});
 };
-self.addEventListener('fetch', function(event) { event.respondWith( promiseAny([caches.match(event.request), fetch(event.request)]) );
+self.addEventListener('fetch', function(event) { 
+	event.respondWith( promiseAny([caches.match(event.request), fetch(event.request)]) );
 });
 \end{lstlisting}
 \begin{figure}[h]
@@ -364,31 +365,9 @@ self.addEventListener('fetch', function(event) { event.respondWith( promiseAny([
 \pagebreak
 \subsection{Cache then network}
 Questa strategia mira a fornire il contenuto dalla cache per una risposta molto rapida. Dopodiché in parallelo si avvia una richiesta in rete per scaricare una copia aggiornata della risorsa e sostituirla con quella in cache. La risorsa ricevuta dalla rete viene poi sostituita con quella presente sulla pagina.
+Per ottenere questo obiettivo occorre avere sia codice lato pagina che lato ServiceWorker. Questo perché il ServiceWorker deve rispondere subito e non può attendere il completamento di un secondo task senza rallentare l’intera operazione.
+Per ottenere qualcosa di analogo usando il solo ServiceWorker occorre utilizzare postMessage affinché la pagina comunichi al service worker la risorsa da interpellare con un secondo fetch, sia esso dalla cache o dalla rete. La complessità rimane uguale ma molto utile in caso si utilizzi il service worker per fare page caching.
 
-Per ottenere questo obiettivo occorre avere sia codice lato pagina che lato service worker. Questo perché il service worker deve rispondere subito e non può attendere il completamento di un secondo task senza rallentare l’intera operazione.
-
-Per ottenere qualcosa di analogo usando il solo service worker occorre utilizzare postMessage affinché la pagina comunichi al service worker la risorsa da interpellare con un secondo fetch, sia esso dalla cache o dalla rete. La complessità rimane uguale ma molto utile in caso si utilizzi il service worker per fare page caching.
-
-Di seguito il codice da inserire nella pagina:
-\begin{lstlisting}
-var networkDataReceived = false;
-var risorsa = '/data.json';
-startSpinner();
-// Richiesta di rete (intercettata dal service worker)
-var networkUpdate = fetch(risorsa).then(function(response) { return response.json();
-}).then(function(data) { networkDataReceived = true; updatePage();
-});
-// Richiesta dalla cache
-caches.match(risorsa).then(function(response) { if (!response) throw Error("No data"); return response.json();
-}).then(function(data) { // Aggiorno la pagina se il contenuto dalla rete non e' stato ancora ricevuto if (!networkDataReceived) { updatePage(data); }
-}).catch(function() { // Contenuto non presente in cache, attendo quello dalla rete return networkUpdate;
-}).catch(showErrorMessage).then(stopSpinner);
-\end{lstlisting}
-Di seguito quello del service worker:
-\begin{lstlisting}
-self.addEventListener('fetch', function(event) { event.respondWith( fetch(event.request).then(function(response) { cache.put(event.request, response.clone()); return response; }) );
-});
-\end{lstlisting}
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1\linewidth]{Strategia6}
