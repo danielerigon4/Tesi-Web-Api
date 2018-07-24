@@ -93,129 +93,80 @@
 	\pagebreak
 	
 	\section{Overview Payment Request}
-	Fare acquisti sul web, in particolare sui dispositivi mobili, può essere un'esperienza frustrante. Ogni sito Web ha il proprio flusso e la maggior parte richiede agli utenti di digitare manualmente gli stessi indirizzi, le informazioni di contatto e le credenziali di pagamento ancora e ancora. Ciò può portare all'abbandono del carrello della spesa e alla perdita della fedeltà dei clienti. Allo stesso modo, è difficile e richiede molto tempo agli sviluppatori di creare e gestire pagine di checkout che supportano vari metodi di pagamento.
-	L' API di richiesta di pagamento (e le specifiche di supporto) consentono ai commercianti di creare esperienze di pagamento semplificate. Piuttosto che ridigitare gli indirizzi di spedizione, le informazioni di contatto, le credenziali di pagamento e altre informazioni ancora e ancora sul Web, gli utenti possono memorizzare e riutilizzare le informazioni e completare più rapidamente e accuratamente le transazioni online. Non è un nuovo metodo di pagamento; piuttosto, è un condotto dal metodo di pagamento preferito dall'utente a un commerciante.
+	Fare acquisti sul web, in particolare sui dispositivi mobili, può essere un'esperienza frustrante, in quanto ogni sito Web ha il proprio sistema e la maggior parte dei siti richiede agli utenti di digitare manualmente le stesse informazioni (di contatto, credenziali di pagamento, indirizzi) più e più volte, e questa ridondanza può portare alla perdita di clienti.
+	Allo stesso modo creare e gestire pagine che supportano diversi meotodi di pagamanto puo risultare difficile, e puo richiedere molto tempo agli sviluppatori.
+	La PaymentRequest API consente ai commercianti di creare esperienze di pagamento semplificate. Piuttosto che ridigitare le stesse informazioni più volte nel Web, gli utenti possono memorizzare e riutilizzare le informazioni e completare più rapidamente e accuratamente le transazioni online.
 	
 	\subsection{Concetti e utilizzo della richiesta di pagamento}
 	
-	Molti problemi legati all'abbandono degli acquisti online possono essere ricondotti ai moduli di checkout, difficili da usare, lenti da caricare e aggiornare e richiedono più passaggi da completare. L' API di richiesta di pagamento è un sistema che ha lo scopo di eliminare i moduli di checkout. Migliora notevolmente il flusso di lavoro degli utenti durante il processo di acquisto, offrendo un'esperienza utente più coerente e consentendo ai commercianti di sfruttare facilmente diversi metodi di pagamento. 
+	Molti problemi legati all'abbandono degli acquisti online possono essere ricondotti ai moduli di checkout, difficili da usare, lenti da caricare e aggiornare e richiedono più passaggi da completare. La PaymentRequest API è un sistema che ha lo scopo di eliminare i moduli di checkout, migliorando il flusso di lavoro degli utenti durante il processo di acquisto, offrendo un'esperienza utente più coerente e consentendo ai commercianti di sfruttare facilmente diversi metodi di pagamento. 
 	
 	\subsection{Vantaggi nell'utilizzo di questa API}
 	\begin{itemize}
-	\item Esperienza di acquisto rapida: gli utenti immettono i propri dati una volta nel browser e sono quindi pronti a pagare beni e servizi sul Web. Non è più necessario compilare ripetutamente gli stessi dettagli su siti diversi. 
-	\item Esperienza coerente su ogni sito (che supporta l'API):  poiché il foglio di pagamento è controllato dal browser, può personalizzare l'esperienza per l'utente. Ciò può includere la localizzazione dell'interfaccia utente nella lingua preferita dell'utente.
-	\item Accessibilità: poiché il browser controlla gli elementi di input del foglio di pagamento, è in grado di assicurare accessibilità coerente per tastiera e screen reader su ogni sito Web, senza che gli sviluppatori debbano fare nulla. Un browser può anche regolare la dimensione del carattere o il contrasto cromatico del foglio di pagamento, rendendo più comodo all'utente effettuare un pagamento. 
-	\item Gestione delle credenziali: gli utenti possono gestire le loro carte di credito e gli indirizzi di spedizione direttamente nel browser. Un browser può anche sincronizzare queste "credenziali" tra dispositivi, rendendo più semplice per gli utenti passare dal desktop al cellulare e viceversa quando si acquistano oggetti.
-	\item Gestione coerente degli errori: il browser può controllare la validità dei numeri delle carte e può comunicare all'utente se una carta è scaduta (o sta per scadere). Il browser può suggerire automaticamente quale carta utilizzare in base ai modelli di utilizzo passati o alle restrizioni del commerciante, o consentire all'utente di dire quale è la loro carta predefinita / preferita.
-	\item Esperienza utente migliorata in vari modi, tra cui: meno tipizzazione, coerenza tra i siti Web, coerenza tra browser e sistemi operativi e nuove funzionalità del browser per semplificare il checkout.
-	\item Conversione aumentata (ovvero: abbandono del carrello inferiore). Anche se non disponiamo ancora di dati significativi per confermare questa aspettativa, Google ha segnalato che il completamento automatico da solo può aumentare le conversioni di 25; questa API intende migliorare sulla funzione di completamento automatico.
-	\item Sviluppo più facile delle pagine di pagamento per i commercianti o i loro fornitori di servizi.
-	\item Miglioramento della sicurezza. L'API di richiesta di pagamento ha il potenziale per ridurre le opportunità di frode e può facilitare l'adozione di metodi di pagamento più sicuri.
-	\item Responsabilità inferiore In passato, per creare un'esperienza utente semplificata, i commercianti dovevano memorizzare le credenziali di pagamento degli utenti. Questo non è più necessario, il che può aiutare a ridurre la responsabilità del commerciante.
-	\item Supporta l'innovazione del metodo di pagamento. Riducendo il costo dell'integrazione di nuovi metodi di pagamento, l'industria dei pagamenti può creare e adottare più facilmente nuovi metodi di pagamento, ad esempio per migliorare la sicurezza.
+	\item Esperienza di acquisto rapida: gli utenti immettono i propri dati una volta nel browser e sono pronti a pagare beni e servizi sul Web; una volta inseriti i dati non è più necessario compilare ripetutamente gli stessi dettagli su siti diversi;
+	\item Esperienza coerente su ogni sito (che supporta l'API):  poiché la pagina di pagamento è controllata dal browser si può personalizzare l'esperienza utente, ad esempio includendo la localizzazione per impostare automaticamente la lingua preferita dell'utente, ecc;
+	\item Gestione delle credenziali: gli utenti possono gestire le loro carte di credito e gli indirizzi di spedizione direttamente nel browser. Un browser può anche sincronizzare queste "credenziali" tra dispositivi, rendendo più semplice per gli utenti passare dal desktop al cellulare e viceversa quando si acquistano oggetti;
+	\item Gestione coerente degli errori: il browser può controllare la validità dei numeri delle carte e può comunicare all'utente se una carta è scaduta o sta per scadere, può suggerire automaticamente quale carta utilizzare in base ai modelli di utilizzo passati o alle restrizioni del commerciante, o consentire all'utente di dire quale sia la carta predefinita/preferita.
+	\item Esperienza utente migliorata: meno tipizzazione, coerenza tra i siti Web, coerenza tra browser e sistemi operativi e nuove funzionalità del browser per semplificare il checkout, ecc;
+	\item Miglioramento della sicurezza: la PaymentRequest API ha il potenziale per ridurre le opportunità di frode e può facilitare l'adozione di metodi di pagamento più sicuri;
+	\item Responsabilità inferiore: in passato, per creare un'esperienza utente semplificata, i commercianti dovevano memorizzare le credenziali di pagamento degli utenti. Questo non è più necessario, il che può aiutare a ridurre la responsabilità del commerciante nei confronti del cliente;
 	\end{itemize}
 	
-	\begin{flushleft}
-		Per richiedere un pagamento, una pagina Web crea un oggetto Payment request in risposta a un'azione dell'utente che avvia un pagamento, ad esempio facendo clic sul pulsante "Acquista". 
-		Il Payment request permette alla pagina web di scambiare informazioni con l'agente utente mentre l'utente fornisce l'input per completare la transazione.
-	\end{flushleft}
-
-	\subsection{Come funziona}
+	\subsection{Come funziona}	
 	L'API di richiesta di pagamento consente a un utente di completare una transazione più facilmente riutilizzando le informazioni memorizzate nel browser o in app di pagamento di terze parti.
-	Quando l'utente preme un pulsante in una pagina di checkout collegata all'API, il commerciante utilizza l'API per richiedere il pagamento. Il commerciante fornisce informazioni su prezzo, valuta e un elenco di metodi di pagamento accettati. Il commerciante può inoltre richiedere al browser di creare un'interfaccia utente semplificata per raccogliere l'indirizzo di spedizione, le informazioni di contatto e un numero limitato di elementi aggiuntivi dall'utente.
-	Il browser determina quale delle "app di pagamento" dell'utente sa di supportare i metodi di pagamento accettati dai commercianti. Il browser mostra le app di pagamento corrispondenti all'utente. Se il commerciante ha chiesto al browser di aiutare a raccogliere un indirizzo di spedizione o altri dati, il browser presenta i dati memorizzati per la selezione dell'utente (o richiede all'utente di inserire nuovi dati).
-	L'utente seleziona un'app di pagamento da pagare. L'app di pagamento può comportare ulteriori interazioni con l'utente (ad esempio, per l'autenticazione). Al completamento, l'app di pagamento restituisce i dati tramite l'API al commerciante.
+	Quando l'utente preme un pulsante in una pagina di checkout collegata all'API il commerciante utilizza l'API per richiedere il pagamento. Il commerciante fornisce informazioni su prezzo, valuta e un elenco di metodi di pagamento accettati, e può inoltre richiedere al browser di creare un'interfaccia utente semplificata per raccogliere l'indirizzo di spedizione, le informazioni di contatto e un numero limitato di elementi aggiuntivi dall'utente.
+	Il browser determina quali metodi di pagamento sono supportati dal commerciante tra le varie "app di pagamento" mostrandole all'utente. 
+	L'utente seleziona un'app di pagamento con la quale pagare, la quale può comportare ulteriori interazioni con l'utente (ad esempio per l'autenticazione); al completamento l'app di pagamento restituisce i dati tramite l'API al commerciante.
 
-	\begin{figure}
+	\begin{figure}[h]
 		\centering
 		\includegraphics[width=1\linewidth]{SchemaPayment}
 		\caption{Schema Payment Request API}
 		\label{fig:Schema Payment}
 	\end{figure}
-	\pagebreak
+	
 	\subsection{Rischi}
-	L'API di richiesta di pagamento consente ai commercianti di "consegnare" la raccolta di credenziali di pagamento alle app di pagamento. Ciò riduce l'onere per i commercianti di creare un'esperienza di pagamento e l'esperienza utente migliorata dovrebbe aumentare le conversioni. Ciò implica, tuttavia, che quando lo fanno, i commercianti non controllano alcuni aspetti dell'esperienza utente.
+	La PaymentRequest API consente ai commercianti di "consegnare" la raccolta di credenziali di pagamento alle app di pagamento, riducendo cosi l'onere di creare un'esperienza di pagamento adeguata per l'utente. 
 	
 	\subsection{Sicurezza API}
-	L'API di richiesta di pagamento aumenta la sicurezza poichè:
+	La PaymentRequest API aumenta la sicurezza poichè:
 	\begin{itemize}
-	\item I commercianti possono ottenere un checkout semplificato senza memorizzare le credenziali dell'utente (dato che gli utenti memorizzano le proprie credenziali). Ciò rende i commercianti meno vulnerabili agli attacchi.
-	\item La selezione delle app di pagamento da chrome browser nativo dovrebbe eliminare alcuni comportamenti dannosi che potrebbero influire sulle pagine Web.
-	\item L'API di richiesta di pagamento dovrebbe facilitare l'introduzione di metodi di pagamento più sicuri sul Web, come i pagamenti con carta tokenizzata.
-	\item I proprietari dei metodi di pagamento disporranno di meccanismi standard per autorizzare software specifici a implementare il loro metodo di pagamento, che il browser può verificare (ovvero, una firma digitale).
+	\item I commercianti possono ottenere un checkout semplificato senza memorizzare le credenziali dell'utente, in quanto lo fa l'API, rendendo i commercianti meno vulnerabili agli attacchi;
+	\item La PaymentRequest API dovrebbe facilitare l'introduzione di metodi di pagamento più sicuri sul Web, come i pagamenti con carta tokenizzata;
+	\item I proprietari dei metodi di pagamento disporranno di meccanismi standard per autorizzare software specifici a implementare il loro metodo di pagamento, che il browser può verificare attraverso una firma digitale.
 	\end{itemize}
-	I browser utilizzano una varietà di meccanismi per archiviare informazioni sensibili dell'utente, inclusi cookie, IndexedDB, memoria locale e funzionalità del sistema operativo in modo sicuro. W3C sta inoltre sviluppando nuove tecnologie correlate come l'autenticazione Web e l'API di gestione delle credenziali.
-	Per quanto riguarda la meorizzazione delle informazioni delle app di pagamento in modo sicuro, questo è un dettaglio di implementazione per ogni app di pagamento. Lo storage nel back-end è interamente a carico del provider di pagamenti.
-	
-	Inoltre l'API di richiesta di pagamento è richiamata in un contesto sicuro, come indicato dal WebIDL nelle specifiche. 
-	Nota: le implementazioni del browser possono variare in ciò che supportano. Ad esempio, Chrome considera i seguenti contesti protetti: "https: //", "file: //" e URL localhost.
-	
-
-
+	I browser utilizzano una varietà di meccanismi per archiviare informazioni sensibili dell'utente, e attualmente W3C sta sviluppando nuove tecnologie per aumentarne la sicurezza.
+	Per quanto riguarda la memorizzazione delle informazioni delle app di pagamento in modo sicuro, questo è un dettaglio di implementazione che è diverso per ogni app di pagamento, e tale sicurezza è a carico del provider dell'app di pagamento.
 	
 	\subsection{Uso API}
 	\subsubsection{Ruolo dell'utente}
-	Gli utenti beneficiano del riutilizzo delle credenziali (come informazioni di pagamento, indirizzo di spedizione e informazioni di contatto) che hanno accettato di archiviare nel browser o nelle app di pagamento. Ciò implica che gli utenti hanno bisogno di:
-	\begin{itemize}
-		\item Un browser o altro agente utente che implementa l'API di richiesta di pagamento; 
-		\item Per i metodi di pagamento diversi dalla carta base, l'utente avrà bisogno di una o più app di pagamento; 
-		\item L'utente quindi memorizzerà le credenziali nel proprio browser o in altre app di pagamento
-	\end{itemize}
-	\begin{flushleft}
-		Quindi, quando si visita un sito Web che sfrutta l'API di richiesta di pagamento, gli utenti avranno l'opportunità di sfruttare il riutilizzo semplificato delle credenziali archiviate.
-	\end{flushleft}
-
+	Gli utenti beneficiano del riutilizzo delle credenziali inserite nel browser o nelle app di pagamento. Quindi, quando si visita un sito Web che sfrutta la PaymentRequest API gli utenti avranno l'opportunità di sfruttare il riutilizzo semplificato delle credenziali archiviate.
 
 	\subsubsection{Ruolo del commerciante}
-	Ad un livello elevato, l'API influisce sul front end (checkout), non sul back-end. Pertanto, il commerciante non dovrebbe dover apportare modifiche all'elaborazione back-end di vari metodi di pagamento.
-	Chiunque fornisca la pagina di pagamento del venditore sostituirà i moduli Web con le chiamate all'API di richiesta di pagamento.
-	Un commerciante puo accettare o meno un particolare metodo di pagamento in base al metodo di pagamento
-	Ad esempio, se oggi il commerciante raccoglie i dati della carta di credito tramite un modulo Web, il commerciante (o il fornitore di servizi di pagamento) riceverà gli stessi dati tramite l'API di richiesta di pagamento e dovrà comunque gestirlo, tuttavia ciò avviene oggi.
-	Altri metodi di pagamento possono comportare l'integrazione di software aggiuntivo, accordi legali, verifica di commercianti, ecc. Ad esempio, un'organizzazione che possiede un metodo di pagamento proprietario potrebbe richiedere l'integrazione del software oltre a ciò che fa l'API di richiesta di pagamento.
+	L'API influisce sul front end e non sul back-end, ovvero solamente sull'intrfaccia dell'esperienza utente; pertanto il commerciante non dovrebbe dover apportare modifiche all'elaborazione back-end di vari metodi di pagamento, questo sarà compito del fornitore della pagina di pagamento, il quale sostituirà i moduli Web con le chiamate alla PaymentRequest API.
 	
-	È richiesto il gesto dell'utente per attivare l'API di richiesta di pagamento attraverso PaymentRequest.show (), il che significa che deve essere attivato PaymentRequest.show (), ad esempio, tramite un gestore di eventi del pulsante.
+	È richiesto il gesto dell'utente per attivare l'API di richiesta di pagamento attraverso PaymentRequest.show().
 	
-	L'API non include l'autenticazione dell'utente
-	Esistono (almeno) due tipi di autenticazione utente, ma	entrambi esulano dall'ambito delle specifiche dell'API della richiesta di pagamento:
+	L'API non include l'autenticazione dell'utente, ma esistono due tipi di autenticazione utente che esulano dall'ambito delle specifiche della PaymentRequest API:
 	\begin{itemize}
-	\item Autenticazione del commerciante dell'utente (ad esempio, l'utente accede al proprio account con il commerciante).
-	\item Autenticazione delle app di pagamento dell'utente (ad esempio, fornendo un codice CVV, tramite nome / password o tramite autenticazione a più fattori).
+	\item Autenticazione del commerciante dell'utente: l'utente accede al proprio account con il commerciante;
+	\item Autenticazione delle app di pagamento dell'utente: fornendo un codice CVV, tramite nome/password o tramite autenticazione a più fattori.
 	\end{itemize}
 	
-	
-	
-	
-	
-	 
-	\subsubsection{Ruolo fornitore app di pagamento}
-	Ad un livello elevato, un'app di pagamento deve registrarsi con un browser per dichiarare quale metodo di pagamento supporta.
-	Le app native di pagamento mobile registrano e comunicano con i browser attraverso meccanismi specifici della piattaforma che sono fuori portata per W3C.
-	Il gruppo di lavoro Web Payments sta lavorando a un meccanismo per consentire ai siti Web di registrarsi per gestire i pagamenti per conto dell'utente; questo è un lavoro in corso.
 	\subsubsection{Ruolo del browser}
-	I browser svolgono due ruoli nell'API. Il primo riguarda queste attività:
+	Il browser svolge diversi ruoli:
 	\begin{itemize}
-	\item Calcola l'intersezione dei metodi di pagamento accettati dal commerciante e registrati dall'utente.
-	\item Visualizza l'interfaccia utente (nativa) che consente all'utente di fornire informazioni di contatto, indirizzi di spedizione e corrispondenti app di pagamento.
-	\item Fungere da canale per i dati da e verso il commerciante e da e verso l'utente (tramite app di pagamento).
+	\item Calcola l'intersezione dei metodi di pagamento accettati dal commerciante e registrati dall'utente;
+	\item Visualizza l'interfaccia utente che consente all'utente di inserire le proprie informazioni;
+	\item Funge da canale per i dati da e verso il commerciante e da e verso l'utente.
 	\end{itemize}
-	\begin{flushleft}
-	È probabile che anche i browser svolgano un secondo ruolo, agendo come app di pagamento per un piccolo numero di metodi di pagamento. Al momento della stesura di questo documento, i produttori di browser prevedono di supportare i pagamenti della Carta base. Ciò significa che gli utenti saranno in grado di restituire rapidamente le informazioni della carta ai commercianti che sono stati precedentemente memorizzati nel browser.
-	\end{flushleft}
 	
 	\subsubsection{Metodi di pagamento}
-		L'API di richiesta di pagamento è progettata per funzionare con un gran numero di metodi di pagamento, inclusi i metodi pull (come i pagamenti con carta) e i metodi push (come i bonifici).
-	I metodi di pagamento vengono identificti attraverso due strade:
+	La PaymentRequest API è progettata per funzionare con un gran numero di metodi di pagamento, i quali vengono identificati attraverso due strade:
 	\begin{itemize}
-		\item I metodi di pagamento definiti da W3C sono identificati da stringhe corte come "basic-card". Ogni specifica del metodo di pagamento di W3C include la stringa breve per l'identificazione di quel metodo di pagamento.
-		\item I metodi di pagamento definiti da altre parti sono identificati dagli URL. Ciò consente a qualsiasi parte di pubblicare un metodo di pagamento a cui possono fare riferimento i commercianti.
+		\item I metodi di pagamento definiti da W3C sono identificati come "basic-card" e sono composti da stringhe corte;
+		\item I metodi di pagamento definiti da altre parti sono identificati dagli URL.
 	\end{itemize}
-	\begin{flushleft}
-	Per creare un metodo di pagamento che può essere utilizzato con questa API, sono richieste le seguenti informazioni:
-	\begin{itemize}
-	\item Un identificatore per il metodo di pagamento; vedere la specifica dell'identificatore del metodo di pagamento .
-	\item Una descrizione dei dati forniti dal commerciante all'app di pagamento ("dati di richiesta") e i dati restituiti dall'app di pagamento al commerciante tramite l'agente utente ("dati di risposta").
-	\end{itemize}
-	\end{flushleft}
 	
 	\subsubsection{App di pagamento}
 	In base alla progettazione,le app di pagamento sono app native per dispositivi mobili e app Web. Il gruppo di lavoro Web Payments sta lavorando su una specifica per come le applicazioni Web si registrano per gestire le richieste di pagamento. Il gruppo di lavoro Web Payments non discute l'integrazione di app di pagamento native su piattaforme proprietarie; che viene gestito dai proprietari di quelle piattaforme.
