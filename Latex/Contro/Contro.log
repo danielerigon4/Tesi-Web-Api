@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.6.25)  26 JUL 2018 11:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.6.25)  26 JUL 2018 14:15
 entering extended mode
 **./Contro.tex
 (Contro.tex
@@ -808,15 +808,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 122--126
  []
 
 [2]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 168.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 169.
  [3]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 168.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 169.
  (Contro.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 168.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 168.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 169.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 169.
 Package rerunfilecheck Info: File `Contro.out' has not changed.
 (rerunfilecheck)             Checksum: 3539AA89AF98E7A50DF4E22231471CA6;232.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 168.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 169.
  ) 
 Here is how much of TeX's memory you used:
  8390 strings out of 493305
@@ -836,7 +836,7 @@ fonts/type1/public/lm/lmr12.pfb><C:/Users/Daniele/AppData/Local/Programs/MiKTeX
  2.9/fonts/type1/public/lm/lmr17.pfb><C:/Users/Daniele/AppData/Local/Programs/M
 iKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Daniele/AppData/Local/Prog
 rams/MiKTeX 2.9/fonts/type1/public/lm/lmtt10.pfb>
-Output written on Contro.pdf (3 pages, 176721 bytes).
+Output written on Contro.pdf (3 pages, 176755 bytes).
 PDF statistics:
  80 PDF objects out of 1000 (max. 8388607)
  10 named destinations out of 1000 (max. 500000)

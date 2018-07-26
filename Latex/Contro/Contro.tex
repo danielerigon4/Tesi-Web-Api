@@ -125,11 +125,11 @@ vedere se si puo caricare una pagina finta sopra per far si che siamo convinti d
 \\
 \item ServiceWorker: /*ServiceWorker usato non per caching ma per intercettare un messaggio, cambiandolo in negativo (simile a man-in-the-middle).*/
 \\
-Attaccante carica su una pagina fb (o un altro sito) uno script js: vedere se può prendere le password e portarle fuori.
+- Attaccante carica su una pagina fb (o un altro sito) uno script js: vedere se può prendere le password e portarle fuori.
 \\
-Pro: vedere se i SW possono migliorare la sicurezza di una pagina, senza essere usati solo per fare caching.
+- Pro: vedere se i SW possono migliorare la sicurezza di una pagina, senza essere usati solo per fare caching.
 \\
-Spiegare bene il discorso degli scope.
+- Spiegare bene il discorso degli scope.
 Vedere se si possono caricare SW solo dalla stessa origine, in quel caso non possiamo caricare SW su fb da un'altra pagina, ma possiamo caricarli solo da fb.
 \\
 %https://chromium.googlesource.com/chromium/src/+/lkcr/docs/security/service-worker-security-faq.md
@@ -144,6 +144,7 @@ Solo i contesti protetti possono registrarsi o utilizzare i Service Worker.
 
 Poiché i SW possono chiamare importScripts per importare script (da qualsiasi altra origine), è una buona idea per gli operatori del sito impostare un'intestazione di risposta Content-Security-Policy sulla risposta JavaScript di ServiceWorker, istruendo il browser su quali fonti di script l'origine considera attendibili. Ciò ridurrebbe la capacità di un attaccante XSS di inserire il proprio codice.
 \\
+-
 \textbf{Se un sito ha una vulnerabilità XSS, l'autore dell'attacco può compromettere definitivamente tale origine per me?}
 \\
 Un attaccante XSS può effettivamente registrare un SW malvagio. Come prima dei SW, XSS è una modalità di attacco molto potente su un'origine web. Per mitigare il rischio che un attacco XSS registri un SW malevolo, il browser richiede che l'URL di registrazione SW provenga dall'origine stessa. Pertanto, per utilizzare un attacco XSS per registrare un SW malevolo, l'utente malintenzionato ha bisogno della capacità aggiuntiva di ospitare i propri script sul server.
@@ -155,7 +156,7 @@ Ecco un altro scenario di exploit: se la pagina con una vulnerabilità XSS ha an
 \end{itemize}
 In una situazione XSS, il limite della direttiva cache di 24 ore garantisce che un SW malevolo o compromesso sopravviverà a una correzione della vulnerabilità XSS di un massimo di 24 ore (presupponendo che il client sia online). Gli operatori del sito possono ridurre la finestra di vulnerabilità impostando TTL più bassi sugli script SW.
 \\
-Vedere se ci sono metodi che limitano alcune funzionalita per mitigare questi problemi.
+- Vedere se ci sono metodi che limitano alcune funzionalita per mitigare questi problemi.
 \end{itemize}
 
 \section{Crawler}
