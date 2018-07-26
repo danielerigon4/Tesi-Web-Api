@@ -90,7 +90,7 @@ var onShippingOptionChange = function(pr, details, subtotal, tax) {
 
   details.displayItems = [{
     label: 'Sub-total',
-    /* aggiungere una tassa di elaborazione per l'utilizzo di una carta di credito. Si noti che richiede il ricalcolo del totale. */
+    /*aggiungere una tassa di elaborazione per l'utilizzo di una carta di credito. Si noti che richiede il ricalcolo del totale. */
     amount: { currency: 'USD', value: subtotal.toFixed(2) }
   }, {
     label: 'Shipping',
