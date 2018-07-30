@@ -1,0 +1,1 @@
+http://www.xss-payloads.com/papers/HTML5AttackVectors.pdf
