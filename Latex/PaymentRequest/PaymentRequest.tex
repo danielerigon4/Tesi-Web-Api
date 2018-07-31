@@ -93,30 +93,25 @@
 	\pagebreak
 	
 	\section{Overview Payment Request}
-	Fare acquisti sul web, in particolare sui dispositivi mobili, può essere un'esperienza frustrante, in quanto ogni sito Web ha il proprio sistema e la maggior parte dei siti richiede agli utenti di digitare manualmente le stesse informazioni (di contatto, credenziali di pagamento, indirizzi) più e più volte, e questa ridondanza può portare alla perdita di clienti.
-	Allo stesso modo creare e gestire pagine che supportano diversi meotodi di pagamanto puo risultare difficile, e puo richiedere molto tempo agli sviluppatori.
-	La PaymentRequest API consente ai commercianti di creare esperienze di pagamento semplificate. Piuttosto che ridigitare le stesse informazioni più volte nel Web, gli utenti possono memorizzare e riutilizzare le informazioni e completare più rapidamente e accuratamente le transazioni online.
+	La PaymenteRequest API nasce con l'intento di creare esperienze di pagamento semplificate, in quanto ogni sito web ha il proprio sistema di pagamento e molti siti richiedono la ridigitazione manuale delle stesse informazioni più volte, le quali possono essere invece memorizzate e riutilizzate dall'API per completare più rapidamente le transazioni online.
 	
-	\subsection{Concetti e utilizzo della richiesta di pagamento}
-	
-	Molti problemi legati all'abbandono degli acquisti online possono essere ricondotti ai moduli di checkout, difficili da usare, lenti da caricare e aggiornare e richiedono più passaggi da completare. La PaymentRequest API è un sistema che ha lo scopo di eliminare i moduli di checkout, migliorando il flusso di lavoro degli utenti durante il processo di acquisto, offrendo un'esperienza utente più coerente e consentendo ai commercianti di sfruttare facilmente diversi metodi di pagamento. 
-	
-	\subsection{Vantaggi nell'utilizzo di questa API}
+	\subsection{Vantaggi}
 	\begin{itemize}
-	\item Esperienza di acquisto rapida: gli utenti immettono i propri dati una volta nel browser e sono pronti a pagare beni e servizi sul Web; una volta inseriti i dati non è più necessario compilare ripetutamente gli stessi dettagli su siti diversi;
-	\item Esperienza coerente su ogni sito (che supporta l'API):  poiché la pagina di pagamento è controllata dal browser si può personalizzare l'esperienza utente, ad esempio includendo la localizzazione per impostare automaticamente la lingua preferita dell'utente, ecc;
-	\item Gestione delle credenziali: gli utenti possono gestire le loro carte di credito e gli indirizzi di spedizione direttamente nel browser. Un browser può anche sincronizzare queste "credenziali" tra dispositivi, rendendo più semplice per gli utenti passare dal desktop al cellulare e viceversa quando si acquistano oggetti;
-	\item Gestione coerente degli errori: il browser può controllare la validità dei numeri delle carte e può comunicare all'utente se una carta è scaduta o sta per scadere, può suggerire automaticamente quale carta utilizzare in base ai modelli di utilizzo passati o alle restrizioni del commerciante, o consentire all'utente di dire quale sia la carta predefinita/preferita.
-	\item Esperienza utente migliorata: meno tipizzazione, coerenza tra i siti Web, coerenza tra browser e sistemi operativi e nuove funzionalità del browser per semplificare il checkout, ecc;
-	\item Miglioramento della sicurezza: la PaymentRequest API ha il potenziale per ridurre le opportunità di frode e può facilitare l'adozione di metodi di pagamento più sicuri;
-	\item Responsabilità inferiore: in passato, per creare un'esperienza utente semplificata, i commercianti dovevano memorizzare le credenziali di pagamento degli utenti. Questo non è più necessario, il che può aiutare a ridurre la responsabilità del commerciante nei confronti del cliente;
+	\item \textbf{Esperienza di acquisto rapida:} gli utenti immettono i propri dati una sola volta nel browser, e dopo averli inseriti non è più necessario reinserirli su siti diversi;
+	\item \textbf{Esperienza coerente su ogni sito che supporta l'API:} poiché la pagina di pagamento è controllata dal browser si può personalizzare l'esperienza utente, ad esempio includendo la localizzazione per impostare automaticamente la lingua preferita dell'utente o altre features;
+	\item \textbf{Gestione delle credenziali:} gli utenti possono gestire le loro carte di credito e gli indirizzi di spedizione direttamente nel browser. Un browser può anche sincronizzare queste "credenziali" tra dispositivi, rendendo più semplice per gli utenti passare dal desktop al cellulare e viceversa quando si acquistano oggetti;
+	\item \textbf{Gestione coerente degli errori:} il browser può controllare la validità dei numeri delle carte e può comunicare all'utente se una carta è scaduta o sta per scadere, può suggerire automaticamente quale carta utilizzare in base ai modelli di utilizzo passati o alle restrizioni del commerciante, o consentire all'utente di dire quale sia la carta predefinita/preferita;
+	\item \textbf{Esperienza utente migliorata:} meno tipizzazione, coerenza tra i siti Web, tra browser e sistemi operativi e nuove funzionalità del browser per semplificare il checkout, ecc;
+	\item \textbf{Miglioramento della sicurezza:} la PaymentRequest API ha il potenziale per ridurre le opportunità di frode e può facilitare l'adozione di metodi di pagamento più sicuri. Purtroppo ci sono dei problemi di sicurezza analizzati al capitolo 4; 
+	\item \textbf{Responsabilità inferiore:} in passato, per creare un'esperienza utente semplificata, i commercianti dovevano memorizzare le credenziali di pagamento degli utenti. Questo non è più necessario, il che può aiutare a ridurre la responsabilità del commerciante nei confronti del cliente.
 	\end{itemize}
 	
 	\subsection{Come funziona}	
-	L'API di richiesta di pagamento consente a un utente di completare una transazione più facilmente riutilizzando le informazioni memorizzate nel browser o in app di pagamento di terze parti.
-	Quando l'utente preme un pulsante in una pagina di checkout collegata all'API il commerciante utilizza l'API per richiedere il pagamento. Il commerciante fornisce informazioni su prezzo, valuta e un elenco di metodi di pagamento accettati, e può inoltre richiedere al browser di creare un'interfaccia utente semplificata per raccogliere l'indirizzo di spedizione, le informazioni di contatto e un numero limitato di elementi aggiuntivi dall'utente.
+	La PaymentRequest API consente a un utente di completare una transazione più facilmente riutilizzando le informazioni memorizzate nel browser o in app di pagamento di terze parti.
+	Quando l'utente preme un pulsante in una pagina di checkout collegata all'API il commerciante utilizza l'API per richiedere il pagamento. Il commerciante fornisce informazioni su prezzo, valuta e un elenco di metodi di pagamento accettati, e può inoltre richiedere al browser di creare un'interfaccia utente semplificata per raccogliere l'indirizzo di spedizione, le informazioni di contatto e altri elementi all'utente.
 	Il browser determina quali metodi di pagamento sono supportati dal commerciante tra le varie "app di pagamento" mostrandole all'utente. 
-	L'utente seleziona un'app di pagamento con la quale pagare, la quale può comportare ulteriori interazioni con l'utente (ad esempio per l'autenticazione); al completamento l'app di pagamento restituisce i dati tramite l'API al commerciante.
+	L'utente seleziona un'app di pagamento con la quale pagare, la quale può comportare ulteriori interazioni con l'utente (ad esempio per l'autenticazione). 
+	Al completamento l'app di pagamento restituisce i dati tramite l'API al commerciante.
 
 	\begin{figure}[h]
 		\centering
@@ -124,34 +119,14 @@
 		\caption{Schema Payment Request API}
 		\label{fig:Schema Payment}
 	\end{figure}
-	
-	\subsection{Rischi}
-	La PaymentRequest API consente ai commercianti di "consegnare" la raccolta di credenziali di pagamento alle app di pagamento, riducendo cosi l'onere di creare un'esperienza di pagamento adeguata per l'utente. 
-	
-	\subsection{Sicurezza API}
-	La PaymentRequest API aumenta la sicurezza poichè:
-	\begin{itemize}
-	\item I commercianti possono ottenere un checkout semplificato senza memorizzare le credenziali dell'utente, in quanto lo fa l'API, rendendo i commercianti meno vulnerabili agli attacchi;
-	\item La PaymentRequest API dovrebbe facilitare l'introduzione di metodi di pagamento più sicuri sul Web, come i pagamenti con carta tokenizzata;
-	\item I proprietari dei metodi di pagamento disporranno di meccanismi standard per autorizzare software specifici a implementare il loro metodo di pagamento, che il browser può verificare attraverso una firma digitale.
-	\end{itemize}
-	I browser utilizzano una varietà di meccanismi per archiviare informazioni sensibili dell'utente, e attualmente W3C sta sviluppando nuove tecnologie per aumentarne la sicurezza.
-	Per quanto riguarda la memorizzazione delle informazioni delle app di pagamento in modo sicuro, questo è un dettaglio di implementazione che è diverso per ogni app di pagamento, e tale sicurezza è a carico del provider dell'app di pagamento.
+	\pagebreak
 	
 	\subsection{Uso API}
 	\subsubsection{Ruolo dell'utente}
 	Gli utenti beneficiano del riutilizzo delle credenziali inserite nel browser o nelle app di pagamento. Quindi, quando si visita un sito Web che sfrutta la PaymentRequest API gli utenti avranno l'opportunità di sfruttare il riutilizzo semplificato delle credenziali archiviate.
 
 	\subsubsection{Ruolo del commerciante}
-	L'API influisce sul front end e non sul back-end, ovvero solamente sull'intrfaccia dell'esperienza utente; pertanto il commerciante non dovrebbe dover apportare modifiche all'elaborazione back-end di vari metodi di pagamento, questo sarà compito del fornitore della pagina di pagamento, il quale sostituirà i moduli Web con le chiamate alla PaymentRequest API.
-	
-	È richiesto il gesto dell'utente per attivare l'API di richiesta di pagamento attraverso PaymentRequest.show().
-	
-	L'API non include l'autenticazione dell'utente, ma esistono due tipi di autenticazione utente che esulano dall'ambito delle specifiche della PaymentRequest API:
-	\begin{itemize}
-	\item Autenticazione del commerciante dell'utente: l'utente accede al proprio account con il commerciante;
-	\item Autenticazione delle app di pagamento dell'utente: fornendo un codice CVV, tramite nome/password o tramite autenticazione a più fattori.
-	\end{itemize}
+	L'API influisce sul front end (l'interfaccia dell'esperienza utente) e non sul back-end, pertanto il commerciante non dovrebbe dover apportare modifiche all'elaborazione back-end dei vari metodi di pagamento; questo sarà compito del fornitore della pagina di pagamento il quale sostituirà i moduli Web con le chiamate alla PaymentRequest API.
 	
 	\subsubsection{Ruolo del browser}
 	Il browser svolge diversi ruoli:
@@ -169,7 +144,7 @@
 	\end{itemize}
 	
 	\subsubsection{App di pagamento}
-	La PaymentRequest API, ovvero il browser, determina se un'app di pagamento "corrisponde" a una determinata transazione definendo un algoritmo che considera i metodi di pagamento accettati dal commerciante, dichiarati attraverso un elenco di identificativi del metodo di pagamento passati attraverso l'API.
+	La PaymentRequest API, ovvero il browser, determina se un'app di pagamento "corrisponde" a una determinata transazione definendo un algoritmo che considera i metodi di pagamento accettati dal commerciante, dichiarati attraverso un elenco di identificativi del metodo di pagamento, passati attraverso l'API.
 	Al fine di proteggere la privacy degli utenti i commercianti hanno accesso a informazioni molto limitate dell'utente. 
 	
 	Vediamo in che modo la PaymentRequest API influisce sul flusso dei metodi di pagamento che già supporta. Il normale flusso per gli utenti di solito implica qualcosa del genere:
@@ -189,22 +164,20 @@
 	
 	
 	\subsubsection{Differenze tra metodo di pagamento e app di pagamento}
-	Un'app di pagamento è il software che l'utente utilizza per pagare, la quale può supportare uno o più metodi di pagamento, e può essere implementa utilizzando diverse tecnologie. I browser possono anche fungere da app di pagamento, memorizzando le credenziali dell'utente. 
-	In generale più app di pagamento possono implementare lo stesso metodo di pagamento. 
-	Vi sono casi importanti in cui è disponibile una sola app di pagamento autorizzata a supportare un metodo di pagamento, mentre ci sono casi in cui più app di pagamento possono servire diversi metodi di pagamento. In questo caso non è il commerciante che deve preoccuparsi dell'integrazione software, egli deve solamente richiedere le informazioni attraverso la PaymentRequest API.
+	Un'app di pagamento è il software che l'utente utilizza per pagare, la quale può supportare uno o più metodi di pagamento e può essere implementata utilizzando diverse tecnologie. I browser possono anche fungere da app di pagamento, memorizzando le credenziali dell'utente. In generale più app di pagamento possono implementare lo stesso metodo di pagamento. 
+	Vi sono casi importanti in cui è disponibile una sola app di pagamento autorizzata a supportare un metodo di pagamento, mentre ci sono casi in cui più app di pagamento possono servire diversi metodi di pagamento. In questo caso non è il commerciante che deve preoccuparsi dell'integrazione software, ma deve solamente richiedere le informazioni attraverso la PaymentRequest API.
+	\pagebreak
 	
 	\section{Specifiche}
 	\subsection{Metodi}
-	Per utilizzare l'API lo sviluppatore deve fornire e tenere traccia di una serie di informazioni chiave. Questi bit di informazioni vengono passati al costruttore PaymentRequest come argomenti e successivamente utilizzati per aggiornare la richiesta di pagamento visualizzata all'utente. Questi bit di informazione sono:
+	Per utilizzare l'API lo sviluppatore deve fornire e tenere traccia di una serie di informazioni chiave, le quali vengono passate al costruttore PaymentRequest come argomenti e successivamente utilizzate per aggiornare la richiesta di pagamento visualizzata all'utente. Queste informazioni sono:
 	\begin{itemize}
-	\item Il PaymentMethodData: Una sequenza di PaymentMethodData che rappresenta i metodi di pagamento che il sito supporta;
-	\item I PaymentDetails: i dettagli della transazione, come un PaymentDetailsInit. Ciò include il costo totale e facoltativamente un elenco di beni o servizi acquistati, beni materiali e opzioni di spedizione. Inoltre, può facoltativamente includere "modificatori" su come vengono effettuati i pagamenti. Ad esempio, "se paghi con una carta di credito di tipo X, incorre in una tassa di elaborazione di tot";
-	\item Le PaymentOptions: un elenco di PaymentOptions, in quanto il sito ha bisogno di consegnare il bene o il servizio (ad esempio, per i beni fisici, il commerciante di solito avrà bisogno di un indirizzo fisico dove spedire, mentre per i beni digitalie sufficeinte un'e-mail). Una volta che il PaymentRequest è stato costruito, viene presentato all'utente finale tramite il metodo show(), il quale ritorna una promise che, una volta che l'utente conferma la richiesta di pagamento, si traduce in una PaymentResponse;
-	\item PaymentRequest: uno sviluppatore crea una PaymentRequest per effettuare una richiesta di pagamento. Questo è in genere associato all'utente che avvia un processo di pagamento. La PaymentRequest consente agli sviluppatori di scambiare informazioni con l'user agent mentre l'utente sta fornendo dati in input. Poiché la visualizzazione simultanea di più interfacce PaymentRequest potrebbe confondere l'utente, questa specifica limita lo user agent a visualizzarne uno alla volta tramite il metodo show();
-	\item PaymentMethodData: un PaymentMethodData viene utilizzato per indicare un insieme di metodi di pagamento supportati e qualsiasi dato specifico del metodo di pagamento associato per tali metodi;
-	\item PaymentDetailsInit: Il PaymentDetailsInit viene utilizzato nella costruzione della richiesta di pagamento;
-	\item PaymentOptions: Il PaymentOptions viene passato al costruttore PaymentRequest e fornisce informazioni sulle opzioni desiderate per la richiesta di pagamento;
-	\item PaymentResponse: un PaymentResponse viene restituito quando un utente ha selezionato un metodo di pagamento e approvato una richiesta di pagamento.
+	\item \textbf{PaymentMethodData:} rappresenta i metodi di pagamento che il sito supporta;
+	\item \textbf{PaymentDetails:} rappresenta i dettagli della transazione. Ciò include il costo totale e facoltativamente un elenco di beni o servizi acquistati, beni materiali, opzioni di spedizione o "modificatori" su come vengono effettuati i pagamenti: ad esempio "se paghi con una carta di credito di tipo X incorre in una tassa di elaborazione di tot";
+	\item \textbf{PaymentOptions:} il PaymentOptions viene passato al costruttore PaymentRequest e fornisce informazioni sulla consegna del prodotto: ad esempio per i beni fisici il commerciante avrà bisogno di un indirizzo fisico dove spedire, mentre per i beni digitali e sufficeinte un'e-mail. Una volta che il PaymentRequest è stato costruito viene presentato all'utente finale tramite il metodo show(), il quale ritorna una promise che, una volta che l'utente conferma la richiesta di pagamento, si traduce in una PaymentResponse;
+	\item \textbf{PaymentRequest:} la PaymentRequest serve a effettuare una richiesta di pagamento, in genere associata all'avvio di un processo di pagamento da parte dell'utente. La PaymentRequest consente agli sviluppatori di scambiare informazioni con l'user agent mentre l'utente sta fornendo dati in input. Poiché la visualizzazione simultanea di più interfacce PaymentRequest potrebbe confondere l'utente, questa specifica limita lo user agent a visualizzarne uno alla volta tramite il metodo show();
+	\item \textbf{PaymentDetailsInit:} Il PaymentDetailsInit viene utilizzato nella costruzione della richiesta di pagamento;
+	\item \textbf{PaymentResponse:} un PaymentResponse viene restituito quando un utente ha selezionato un metodo di pagamento e approvato una richiesta di pagamento.
 	\end{itemize}
 
 	\subsubsection{PaymentMethodData}
@@ -355,17 +328,41 @@
 		doPaymentRequest();
 	\end{lstlisting}
 	
-	\section{Codice d'esempio per pagina demo}
-	Implementazione PaymentRequest API su una pagina d'esempio.
-	\subsubsection{Costruttore}
-	L'oggetto PaymentRequest è costruito passando i seguenti parametri:
+	\section{Rischi e sicurezza}
+	La PaymentRequest API aumenta la sicurezza poichè:
 	\begin{itemize}
-	\item methodData: una serie di dizionari che contiene gli identificativi del metodo di pagamento e tutti i dati pertinenti; un identificativo del metodo di pagamento è una stringa che identifica un metodo di pagamento supportato;
-	\item details: informazioni sulla transazione, come gli elementi pubblicitari in un ordine;
-	\item options: informazioni aggiuntive che il Wallet potrebbe dover raccogliere.
+		\item I commercianti possono ottenere un checkout semplificato senza memorizzare le credenziali dell'utente, in quanto lo fa l'API, rendendo i commercianti meno vulnerabili agli attacchi;
+		\item La PaymentRequest API dovrebbe facilitare l'introduzione di metodi di pagamento più sicuri sul Web, come i pagamenti con carta tokenizzata;
+		\item I proprietari dei metodi di pagamento disporranno di meccanismi standard per autorizzare software specifici a implementare il loro metodo di pagamento, che il browser può verificare attraverso una firma digitale.
+	\end{itemize}
+	I browser utilizzano una varietà di meccanismi per archiviare informazioni sensibili dell'utente, e attualmente W3C sta sviluppando nuove tecnologie per aumentarne la sicurezza.
+	Per quanto riguarda la memorizzazione delle informazioni delle app di pagamento in modo sicuro, questo è un dettaglio di implementazione che è diverso per ogni app di pagamento, e tale sicurezza è a carico del provider dell'app di pagamento.
+	
+	\subsection{Esempio di un possibile attacco}
+	\subsubsection{Descrizione dell'attacco}
+	La sicurezza di usare la PaymentRequest API è che utilizza la gestione delle credenziali del browser che stiamo usando: se stiamo usando Chrome userà la gestione delle credenziali di Google, mentre se stiamo usando Edge userà Microsoft Pay (Nota: in questo caso è necessario anche autenticarsi con l'account Microsoft).
+	Sicuramente il livello di sicurezza è elevato ma non è immune ad un attacco XSS, che potrebbe attaccare similmente al Phishing. 
+	L'API apre una finestra dove inserire le credenziali, sicura perchè non vengono scritte nel DOM. Con un attacco XSS, alla chiamata dell'API, invece di questa finestra potrebbe venirne aperta un'altra uguale a quella originale, gestita però dall'attaccante. Essendo identica la vittima sarà convinta di inserire le credenziali in un posto sicuro, mentre invece saranno inviate all'attaccante invece di essere salvate nel browser tramite l'API.
+	Sara possibile essere vittima di questo attacco solamente la prima volta che saranno inserite le credenziali in quanto l'API chiede l'inserimento delle credenziali solamente la prima volta, dopo saranno salvate e non verra piu chiesto l'inserimento da parte dell'utente.
+	Sia su Chrome che su Microsoft l'inserimento del codice CVV viene chiesto in una pagina successiva, dopo aver inserito tutte le credenziali e averle salvate nella pagina corrente. Un attaccante, per essere sicuro di ottenere anche quel codice potrebbe inserire il form nella prima pagina cosicchè l'utente ignaro, inviando le informazioni, manda tutte quelle utili all'attaccante.
+	\subsubsection{Come difendersi}
+	Vi sono diverse metodologie per difendersi da questi tipi di attacchi:
+	\begin{itemize}
+	\item Una strategia per combattere il phishing è sicuramente quella di istruire le persone a riconoscere gli attacchi e ad affrontarli;
+	\item Dato che il piu delle volte non e facile riconoscere questi attacchi, ci sono anche delle misure anti-phishing implementate nei browsers, come estensioni o toolbar, oltre a diversi software contro il phishing;
+	\item Inoltre, la maggior parte dei siti bersaglio del phishing sono protetti da SSL con una forte crittografia, dove l'URL del sito web è usata come identificativo. Questo dovrebbe in teoria confermare l'autenticità del sito, ma nella pratica è facile da aggirare, sfruttando la vurnerabilita che sta nella user interface (UI) del browser. Nell'url del browser viene poi indicata la connessione utilizzara con diversi colori (blocco verde per certificato EV, scritta https in verde, ecc.).
 	\end{itemize}
 
-	Nel seguente snippet stiamo consentendo agli utenti di pagare con qualsiasi carta di debito o di credito appartenente alle reti Visa, MasterCard o Amex. L'oggetto details contiene l'importo totale parziale, l'imposta sulle vendite e il totale dovuto; questi dettagli verranno mostrati all'utente nel portafoglio. Bisogna tenere presente che l'API non aggiunge elementi o calcola l'imposta sulle vendite, spetta al commerciante fornire le informazioni corrette. In questo esempio, stiamo vendendo un bene fisico, quindi chiediamo l'indirizzo di spedizione del cliente.
+	\section{Implementazione PaymentRequest API su una pagina d'esempio}
+	\subsection{Costruttore}
+	L'oggetto PaymentRequest è costruito passando i seguenti parametri:
+	\begin{itemize}
+	\item \textbf{methodData:} una serie di identificativi del metodo di pagamento e tutti i dati pertinenti. Un identificativo del metodo di pagamento è una stringa che identifica un metodo di pagamento supportato;
+	\item \textbf{details:} contiene le informazioni sulla transazione, come gli elementi pubblicitari in un ordine;
+	\item \textbf{options:} contiene informazioni aggiuntive che il Wallet potrebbe dover raccogliere.
+	\end{itemize}
+
+	Nel seguente esempio stiamo consentendo agli utenti di pagare con qualsiasi carta di debito o di credito appartenente alle reti Visa, MasterCard o Amex. L'oggetto details contiene l'importo totale parziale, l'imposta sulle vendite e il totale dovuto; questi dettagli verranno mostrati all'utente nel portafoglio. Bisogna tenere presente che l'API non aggiunge elementi o calcola l'imposta sulle vendite, spetta al commerciante fornire le informazioni corrette. In questo esempio, stiamo vendendo un bene fisico, quindi chiediamo l'indirizzo di spedizione del cliente.
 
 	\begin{lstlisting}
 		var methodData = [
@@ -399,18 +396,19 @@
 		var payment = new PaymentRequest(methodData, details, options);
 	\end{lstlisting}
 	
-	\subsubsection{Visualizzazione dell'interfaccia utente, elaborazione del pagamento e visualizzazione dei risultati}
-	Una volta creato l'oggetto PaymentRequest è possibile attivare il browser per visualizzare il wallet con request.show (). 
+	\subsection{Visualizzazione dell'interfaccia utente, elaborazione del pagamento e visualizzazione dei risultati}
+	Una volta creato l'oggetto PaymentRequest è possibile attivare il browser per visualizzare il wallet con request.show(). 
 	\begin{figure}[h]
 		\centering
 		\includegraphics[width=1\linewidth]{wallet1}
 		\caption{Wallet dopo la chiamata request.show()}
 		\label{fig: Wallet dopo la chiamata request.show()}
 	\end{figure}
-
-	I clienti possono  selezionare le informazioni di pagamento, l'indirizzo di spedizione e altri campi appropriati e cliccare su Paga quando è pronto. A questo punto, gli utenti dovranno verificare la loro identità: in caso di esito positivo verrà soddisfatta la promise request.show () e verranno restituite al sito Web tutte le informazioni che il cliente ha fornito. Per il metodo di pagamento con carta di base l'oggetto risultante conterrà il nome del titolare della carta, il numero della carta, il mese di scadenza e altri campi pertinenti. Il commerciante può quindi utilizzare queste informazioni per elaborare la transazione sul back-end.
-	Dopo che la risposta è tornata dal server, è possibile utilizzare result.complete ('successo') per visualizzare la schermata di successo o result.complete ('fail') per indicare una transazione fallita.
-
+	\pagebreak
+	\\
+	I clienti possono  selezionare le informazioni di pagamento, l'indirizzo di spedizione e altri campi appropriati e cliccare su Paga quando è pronto. A questo punto, gli utenti dovranno verificare la loro identità: in caso di esito positivo verrà soddisfatta la promise request.show() e verranno restituite al sito Web tutte le informazioni che il cliente ha fornito. Per il metodo di pagamento con carta di base l'oggetto risultante conterrà il nome del titolare della carta, il numero della carta, il mese di scadenza e altri campi pertinenti. Il commerciante può quindi utilizzare queste informazioni per elaborare la transazione sul back-end.
+	Dopo che la risposta è tornata dal server, è possibile utilizzare result.complete('success') per visualizzare la schermata di successo o result.complete('fail') per indicare una transazione fallita.
+	\pagebreak
 	\begin{lstlisting}
 	// Mostra l'interfaccia utente nativa
 	payment.show()
@@ -429,7 +427,7 @@
 		}); 
 	});
 	\end{lstlisting}
-	
+	\pagebreak
 	\begin{figure}[h]
 		\centering
 		\includegraphics[width=1\linewidth]{wallet2}
@@ -442,8 +440,9 @@
 		\caption{Wallet in caso di fail}
 		\label{fig: Wallet in caso di fail}
 	\end{figure}
-
-	\subsubsection{Ascoltare gli eventi}
+	\pagebreak
+	
+	\subsection{Ascoltare gli eventi}
 	Il prezzo potrebbe cambiare in base all'indirizzo di spedizione e alle opzioni di spedizione selezionate dal cliente. È possibile ascoltare tali modifiche con gli eventi shippingaddresschange e shippingoptionchange per ricalcolare di conseguenza i prezzi.
 	\begin{lstlisting}
 		payment.addEventListener("shippingaddresschange", function (changeEvent) {
@@ -454,6 +453,7 @@
 			// Modifica delle opzioni di spedizione del processo (ad esempio "spedizione in giornata")
 		});
 	\end{lstlisting}
+	\pagebreak
 	
 	\section{Compatibilità web}
 	\begin{figure}[h]
@@ -470,5 +470,5 @@
 	\end{figure}
 
 	\section{Conclusioni}
-	L'API di richiesta di pagamento fornisce un potente strumento per i commercianti per migliorare l'esperienza utente sul Web offrendo ai clienti un'esperienza di acquisto più piacevole e conveniente. Questa API è un ottimo esempio della potenza e della flessibilità della piattaforma web.
+	La PaymentRequest API è uno potente strumento per migliorare l'esperienza utente sul Web offrendo ai clienti un'esperienza di acquisto più piacevole, pur avendo delle vulnerabilità difficili da rompere ma dalle quali ci si puo difendere.
 \end{document}

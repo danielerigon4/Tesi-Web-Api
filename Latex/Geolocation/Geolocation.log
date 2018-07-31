@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.6.25)  24 JUL 2018 10:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.6.25)  30 JUL 2018 14:51
 entering extended mode
 **./Geolocation.tex
 (Geolocation.tex
@@ -800,34 +800,30 @@ File: ./images/img.png Graphic file (type png)
 <use ./images/img.png>
 Package pdftex.def Info: ./images/img.png  used on input line 148.
 (pdftex.def)             Requested size: 455.24411pt x 255.95268pt.
- [3 <./images/img.png>]
-<./images/web1.png, id=105, 1028.34187pt x 578.16pt>
+ [3 <./images/img.png>] [4]
+<./images/web1.png, id=125, 1028.34187pt x 578.16pt>
 File: ./images/web1.png Graphic file (type png)
 <use ./images/web1.png>
-Package pdftex.def Info: ./images/web1.png  used on input line 192.
+Package pdftex.def Info: ./images/web1.png  used on input line 213.
 (pdftex.def)             Requested size: 455.24411pt x 255.95268pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 225.
-[4] [5 <./images/web1.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 225.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 217.
+ [5 <./images/web1.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 217.
  (Geolocation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 225.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 225.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 217.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 217.
 Package rerunfilecheck Info: File `Geolocation.out' has not changed.
-(rerunfilecheck)             Checksum: BD198FCDB6B5F6E724071C46CA4762CA;618.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 225.
+(rerunfilecheck)             Checksum: 7086D2AC7616B040F09BDECBC6FC2602;578.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 217.
  ) 
 Here is how much of TeX's memory you used:
- 8791 strings out of 493305
- 126166 string characters out of 3128932
- 338587 words of memory out of 3000000
- 12148 multiletter control sequences out of 15000+200000
+ 8794 strings out of 493305
+ 126194 string characters out of 3128932
+ 339587 words of memory out of 3000000
+ 12149 multiletter control sequences out of 15000+200000
  51158 words of font info for 45 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 28i,6n,40p,936b,1207s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 28i,7n,40p,936b,1207s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Daniele/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.
 enc}<C:/Users/Daniele/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/l
 mbx10.pfb><C:/Users/Daniele/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
@@ -837,11 +833,10 @@ type1/public/lm/lmr12.pfb><C:/Users/Daniele/AppData/Local/Programs/MiKTeX 2.9/f
 onts/type1/public/lm/lmr17.pfb><C:/Users/Daniele/AppData/Local/Programs/MiKTeX 
 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Users/Daniele/AppData/Local/Programs/MiK
 TeX 2.9/fonts/type1/public/lm/lmtk10.pfb><C:/Users/Daniele/AppData/Local/Progra
-ms/MiKTeX 2.9/fonts/type1/public/lm/lmtt10.pfb><C:/Users/Daniele/AppData/Local/
-Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtt8.pfb>
-Output written on Geolocation.pdf (5 pages, 393930 bytes).
+ms/MiKTeX 2.9/fonts/type1/public/lm/lmtt8.pfb>
+Output written on Geolocation.pdf (5 pages, 371645 bytes).
 PDF statistics:
- 190 PDF objects out of 1000 (max. 8388607)
- 76 named destinations out of 1000 (max. 500000)
+ 187 PDF objects out of 1000 (max. 8388607)
+ 78 named destinations out of 1000 (max. 500000)
  83 words of extra memory for PDF output out of 10000 (max. 10000000)
 

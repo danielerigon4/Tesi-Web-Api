@@ -1,25 +1,26 @@
 \BOOKMARK [1][-]{section.1}{Overview Payment Request}{}% 1
-\BOOKMARK [2][-]{subsection.1.1}{Concetti e utilizzo della richiesta di pagamento}{section.1}% 2
-\BOOKMARK [2][-]{subsection.1.2}{Vantaggi nell'utilizzo di questa API}{section.1}% 3
-\BOOKMARK [2][-]{subsection.1.3}{Come funziona}{section.1}% 4
-\BOOKMARK [2][-]{subsection.1.4}{Rischi}{section.1}% 5
-\BOOKMARK [2][-]{subsection.1.5}{Sicurezza API}{section.1}% 6
-\BOOKMARK [2][-]{subsection.1.6}{Uso API}{section.1}% 7
-\BOOKMARK [3][-]{subsubsection.1.6.1}{Ruolo dell'utente}{subsection.1.6}% 8
-\BOOKMARK [3][-]{subsubsection.1.6.2}{Ruolo del commerciante}{subsection.1.6}% 9
-\BOOKMARK [3][-]{subsubsection.1.6.3}{Ruolo del browser}{subsection.1.6}% 10
-\BOOKMARK [3][-]{subsubsection.1.6.4}{Metodi di pagamento}{subsection.1.6}% 11
-\BOOKMARK [3][-]{subsubsection.1.6.5}{App di pagamento}{subsection.1.6}% 12
-\BOOKMARK [3][-]{subsubsection.1.6.6}{Differenze tra metodo di pagamento e app di pagamento}{subsection.1.6}% 13
-\BOOKMARK [1][-]{section.2}{Specifiche}{}% 14
-\BOOKMARK [2][-]{subsection.2.1}{Metodi}{section.2}% 15
-\BOOKMARK [3][-]{subsubsection.2.1.1}{PaymentMethodData}{subsection.2.1}% 16
-\BOOKMARK [3][-]{subsubsection.2.1.2}{PaymentDetails}{subsection.2.1}% 17
-\BOOKMARK [3][-]{subsubsection.2.1.3}{PaymentOptions}{subsection.2.1}% 18
-\BOOKMARK [3][-]{subsubsection.2.1.4}{PaymentRequest}{subsection.2.1}% 19
-\BOOKMARK [1][-]{section.3}{Codice d'esempio per pagina demo}{}% 20
-\BOOKMARK [2][-]{subsubsection.3.0.1}{Costruttore}{section.3}% 21
-\BOOKMARK [3][-]{subsubsection.3.0.2}{Visualizzazione dell'interfaccia utente, elaborazione del pagamento e visualizzazione dei risultati}{subsubsection.3.0.1}% 22
-\BOOKMARK [3][-]{subsubsection.3.0.3}{Ascoltare gli eventi}{subsubsection.3.0.1}% 23
-\BOOKMARK [1][-]{section.4}{Compatibilit\340 web}{}% 24
-\BOOKMARK [1][-]{section.5}{Conclusioni}{}% 25
+\BOOKMARK [2][-]{subsection.1.1}{Vantaggi}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.2}{Come funziona}{section.1}% 3
+\BOOKMARK [2][-]{subsection.1.3}{Uso API}{section.1}% 4
+\BOOKMARK [3][-]{subsubsection.1.3.1}{Ruolo dell'utente}{subsection.1.3}% 5
+\BOOKMARK [3][-]{subsubsection.1.3.2}{Ruolo del commerciante}{subsection.1.3}% 6
+\BOOKMARK [3][-]{subsubsection.1.3.3}{Ruolo del browser}{subsection.1.3}% 7
+\BOOKMARK [3][-]{subsubsection.1.3.4}{Metodi di pagamento}{subsection.1.3}% 8
+\BOOKMARK [3][-]{subsubsection.1.3.5}{App di pagamento}{subsection.1.3}% 9
+\BOOKMARK [3][-]{subsubsection.1.3.6}{Differenze tra metodo di pagamento e app di pagamento}{subsection.1.3}% 10
+\BOOKMARK [1][-]{section.2}{Specifiche}{}% 11
+\BOOKMARK [2][-]{subsection.2.1}{Metodi}{section.2}% 12
+\BOOKMARK [3][-]{subsubsection.2.1.1}{PaymentMethodData}{subsection.2.1}% 13
+\BOOKMARK [3][-]{subsubsection.2.1.2}{PaymentDetails}{subsection.2.1}% 14
+\BOOKMARK [3][-]{subsubsection.2.1.3}{PaymentOptions}{subsection.2.1}% 15
+\BOOKMARK [3][-]{subsubsection.2.1.4}{PaymentRequest}{subsection.2.1}% 16
+\BOOKMARK [1][-]{section.3}{Rischi e sicurezza}{}% 17
+\BOOKMARK [2][-]{subsection.3.1}{Esempio di un possibile attacco}{section.3}% 18
+\BOOKMARK [3][-]{subsubsection.3.1.1}{Descrizione dell'attacco}{subsection.3.1}% 19
+\BOOKMARK [3][-]{subsubsection.3.1.2}{Come difendersi}{subsection.3.1}% 20
+\BOOKMARK [1][-]{section.4}{Implementazione PaymentRequest API su una pagina d'esempio}{}% 21
+\BOOKMARK [2][-]{subsection.4.1}{Costruttore}{section.4}% 22
+\BOOKMARK [2][-]{subsection.4.2}{Visualizzazione dell'interfaccia utente, elaborazione del pagamento e visualizzazione dei risultati}{section.4}% 23
+\BOOKMARK [2][-]{subsection.4.3}{Ascoltare gli eventi}{section.4}% 24
+\BOOKMARK [1][-]{section.5}{Compatibilit\340 web}{}% 25
+\BOOKMARK [1][-]{section.6}{Conclusioni}{}% 26

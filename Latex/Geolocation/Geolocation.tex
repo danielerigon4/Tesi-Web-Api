@@ -93,7 +93,7 @@
 \pagebreak
 
 
-\section{Overview geolocation}
+\section{Overview}
 La Geolocation API viene utilizzata per ottenere la posizione geografica di un utente. 
 Poiché questo può compromettere la privacy la posizione non è disponibile a meno che l'utente non la approvi: su un dispositivo mobile avremo un set di coordinate provenienti dal sensore GPS mentre su un portatile potremo usare il posizionamento legato all’ip della connessione internet.
 
@@ -105,13 +105,13 @@ Le API di geolocalizzazione sono pubblicate tramite l'oggetto navigator.geolocat
 	if ("geolocation" in navigator) {
 	/* la geolocalizzazione e disponibile */
 	} else {
-	/* la geolocalizzazione NON e disponibile */
+	/* la geolocalizzazione non e disponibile */
 	}
 \end{lstlisting}
 
 \subsection{Metodi}
 Ci sono solamente tre metodi a disposizione: getCurrentPosition, watchPosition e clearWatch. I primi due sono utili a ottenere la posizione corrente mentre il terzo serve ad annullare la ricerca della posizione corrente. 
-La differenza tra i primi due va ricercata nella loro periodicità, mentre il primo metodo fornisce il dato una sola volta, il secondo si attiva automaticamente ogniqualvolta la posizione cambi, o ogni tot intervallo di tempo.
+La differenza tra i primi due va ricercata nella loro periodicità, mentre il primo metodo fornisce il dato una sola volta, il secondo si attiva automaticamente ogni qualvolta la posizione cambi, o ogni tot intervallo di tempo.
 La sintassi per invocare questi metodi è la seguente:
 \begin{lstlisting}[language=JavaScript]
 navigator.geolocation.getCurrentPosition(inCasoDiSuccesso, opzInCasoDiErrore, opzioni); 
@@ -152,7 +152,7 @@ function success(position) {
 In caso invece si verifichi un errore la funzione preposta deve accettare anch’essa un parametro, un oggetto di tipo PositionError  contenente un codice di errore ed un messaggio ad uso di debug, ad esempio:
 \begin{lstlisting}
 	message.opzInCasoDiErrore = function(error){ 
-	alert( "Errore " + error.code + ": " + error.message);
+		alert( "Errore " + error.code + ": " + error.message);
 	}
 \end{lstlisting}
 
@@ -186,40 +186,32 @@ Viene usato il metodo clearWatch() per annullare il monitoraggio della posizione
 navigator.geolocation.clearWatch(watchId);
 /*Il numero ID e quello restituito dal metodo watchPosition() descritto precedentemente*/
 \end{lstlisting}
-\subsection{Supporto compatibilità web}
+\section{Problemi sicurezza/privacy}
+Uno dei principali problemi con l'API di geolocalizzazione è rappresentato dagli attacchi di cross-site scripting (XSS) dovuti al fatto che gli oggetti per tracciare le coordinate (latitudine e longitudine) risiedono all'interno del DOM, il quale è accessibile con JavaScript. La vulnerabilità XSS potrebbe essere sfruttata per determinare la posizione della vittima e potrebbe verificarsi l'invasione della privacy.
+A causa del fatto che gli utenti si fidano del sito web, questi si fidano anche della richiesta e condividono 
+la loro posizione. 
+La cosa peggiore è che se l'utente non disabilita il tracciamento il browser continuerà a esporre la posizione della vittima all'attaccante.
+Supponiamo che un utente malintenzionato abbia rilevato una vulnerabilità XSS in un sito Web; tutto ciò che dovra fare è fare in modo che la vittima esegua il seguente codice JavaScript per rubare la posizione.
+Il codice utilizza le proprietà DOM cords.latitude e cords.langitude per determinare rispettivamente la latitudine / longitudine e le memorizza in una variabile. Successivamente il codice JavaScript invia i dati al dominio dell'attaccante, in modo diverso a seconda di come è stato configurata la richiesta.	
+\pagebreak
+\begin{lstlisting}
+<script>
+	function showPosition(position){
+		var pos="Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
+		document.getElementById("mydiv").innerHTML = pos;
+	}
+	function getLocation(){
+		navigator.geolocation.getCurrentPosition(showPosition);
+	}
+	getLocation();
+</script>
+\end{lstlisting}
+\section{Supporto compatibilità web}
+manca mobile, fare meglio desktop, vedi payment
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1\linewidth]{web1}
 	\caption{Browser compatibility}
 	\label{fig:Browser compatibility}
 \end{figure}
-	
-\subsection{Problemi sicurezza/privacy}
-\url{https://developers.google.com/web/updates/2016/04/geolocation-on-secure-contexts-only}
-
-Può essere eseguito solo in HTTPS o localhost. Se eseguito in HTTP, o si è in una pagina HTTPS ospitata da HTTP (vedi secure context), viene gestito l'errore.
-
-(vedere se levare questa parte)
-\begin{lstlisting}
-		navigator.geolocation.getCurrentPosition(function(success) { 
-			/* Do something */ },
-			function(failure) {
-				if(failure.message.indexOf("Only secure origins are allowed") == 0) {
-					// Secure Origin issue.
-				}
-			};
-		});
-\end{lstlisting}
-	
-%\subsection{Come la geolocation api trova la posizione esatta}
-%\url{https://stackoverflow.com/questions/4213410/how-does-html5-geolocation-work}
-%La maggiorparte dei browser si affida alla geolocalizzazione abilitata alla rete tramite il database del servizio di localizzazione di Google.
-
-
-%\subsection{Test Result}
-%\url{https://wpt.fyi/results/geolocation-API}
-
-%\subsection{Test Repository}
-%\url{https://github.com/web-platform-tests/wpt/tree/master/geolocation-API}
-	
 \end{document}
