@@ -1,55 +1,50 @@
-\documentclass[italian]{article}
+\documentclass[11pt ,a4paper , twoside , openright ]{article}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
 \usepackage{hyperref}
 \usepackage[a4paper,top=3cm,bottom=3cm,left=2.5cm,right=2.5cm]{geometry}
+\usepackage[square,numbers]{natbib}
+\bibliographystyle{abbrvnat}
 \usepackage[italian]{babel}
-\usepackage{listings} %Per inserire codice
-\usepackage[usenames]{color} %Per permettere la colorazione dei caratteri 
-%Define the listing package
-\usepackage{listings} %code highlighter
-\usepackage{color} %use color
+\usepackage[usenames]{color} 
+\usepackage{listings} 
+\usepackage{color}
 \usepackage{graphicx}
 \graphicspath{ {./images/} }
 \definecolor{mygreen}{rgb}{0,0.6,0}
 \definecolor{mygray}{rgb}{0.5,0.5,0.5}
 \definecolor{mymauve}{rgb}{0.58,0,0.82}
 
-%Customize a bit the look
-\lstset{ %
-	backgroundcolor=\color{white}, % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
-	basicstyle=\footnotesize, % the size of the fonts that are used for the code
-	breakatwhitespace=false, % sets if automatic breaks should only happen at whitespace
-	breaklines=true, % sets automatic line breaking
-	captionpos=b, % sets the caption-position to bottom
-	commentstyle=\color{mygreen}, % comment style
-	deletekeywords={...}, % if you want to delete keywords from the given language
-	escapeinside={\%*}{*)}, % if you want to add LaTeX within your code
-	extendedchars=true, % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
-	frame=single, % adds a frame around the code
-	keepspaces=true, % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
-	keywordstyle=\color{blue}, % keyword style
-	% language=Octave, % the language of the code
-	morekeywords={*,...}, % if you want to add more keywords to the set
-	numbers=left, % where to put the line-numbers; possible values are (none, left, right)
-	numbersep=5pt, % how far the line-numbers are from the code
-	numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
-	rulecolor=\color{black}, % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
-	showspaces=false, % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
-	showstringspaces=false, % underline spaces within strings only
-	showtabs=false, % show tabs within strings adding particular underscores
-	stepnumber=1, % the step between two line-numbers. If it's 1, each line will be numbered
-	stringstyle=\color{mymauve}, % string literal style
-	tabsize=2, % sets default tabsize to 2 spaces
-	title=\lstname % show the filename of files included with \lstinputlisting; also try caption instead of title
+\lstset{ 
+	backgroundcolor=\color{white}, 
+	basicstyle=\footnotesize,
+	breakatwhitespace=false, 
+	breaklines=true,
+	captionpos=b, 
+	commentstyle=\color{mygreen}, 
+	escapeinside={\%*}{*)}, 
+	extendedchars=true, 
+	frame=single,
+	keepspaces=true, 
+	keywordstyle=\color{blue},
+	morekeywords={*,...}, 
+	numbers=left, 
+	numbersep=5pt, 
+	numberstyle=\tiny\color{mygray}, 
+	rulecolor=\color{black}, 
+	showspaces=false, 
+	showstringspaces=false, 
+	showtabs=false, 
+	stepnumber=1, 
+	stringstyle=\color{mymauve}, 
+	tabsize=2, 
+	title=\lstname 
 }
-%END of listing package%
 
 \definecolor{darkgray}{rgb}{.4,.4,.4}
 \definecolor{purple}{rgb}{0.65, 0.12, 0.82}
 
-%define Javascript language
 \lstdefinelanguage{JavaScript}{
 	keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
 	keywordstyle=\color{blue}\bfseries,
@@ -68,17 +63,18 @@
 \lstset{
 	language=JavaScript,
 	extendedchars=true,
-	basicstyle=\footnotesize\ttfamily,
+	basicstyle=\small\ttfamily,
 	showstringspaces=false,
 	showspaces=false,
 	numbers=left,
-	numberstyle=\footnotesize,
+	numberstyle=\scriptsize,
 	numbersep=9pt,
 	tabsize=2,
 	breaklines=true,
 	showtabs=false,
 	captionpos=b
 }
+
 \author{
 	Daniele Rigon - 857319 \\
 }
@@ -90,6 +86,7 @@
 	\maketitle
 	
 	\tableofcontents
+	
 	\pagebreak
 	
 	\section{Overview Payment Request}
@@ -166,7 +163,7 @@
 	\subsubsection{Differenze tra metodo di pagamento e app di pagamento}
 	Un'app di pagamento è il software che l'utente utilizza per pagare, la quale può supportare uno o più metodi di pagamento e può essere implementata utilizzando diverse tecnologie. I browser possono anche fungere da app di pagamento, memorizzando le credenziali dell'utente. In generale più app di pagamento possono implementare lo stesso metodo di pagamento. 
 	Vi sono casi importanti in cui è disponibile una sola app di pagamento autorizzata a supportare un metodo di pagamento, mentre ci sono casi in cui più app di pagamento possono servire diversi metodi di pagamento. In questo caso non è il commerciante che deve preoccuparsi dell'integrazione software, ma deve solamente richiedere le informazioni attraverso la PaymentRequest API.
-	\pagebreak
+	\newpage
 	
 	\section{Specifiche}
 	\subsection{Metodi}
@@ -180,6 +177,7 @@
 	\item \textbf{PaymentResponse:} un PaymentResponse viene restituito quando un utente ha selezionato un metodo di pagamento e approvato una richiesta di pagamento.
 	\end{itemize}
 
+	\pagebreak
 	\subsubsection{PaymentMethodData}
 	PaymentMethodData contiene gli identificativi dei metodi di pagamento accettati dal sito Web e qualsiasi dato specifico del metodo di pagamento associato.
 	\begin{lstlisting}
@@ -200,7 +198,6 @@
 			},
 		];
 	\end{lstlisting}
-	
 	\subsubsection{PaymentDetails}
 	I details contengono informazioni sulla transazione che l'utente è invitato a completare.
 	\begin{lstlisting}
@@ -226,7 +223,7 @@
 			},
 		};
 	\end{lstlisting}
-	
+	\pagebreak
 	\textbf{Opzioni di spedizione}
 	\\
 	Qui vediamo un esempio di come aggiungere due opzioni di spedizione ai details.
@@ -247,7 +244,7 @@
 		Object.assign(details, { shippingOptions });
 	\end{lstlisting}
 	
-	\textbf{Modifiche condizionali alla richiesta di pagamento}
+	\flushleft\textbf{Modifiche condizionali alla richiesta di pagamento}
 	\\
 	Qui vediamo come aggiungere una tassa di elaborazione per l'utilizzo di una carta di credito. Si noti che richiede il ricalcolo del totale.
 	\begin{lstlisting}
@@ -276,8 +273,7 @@
 		];
 		Object.assign(details, { modifiers });
 	\end{lstlisting}
-	
-	
+	\pagebreak
 	\subsubsection{PaymentOptions}
 	Options contiene informazioni che lo sviluppatore ha bisogno dall'utente per eseguire il pagamento.
 	\begin{lstlisting}
@@ -327,7 +323,7 @@
 		}
 		doPaymentRequest();
 	\end{lstlisting}
-	
+	\newpage
 	\section{Rischi e sicurezza}
 	La PaymentRequest API aumenta la sicurezza poichè:
 	\begin{itemize}
@@ -340,11 +336,26 @@
 	
 	\subsection{Esempio di un possibile attacco}
 	\subsubsection{Descrizione dell'attacco}
-	La sicurezza di usare la PaymentRequest API è che utilizza la gestione delle credenziali del browser che stiamo usando: se stiamo usando Chrome userà la gestione delle credenziali di Google, mentre se stiamo usando Edge userà Microsoft Pay (Nota: in questo caso è necessario anche autenticarsi con l'account Microsoft).
+	La sicurezza di usare la PaymentRequest API è che utilizza la gestione delle credenziali del browser che stiamo usando: se stiamo usando Chrome userà la gestione delle credenziali di Google, mentre se stiamo usando Edge userà Microsoft Pay (Nota: in questo caso è necessario anche autenticarsi con l'account Microsoft). \\
 	Sicuramente il livello di sicurezza è elevato ma non è immune ad un attacco XSS, che potrebbe attaccare similmente al Phishing. 
 	L'API apre una finestra dove inserire le credenziali, sicura perchè non vengono scritte nel DOM. Con un attacco XSS, alla chiamata dell'API, invece di questa finestra potrebbe venirne aperta un'altra uguale a quella originale, gestita però dall'attaccante. Essendo identica la vittima sarà convinta di inserire le credenziali in un posto sicuro, mentre invece saranno inviate all'attaccante invece di essere salvate nel browser tramite l'API.
 	Sara possibile essere vittima di questo attacco solamente la prima volta che saranno inserite le credenziali in quanto l'API chiede l'inserimento delle credenziali solamente la prima volta, dopo saranno salvate e non verra piu chiesto l'inserimento da parte dell'utente.
-	Sia su Chrome che su Microsoft l'inserimento del codice CVV viene chiesto in una pagina successiva, dopo aver inserito tutte le credenziali e averle salvate nella pagina corrente. Un attaccante, per essere sicuro di ottenere anche quel codice potrebbe inserire il form nella prima pagina cosicchè l'utente ignaro, inviando le informazioni, manda tutte quelle utili all'attaccante.
+	Sia su Chrome che su Microsoft l'inserimento del codice CVV viene chiesto in una pagina successiva, dopo aver inserito tutte le credenziali e averle salvate nella pagina corrente. 
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.5\linewidth]{Chrome1}
+		\caption{Inserimento credenziali}
+		\label{fig: Inserimento credenziali}
+	\end{figure}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.5\linewidth]{Chrome2}
+		\caption{Inserimento CVV}
+		\label{fig: Inserimento CVV}
+	\end{figure}
+	\pagebreak
+	\\
+	Un attaccante, per essere sicuro di ottenere anche quel codice potrebbe inserire il form nella prima pagina cosicchè l'utente ignaro, inviando le informazioni, manda tutte quelle utili all'attaccante.
 	\subsubsection{Come difendersi}
 	Vi sono diverse metodologie per difendersi da questi tipi di attacchi:
 	\begin{itemize}
@@ -352,7 +363,7 @@
 	\item Dato che il piu delle volte non e facile riconoscere questi attacchi, ci sono anche delle misure anti-phishing implementate nei browsers, come estensioni o toolbar, oltre a diversi software contro il phishing;
 	\item Inoltre, la maggior parte dei siti bersaglio del phishing sono protetti da SSL con una forte crittografia, dove l'URL del sito web è usata come identificativo. Questo dovrebbe in teoria confermare l'autenticità del sito, ma nella pratica è facile da aggirare, sfruttando la vurnerabilita che sta nella user interface (UI) del browser. Nell'url del browser viene poi indicata la connessione utilizzara con diversi colori (blocco verde per certificato EV, scritta https in verde, ecc.).
 	\end{itemize}
-
+	\newpage
 	\section{Implementazione PaymentRequest API su una pagina d'esempio}
 	\subsection{Costruttore}
 	L'oggetto PaymentRequest è costruito passando i seguenti parametri:
@@ -400,26 +411,22 @@
 	Una volta creato l'oggetto PaymentRequest è possibile attivare il browser per visualizzare il wallet con request.show(). 
 	\begin{figure}[h]
 		\centering
-		\includegraphics[width=1\linewidth]{wallet1}
+		\includegraphics[width=0.5\linewidth]{wallet1}
 		\caption{Wallet dopo la chiamata request.show()}
 		\label{fig: Wallet dopo la chiamata request.show()}
 	\end{figure}
-	\pagebreak
 	\\
 	I clienti possono  selezionare le informazioni di pagamento, l'indirizzo di spedizione e altri campi appropriati e cliccare su Paga quando è pronto. A questo punto, gli utenti dovranno verificare la loro identità: in caso di esito positivo verrà soddisfatta la promise request.show() e verranno restituite al sito Web tutte le informazioni che il cliente ha fornito. Per il metodo di pagamento con carta di base l'oggetto risultante conterrà il nome del titolare della carta, il numero della carta, il mese di scadenza e altri campi pertinenti. Il commerciante può quindi utilizzare queste informazioni per elaborare la transazione sul back-end.
 	Dopo che la risposta è tornata dal server, è possibile utilizzare result.complete('success') per visualizzare la schermata di successo o result.complete('fail') per indicare una transazione fallita.
-	\pagebreak
 	\begin{lstlisting}
-	// Mostra l'interfaccia utente nativa
-	payment.show()
-	// Quando la promessa e soddisfatta, passa i risultati al tuo server per l'elaborazione
-	.then(result => {
+	//Quando la promessa e soddisfatta, passa i risultati al server per l'elaborazione
+	payment.show().then(result => {
 		return process(result).then(response => {
 			if (response.status === 200) {
-				// Mostra che la transazione ha avuto successo nell'interfaccia utente
+				//La transazione ha avuto successo
 				return result.complete('success');
 			} else {
-					// Mostra nell'interfaccia utente nativa che la transazione ha avuto esito negativo
+					//la transazione ha fallito
 					return result.complete('fail');
 				}
 			}).catch((err) => {
@@ -427,21 +434,20 @@
 		}); 
 	});
 	\end{lstlisting}
-	\pagebreak
+	Ed ecco i wallet in caso di successo e di fallimento.
 	\begin{figure}[h]
 		\centering
-		\includegraphics[width=1\linewidth]{wallet2}
+		\includegraphics[width=0.5\linewidth]{wallet2}
 		\caption{Wallet in caso di successo}
 		\label{fig: Wallet in caso di successo}
 	\end{figure}
 	\begin{figure}[h]
 		\centering
-		\includegraphics[width=1\linewidth]{wallet3}
+		\includegraphics[width=0.5\linewidth]{wallet3}
 		\caption{Wallet in caso di fail}
 		\label{fig: Wallet in caso di fail}
 	\end{figure}
-	\pagebreak
-	
+	\pagebreak	
 	\subsection{Ascoltare gli eventi}
 	Il prezzo potrebbe cambiare in base all'indirizzo di spedizione e alle opzioni di spedizione selezionate dal cliente. È possibile ascoltare tali modifiche con gli eventi shippingaddresschange e shippingoptionchange per ricalcolare di conseguenza i prezzi.
 	\begin{lstlisting}
@@ -453,8 +459,7 @@
 			// Modifica delle opzioni di spedizione del processo (ad esempio "spedizione in giornata")
 		});
 	\end{lstlisting}
-	\pagebreak
-	
+	\newpage
 	\section{Compatibilità web}
 	\begin{figure}[h]
 		\centering
@@ -468,7 +473,61 @@
 		\caption{Compatibilità mobile}
 		\label{fig: Compatibilità mobile}
 	\end{figure}
-
+	\newpage
 	\section{Conclusioni}
 	La PaymentRequest API è uno potente strumento per migliorare l'esperienza utente sul Web offrendo ai clienti un'esperienza di acquisto più piacevole, pur avendo delle vulnerabilità difficili da rompere ma dalle quali ci si puo difendere.
+	\newpage
+	\begin{thebibliography}{99}
+		\bibitem{}
+		Sheppy, poshaughnessy, jpmedley, echenley, chrisdavidmills, marcoscaceres, riking, amZotti, andersnorgaard, erikadoyle, agektmr, reaktivo, dgashmdn
+		\emph{Payment Request API, Mozilla Developer},
+		\url{https://developer.mozilla.org/en-US/docs/Web/API/Payment_Request_API}
+		
+		\bibitem{}
+		W3C (2018),
+		\emph{W3C Payment Request API, Mozilla Developer},
+		\url{https://w3c.github.io/payment-request/}
+		
+		\bibitem{}
+		Natasja Bolton
+		\emph{One more nail in the coffin for iFrames?}, 
+		\url{https://sysnetgs.com/2016/06/one-nail-coffin-iframes/}
+		
+		\bibitem{}
+		Matt Gaunt
+		\emph{Deep Dive into the Payment Request API}, 
+		\url{https://developers.google.com/web/fundamentals/payments/deep-dive-into-payment-request}
+		
+		\bibitem{}
+		\emph{What is Payment Request?},
+		\url{https://paymentrequest.show/}
+		
+		\bibitem{}
+		\emph{Introduction to the Payment Request API},
+		\url{https://developers.google.com/web/ilt/pwa/introduction-to-the-payment-request-api}
+		
+		\bibitem{}
+		Eiji Kitamura,
+		\emph{Bringing Easy and Fast Checkout with Payment Request API},
+		\url{https://developers.google.com/web/updates/2016/07/payment-request}
+		
+		\bibitem{}
+		Microsoft,
+		\emph{Payment Request API},
+		\url{https://docs.microsoft.com/en-us/microsoft-edge/dev-guide/windows-integration/payment-request-api}
+		
+		\bibitem{}
+		Microsoft,
+		\emph{Payment Request API samples},
+		\url{https://developer.microsoft.com/en-us/microsoft-edge/testdrive/demos/paymentrequest/}
+		
+		\bibitem{}
+		\emph{Simpler web payments: Introducing the Payment Request API},
+		\url{https://blogs.windows.com/msedgedev/2016/12/15/payment-request-api-edge/#UATsm3ejAT9oYtrj.97}
+		
+		\bibitem{}
+		MANCA LINK GUIDA GITHUB
+	\end{thebibliography}
+	\newpage
+	\listoffigures
 \end{document}

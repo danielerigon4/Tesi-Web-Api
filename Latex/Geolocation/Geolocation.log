@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.6.25)  1 AUG 2018 11:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.6.25)  1 AUG 2018 15:22
 entering extended mode
 **./Geolocation.tex
 (Geolocation.tex
@@ -529,6 +529,14 @@ Package: geometry 2010/09/12 v5.6 Page Geometry
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\geometry\geometr
 y.cfg"))
+("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\natbib\natbib.st
+y"
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip44
+\bibsep=\skip45
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count100
+)
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\babel.st
 y"
 Package: babel 2018/02/14 3.18 The Babel package
@@ -553,21 +561,21 @@ Language: italian 2015/03/26 v1.3n Italian support from the babel system
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\babel.de
 f"
 File: babel.def 2018/02/14 3.18 Babel common definitions
-\babel@savecnt=\count100
+\babel@savecnt=\count101
 \U@D=\dimen115
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\txtbabel
 .def")
-\bbl@dirlevel=\count101
+\bbl@dirlevel=\count102
 )
-\it@lettering=\count102
-\it@doublequoteactive=\count103
-\it@ISOcompliance=\count104
+\it@lettering=\count103
+\it@doublequoteactive=\count104
+\it@ISOcompliance=\count105
 ))
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\etoolbox\etoolbo
 x.sty"
 Package: etoolbox 2018/02/11 v2.5e e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count105
+\etb@tempcnta=\count106
 )
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\color.s
 ty"
@@ -585,24 +593,24 @@ File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\listing
 s.sty"
-\lst@mode=\count106
+\lst@mode=\count107
 \lst@gtempboxa=\box26
 \lst@token=\toks18
-\lst@length=\count107
+\lst@length=\count108
 \lst@currlwidth=\dimen116
-\lst@column=\count108
-\lst@pos=\count109
+\lst@column=\count109
+\lst@pos=\count110
 \lst@lostspace=\dimen117
 \lst@width=\dimen118
-\lst@newlines=\count110
-\lst@lineno=\count111
+\lst@newlines=\count111
+\lst@lineno=\count112
 \lst@maxwidth=\dimen119
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\lstmisc
 .sty"
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-\c@lstnumber=\count112
-\lst@skipnumbers=\count113
+\c@lstnumber=\count113
+\lst@skipnumbers=\count114
 \lst@framebox=\box27
 )
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\listing
@@ -636,30 +644,54 @@ Package graphics Info: Driver file: pdftex.def on input line 99.
 LaTeX Warning: Unused global option(s):
     [openright].
 
-(Geolocation.aux)
+(Geolocation.aux
+
+Package natbib Warning: Citation `' multiply defined.
+
+
+Package natbib Warning: Citation `' multiply defined.
+
+
+Package natbib Warning: Citation `' multiply defined.
+
+
+Package natbib Warning: Citation `' multiply defined.
+
+
+Package natbib Warning: Citation `' multiply defined.
+
+
+Package natbib Warning: Citation `' multiply defined.
+
+
+Package natbib Warning: Citation `' multiply defined.
+
+
+Package natbib Warning: Citation `' multiply defined.
+
+)
 \openout1 = `Geolocation.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 87.
-
-("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\t1lmr.fd"
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 83.
+ ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\t1lmr.fd"
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 \AtBeginShipoutBox=\box28
-Package hyperref Info: Link coloring OFF on input line 87.
+Package hyperref Info: Link coloring OFF on input line 83.
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\nameref
 .sty"
@@ -669,11 +701,11 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 tlestring.sty"
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count114
+\c@section@level=\count115
 )
-LaTeX Info: Redefining \ref on input line 87.
-LaTeX Info: Redefining \pageref on input line 87.
-LaTeX Info: Redefining \nameref on input line 87.
+LaTeX Info: Redefining \ref on input line 83.
+LaTeX Info: Redefining \pageref on input line 83.
+LaTeX Info: Redefining \nameref on input line 83.
  (Geolocation.out) (Geolocation.out)
 \@outlinefile=\write3
 \openout3 = `Geolocation.out'.
@@ -713,22 +745,22 @@ LaTeX Info: Redefining \nameref on input line 87.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \it@ocap on input line 87.
-LaTeX Info: Redefining \it@ccap on input line 87.
+LaTeX Info: Redefining \it@ocap on input line 83.
+LaTeX Info: Redefining \it@ccap on input line 83.
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.
 mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count115
+\scratchcounter=\count116
 \scratchdimen=\dimen122
 \scratchbox=\box29
-\nofMPsegments=\count116
-\nofMParguments=\count117
+\nofMPsegments=\count117
+\nofMParguments=\count118
 \everyMPshowfont=\toks19
-\MPscratchCnt=\count118
+\MPscratchCnt=\count119
 \MPscratchDim=\dimen123
-\MPnumerator=\count119
-\makeMPintoPDFobject=\count120
+\MPnumerator=\count120
+\makeMPintoPDFobject=\count121
 \everyMPtoPDFconversion=\toks20
 )
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\epstopd
@@ -746,35 +778,35 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
-\c@lstlisting=\count121
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 91.
+\c@lstlisting=\count122
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 87.
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\ot1lmr.fd"
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 91.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 87.
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\omllmm.fd"
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 91.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 87.
 
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\omslmsy.fd"
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 91.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 87.
 
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\omxlmex.fd"
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 91.
+(Font)              <12> on input line 87.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 91.
+(Font)              <8> on input line 87.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 91.
+(Font)              <6> on input line 87.
 
 (Geolocation.toc
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -789,60 +821,61 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [1
 
 {C:/Users/Daniele/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 104.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 100.
 
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <9> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 105.
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 101.
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--127
+
+ []
 
 [2]
-<./images/geo1.png, id=83, 344.03531pt x 488.57532pt>
+<./images/geo1.png, id=79, 344.03531pt x 488.57532pt>
 File: ./images/geo1.png Graphic file (type png)
 <use ./images/geo1.png>
-Package pdftex.def Info: ./images/geo1.png  used on input line 153.
+Package pdftex.def Info: ./images/geo1.png  used on input line 142.
 (pdftex.def)             Requested size: 227.62206pt x 323.25095pt.
-<./images/geo2.png, id=84, 606.01407pt x 491.58656pt>
+<./images/geo2.png, id=80, 606.01407pt x 491.58656pt>
 File: ./images/geo2.png Graphic file (type png)
 <use ./images/geo2.png>
-Package pdftex.def Info: ./images/geo2.png  used on input line 161.
-(pdftex.def)             Requested size: 227.62206pt x 184.64455pt.
-<./images/geo3.png, id=85, 344.03531pt x 491.58656pt>
+Package pdftex.def Info: ./images/geo2.png  used on input line 151.
+(pdftex.def)             Requested size: 182.09486pt x 147.70963pt.
+<./images/geo3.png, id=81, 344.03531pt x 491.58656pt>
 File: ./images/geo3.png Graphic file (type png)
 <use ./images/geo3.png>
-Package pdftex.def Info: ./images/geo3.png  used on input line 170.
-(pdftex.def)             Requested size: 227.62206pt x 325.24324pt.
-<./images/geo4.png, id=86, 345.54094pt x 500.62032pt>
+Package pdftex.def Info: ./images/geo3.png  used on input line 159.
+(pdftex.def)             Requested size: 182.09486pt x 260.19458pt.
+<./images/geo4.png, id=82, 345.54094pt x 500.62032pt>
 File: ./images/geo4.png Graphic file (type png)
 <use ./images/geo4.png>
-Package pdftex.def Info: ./images/geo4.png  used on input line 179.
+Package pdftex.def Info: ./images/geo4.png  used on input line 168.
 (pdftex.def)             Requested size: 227.62206pt x 329.78404pt.
  [3 <./images/geo1.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [4 <./images/geo2.png>]
+ [4 <./images/geo2.png> <./images/geo3.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [5 <./images/geo3.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [6 <./images/geo4.png>] [7]
-<./images/pos1.png, id=132, 447.92343pt x 169.38281pt>
+ [5 <./images/geo4.png>] [6]
+<./images/pos1.png, id=123, 447.92343pt x 169.38281pt>
 File: ./images/pos1.png Graphic file (type png)
 <use ./images/pos1.png>
-Package pdftex.def Info: ./images/pos1.png  used on input line 212.
+Package pdftex.def Info: ./images/pos1.png  used on input line 201.
 (pdftex.def)             Requested size: 455.24411pt x 172.15562pt.
-<./images/Blocca.png, id=133, 453.19313pt x 156.585pt>
+<./images/Blocca.png, id=124, 453.19313pt x 156.585pt>
 File: ./images/Blocca.png Graphic file (type png)
 <use ./images/Blocca.png>
-Package pdftex.def Info: ./images/Blocca.png  used on input line 235.
+Package pdftex.def Info: ./images/Blocca.png  used on input line 224.
 (pdftex.def)             Requested size: 455.24411pt x 157.29422pt.
-<./images/Consenti.png, id=134, 456.20438pt x 147.55125pt>
+<./images/Consenti.png, id=125, 456.20438pt x 147.55125pt>
 File: ./images/Consenti.png Graphic file (type png)
 <use ./images/Consenti.png>
-Package pdftex.def Info: ./images/Consenti.png  used on input line 244.
+Package pdftex.def Info: ./images/Consenti.png  used on input line 233.
 (pdftex.def)             Requested size: 455.24411pt x 147.24467pt.
 
 
@@ -851,30 +884,128 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [8 <./images/pos1.png>] [9 <./images/Blocca.png> <./images/Consenti.png>]
-<./images/compatibility.png, id=157, 729.47531pt x 300.3722pt>
+ [7 <./images/pos1.png>] [8 <./images/Blocca.png> <./images/Consenti.png>]
+<./images/compatibility.png, id=149, 729.47531pt x 300.3722pt>
 File: ./images/compatibility.png Graphic file (type png)
 <use ./images/compatibility.png>
-Package pdftex.def Info: ./images/compatibility.png  used on input line 252.
+Package pdftex.def Info: ./images/compatibility.png  used on input line 241.
 (pdftex.def)             Requested size: 455.24411pt x 187.45256pt.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 256.
- [10 <./images/compatibility.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 256.
- (Geolocation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 256.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 256.
+ [9 <./images/compatibility.png>]
+Underfull \hbox (badness 1454) in paragraph at lines 259--262
+[]\T1/lmr/m/n/10.95 W3C (2018), \T1/lmr/m/it/10.95 Geo-lo-ca-tion API Spe-ci-fi
+-ca-tion 2nd Edi-tion\T1/lmr/m/n/10.95 , []$\T1/lmtt/m/n/10.95 https : / / www 
+. w3 . org / TR /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 274--276
+[]\T1/lmr/m/n/10.95 Ruadhán O'Do-no-ghue (2013), \T1/lmr/m/it/10.95 HTML5 for t
+he Mo-bi-le Web  a gui-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 274--276
+\T1/lmr/m/it/10.95 de to the Geo-lo-ca-tion API\T1/lmr/m/n/10.95 , []$\T1/lmtt/
+m/n/10.95 https : / / mobiforge . com / design-[]development /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 278--280
+[]\T1/lmr/m/n/10.95 OccupyTheWeb, Won-de-rHo-w-To (2015), \T1/lmr/m/it/10.95 Ho
+w to Find the Exact Lo-ca-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 278--280
+\T1/lmr/m/it/10.95 tion of Any IP Ad-dress\T1/lmr/m/n/10.95 , []$\T1/lmtt/m/n/1
+0.95 https : / / null-[]byte . wonderhowto . com / how-[]to /
+ []
+
+[10pdfTeX warning (ext4): destination with the same identifier (name{cite.}) ha
+s been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.295 \newpage
+              pdfTeX warning (ext4): destination with the same identifier (name
+{cite.}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.295 \newpage
+              pdfTeX warning (ext4): destination with the same identifier (name
+{cite.}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.295 \newpage
+              pdfTeX warning (ext4): destination with the same identifier (name
+{cite.}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.295 \newpage
+              pdfTeX warning (ext4): destination with the same identifier (name
+{cite.}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.295 \newpage
+              pdfTeX warning (ext4): destination with the same identifier (name
+{cite.}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.295 \newpage
+              pdfTeX warning (ext4): destination with the same identifier (name
+{cite.}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.295 \newpage
+              pdfTeX warning (ext4): destination with the same identifier (name
+{cite.}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.295 \newpage
+              pdfTeX warning (ext4): destination with the same identifier (name
+{cite.}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.295 \newpage
+              ] (Geolocation.lof)
+\tf@lof=\write5
+\openout5 = `Geolocation.lof'.
+
+
+
+Package natbib Warning: There were multiply defined citations.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 297.
+[11]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 297.
+ (Geolocation.aux
+
+Package natbib Warning: Citation(s) may have changed.
+(natbib)                Rerun to get citations correct.
+
+)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 297.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 297.
 Package rerunfilecheck Info: File `Geolocation.out' has not changed.
 (rerunfilecheck)             Checksum: 7086D2AC7616B040F09BDECBC6FC2602;578.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 256.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 297.
  ) 
 Here is how much of TeX's memory you used:
- 8824 strings out of 493305
- 126857 string characters out of 3128932
- 321428 words of memory out of 3000000
- 12176 multiletter control sequences out of 15000+200000
- 44286 words of font info for 40 fonts, out of 3000000 for 9000
+ 9140 strings out of 493305
+ 130728 string characters out of 3128932
+ 321179 words of memory out of 3000000
+ 12485 multiletter control sequences out of 15000+200000
+ 51534 words of font info for 42 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 28i,7n,40p,967b,1207s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 28i,7n,40p,922b,1836s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Daniele/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.
 enc}<C:/Users/Daniele/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/l
 mbx10.pfb><C:/Users/Daniele/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
@@ -882,12 +1013,13 @@ c/lm/lmbx12.pfb><C:/Users/Daniele/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
 /public/lm/lmr10.pfb><C:/Users/Daniele/AppData/Local/Programs/MiKTeX 2.9/fonts/
 type1/public/lm/lmr12.pfb><C:/Users/Daniele/AppData/Local/Programs/MiKTeX 2.9/f
 onts/type1/public/lm/lmr17.pfb><C:/Users/Daniele/AppData/Local/Programs/MiKTeX 
-2.9/fonts/type1/public/lm/lmr9.pfb><C:/Users/Daniele/AppData/Local/Programs/MiK
-TeX 2.9/fonts/type1/public/lm/lmtk10.pfb><C:/Users/Daniele/AppData/Local/Progra
-ms/MiKTeX 2.9/fonts/type1/public/lm/lmtt9.pfb>
-Output written on Geolocation.pdf (10 pages, 372758 bytes).
+2.9/fonts/type1/public/lm/lmr8.pfb><C:/Users/Daniele/AppData/Local/Programs/MiK
+TeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Users/Daniele/AppData/Local/Progra
+ms/MiKTeX 2.9/fonts/type1/public/lm/lmtk10.pfb><C:/Users/Daniele/AppData/Local/
+Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtt10.pfb>
+Output written on Geolocation.pdf (11 pages, 410923 bytes).
 PDF statistics:
- 209 PDF objects out of 1000 (max. 8388607)
+ 241 PDF objects out of 1000 (max. 8388607)
  77 named destinations out of 1000 (max. 500000)
  113 words of extra memory for PDF output out of 10000 (max. 10000000)
 
