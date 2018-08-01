@@ -1,21 +1,8 @@
 <html>
     <head>
-
     </head>
     <body>
-        <p>Uno dei principali problemi con l'API di geolocalizzazione è rappresentato dagli attacchi di cross-site 
-            scripting dovuti al fatto che gli oggetti per tracciare le coordinate (latitudine e longitudine) risiedono 
-            all'interno del DOM, che è accessibile con JavaScript. La vulnerabilità XSS potrebbe essere sfruttata per 
-            determinare la posizione della vittima e potrebbe verificarsi l'invasione della privacy.
-            A causa del fatto che gli utenti si fidano maggiormente del sito web, si fidano della richiesta e condividono 
-            la loro posizione. Ciò che lo rende ancora peggio è che, a meno che l'utente non disabiliti il tracciamento, 
-            il browser continuerà a esporre la posizione della vittima all'attaccante.
-        </p>
-        <p>Supponiamo che un utente malintenzionato abbia rilevato una vulnerabilità XSS in un sito Web. 
-            Tutto ciò che l'utente malintenzionato deve fare è fare in modo che la vittima esegua il seguente codice 
-            JavaScript per rubare la posizione
-        </p>
-
+        <div id = "mydiv">Position</div>
         <script>
                 function showPosition(position){
                     var pos="Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
@@ -27,12 +14,5 @@
                 }
                 getLocation();
         </script>
-        <div id = "mydiv">Position</div>
-        <p>Il precedente JavaScript utilizza le proprietà DOM cords.latitude e cords.langitude per determinare 
-            rispettivamente la latitudine / longitudine; quindi lo memorizza sotto la variabile "pos". Nella riga successiva, 
-            il JavaScript invia i dati al dominio dell'attaccante. 
-            Una volta che i clic della vittima decidono di condividere la posizione, i dettagli vengono scritti su un file di testo 
-            o inviati al malintenzionato a seconda di come è stato configurato il ladro di PHP.
-        </p>
     </body>
 </html>

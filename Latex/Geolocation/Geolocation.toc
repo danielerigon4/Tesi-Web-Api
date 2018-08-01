@@ -5,7 +5,7 @@
 \contentsline {subsection}{\numberline {2.1}Oggetto della geolocalizzazione}{2}{subsection.2.1}
 \contentsline {subsection}{\numberline {2.2}Metodi}{2}{subsection.2.2}
 \contentsline {subsubsection}{\numberline {2.2.1}GetCurrentPosition}{2}{subsubsection.2.2.1}
-\contentsline {subsubsection}{\numberline {2.2.2}WatchPosition}{4}{subsubsection.2.2.2}
-\contentsline {subsubsection}{\numberline {2.2.3}ClearPosition}{4}{subsubsection.2.2.3}
-\contentsline {section}{\numberline {3}Problemi sicurezza/privacy}{4}{section.3}
-\contentsline {section}{\numberline {4}Supporto compatibilit\IeC {\`a} web}{5}{section.4}
+\contentsline {subsubsection}{\numberline {2.2.2}WatchPosition}{7}{subsubsection.2.2.2}
+\contentsline {subsubsection}{\numberline {2.2.3}ClearPosition}{7}{subsubsection.2.2.3}
+\contentsline {section}{\numberline {3}Problemi sicurezza/privacy}{8}{section.3}
+\contentsline {section}{\numberline {4}Supporto compatibilit\IeC {\`a} web}{10}{section.4}
