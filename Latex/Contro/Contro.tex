@@ -89,12 +89,14 @@
 
 \tableofcontents
 \pagebreak
+SEZIONE FATTA
 \section{Geolocation}
 \begin{itemize}
 \item viene chiesto all'utente il permesso per usare l'api (unica forma di sicurezza)
 \item i metodi getCurrentPosition e WatchPosition danno la posizione dell'utente. Possono essere intercettati (?) -> esempio di come prendo la posizione dell'utente (?)
 \end{itemize}
 
+SEZIONE FATTA
 \section{PaymentRequest}
 \begin{itemize}
 \item Usando questa API essa chiama la gestione delle credenziali del browser, caricando una finestra, e quindi non inserendo le credenziali nel DOM
@@ -117,11 +119,11 @@ Usando i ServiceWorker si possono dirottare le connessioni, rispondere in modo d
 
 \section{Scenari}
 \begin{itemize}
-\item Geolocation: al "si" dell'utente viene rubata la posizione tramite Geolocation API;
+\item FATTO Geolocation: al "si" dell'utente viene rubata la posizione tramite Geolocation API;
 \\
-\item PaymentRequest: vedere se ci sono metodi con i quali si può rubare il numero di carta o altre info con PaymentRequest (poco probabile perchè viene usata la gestione delle credenziali Microsoft e Google) -> capire qual è la pagina di "pop-up"(che non è un pop-up) che viene aperta;
+\item FATTO PaymentRequest: vedere se ci sono metodi con i quali si può rubare il numero di carta o altre info con PaymentRequest (poco probabile perchè viene usata la gestione delle credenziali Microsoft e Google) -> capire qual è la pagina di "pop-up"(che non è un pop-up) che viene aperta;
 \\
-vedere se si puo caricare una pagina finta sopra per far si che siamo convinti di comprare una cosa invece compriamo altro (phishing)
+FATTO vedere se si puo caricare una pagina finta sopra per far si che siamo convinti di comprare una cosa invece compriamo altro (phishing)
 \\
 \item ServiceWorker: /*ServiceWorker usato non per caching ma per intercettare un messaggio, cambiandolo in negativo (simile a man-in-the-middle).*/
 \\

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.6.25)  1 AUG 2018 15:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.6.25)  1 AUG 2018 15:40
 entering extended mode
 **./PaymentRequest.tex
 (PaymentRequest.tex
@@ -666,6 +666,15 @@ Package natbib Warning: Citation `' multiply defined.
 
 Package natbib Warning: Citation `' multiply defined.
 
+
+Package natbib Warning: Citation `' multiply defined.
+
+
+Package natbib Warning: Citation `' multiply defined.
+
+
+Package natbib Warning: Citation `' multiply defined.
+
 )
 \openout1 = `PaymentRequest.aux'.
 
@@ -852,12 +861,12 @@ Underfull \vbox (badness 1552) has occurred while \output is active []
 <./images/Chrome1.png, id=307, 386.19281pt x 338.76563pt>
 File: ./images/Chrome1.png Graphic file (type png)
 <use ./images/Chrome1.png>
-Package pdftex.def Info: ./images/Chrome1.png  used on input line 346.
+Package pdftex.def Info: ./images/Chrome1.png  used on input line 349.
 (pdftex.def)             Requested size: 227.62206pt x 199.66838pt.
 <./images/Chrome2.png, id=308, 386.19281pt x 339.51843pt>
 File: ./images/Chrome2.png Graphic file (type png)
 <use ./images/Chrome2.png>
-Package pdftex.def Info: ./images/Chrome2.png  used on input line 352.
+Package pdftex.def Info: ./images/Chrome2.png  used on input line 355.
 (pdftex.def)             Requested size: 227.62206pt x 200.11209pt.
 
 
@@ -867,25 +876,25 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 4366) has occurred while \output is active []
 
  [9]
 [10 <./images/Chrome1.png> <./images/Chrome2.png>] [11]
 <./images/wallet1.png, id=323, 225.84375pt x 221.32687pt>
 File: ./images/wallet1.png Graphic file (type png)
 <use ./images/wallet1.png>
-Package pdftex.def Info: ./images/wallet1.png  used on input line 414.
+Package pdftex.def Info: ./images/wallet1.png  used on input line 417.
 (pdftex.def)             Requested size: 227.62206pt x 223.08243pt.
  [12]
 <./images/wallet2.png, id=359, 184.5294pt x 180.675pt>
 File: ./images/wallet2.png Graphic file (type png)
 <use ./images/wallet2.png>
-Package pdftex.def Info: ./images/wallet2.png  used on input line 440.
+Package pdftex.def Info: ./images/wallet2.png  used on input line 443.
 (pdftex.def)             Requested size: 227.62206pt x 222.8823pt.
 <./images/wallet3.png, id=360, 184.5294pt x 180.675pt>
 File: ./images/wallet3.png Graphic file (type png)
 <use ./images/wallet3.png>
-Package pdftex.def Info: ./images/wallet3.png  used on input line 446.
+Package pdftex.def Info: ./images/wallet3.png  used on input line 449.
 (pdftex.def)             Requested size: 227.62206pt x 222.8823pt.
  [13 <./images/wallet1.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -894,12 +903,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 <./images/Compatibilita1.png, id=402, 971.12813pt x 143.03438pt>
 File: ./images/Compatibilita1.png Graphic file (type png)
 <use ./images/Compatibilita1.png>
-Package pdftex.def Info: ./images/Compatibilita1.png  used on input line 466.
+Package pdftex.def Info: ./images/Compatibilita1.png  used on input line 469.
 (pdftex.def)             Requested size: 455.24411pt x 67.04936pt.
 <./images/Compatibilita2.png, id=403, 971.12813pt x 118.94438pt>
 File: ./images/Compatibilita2.png Graphic file (type png)
 <use ./images/Compatibilita2.png>
-Package pdftex.def Info: ./images/Compatibilita2.png  used on input line 472.
+Package pdftex.def Info: ./images/Compatibilita2.png  used on input line 475.
 (pdftex.def)             Requested size: 455.24411pt x 55.75684pt.
  [16 <./images/Compatibilita1.png> <./images/Compatibilita2.png>] [17] [18pdfTe
 X warning (ext4): destination with the same identifier (name{cite.}) has been a
@@ -907,61 +916,61 @@ lready used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.531 	\newpage
+l.534 	\newpage
                pdfTeX warning (ext4): destination with the same identifier (nam
 e{cite.}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.531 	\newpage
+l.534 	\newpage
                pdfTeX warning (ext4): destination with the same identifier (nam
 e{cite.}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.531 	\newpage
+l.534 	\newpage
                pdfTeX warning (ext4): destination with the same identifier (nam
 e{cite.}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.531 	\newpage
+l.534 	\newpage
                pdfTeX warning (ext4): destination with the same identifier (nam
 e{cite.}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.531 	\newpage
+l.534 	\newpage
                pdfTeX warning (ext4): destination with the same identifier (nam
 e{cite.}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.531 	\newpage
+l.534 	\newpage
                pdfTeX warning (ext4): destination with the same identifier (nam
 e{cite.}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.531 	\newpage
+l.534 	\newpage
                pdfTeX warning (ext4): destination with the same identifier (nam
 e{cite.}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.531 	\newpage
+l.534 	\newpage
                pdfTeX warning (ext4): destination with the same identifier (nam
 e{cite.}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.531 	\newpage
+l.534 	\newpage
                pdfTeX warning (ext4): destination with the same identifier (nam
 e{cite.}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.531 	\newpage
+l.534 	\newpage
                ] (PaymentRequest.lof)
 \tf@lof=\write5
 \openout5 = `PaymentRequest.lof'.
@@ -970,25 +979,25 @@ l.531 	\newpage
 
 Package natbib Warning: There were multiply defined citations.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 533.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 536.
 [19]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 533.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 536.
  (PaymentRequest.aux
 
 Package natbib Warning: Citation(s) may have changed.
 (natbib)                Rerun to get citations correct.
 
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 533.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 533.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 536.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 536.
 Package rerunfilecheck Info: File `PaymentRequest.out' has not changed.
 (rerunfilecheck)             Checksum: 476DA8F9939F21847AE2EA5C5B80841F;1931.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 533.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 536.
  ) 
 Here is how much of TeX's memory you used:
  9365 strings out of 493305
  134367 string characters out of 3128932
- 371221 words of memory out of 3000000
+ 371222 words of memory out of 3000000
  12544 multiletter control sequences out of 15000+200000
  51534 words of font info for 42 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1006,7 +1015,7 @@ ms/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Users/Daniele/AppData/Local/
 Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Daniele/AppData/
 Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtk10.pfb><C:/Users/Daniele/Ap
 pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtt10.pfb>
-Output written on PaymentRequest.pdf (19 pages, 503539 bytes).
+Output written on PaymentRequest.pdf (19 pages, 503839 bytes).
 PDF statistics:
  536 PDF objects out of 1000 (max. 8388607)
  240 named destinations out of 1000 (max. 500000)

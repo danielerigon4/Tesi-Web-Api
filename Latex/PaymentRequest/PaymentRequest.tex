@@ -337,8 +337,11 @@
 	\subsection{Esempio di un possibile attacco}
 	\subsubsection{Descrizione dell'attacco}
 	La sicurezza di usare la PaymentRequest API è che utilizza la gestione delle credenziali del browser che stiamo usando: se stiamo usando Chrome userà la gestione delle credenziali di Google, mentre se stiamo usando Edge userà Microsoft Pay (Nota: in questo caso è necessario anche autenticarsi con l'account Microsoft). \\
-	Sicuramente il livello di sicurezza è elevato ma non è immune ad un attacco XSS, che potrebbe attaccare similmente al Phishing. 
-	L'API apre una finestra dove inserire le credenziali, sicura perchè non vengono scritte nel DOM. Con un attacco XSS, alla chiamata dell'API, invece di questa finestra potrebbe venirne aperta un'altra uguale a quella originale, gestita però dall'attaccante. Essendo identica la vittima sarà convinta di inserire le credenziali in un posto sicuro, mentre invece saranno inviate all'attaccante invece di essere salvate nel browser tramite l'API.
+	Sicuramente il livello di sicurezza è elevato ma non è immune ad un attacco XSS, che potrebbe attaccare similmente al Phishing. Una delle poche forme per attaccare questa API è il pishing in quanto non ci sono metodi che prendono in input password o credenziali, ma vengono gestiti altrove, senza quindi avere la possibilirà di essere intercettati.
+	L'API apre una finestra dove inserire le credenziali, sicura perchè non vengono scritte nel DOM. 
+	(Nota: viene aperta una sola pagina con l'API per volta; se si tenta di aprirne più di una resterà aperta solamente la prima e le altre non si apriranno; questo come ulteriore forma di sicurezza).
+	\\
+	Con un attacco XSS, alla chiamata dell'API, invece di questa finestra potrebbe venirne aperta un'altra uguale a quella originale, gestita però dall'attaccante. Essendo identica la vittima sarà convinta di inserire le credenziali in un posto sicuro, mentre invece saranno inviate all'attaccante invece di essere salvate nel browser tramite l'API.
 	Sara possibile essere vittima di questo attacco solamente la prima volta che saranno inserite le credenziali in quanto l'API chiede l'inserimento delle credenziali solamente la prima volta, dopo saranno salvate e non verra piu chiesto l'inserimento da parte dell'utente.
 	Sia su Chrome che su Microsoft l'inserimento del codice CVV viene chiesto in una pagina successiva, dopo aver inserito tutte le credenziali e averle salvate nella pagina corrente. 
 	\begin{figure}[h]

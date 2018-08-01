@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.6.25)  24 JUL 2018 15:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.6.25)  1 AUG 2018 16:09
 entering extended mode
 **./ServiceWorker.tex
 (ServiceWorker.tex
@@ -7,8 +7,8 @@ Babel <3.18> and hyphenation patterns for 75 language(s) loaded.
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\article.cls
 "
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
-("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\size10.clo"
-File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\size11.clo"
+File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
 \c@section=\count80
@@ -529,6 +529,14 @@ Package: geometry 2010/09/12 v5.6 Page Geometry
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\geometry\geometr
 y.cfg"))
+("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\natbib\natbib.st
+y"
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip44
+\bibsep=\skip45
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count100
+)
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\babel.st
 y"
 Package: babel 2018/02/14 3.18 The Babel package
@@ -553,50 +561,22 @@ Language: italian 2015/03/26 v1.3n Italian support from the babel system
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\babel.de
 f"
 File: babel.def 2018/02/14 3.18 Babel common definitions
-\babel@savecnt=\count100
+\babel@savecnt=\count101
 \U@D=\dimen115
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\txtbabel
 .def")
-\bbl@dirlevel=\count101
+\bbl@dirlevel=\count102
 )
-\it@lettering=\count102
-\it@doublequoteactive=\count103
-\it@ISOcompliance=\count104
+\it@lettering=\count103
+\it@doublequoteactive=\count104
+\it@ISOcompliance=\count105
 ))
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\etoolbox\etoolbo
 x.sty"
 Package: etoolbox 2018/02/11 v2.5e e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count105
+\etb@tempcnta=\count106
 )
-("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\listing
-s.sty"
-\lst@mode=\count106
-\lst@gtempboxa=\box26
-\lst@token=\toks18
-\lst@length=\count107
-\lst@currlwidth=\dimen116
-\lst@column=\count108
-\lst@pos=\count109
-\lst@lostspace=\dimen117
-\lst@width=\dimen118
-\lst@newlines=\count110
-\lst@lineno=\count111
-\lst@maxwidth=\dimen119
-
-("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\lstmisc
-.sty"
-File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-\c@lstnumber=\count112
-\lst@skipnumbers=\count113
-\lst@framebox=\box27
-)
-("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\listing
-s.cfg"
-File: listings.cfg 2015/06/04 1.6 listings configuration
-))
-Package: listings 2015/06/04 1.6 (Carsten Heinz)
-
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\color.s
 ty"
 Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
@@ -611,6 +591,34 @@ Package color Info: Driver file: pdftex.def on input line 147.
 tex.def"
 File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
+("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\listing
+s.sty"
+\lst@mode=\count107
+\lst@gtempboxa=\box26
+\lst@token=\toks18
+\lst@length=\count108
+\lst@currlwidth=\dimen116
+\lst@column=\count109
+\lst@pos=\count110
+\lst@lostspace=\dimen117
+\lst@width=\dimen118
+\lst@newlines=\count111
+\lst@lineno=\count112
+\lst@maxwidth=\dimen119
+
+("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\lstmisc
+.sty"
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+\c@lstnumber=\count113
+\lst@skipnumbers=\count114
+\lst@framebox=\box27
+)
+("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\listing
+s.cfg"
+File: listings.cfg 2015/06/04 1.6 listings configuration
+))
+Package: listings 2015/06/04 1.6 (Carsten Heinz)
+
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphic
 x.sty"
 Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
@@ -631,30 +639,35 @@ Package graphics Info: Driver file: pdftex.def on input line 99.
 )
 \Gin@req@height=\dimen120
 \Gin@req@width=\dimen121
-) (ServiceWorker.aux)
+)
+
+LaTeX Warning: Unused global option(s):
+    [openright].
+
+(ServiceWorker.aux)
 \openout1 = `ServiceWorker.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 87.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 82.
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\t1lmr.fd"
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 \AtBeginShipoutBox=\box28
-Package hyperref Info: Link coloring OFF on input line 87.
+Package hyperref Info: Link coloring OFF on input line 82.
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\nameref
 .sty"
@@ -664,11 +677,11 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 tlestring.sty"
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count114
+\c@section@level=\count115
 )
-LaTeX Info: Redefining \ref on input line 87.
-LaTeX Info: Redefining \pageref on input line 87.
-LaTeX Info: Redefining \nameref on input line 87.
+LaTeX Info: Redefining \ref on input line 82.
+LaTeX Info: Redefining \pageref on input line 82.
+LaTeX Info: Redefining \nameref on input line 82.
  (ServiceWorker.out) (ServiceWorker.out)
 \@outlinefile=\write3
 \openout3 = `ServiceWorker.out'.
@@ -681,7 +694,7 @@ LaTeX Info: Redefining \nameref on input line 87.
 * paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
-* modes: 
+* modes: twoside 
 * h-part:(L,W,R)=(71.13188pt, 455.24411pt, 71.13188pt)
 * v-part:(T,H,B)=(85.35826pt, 674.33032pt, 85.35826pt)
 * \paperwidth=597.50787pt
@@ -693,24 +706,23 @@ LaTeX Info: Redefining \nameref on input line 87.
 * \topmargin=-23.91173pt
 * \headheight=12.0pt
 * \headsep=25.0pt
-* \topskip=10.0pt
+* \topskip=11.0pt
 * \footskip=30.0pt
-* \marginparwidth=65.0pt
-* \marginparsep=11.0pt
+* \marginparwidth=103.0pt
+* \marginparsep=10.0pt
 * \columnsep=10.0pt
-* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
 * \@twocolumnfalse
-* \@twosidefalse
-* \@mparswitchfalse
+* \@twosidetrue
+* \@mparswitchtrue
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \it@ocap on input line 87.
-LaTeX Info: Redefining \it@ccap on input line 87.
-\c@lstlisting=\count115
+LaTeX Info: Redefining \it@ocap on input line 82.
+LaTeX Info: Redefining \it@ccap on input line 82.
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.
 mkii"
@@ -742,147 +754,297 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 90.
+\c@lstlisting=\count122
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 85.
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\ot1lmr.fd"
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 90.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 85.
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\omllmm.fd"
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 90.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 85.
 
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\omslmsy.fd"
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 90.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 85.
 
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\omxlmex.fd"
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 90.
+(Font)              <12> on input line 85.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 90.
+(Font)              <8> on input line 85.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 90.
+(Font)              <6> on input line 85.
 
 (ServiceWorker.toc
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 4.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 4.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 4.
+(Font)              <10.95> on input line 4.
 )
 \tf@toc=\write4
 \openout4 = `ServiceWorker.toc'.
 
+
+Underfull \vbox (badness 5490) has occurred while \output is active []
+
  [1
 
 {C:/Users/Daniele/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 103.
-
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 98.
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\omslmr.fd"
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 103.
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 103.
-
+LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 98.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 98.
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
+Overfull \hbox (32.48819pt too wide) in paragraph at lines 107--108
+[]\T1/lmr/m/n/10.95 L'URL del Ser-vi-ceWor-ker vie-ne re-cu-pe-ra-to e re-gi-st
+ra-to tra-mi-te ser-vi-ceWor-ker-Con-tai-ner.register(); 
+ []
+
 <./images/SwLifecycle.png, id=128, 581.17125pt x 870.25125pt>
 File: ./images/SwLifecycle.png Graphic file (type png)
 <use ./images/SwLifecycle.png>
-Package pdftex.def Info: ./images/SwLifecycle.png  used on input line 119.
+Package pdftex.def Info: ./images/SwLifecycle.png  used on input line 114.
 (pdftex.def)             Requested size: 273.14923pt x 409.01814pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[2] [3 <./images/SwLifecycle.png>] [4]
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 148.
+ [5] [6] [7] [8]
+<./images/Strategia1.png, id=218, 821.0675pt x 445.665pt>
+File: ./images/Strategia1.png Graphic file (type png)
+<use ./images/Strategia1.png>
+Package pdftex.def Info: ./images/Strategia1.png  used on input line 281.
+(pdftex.def)             Requested size: 455.24411pt x 247.09538pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[2] [3 <./images/SwLifecycle.png>]
-LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <8> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 153.
 
-Overfull \hbox (19.17331pt too wide) in paragraph at lines 160--162
-\T1/lmr/m/n/10 Il co-di-ce ini-zia con-trol-lan-do il sup-por-to da par-te del 
-bro-w-ser ve-ri-fi-can-do la pre-sen-za di na-vi-ga-tor.serviceWorker.
- []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[4] [5] [6]
-<./images/Strategia1.png, id=217, 821.0675pt x 445.665pt>
-File: ./images/Strategia1.png Graphic file (type png)
-<use ./images/Strategia1.png>
-Package pdftex.def Info: ./images/Strategia1.png  used on input line 286.
-(pdftex.def)             Requested size: 455.24411pt x 247.09538pt.
- [7 <./images/Strategia1.png>]
-<./images/Strategia2.png, id=235, 821.0675pt x 439.6425pt>
+ [9]
+<./images/Strategia2.png, id=240, 821.0675pt x 439.6425pt>
 File: ./images/Strategia2.png Graphic file (type png)
 <use ./images/Strategia2.png>
-Package pdftex.def Info: ./images/Strategia2.png  used on input line 304.
+Package pdftex.def Info: ./images/Strategia2.png  used on input line 299.
 (pdftex.def)             Requested size: 455.24411pt x 243.75626pt.
- [8 <./images/Strategia2.png>]
-<./images/Strategia3.png, id=250, 821.0675pt x 319.1925pt>
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [10 <./images/Strategia1.png>]
+<./images/Strategia3.png, id=255, 821.0675pt x 319.1925pt>
 File: ./images/Strategia3.png Graphic file (type png)
 <use ./images/Strategia3.png>
-Package pdftex.def Info: ./images/Strategia3.png  used on input line 324.
+Package pdftex.def Info: ./images/Strategia3.png  used on input line 319.
 (pdftex.def)             Requested size: 455.24411pt x 176.97372pt.
 
-[9 <./images/Strategia3.png>]
-<./images/Strategia4.png, id=263, 821.0675pt x 321.2pt>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [11 <./images/Strategia2.png>]
+<./images/Strategia4.png, id=268, 821.0675pt x 321.2pt>
 File: ./images/Strategia4.png Graphic file (type png)
 <use ./images/Strategia4.png>
-Package pdftex.def Info: ./images/Strategia4.png  used on input line 338.
+Package pdftex.def Info: ./images/Strategia4.png  used on input line 333.
 (pdftex.def)             Requested size: 455.24411pt x 178.08676pt.
- [10 <./images/Strategia4.png>]
-<./images/Strategia5.png, id=274, 821.0675pt x 464.73625pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [12 <./images/Strategia3.png> <./images/Strategia4.png>]
+<./images/Strategia5.png, id=281, 821.0675pt x 464.73625pt>
 File: ./images/Strategia5.png Graphic file (type png)
 <use ./images/Strategia5.png>
-Package pdftex.def Info: ./images/Strategia5.png  used on input line 361.
+Package pdftex.def Info: ./images/Strategia5.png  used on input line 356.
 (pdftex.def)             Requested size: 455.24411pt x 257.66928pt.
- [11 <./images/Strategia5.png>]
-<./images/Strategia6.png, id=292, 821.0675pt x 529.98pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [13 <./images/Strategia5.png>]
+<./images/Strategia6.png, id=300, 821.0675pt x 529.98pt>
 File: ./images/Strategia6.png Graphic file (type png)
 <use ./images/Strategia6.png>
-Package pdftex.def Info: ./images/Strategia6.png  used on input line 373.
+Package pdftex.def Info: ./images/Strategia6.png  used on input line 368.
 (pdftex.def)             Requested size: 455.24411pt x 293.84315pt.
- [12 <./images/Strategia6.png>]
-<./images/CompWeb.png, id=299, 721.19438pt x 100.12407pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [14 <./images/Strategia6.png>]
+<./images/CompWeb.png, id=307, 721.19438pt x 100.12407pt>
 File: ./images/CompWeb.png Graphic file (type png)
 <use ./images/CompWeb.png>
-Package pdftex.def Info: ./images/CompWeb.png  used on input line 383.
+Package pdftex.def Info: ./images/CompWeb.png  used on input line 378.
 (pdftex.def)             Requested size: 455.24411pt x 63.20222pt.
-<./images/CompMobile.png, id=300, 721.94719pt x 130.23656pt>
+<./images/CompMobile.png, id=308, 721.94719pt x 130.23656pt>
 File: ./images/CompMobile.png Graphic file (type png)
 <use ./images/CompMobile.png>
-Package pdftex.def Info: ./images/CompMobile.png  used on input line 390.
+Package pdftex.def Info: ./images/CompMobile.png  used on input line 385.
 (pdftex.def)             Requested size: 455.24411pt x 82.12497pt.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 397.
- [13 <./images/CompWeb.png> <./images/CompMobile.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 397.
- (ServiceWorker.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 397.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 397.
+ [15 <./images/CompWeb.png> <./images/CompMobile.png>]
+Underfull \hbox (badness 6141) in paragraph at lines 395--398
+[]\T1/lmr/m/n/10.95 Angular Uni-ver-si-ty (2018), \T1/lmr/m/it/10.95 An-gu-lar 
+Ser-vi-ce Wor-ker - Step-By-Step Gui-de for
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 395--398
+\T1/lmr/m/it/10.95 tur-ning your Ap-pli-ca-tion in-to a PWA\T1/lmr/m/n/10.95 , 
+[]$\T1/lmtt/m/n/10.95 https : / / blog . angular-[]university . io /
+ []
+
+[16pdfTeX warning (ext4): destination with the same identifier (name{cite.}) ha
+s been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.434 	\bibitem{}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{cite.}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.434 	\bibitem{}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{cite.}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.434 	\bibitem{}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{cite.}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.434 	\bibitem{}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{cite.}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.434 	\bibitem{}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{cite.}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.434 	\bibitem{}
+                 ]pdfTeX warning (ext4): destination with the same identifier (
+name{cite.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.434 	\bibitem{}
+                 
+Underfull \hbox (badness 3009) in paragraph at lines 435--438
+[]\T1/lmr/m/n/10.95 Speedy Word-press, \T1/lmr/m/it/10.95 Gui-da com-ple-ta ai 
+Ser-vi-ce Wor-ker Ja-va-script\T1/lmr/m/n/10.95 , []$\T1/lmtt/m/n/10.95 https :
+ / / www .
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{cite.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.439 	\bibitem{}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{cite.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.444 	\bibitem{}
+                 
+Underfull \hbox (badness 7759) in paragraph at lines 445--448
+[]\T1/lmr/m/n/10.95 SitePoint, \T1/lmr/m/it/10.95 Get-ting Star-ted with Ser-vi
+-ce Wor-kers\T1/lmr/m/n/10.95 , []$\T1/lmtt/m/n/10.95 https : / / www . sitepoi
+nt . com /
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{cite.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.449 	\bibitem{}
+                 
+Underfull \hbox (badness 1803) in paragraph at lines 450--453
+[]\T1/lmr/m/n/10.95 jakearchibald Gi-thub (2017), \T1/lmr/m/it/10.95 Ser-vi-ce 
+wor-kers ex-plai-ned\T1/lmr/m/n/10.95 , []$\T1/lmtt/m/n/10.95 https : / / githu
+b . com / w3c /
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{cite.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.454 	\bibitem{}
+                 
+Underfull \hbox (badness 2245) in paragraph at lines 455--458
+[]\T1/lmr/m/n/10.95 Lyza Dan-ger Gard-ner \T1/lmr/m/it/10.95 Ma-king A Ser-vi-c
+e Wor-ker: A Ca-se Stu-dy []$\T1/lmtt/m/n/10.95 https : / / www .
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{cite.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.459 	\bibitem{}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{cite.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.464 	\bibitem{}
+                  [17pdfTeX warning (ext4): destination with the same identifie
+r (name{cite.}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.469 \newpage
+              ] (ServiceWorker.lof)
+\tf@lof=\write5
+\openout5 = `ServiceWorker.lof'.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 471.
+ [18]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 471.
+ (ServiceWorker.aux
+
+Package natbib Warning: Citation(s) may have changed.
+(natbib)                Rerun to get citations correct.
+
+)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 471.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 471.
 Package rerunfilecheck Info: File `ServiceWorker.out' has not changed.
 (rerunfilecheck)             Checksum: 297911D34D49BE006CB7DF45FFFF5CEF;1376.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 397.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 471.
  ) 
 Here is how much of TeX's memory you used:
- 8948 strings out of 493305
- 128747 string characters out of 3128932
- 339856 words of memory out of 3000000
- 12225 multiletter control sequences out of 15000+200000
- 51158 words of font info for 45 fonts, out of 3000000 for 9000
+ 9273 strings out of 493305
+ 132714 string characters out of 3128932
+ 344132 words of memory out of 3000000
+ 12537 multiletter control sequences out of 15000+200000
+ 51534 words of font info for 42 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 28i,6n,40p,938b,1149s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 28i,6n,40p,1339b,1151s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Daniele/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.
 enc}{C:/Users/Daniele/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-m
 athsy.enc}<C:/Users/Daniele/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
@@ -892,13 +1054,13 @@ c/lm/lmbx10.pfb><C:/Users/Daniele/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
 fonts/type1/public/lm/lmr12.pfb><C:/Users/Daniele/AppData/Local/Programs/MiKTeX
  2.9/fonts/type1/public/lm/lmr17.pfb><C:/Users/Daniele/AppData/Local/Programs/M
 iKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Users/Daniele/AppData/Local/Progra
-ms/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Daniele/AppData/Local/
-Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtk10.pfb><C:/Users/Daniele/AppData/
-Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtt10.pfb><C:/Users/Daniele/Ap
-pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtt8.pfb>
-Output written on ServiceWorker.pdf (13 pages, 496910 bytes).
+ms/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Users/Daniele/AppData/Local/
+Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Daniele/AppData/
+Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtk10.pfb><C:/Users/Daniele/Ap
+pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtt10.pfb>
+Output written on ServiceWorker.pdf (18 pages, 515584 bytes).
 PDF statistics:
- 375 PDF objects out of 1000 (max. 8388607)
- 146 named destinations out of 1000 (max. 500000)
+ 435 PDF objects out of 1000 (max. 8388607)
+ 154 named destinations out of 1000 (max. 500000)
  222 words of extra memory for PDF output out of 10000 (max. 10000000)
 
