@@ -11,6 +11,7 @@
 \usepackage{listings} 
 \usepackage{color}
 \usepackage{graphicx}
+\usepackage[bottom]{footmisc}
 \graphicspath{ {./images/} }
 \definecolor{mygreen}{rgb}{0,0.6,0}
 \definecolor{mygray}{rgb}{0.5,0.5,0.5}
@@ -39,7 +40,6 @@
 	stepnumber=1, 
 	stringstyle=\color{mymauve}, 
 	tabsize=2, 
-	title=\lstname 
 }
 
 \definecolor{darkgray}{rgb}{.4,.4,.4}
@@ -369,8 +369,34 @@ Per ottenere qualcosa di analogo usando il solo ServiceWorker occorre utilizzare
 	\caption{Cache then Network}
 	\label{fig: Cache then Network}
 \end{figure}
-\pagebreak
+\newpage
+\section{Rischi e sicurezza}
+Come già detto i Service Worker operano solo in contesti protetti, ma questo non vuol dire che l'ambiente sia sicuro al 100\% in quanto un ServiceWorker ha la possibilità di importare script da qualsiasi altra origine tramite la chiamata a importScripts, aumentando la capacità di un attaccante XSS di inserire il proprio codice javascript all'interno della pagina, potendo cosi rubare informazioni dell'utente, ad esempio all'inserimento di username e password in una data pagina e portarle fuori. La registrazione dei Service Worker specifica che essi devono essere eseguiti nella stessa origine dei loro chiamanti; il confronto dell'origine è una corrispondenza col prefisso più lungo degli URL serializzati compreso il percorso, quindi ad esempio https://example.com è differente da https://example.com.evil.com. Quindi un attaccante può effettivamente registrare un Service Worker malevolo. Per mitigare questo rischio il browser richiede che l'URL di registrazione del Service Worker provenga dall'origine stessa; quindi per registrare un Service Worker malevolo attraverso un attacco XSS l'utente malintenzionato ha bisogno di ospitare i propri script sul server.
+\\
+Un possibile scenario potrebbe essere questo: se la pagina ha una vulnerabilità XSS ha anche un endpoint JSONP \footnote{Utilizzato per richiedere dati da un server che risiede in un dominio diverso da quello del client; consente la condivisione dei dati aggirando la politica della stessa origine} e l'utente malintenzionato potrebbe utilizzarlo per:
+\begin{itemize}
+	\item bypassare CSP\footnote{Cryptographic Service Provider, libreria software sviluppata da Microsoft};
+	\item registrare un Service Worker; 
+	\item chiamare importScripts per importare uno script malevolo da terze parti.
+\end{itemize}
+In una situazione XSS del genere il limite della direttiva cache di 24 ore garantisce che un Service Worker malevolo o compromesso sopravviverà a un massimo di 24 ore, o meno in base a come è impostato il sito. Una possibile mitigazione del problema potrebbe essere accorciare la vita dei Service Worker, ovviamente in modo ragionevole altrimenti non sarebbero sfruttate le potenzialità.
+\\
+Inoltre un Service Worker potrebbe non essere usato solamente per il caching, migliorando i tempi di risposta dell'applicazione o del sito, ma potrebbe anche essere usato per intercettare messaggi, modificandoli e restituendoli errati (similmente a man-in-the-middle).
 
+
+- Pro: vedere se i SW possono migliorare la sicurezza di una pagina, senza essere usati solo per fare caching.
+\newpage
+\section{Esempio di attacco}
+Supponiamo di avere questa pagina HTML che carica uno script per l'installazione di un Service Worker, pensando sia sicuro.
+\lstinputlisting{../../ServiceWorker/AttaccoXSS/index.html}
+Il file script.js sarà il seguente:
+\lstinputlisting{../../ServiceWorker/AttaccoXSS/script.js}
+Mentre hack.js, che intercetta ogni richiesta, sarà questo:
+\lstinputlisting{../../ServiceWorker/AttaccoXSS/hack.js}
+Infine il file che installerà il Service Worker malevolo sarà questo:
+\lstinputlisting{../../ServiceWorker/AttaccoXSS/install.js}
+Ogni richiesta che verrà fatta sarà intercettata dal Service Worker (in questo caso uscirà il messaggio "Intercepted" nella pagina web) fino a che non sarà disinstallato e non verrà cancellata la cache.
+\newpage
 \section{Compatibilità web}
 \subsection{Desktop}
 \begin{figure}[h]
@@ -388,8 +414,11 @@ Per ottenere qualcosa di analogo usando il solo ServiceWorker occorre utilizzare
 \end{figure}
 \newpage
 \section{Conclusioni}
-Se realizzati da un esperto i service worker possono rendere la navigazione del sito web molto ma molto veloce. Grazie alla loro implementazione esterna, non richiedono modifica alcuna al sito web, motivo per cui sono molto apprezzati nel ramo delle web performance.
-
+Se realizzati per fare caching i Service Worker possono rendere la navigazione del sito web o dell'applicazione molto più veloce, senza rendere necessarie modifiche al sito o all'applicazione per raggiungere questo scopo. 
+Purtroppo sono uno potente strumento anche per scopi malevoli, come illustrato al punto 4.
+\newpage
+\listoffigures
+\newpage
 \begin{thebibliography}{99}
 	\bibitem{}
 	Angular University (2018),
@@ -465,7 +494,9 @@ Se realizzati da un esperto i service worker possono rendere la navigazione del 
 	Nicolas Bevacqua (2015), 
 	\emph{Making a Simple Site Work Offline with ServiceWorker},
 	\url{https://css-tricks.com/serviceworker-for-offline/}
+	
+	\bibitem{}
+	\emph{Service Worker Security FAQ},
+	\url{https://chromium.googlesource.com/chromium/src/+/lkcr/docs/security/service-worker-security-faq.md}
 \end{thebibliography}
-\newpage
-\listoffigures
 \end{document}

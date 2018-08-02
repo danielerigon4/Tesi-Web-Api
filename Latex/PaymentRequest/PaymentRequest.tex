@@ -11,6 +11,7 @@
 \usepackage{listings} 
 \usepackage{color}
 \usepackage{graphicx}
+\usepackage[bottom]{footmisc}
 \graphicspath{ {./images/} }
 \definecolor{mygreen}{rgb}{0,0.6,0}
 \definecolor{mygray}{rgb}{0.5,0.5,0.5}
@@ -39,7 +40,6 @@
 	stepnumber=1, 
 	stringstyle=\color{mymauve}, 
 	tabsize=2, 
-	title=\lstname 
 }
 
 \definecolor{darkgray}{rgb}{.4,.4,.4}
@@ -180,149 +180,29 @@
 	\pagebreak
 	\subsubsection{PaymentMethodData}
 	PaymentMethodData contiene gli identificativi dei metodi di pagamento accettati dal sito Web e qualsiasi dato specifico del metodo di pagamento associato.
-	\begin{lstlisting}
-		const methodData = [
-			{
-				supportedMethods: "basic-card",
-				data: {
-					supportedNetworks: ["visa", "mastercard"],
-					supportedTypes: ["debit", "credit"],
-				},
-			},
-			{
-				supportedMethods: "https://example.com/bobpay",
-				data: {
-					merchantIdentifier: "XXXX",
-					bobPaySpecificField: true,
-				},
-			},
-		];
-	\end{lstlisting}
+	\lstinputlisting{code/PaymentMethodData.js}
 	\subsubsection{PaymentDetails}
 	I details contengono informazioni sulla transazione che l'utente è invitato a completare.
-	\begin{lstlisting}
-		const details = {
-			id: "super-store-order-123-12312",
-			displayItems: [
-			{
-				label: "Sub-total",
-				amount: { currency: "USD", value: "55.00" },
-			},
-			{
-				label: "Sales Tax",
-				amount: { currency: "USD", value: "5.00" },
-				type: "tax"
-			},
-			],
-			total: {
-				label: "Total due",
-				// The total is USD$65.00 here because we need to
-				// add shipping (below). The selected shipping
-				// costs USD$5.00.
-				amount: { currency: "USD", value: "65.00" },
-			},
-		};
-	\end{lstlisting}
+	\lstinputlisting{code/PaymentDetails.js}
 	\pagebreak
 	\textbf{Opzioni di spedizione}
 	\\
 	Qui vediamo un esempio di come aggiungere due opzioni di spedizione ai details.
-	\begin{lstlisting}
-		const shippingOptions = [
-			{
-				id: "standard",
-				label: "Ground Shipping (2 days)",
-				amount: { currency: "USD", value: "5.00" },
-				selected: true,
-			},
-			{
-				id: "drone",
-				label: " Drone Express (2 hours)",
-				amount: { currency: "USD", value: "25.00" }
-			},
-		];
-		Object.assign(details, { shippingOptions });
-	\end{lstlisting}
+	\lstinputlisting{code/OpzioniSpedizione.js}
 	
 	\flushleft\textbf{Modifiche condizionali alla richiesta di pagamento}
 	\\
 	Qui vediamo come aggiungere una tassa di elaborazione per l'utilizzo di una carta di credito. Si noti che richiede il ricalcolo del totale.
-	\begin{lstlisting}
-		// Credit card incurs a $3.00 processing fee.
-		const creditCardFee = {
-			label: "Credit card processing fee",
-			amount: { currency: "USD", value: "3.00" },
-		};
-		
-		// Modifiers apply when the user chooses to pay with
-		// a credit card.
-		const modifiers = [
-			{
-				additionalDisplayItems: [creditCardFee],
-				supportedMethods: "basic-card",
-				total: 
-				{
-					label: "Total due",
-					amount: { currency: "USD", value: "68.00" },
-				},
-				data: 
-				{
-					supportedTypes: "credit",
-				},
-			},
-		];
-		Object.assign(details, { modifiers });
-	\end{lstlisting}
+	\lstinputlisting{code/Tassa.js}
 	\pagebreak
 	\subsubsection{PaymentOptions}
 	Options contiene informazioni che lo sviluppatore ha bisogno dall'utente per eseguire il pagamento.
-	\begin{lstlisting}
-		const options = {
-			requestPayerEmail: false,
-			requestPayerName: true,
-			requestPayerPhone: false,
-			requestShipping: true,
-		}
-	\end{lstlisting}
+	\lstinputlisting{code/PaymentOptions.js}
 	
 	
 	\subsubsection{PaymentRequest}
 	Dopo aver raccolto tutti i bit di informazioni prerequisite, ora possiamo costruirne uno PaymentRequest e richiedere che il browser lo presenti all'utente.
-	\begin{lstlisting}
-		async function doPaymentRequest() 
-		{
-			try 
-			{
-				const request = new PaymentRequest(methodData, details, options);
-				// See below for a detailed example of handling these events
-				request.onshippingaddresschange = ev => ev.updateWith(details);
-				request.onshippingoptionchange = ev => ev.updateWith(details);
-				const response = await request.show();
-				await validateResponse(response);
-			} catch (err) 
-				{
-					// AbortError, SecurityError
-					console.error(err);
-				}
-		}
-		async function validateResponse(response) 
-		{
-			try {
-				if (await checkAllValuesAreGood(response)) 
-				{
-					await response.complete("success");
-				} 
-				else {
-					await response.complete("fail");
-				}
-			} catch (err) 
-				{
-					// Something went wrong...
-					await response.complete("fail");
-				}
-		}
-		doPaymentRequest();
-	\end{lstlisting}
+	\lstinputlisting{code/PaymentRequest.js}
 	\newpage
 	\section{Rischi e sicurezza}
 	La PaymentRequest API aumenta la sicurezza poichè:
@@ -377,38 +257,7 @@
 	\end{itemize}
 
 	Nel seguente esempio stiamo consentendo agli utenti di pagare con qualsiasi carta di debito o di credito appartenente alle reti Visa, MasterCard o Amex. L'oggetto details contiene l'importo totale parziale, l'imposta sulle vendite e il totale dovuto; questi dettagli verranno mostrati all'utente nel portafoglio. Bisogna tenere presente che l'API non aggiunge elementi o calcola l'imposta sulle vendite, spetta al commerciante fornire le informazioni corrette. In questo esempio, stiamo vendendo un bene fisico, quindi chiediamo l'indirizzo di spedizione del cliente.
-
-	\begin{lstlisting}
-		var methodData = [
-			{     
-				supportedMethods: ['basic-card'],     
-				data: {          
-					supportedNetworks: ['visa', 'mastercard', 'amex'],
-					supportedTypes: ['credit']                 
-				}    
-			}     
-		];
-		var details =  {
-			displayItems: [
-				{
-					label: "Sub-total",
-					amount: { currency: "USD", value : "100.00" } // US$100.00
-				},
-				{
-					label: "Sales Tax",
-					amount: { currency: "USD", value : "9.00" } // US$9.00
-				}
-			],
-			total:  {
-				label: "Total due",
-				amount: { currency: "USD", value : "109.00" } // US$109.00
-			}
-		};	
-		var options = {
-			requestShipping: true 
-		};
-		var payment = new PaymentRequest(methodData, details, options);
-	\end{lstlisting}
+	\lstinputlisting{code/Costruttore.js}
 	
 	\subsection{Visualizzazione dell'interfaccia utente, elaborazione del pagamento e visualizzazione dei risultati}
 	Una volta creato l'oggetto PaymentRequest è possibile attivare il browser per visualizzare il wallet con request.show(). 
@@ -421,22 +270,8 @@
 	\\
 	I clienti possono  selezionare le informazioni di pagamento, l'indirizzo di spedizione e altri campi appropriati e cliccare su Paga quando è pronto. A questo punto, gli utenti dovranno verificare la loro identità: in caso di esito positivo verrà soddisfatta la promise request.show() e verranno restituite al sito Web tutte le informazioni che il cliente ha fornito. Per il metodo di pagamento con carta di base l'oggetto risultante conterrà il nome del titolare della carta, il numero della carta, il mese di scadenza e altri campi pertinenti. Il commerciante può quindi utilizzare queste informazioni per elaborare la transazione sul back-end.
 	Dopo che la risposta è tornata dal server, è possibile utilizzare result.complete('success') per visualizzare la schermata di successo o result.complete('fail') per indicare una transazione fallita.
-	\begin{lstlisting}
-	//Quando la promessa e soddisfatta, passa i risultati al server per l'elaborazione
-	payment.show().then(result => {
-		return process(result).then(response => {
-			if (response.status === 200) {
-				//La transazione ha avuto successo
-				return result.complete('success');
-			} else {
-					//la transazione ha fallito
-					return result.complete('fail');
-				}
-			}).catch((err) => {
-			console.error('User rejected request', err.message)
-		}); 
-	});
-	\end{lstlisting}
+	\lstinputlisting{code/PaymentShow.js}
+	\pagebreak
 	Ed ecco i wallet in caso di successo e di fallimento.
 	\begin{figure}[h]
 		\centering
@@ -450,18 +285,10 @@
 		\caption{Wallet in caso di fail}
 		\label{fig: Wallet in caso di fail}
 	\end{figure}
-	\pagebreak	
+	\pagebreak
 	\subsection{Ascoltare gli eventi}
 	Il prezzo potrebbe cambiare in base all'indirizzo di spedizione e alle opzioni di spedizione selezionate dal cliente. È possibile ascoltare tali modifiche con gli eventi shippingaddresschange e shippingoptionchange per ricalcolare di conseguenza i prezzi.
-	\begin{lstlisting}
-		payment.addEventListener("shippingaddresschange", function (changeEvent) {
-			    // Elabora la modifica dell'indirizzo di spedizione
-		});
-		
-		payment.addEventListener("shippingoptionchange", function (changeEvent) {
-			// Modifica delle opzioni di spedizione del processo (ad esempio "spedizione in giornata")
-		});
-	\end{lstlisting}
+	\lstinputlisting{code/Events.js}
 	\newpage
 	\section{Compatibilità web}
 	\begin{figure}[h]

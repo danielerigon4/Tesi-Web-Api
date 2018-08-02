@@ -11,6 +11,7 @@
 \usepackage{listings} 
 \usepackage{color}
 \usepackage{graphicx}
+\usepackage[bottom]{footmisc}
 \graphicspath{ {./images/} }
 \definecolor{mygreen}{rgb}{0,0.6,0}
 \definecolor{mygray}{rgb}{0.5,0.5,0.5}
@@ -39,7 +40,6 @@
 	stepnumber=1, 
 	stringstyle=\color{mymauve}, 
 	tabsize=2, 
-	title=\lstname 
 }
 
 \definecolor{darkgray}{rgb}{.4,.4,.4}
@@ -91,52 +91,26 @@
 \section{Overview}
 La Geolocation API viene utilizzata per ottenere la posizione geografica di un utente. 
 Poiché questo può compromettere la privacy la posizione non è disponibile a meno che l'utente non la approvi: su un dispositivo mobile avremo un set di coordinate provenienti dal sensore GPS mentre su un portatile potremo usare il posizionamento legato all’ip della connessione internet.
-
+\newpage
 \section{Specifiche}
 
 \subsection{Oggetto della geolocalizzazione}
 Le API di geolocalizzazione sono pubblicate tramite l'oggetto navigator.geolocation. Se l'oggetto esiste, il servizio di geolocalizzazione è disponibile. Per testare l'esistenza di tale oggetto:
-%\lstinputlisting{code/GeolocationInNavigator.js}
-\begin{lstlisting}[language=JavaScript]
-	if ("geolocation" in navigator) {
-	/* la geolocalizzazione e disponibile */
-	} else {
-	/* la geolocalizzazione non e disponibile */
-	}
-\end{lstlisting}
+\lstinputlisting{code/GeolocationInNavigator.js}
 
 \subsection{Metodi}
 Ci sono solamente tre metodi a disposizione: getCurrentPosition, watchPosition e clearWatch. I primi due sono utili a ottenere la posizione corrente mentre il terzo serve ad annullare la ricerca della posizione corrente. 
 La differenza tra i primi due va ricercata nella loro periodicità, mentre il primo metodo fornisce il dato una sola volta, il secondo si attiva automaticamente ogni qualvolta la posizione cambi, o ogni tot intervallo di tempo.
 La sintassi per invocare questi metodi è la seguente:
-\begin{lstlisting}[language=JavaScript]
-navigator.geolocation.getCurrentPosition(inCasoDiSuccesso, opzInCasoDiErrore, opzioni); 
-navigator.geolocation.watchPosition(inCasoDiSuccesso, opzInCasoDiErrore, opzioni);
-\end{lstlisting}
+\lstinputlisting{code/Sintassi.js}
+
 \subsubsection{GetCurrentPosition}
-\begin{lstlisting}[language=JavaScript]
-navigator.geolocation.getCurrentPosition(function(position) {
-	do_something(position.coords.latitude,position.coords.longitude);
-});
-\end{lstlisting}
-L'esempio chiama la funzione dosomething() quando la posizione viene calcolata. 
-\\
-Un esempio concreto potrebbe essere il seguente. 
-Nota: viene chiesto il permesso all'utente nell'uso della posizione quando si chiama il metodo GetCurrentPosition e WatchPosition; se negata apparirà un messaggio di errore in console, se consentita verranno mostrati i dati dell'utente.
-\\
-\begin{lstlisting}
-/*Il codice mostra tutte le informazioni estraibili da Position; a seconda del device sul quale viene effettuata l'interrogazione non saranno tutte sempre disponibili, in tal caso il loro valore sara impostato a null.*/
-function success(position) {
-	document.getElementById('latitude').innerHTML = position.coords.latitude;
-	document.getElementById('longitude').innerHTML = position.coords.longitude;
-	document.getElementById('position-accuracy').innerHTML = position.coords.accuracy;	
-	document.getElementById('altitude').innerHTML = position.coords.altitude ? position.coords.altitude : 'unavailable';
-	document.getElementById('altitude-accuracy').innerHTML = position.coords.altitudeAccuracy ? position.coords.altitudeAccuracy : 'unavailable';
-	document.getElementById('heading').innerHTML = position.coords.heading ? position.coords.heading : 'unavailable';
-	document.getElementById('speed').innerHTML = position.coords.speed ? position.coords.speed : 'unavailable';
-}
-\end{lstlisting}
-Questo codice produrrà la seguente pagina.
+\lstinputlisting{code/GetCurrentPosition.js}
+L'esempio chiama la funzione dosomething() quando la posizione viene calcolata. \\
+Un esempio concreto potrebbe essere il seguente\footnote{viene chiesto il permesso all'utente nell'uso della posizione quando si chiama il metodo GetCurrentPosition e WatchPosition; se negata apparirà un messaggio di errore in console, se consentita verranno mostrati i dati dell'utente}: \\
+\pagebreak
+\lstinputlisting{code/EsempioCompleto.js}
+Che produrrà la seguente pagina:
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.5\linewidth]{geo1}
@@ -172,25 +146,12 @@ Se l'utente acconsente all'utilizzo della posizione verrà mostrato un messaggio
 \pagebreak
 \subsubsection{WatchPosition}
 Se la posizione cambia (perché il dispositivo si sposta o perché viene calcolata una posizione più accurata), si può settare una funzione che viene chiamata quando la posizione attuale si aggiorna. Basta usare la funzione watchPosition(), che ha gli stessi parametri di input di getCurrentPosition(). Questa funzione viene chiamata più volte così da permettere al browser di sapere sempre la posizione del dispositivo. La funzione di errore è opzionale come lo era per getCurrentPosition().
-
-\begin{lstlisting}
-var watchID = navigator.geolocation.watchPosition(function(position) {
-	do_something(position.coords.latitude, position.coords.longitude);
-});
-\end{lstlisting}
+\lstinputlisting{code/WatchPosition.js}
 Il metodo watchPosition() ritorna un ID numerico che può essere usato per identificare univocamente il controllo della posizione. 
-\\
-Nota: si può usare questo valore insieme al metodo clearWatch() per fermare il controllo della posizione.
-\begin{lstlisting}
-navigator.geolocation.clearWatch(watchID);
-\end{lstlisting}
 
 \subsubsection{ClearPosition}
 Viene usato il metodo clearWatch() per annullare il monitoraggio della posizione.
-\begin{lstlisting}
-navigator.geolocation.clearWatch(watchId);
-/*Il numero ID e quello restituito dal metodo watchPosition() descritto precedentemente*/
-\end{lstlisting}
+\lstinputlisting{code/ClearPosition.js}
 \newpage
 \section{Problemi sicurezza/privacy}
 Uno dei principali problemi con la Geolocation API è rappresentato dagli attacchi di cross-site scripting (XSS) dovuto al fatto che gli oggetti per tracciare le coordinate (latitudine e longitudine) risiedono all'interno del DOM, il quale è accessibile con JavaScript e attraverso il quale potrebbe essere rubata la posizione dell'utente. 
@@ -204,19 +165,9 @@ Un problem importante è che se l'utente non disabilita il tracciamento il brows
 \end{figure}
 \\
 Supponiamo che un utente malintenzionato abbia rilevato una vulnerabilità XSS in un sito Web; tutto ciò che dovra fare è fare in modo che la vittima esegua il seguente codice JavaScript per rubare la posizione.
-\begin{lstlisting}
-<script>
-function showPosition(position){
-var pos="Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
-document.getElementById("mydiv").innerHTML = pos;
-}
-function getLocation(){
-navigator.geolocation.getCurrentPosition(showPosition);
-}
-getLocation();
-</script>
-\end{lstlisting}
-Il codice utilizza le proprietà del DOM cords.latitude e cords.langitude per determinare rispettivamente la latitudine / longitudine e le memorizza in una variabile. Successivamente il codice JavaScript invia i dati al dominio dell'attaccante, in modo diverso a seconda di come è stato configurata la richiesta.	
+\lstinputlisting{code/script.js}
+Il codice utilizza le proprietà del DOM cords.latitude e cords.langitude per determinare rispettivamente la latitudine / longitudine e le memorizza in una variabile. Successivamente il codice JavaScript invia i dati al dominio dell'attaccante, in modo diverso a seconda di come è stato configurata la richiesta.
+\pagebreak
 \\
 Se l'utente non consente all'utilizzo della posizione non succederà nulla nella pagina.
 \begin{figure}[h]
@@ -225,7 +176,6 @@ Se l'utente non consente all'utilizzo della posizione non succederà nulla nella
 	\caption{Blocca autorizzazione}
 	\label{fig: Blocca autorizzazione}
 \end{figure}
-\pagebreak
 \\
 Se l'utente acconsente all'utilizzo della posizione essa sarà calcolata e, risiedendo nel DOM, può esser facilmente rubata.
 \begin{figure}[h]
@@ -242,7 +192,10 @@ Se l'utente acconsente all'utilizzo della posizione essa sarà calcolata e, risi
 	\caption{Desktop and mobile compatibility}
 	\label{fig: Desktop and mobile compatibility}
 \end{figure}
-
+\newpage
+\section{Conclusioni}
+\newpage
+\listoffigures
 \newpage
 \begin{thebibliography}{99}
 	\bibitem{}
@@ -292,6 +245,4 @@ Se l'utente acconsente all'utilizzo della posizione essa sarà calcolata e, risi
 	\emph{HTML5 Modern Day Attack And Defense Vector},
 	\url{http://www.xss-payloads.com/papers/HTML5AttackVectors.pdf}
 \end{thebibliography}
-\newpage
-\listoffigures
 \end{document}

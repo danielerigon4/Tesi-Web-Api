@@ -18,7 +18,9 @@
 \contentsline {subsection}{\numberline {3.4}Cache only}{12}{subsection.3.4}
 \contentsline {subsection}{\numberline {3.5}Fastest}{13}{subsection.3.5}
 \contentsline {subsection}{\numberline {3.6}Cache then network}{14}{subsection.3.6}
-\contentsline {section}{\numberline {4}Compatibilit\IeC {\`a} web}{15}{section.4}
-\contentsline {subsection}{\numberline {4.1}Desktop}{15}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Mobile}{15}{subsection.4.2}
-\contentsline {section}{\numberline {5}Conclusioni}{16}{section.5}
+\contentsline {section}{\numberline {4}Rischi e sicurezza}{15}{section.4}
+\contentsline {section}{\numberline {5}Esempio di attacco}{16}{section.5}
+\contentsline {section}{\numberline {6}Compatibilit\IeC {\`a} web}{18}{section.6}
+\contentsline {subsection}{\numberline {6.1}Desktop}{18}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Mobile}{18}{subsection.6.2}
+\contentsline {section}{\numberline {7}Conclusioni}{19}{section.7}

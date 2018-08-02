@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.6.25)  1 AUG 2018 15:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.6.25)  2 AUG 2018 12:02
 entering extended mode
 **./PaymentRequest.tex
 (PaymentRequest.tex
@@ -640,6 +640,21 @@ Package graphics Info: Driver file: pdftex.def on input line 99.
 \Gin@req@height=\dimen120
 \Gin@req@width=\dimen121
 )
+("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\footmisc\footmis
+c.sty"
+Package: footmisc 2011/06/06 v5.5b a miscellany of footnote facilities
+\FN@temptoken=\toks19
+\footnotemargin=\dimen122
+\c@pp@next@reset=\count115
+Package footmisc Info: Declaring symbol style bringhurst on input line 855.
+Package footmisc Info: Declaring symbol style chicago on input line 863.
+Package footmisc Info: Declaring symbol style wiley on input line 872.
+Package footmisc Info: Declaring symbol style lamport-robust on input line 883.
+
+Package footmisc Info: Declaring symbol style lamport* on input line 903.
+Package footmisc Info: Declaring symbol style lamport*-robust on input line 924
+.
+)
 
 LaTeX Warning: Unused global option(s):
     [openright].
@@ -707,7 +722,7 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 tlestring.sty"
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count115
+\c@section@level=\count116
 )
 LaTeX Info: Redefining \ref on input line 83.
 LaTeX Info: Redefining \pageref on input line 83.
@@ -757,17 +772,17 @@ LaTeX Info: Redefining \it@ccap on input line 83.
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.
 mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count116
-\scratchdimen=\dimen122
+\scratchcounter=\count117
+\scratchdimen=\dimen123
 \scratchbox=\box29
-\nofMPsegments=\count117
-\nofMParguments=\count118
-\everyMPshowfont=\toks19
-\MPscratchCnt=\count119
-\MPscratchDim=\dimen123
-\MPnumerator=\count120
-\makeMPintoPDFobject=\count121
-\everyMPtoPDFconversion=\toks20
+\nofMPsegments=\count118
+\nofMParguments=\count119
+\everyMPshowfont=\toks20
+\MPscratchCnt=\count120
+\MPscratchDim=\dimen124
+\MPnumerator=\count121
+\makeMPintoPDFobject=\count122
+\everyMPtoPDFconversion=\toks21
 )
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\epstopd
 f-base.sty"
@@ -784,7 +799,7 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
-\c@lstlisting=\count122
+\c@lstlisting=\count123
 LaTeX Font Info:    Try loading font information for OT1+lmr on input line 87.
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\ot1lmr.fd"
@@ -844,29 +859,35 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [5]
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
+nput line 183.
 LaTeX Font Info:    Try loading font information for T1+lmtt on input line 183.
 
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
+(code/PaymentMethodData.js
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 196.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 13.
+) (code/PaymentDetails.js)
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[6]
-Underfull \vbox (badness 1552) has occurred while \output is active []
+ [6]
+(code/OpzioniSpedizione.js) (code/Tassa.js)
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [7]
-[8]
-<./images/Chrome1.png, id=307, 386.19281pt x 338.76563pt>
+(code/PaymentOptions.js) (code/PaymentRequest.js) [8]
+<./images/Chrome1.png, id=291, 386.19281pt x 338.76563pt>
 File: ./images/Chrome1.png Graphic file (type png)
 <use ./images/Chrome1.png>
-Package pdftex.def Info: ./images/Chrome1.png  used on input line 349.
+Package pdftex.def Info: ./images/Chrome1.png  used on input line 229.
 (pdftex.def)             Requested size: 227.62206pt x 199.66838pt.
-<./images/Chrome2.png, id=308, 386.19281pt x 339.51843pt>
+<./images/Chrome2.png, id=292, 386.19281pt x 339.51843pt>
 File: ./images/Chrome2.png Graphic file (type png)
 <use ./images/Chrome2.png>
-Package pdftex.def Info: ./images/Chrome2.png  used on input line 355.
+Package pdftex.def Info: ./images/Chrome2.png  used on input line 235.
 (pdftex.def)             Requested size: 227.62206pt x 200.11209pt.
 
 
@@ -879,36 +900,37 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 Underfull \vbox (badness 4366) has occurred while \output is active []
 
  [9]
-[10 <./images/Chrome1.png> <./images/Chrome2.png>] [11]
-<./images/wallet1.png, id=323, 225.84375pt x 221.32687pt>
+[10 <./images/Chrome1.png> <./images/Chrome2.png>] [11] (code/Costruttore.js)
+<./images/wallet1.png, id=307, 225.84375pt x 221.32687pt>
 File: ./images/wallet1.png Graphic file (type png)
 <use ./images/wallet1.png>
-Package pdftex.def Info: ./images/wallet1.png  used on input line 417.
+Package pdftex.def Info: ./images/wallet1.png  used on input line 266.
 (pdftex.def)             Requested size: 227.62206pt x 223.08243pt.
- [12]
-<./images/wallet2.png, id=359, 184.5294pt x 180.675pt>
+
+[12] (code/PaymentShow.js) [13 <./images/wallet1.png>]
+<./images/wallet2.png, id=363, 184.5294pt x 180.675pt>
 File: ./images/wallet2.png Graphic file (type png)
 <use ./images/wallet2.png>
-Package pdftex.def Info: ./images/wallet2.png  used on input line 443.
+Package pdftex.def Info: ./images/wallet2.png  used on input line 278.
 (pdftex.def)             Requested size: 227.62206pt x 222.8823pt.
-<./images/wallet3.png, id=360, 184.5294pt x 180.675pt>
+<./images/wallet3.png, id=364, 184.5294pt x 180.675pt>
 File: ./images/wallet3.png Graphic file (type png)
 <use ./images/wallet3.png>
-Package pdftex.def Info: ./images/wallet3.png  used on input line 449.
+Package pdftex.def Info: ./images/wallet3.png  used on input line 284.
 (pdftex.def)             Requested size: 227.62206pt x 222.8823pt.
- [13 <./images/wallet1.png>]
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [14 <./images/wallet2.png> <./images/wallet3.png>] [15]
-<./images/Compatibilita1.png, id=402, 971.12813pt x 143.03438pt>
+ [14 <./images/wallet2.png> <./images/wallet3.png>] (code/Events.js) [15]
+<./images/Compatibilita1.png, id=382, 971.12813pt x 143.03438pt>
 File: ./images/Compatibilita1.png Graphic file (type png)
 <use ./images/Compatibilita1.png>
-Package pdftex.def Info: ./images/Compatibilita1.png  used on input line 469.
+Package pdftex.def Info: ./images/Compatibilita1.png  used on input line 296.
 (pdftex.def)             Requested size: 455.24411pt x 67.04936pt.
-<./images/Compatibilita2.png, id=403, 971.12813pt x 118.94438pt>
+<./images/Compatibilita2.png, id=383, 971.12813pt x 118.94438pt>
 File: ./images/Compatibilita2.png Graphic file (type png)
 <use ./images/Compatibilita2.png>
-Package pdftex.def Info: ./images/Compatibilita2.png  used on input line 475.
+Package pdftex.def Info: ./images/Compatibilita2.png  used on input line 302.
 (pdftex.def)             Requested size: 455.24411pt x 55.75684pt.
  [16 <./images/Compatibilita1.png> <./images/Compatibilita2.png>] [17] [18pdfTe
 X warning (ext4): destination with the same identifier (name{cite.}) has been a
@@ -916,61 +938,61 @@ lready used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.534 	\newpage
+l.361 	\newpage
                pdfTeX warning (ext4): destination with the same identifier (nam
 e{cite.}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.534 	\newpage
+l.361 	\newpage
                pdfTeX warning (ext4): destination with the same identifier (nam
 e{cite.}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.534 	\newpage
+l.361 	\newpage
                pdfTeX warning (ext4): destination with the same identifier (nam
 e{cite.}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.534 	\newpage
+l.361 	\newpage
                pdfTeX warning (ext4): destination with the same identifier (nam
 e{cite.}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.534 	\newpage
+l.361 	\newpage
                pdfTeX warning (ext4): destination with the same identifier (nam
 e{cite.}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.534 	\newpage
+l.361 	\newpage
                pdfTeX warning (ext4): destination with the same identifier (nam
 e{cite.}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.534 	\newpage
+l.361 	\newpage
                pdfTeX warning (ext4): destination with the same identifier (nam
 e{cite.}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.534 	\newpage
+l.361 	\newpage
                pdfTeX warning (ext4): destination with the same identifier (nam
 e{cite.}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.534 	\newpage
+l.361 	\newpage
                pdfTeX warning (ext4): destination with the same identifier (nam
 e{cite.}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.534 	\newpage
+l.361 	\newpage
                ] (PaymentRequest.lof)
 \tf@lof=\write5
 \openout5 = `PaymentRequest.lof'.
@@ -979,29 +1001,29 @@ l.534 	\newpage
 
 Package natbib Warning: There were multiply defined citations.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 536.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 363.
 [19]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 536.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 363.
  (PaymentRequest.aux
 
 Package natbib Warning: Citation(s) may have changed.
 (natbib)                Rerun to get citations correct.
 
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 536.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 536.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 363.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 363.
 Package rerunfilecheck Info: File `PaymentRequest.out' has not changed.
 (rerunfilecheck)             Checksum: 476DA8F9939F21847AE2EA5C5B80841F;1931.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 536.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 363.
  ) 
 Here is how much of TeX's memory you used:
- 9365 strings out of 493305
- 134367 string characters out of 3128932
- 371222 words of memory out of 3000000
- 12544 multiletter control sequences out of 15000+200000
+ 9476 strings out of 493305
+ 136755 string characters out of 3128932
+ 399907 words of memory out of 3000000
+ 12642 multiletter control sequences out of 15000+200000
  51534 words of font info for 42 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 28i,7n,40p,925b,1151s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 28i,7n,40p,925b,1137s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Daniele/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.
 enc}{C:/Users/Daniele/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-m
 athsy.enc}<C:/Users/Daniele/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
@@ -1015,9 +1037,9 @@ ms/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Users/Daniele/AppData/Local/
 Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Daniele/AppData/
 Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtk10.pfb><C:/Users/Daniele/Ap
 pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtt10.pfb>
-Output written on PaymentRequest.pdf (19 pages, 503839 bytes).
+Output written on PaymentRequest.pdf (19 pages, 500634 bytes).
 PDF statistics:
- 536 PDF objects out of 1000 (max. 8388607)
- 240 named destinations out of 1000 (max. 500000)
+ 513 PDF objects out of 1000 (max. 8388607)
+ 220 named destinations out of 1000 (max. 500000)
  249 words of extra memory for PDF output out of 10000 (max. 10000000)
 

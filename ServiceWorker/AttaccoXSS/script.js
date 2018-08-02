@@ -2,7 +2,7 @@ self.addEventListener('fetch', function (event) {
     event.respondWith(
         //console.log(event.request)
         caches.match(event.request).then(function(res){
-                if(res){  //Se c'è una cache, usa la cache 
+                if(res){  //Se ce una cache, usa la cache 
                     return res;
                 }
                 return requestBackend(event);//cache senza cache 
@@ -13,8 +13,8 @@ self.addEventListener('fetch', function (event) {
 function requestBackend(event){  
     var url = event.request.clone();  
     console.log(url)
-    if(url.url=='http://127.0.0.1/aaa.html'){
-    //determina se Risorse che devono essere dirottate
+    if(url.url=='http://127.0.0.1/index.html'){
+    //determina se le risorse che devono essere dirottate
     return new Response("<script>alert(1)</script>", {headers: { 'Content-Type': 'text/html' }})
     }
     return fetch(url).then(function(res){

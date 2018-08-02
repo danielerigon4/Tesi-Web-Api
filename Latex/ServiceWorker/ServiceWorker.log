@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.6.25)  1 AUG 2018 16:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.6.25)  2 AUG 2018 12:02
 entering extended mode
 **./ServiceWorker.tex
 (ServiceWorker.tex
@@ -640,11 +640,72 @@ Package graphics Info: Driver file: pdftex.def on input line 99.
 \Gin@req@height=\dimen120
 \Gin@req@width=\dimen121
 )
+("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\footmisc\footmis
+c.sty"
+Package: footmisc 2011/06/06 v5.5b a miscellany of footnote facilities
+\FN@temptoken=\toks19
+\footnotemargin=\dimen122
+\c@pp@next@reset=\count115
+Package footmisc Info: Declaring symbol style bringhurst on input line 855.
+Package footmisc Info: Declaring symbol style chicago on input line 863.
+Package footmisc Info: Declaring symbol style wiley on input line 872.
+Package footmisc Info: Declaring symbol style lamport-robust on input line 883.
+
+Package footmisc Info: Declaring symbol style lamport* on input line 903.
+Package footmisc Info: Declaring symbol style lamport*-robust on input line 924
+.
+)
 
 LaTeX Warning: Unused global option(s):
     [openright].
 
-(ServiceWorker.aux)
+(ServiceWorker.aux
+
+Package natbib Warning: Citation `' multiply defined.
+
+
+Package natbib Warning: Citation `' multiply defined.
+
+
+Package natbib Warning: Citation `' multiply defined.
+
+
+Package natbib Warning: Citation `' multiply defined.
+
+
+Package natbib Warning: Citation `' multiply defined.
+
+
+Package natbib Warning: Citation `' multiply defined.
+
+
+Package natbib Warning: Citation `' multiply defined.
+
+
+Package natbib Warning: Citation `' multiply defined.
+
+
+Package natbib Warning: Citation `' multiply defined.
+
+
+Package natbib Warning: Citation `' multiply defined.
+
+
+Package natbib Warning: Citation `' multiply defined.
+
+
+Package natbib Warning: Citation `' multiply defined.
+
+
+Package natbib Warning: Citation `' multiply defined.
+
+
+Package natbib Warning: Citation `' multiply defined.
+
+
+Package natbib Warning: Citation `' multiply defined.
+
+)
 \openout1 = `ServiceWorker.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 82.
@@ -662,8 +723,7 @@ LaTeX Font Info:    ... okay on input line 82.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 82.
 LaTeX Font Info:    ... okay on input line 82.
 LaTeX Font Info:    Try loading font information for T1+lmr on input line 82.
-
-("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\t1lmr.fd"
+ ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\t1lmr.fd"
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 \AtBeginShipoutBox=\box28
@@ -677,7 +737,7 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 tlestring.sty"
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count115
+\c@section@level=\count116
 )
 LaTeX Info: Redefining \ref on input line 82.
 LaTeX Info: Redefining \pageref on input line 82.
@@ -727,17 +787,17 @@ LaTeX Info: Redefining \it@ccap on input line 82.
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.
 mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count116
-\scratchdimen=\dimen122
+\scratchcounter=\count117
+\scratchdimen=\dimen123
 \scratchbox=\box29
-\nofMPsegments=\count117
-\nofMParguments=\count118
-\everyMPshowfont=\toks19
-\MPscratchCnt=\count119
-\MPscratchDim=\dimen123
-\MPnumerator=\count120
-\makeMPintoPDFobject=\count121
-\everyMPtoPDFconversion=\toks20
+\nofMPsegments=\count118
+\nofMParguments=\count119
+\everyMPshowfont=\toks20
+\MPscratchCnt=\count120
+\MPscratchDim=\dimen124
+\MPnumerator=\count121
+\makeMPintoPDFobject=\count122
+\everyMPtoPDFconversion=\toks21
 )
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\epstopd
 f-base.sty"
@@ -754,7 +814,7 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
-\c@lstlisting=\count122
+\c@lstlisting=\count123
 LaTeX Font Info:    Try loading font information for OT1+lmr on input line 85.
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\ot1lmr.fd"
@@ -792,7 +852,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 \openout4 = `ServiceWorker.toc'.
 
 
-Underfull \vbox (badness 5490) has occurred while \output is active []
+Underfull \vbox (badness 1448) has occurred while \output is active []
 
  [1
 
@@ -814,7 +874,7 @@ Overfull \hbox (32.48819pt too wide) in paragraph at lines 107--108
 ra-to tra-mi-te ser-vi-ceWor-ker-Con-tai-ner.register(); 
  []
 
-<./images/SwLifecycle.png, id=128, 581.17125pt x 870.25125pt>
+<./images/SwLifecycle.png, id=138, 581.17125pt x 870.25125pt>
 File: ./images/SwLifecycle.png Graphic file (type png)
 <use ./images/SwLifecycle.png>
 Package pdftex.def Info: ./images/SwLifecycle.png  used on input line 114.
@@ -825,8 +885,12 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [2] [3 <./images/SwLifecycle.png>] [4]
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 148.
- [5] [6] [7] [8]
-<./images/Strategia1.png, id=218, 821.0675pt x 445.665pt>
+ [5] [6]
+Underfull \vbox (badness 1769) has occurred while \output is active []
+
+ [7]
+[8]
+<./images/Strategia1.png, id=228, 821.0675pt x 445.665pt>
 File: ./images/Strategia1.png Graphic file (type png)
 <use ./images/Strategia1.png>
 Package pdftex.def Info: ./images/Strategia1.png  used on input line 281.
@@ -839,7 +903,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [9]
-<./images/Strategia2.png, id=240, 821.0675pt x 439.6425pt>
+<./images/Strategia2.png, id=250, 821.0675pt x 439.6425pt>
 File: ./images/Strategia2.png Graphic file (type png)
 <use ./images/Strategia2.png>
 Package pdftex.def Info: ./images/Strategia2.png  used on input line 299.
@@ -852,7 +916,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [10 <./images/Strategia1.png>]
-<./images/Strategia3.png, id=255, 821.0675pt x 319.1925pt>
+<./images/Strategia3.png, id=265, 821.0675pt x 319.1925pt>
 File: ./images/Strategia3.png Graphic file (type png)
 <use ./images/Strategia3.png>
 Package pdftex.def Info: ./images/Strategia3.png  used on input line 319.
@@ -865,7 +929,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [11 <./images/Strategia2.png>]
-<./images/Strategia4.png, id=268, 821.0675pt x 321.2pt>
+<./images/Strategia4.png, id=278, 821.0675pt x 321.2pt>
 File: ./images/Strategia4.png Graphic file (type png)
 <use ./images/Strategia4.png>
 Package pdftex.def Info: ./images/Strategia4.png  used on input line 333.
@@ -874,7 +938,7 @@ Package pdftex.def Info: ./images/Strategia4.png  used on input line 333.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [12 <./images/Strategia3.png> <./images/Strategia4.png>]
-<./images/Strategia5.png, id=281, 821.0675pt x 464.73625pt>
+<./images/Strategia5.png, id=291, 821.0675pt x 464.73625pt>
 File: ./images/Strategia5.png Graphic file (type png)
 <use ./images/Strategia5.png>
 Package pdftex.def Info: ./images/Strategia5.png  used on input line 356.
@@ -883,109 +947,119 @@ Package pdftex.def Info: ./images/Strategia5.png  used on input line 356.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [13 <./images/Strategia5.png>]
-<./images/Strategia6.png, id=300, 821.0675pt x 529.98pt>
+<./images/Strategia6.png, id=310, 821.0675pt x 529.98pt>
 File: ./images/Strategia6.png Graphic file (type png)
 <use ./images/Strategia6.png>
 Package pdftex.def Info: ./images/Strategia6.png  used on input line 368.
 (pdftex.def)             Requested size: 455.24411pt x 293.84315pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
  [14 <./images/Strategia6.png>]
-<./images/CompWeb.png, id=307, 721.19438pt x 100.12407pt>
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 376.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 376.
+ [15]
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
+nput line 391.
+
+(../../ServiceWorker/AttaccoXSS/index.html)
+(../../ServiceWorker/AttaccoXSS/script.js)
+(../../ServiceWorker/AttaccoXSS/hack.js) [16]
+(../../ServiceWorker/AttaccoXSS/install.js) [17]
+<./images/CompWeb.png, id=390, 721.19438pt x 100.12407pt>
 File: ./images/CompWeb.png Graphic file (type png)
 <use ./images/CompWeb.png>
-Package pdftex.def Info: ./images/CompWeb.png  used on input line 378.
+Package pdftex.def Info: ./images/CompWeb.png  used on input line 404.
 (pdftex.def)             Requested size: 455.24411pt x 63.20222pt.
-<./images/CompMobile.png, id=308, 721.94719pt x 130.23656pt>
+<./images/CompMobile.png, id=391, 721.94719pt x 130.23656pt>
 File: ./images/CompMobile.png Graphic file (type png)
 <use ./images/CompMobile.png>
-Package pdftex.def Info: ./images/CompMobile.png  used on input line 385.
+Package pdftex.def Info: ./images/CompMobile.png  used on input line 411.
 (pdftex.def)             Requested size: 455.24411pt x 82.12497pt.
- [15 <./images/CompWeb.png> <./images/CompMobile.png>]
-Underfull \hbox (badness 6141) in paragraph at lines 395--398
+ [18 <./images/CompWeb.png> <./images/CompMobile.png>] [19] (ServiceWorker.lof)
+\tf@lof=\write5
+\openout5 = `ServiceWorker.lof'.
+
+ [20]
+Underfull \hbox (badness 6141) in paragraph at lines 424--427
 []\T1/lmr/m/n/10.95 Angular Uni-ver-si-ty (2018), \T1/lmr/m/it/10.95 An-gu-lar 
 Ser-vi-ce Wor-ker - Step-By-Step Gui-de for
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 395--398
+Underfull \hbox (badness 10000) in paragraph at lines 424--427
 \T1/lmr/m/it/10.95 tur-ning your Ap-pli-ca-tion in-to a PWA\T1/lmr/m/n/10.95 , 
 []$\T1/lmtt/m/n/10.95 https : / / blog . angular-[]university . io /
  []
 
-[16pdfTeX warning (ext4): destination with the same identifier (name{cite.}) ha
-s been already used, duplicate ignored
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.434 	\bibitem{}
-                 pdfTeX warning (ext4): destination with the same identifier (n
-ame{cite.}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.434 	\bibitem{}
-                 pdfTeX warning (ext4): destination with the same identifier (n
-ame{cite.}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.434 	\bibitem{}
-                 pdfTeX warning (ext4): destination with the same identifier (n
-ame{cite.}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.434 	\bibitem{}
-                 pdfTeX warning (ext4): destination with the same identifier (n
-ame{cite.}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.434 	\bibitem{}
-                 pdfTeX warning (ext4): destination with the same identifier (n
-ame{cite.}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.434 	\bibitem{}
-                 ]pdfTeX warning (ext4): destination with the same identifier (
-name{cite.}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.434 	\bibitem{}
-                 
-Underfull \hbox (badness 3009) in paragraph at lines 435--438
+Underfull \hbox (badness 3009) in paragraph at lines 464--467
 []\T1/lmr/m/n/10.95 Speedy Word-press, \T1/lmr/m/it/10.95 Gui-da com-ple-ta ai 
 Ser-vi-ce Wor-ker Ja-va-script\T1/lmr/m/n/10.95 , []$\T1/lmtt/m/n/10.95 https :
  / / www .
  []
 
-pdfTeX warning (ext4): destination with the same identifier (name{cite.}) has b
-een already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.439 	\bibitem{}
-                 pdfTeX warning (ext4): destination with the same identifier (n
-ame{cite.}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.444 	\bibitem{}
-                 
-Underfull \hbox (badness 7759) in paragraph at lines 445--448
+
+Underfull \hbox (badness 7759) in paragraph at lines 474--477
 []\T1/lmr/m/n/10.95 SitePoint, \T1/lmr/m/it/10.95 Get-ting Star-ted with Ser-vi
 -ce Wor-kers\T1/lmr/m/n/10.95 , []$\T1/lmtt/m/n/10.95 https : / / www . sitepoi
 nt . com /
  []
 
-pdfTeX warning (ext4): destination with the same identifier (name{cite.}) has b
-een already used, duplicate ignored
+[21pdfTeX warning (ext4): destination with the same identifier (name{cite.}) ha
+s been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.477 	
+       pdfTeX warning (ext4): destination with the same identifier (name{cite.}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.477 	
+       pdfTeX warning (ext4): destination with the same identifier (name{cite.}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.477 	
+       pdfTeX warning (ext4): destination with the same identifier (name{cite.}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.477 	
+       pdfTeX warning (ext4): destination with the same identifier (name{cite.}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.477 	
+       pdfTeX warning (ext4): destination with the same identifier (name{cite.}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.477 	
+       pdfTeX warning (ext4): destination with the same identifier (name{cite.}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.477 	
+       pdfTeX warning (ext4): destination with the same identifier (name{cite.}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.477 	
+       ]pdfTeX warning (ext4): destination with the same identifier (name{cite.
+}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.449 	\bibitem{}
+l.478 	\bibitem{}
                  
-Underfull \hbox (badness 1803) in paragraph at lines 450--453
+Underfull \hbox (badness 1803) in paragraph at lines 479--482
 []\T1/lmr/m/n/10.95 jakearchibald Gi-thub (2017), \T1/lmr/m/it/10.95 Ser-vi-ce 
 wor-kers ex-plai-ned\T1/lmr/m/n/10.95 , []$\T1/lmtt/m/n/10.95 https : / / githu
 b . com / w3c /
@@ -995,9 +1069,9 @@ pdfTeX warning (ext4): destination with the same identifier (name{cite.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.454 	\bibitem{}
+l.483 	\bibitem{}
                  
-Underfull \hbox (badness 2245) in paragraph at lines 455--458
+Underfull \hbox (badness 2245) in paragraph at lines 484--487
 []\T1/lmr/m/n/10.95 Lyza Dan-ger Gard-ner \T1/lmr/m/it/10.95 Ma-king A Ser-vi-c
 e Wor-ker: A Ca-se Stu-dy []$\T1/lmtt/m/n/10.95 https : / / www .
  []
@@ -1006,61 +1080,80 @@ pdfTeX warning (ext4): destination with the same identifier (name{cite.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.459 	\bibitem{}
+l.488 	\bibitem{}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{cite.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.464 	\bibitem{}
-                  [17pdfTeX warning (ext4): destination with the same identifie
-r (name{cite.}) has been already used, duplicate ignored
+l.493 	\bibitem{}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{cite.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.498 	\bibitem{}
+                 
+
+Package natbib Warning: There were multiply defined citations.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 502.
+[22pdfTeX warning (ext4): destination with the same identifier (name{cite.}) ha
+s been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.469 \newpage
-              ] (ServiceWorker.lof)
-\tf@lof=\write5
-\openout5 = `ServiceWorker.lof'.
+l.502 \end{document}
+                    pdfTeX warning (ext4): destination with the same identifier
+ (name{cite.}) has been already used, duplicate ignored
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 471.
- [18]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 471.
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.502 \end{document}
+                    ]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 502.
  (ServiceWorker.aux
 
 Package natbib Warning: Citation(s) may have changed.
 (natbib)                Rerun to get citations correct.
 
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 471.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 471.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 502.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 502.
 Package rerunfilecheck Info: File `ServiceWorker.out' has not changed.
-(rerunfilecheck)             Checksum: 297911D34D49BE006CB7DF45FFFF5CEF;1376.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 471.
+(rerunfilecheck)             Checksum: 7E66DC68BE9BA4F6A56539880535CD80;1486.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 502.
  ) 
 Here is how much of TeX's memory you used:
- 9273 strings out of 493305
- 132714 string characters out of 3128932
- 344132 words of memory out of 3000000
- 12537 multiletter control sequences out of 15000+200000
- 51534 words of font info for 42 fonts, out of 3000000 for 9000
+ 9487 strings out of 493305
+ 136203 string characters out of 3128932
+ 465868 words of memory out of 3000000
+ 12661 multiletter control sequences out of 15000+200000
+ 64706 words of font info for 50 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 28i,6n,40p,1339b,1151s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/Daniele/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.
-enc}{C:/Users/Daniele/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-m
-athsy.enc}<C:/Users/Daniele/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
-c/lm/lmbx10.pfb><C:/Users/Daniele/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
-/public/lm/lmbx12.pfb><C:/Users/Daniele/AppData/Local/Programs/MiKTeX 2.9/fonts
-/type1/public/lm/lmr10.pfb><C:/Users/Daniele/AppData/Local/Programs/MiKTeX 2.9/
-fonts/type1/public/lm/lmr12.pfb><C:/Users/Daniele/AppData/Local/Programs/MiKTeX
- 2.9/fonts/type1/public/lm/lmr17.pfb><C:/Users/Daniele/AppData/Local/Programs/M
-iKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Users/Daniele/AppData/Local/Progra
-ms/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Users/Daniele/AppData/Local/
-Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Daniele/AppData/
-Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtk10.pfb><C:/Users/Daniele/Ap
-pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtt10.pfb>
-Output written on ServiceWorker.pdf (18 pages, 515584 bytes).
+ 28i,8n,40p,1339b,1151s stack positions out of 5000i,500n,10000p,200000b,50000s
+pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exi
+st, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
+, replaced by a fixed one
+
+{C:/Users/Daniele/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.en
+c}{C:/Users/Daniele/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mat
+hsy.enc}<C:/Users/Daniele/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/
+lm/lmbx10.pfb><C:/Users/Daniele/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/p
+ublic/lm/lmbx12.pfb><C:/Users/Daniele/AppData/Local/Programs/MiKTeX 2.9/fonts/t
+ype1/public/lm/lmr10.pfb><C:/Users/Daniele/AppData/Local/Programs/MiKTeX 2.9/fo
+nts/type1/public/lm/lmr12.pfb><C:/Users/Daniele/AppData/Local/Programs/MiKTeX 2
+.9/fonts/type1/public/lm/lmr17.pfb><C:/Users/Daniele/AppData/Local/Programs/MiK
+TeX 2.9/fonts/type1/public/lm/lmr6.pfb><C:/Users/Daniele/AppData/Local/Programs
+/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Users/Daniele/AppData/Local/Prog
+rams/MiKTeX 2.9/fonts/type1/public/lm/lmr9.pfb><C:/Users/Daniele/AppData/Local/
+Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Users/Daniele/AppData/
+Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Daniele/Ap
+pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtk10.pfb><C:/Users/Dani
+ele/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtt10.pfb>
+Output written on ServiceWorker.pdf (22 pages, 582159 bytes).
 PDF statistics:
- 435 PDF objects out of 1000 (max. 8388607)
- 154 named destinations out of 1000 (max. 500000)
- 222 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 546 PDF objects out of 1000 (max. 8388607)
+ 217 named destinations out of 1000 (max. 500000)
+ 238 words of extra memory for PDF output out of 10000 (max. 10000000)
 
