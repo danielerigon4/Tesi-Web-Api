@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.6.25)  2 AUG 2018 12:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.6.25)  2 AUG 2018 14:15
 entering extended mode
 **./ServiceWorker.tex
 (ServiceWorker.tex
@@ -883,17 +883,19 @@ Package pdftex.def Info: ./images/SwLifecycle.png  used on input line 114.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [2] [3 <./images/SwLifecycle.png>] [4]
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
+nput line 147.
+ (code/Registrazione.js
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 148.
- [5] [6]
-Underfull \vbox (badness 1769) has occurred while \output is active []
-
- [7]
-[8]
-<./images/Strategia1.png, id=228, 821.0675pt x 445.665pt>
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 1.
+)
+(code/Registrazione2.js) [5] (code/Installazione.js) [6] (code/Aggiornamento.js
+) [7] (code/Disinstallare.js) [8] (code/Networkfirst1.js)
+(code/Networkfirst2.js)
+<./images/Strategia1.png, id=241, 821.0675pt x 445.665pt>
 File: ./images/Strategia1.png Graphic file (type png)
 <use ./images/Strategia1.png>
-Package pdftex.def Info: ./images/Strategia1.png  used on input line 281.
+Package pdftex.def Info: ./images/Strategia1.png  used on input line 207.
 (pdftex.def)             Requested size: 455.24411pt x 247.09538pt.
 
 
@@ -903,10 +905,11 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [9]
-<./images/Strategia2.png, id=250, 821.0675pt x 439.6425pt>
+(code/CacheFirst.js)
+<./images/Strategia2.png, id=263, 821.0675pt x 439.6425pt>
 File: ./images/Strategia2.png Graphic file (type png)
 <use ./images/Strategia2.png>
-Package pdftex.def Info: ./images/Strategia2.png  used on input line 299.
+Package pdftex.def Info: ./images/Strategia2.png  used on input line 217.
 (pdftex.def)             Requested size: 455.24411pt x 243.75626pt.
 
 
@@ -915,11 +918,11 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [10 <./images/Strategia1.png>]
-<./images/Strategia3.png, id=265, 821.0675pt x 319.1925pt>
+ [10 <./images/Strategia1.png>] (code/NetworkOnly1.js) (code/NetworkOnly2.js)
+<./images/Strategia3.png, id=278, 821.0675pt x 319.1925pt>
 File: ./images/Strategia3.png Graphic file (type png)
 <use ./images/Strategia3.png>
-Package pdftex.def Info: ./images/Strategia3.png  used on input line 319.
+Package pdftex.def Info: ./images/Strategia3.png  used on input line 231.
 (pdftex.def)             Requested size: 455.24411pt x 176.97372pt.
 
 
@@ -928,78 +931,72 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [11 <./images/Strategia2.png>]
-<./images/Strategia4.png, id=278, 821.0675pt x 321.2pt>
+ [11 <./images/Strategia2.png>] (code/CacheOnly.js)
+<./images/Strategia4.png, id=291, 821.0675pt x 321.2pt>
 File: ./images/Strategia4.png Graphic file (type png)
 <use ./images/Strategia4.png>
-Package pdftex.def Info: ./images/Strategia4.png  used on input line 333.
+Package pdftex.def Info: ./images/Strategia4.png  used on input line 241.
 (pdftex.def)             Requested size: 455.24411pt x 178.08676pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [12 <./images/Strategia3.png> <./images/Strategia4.png>]
-<./images/Strategia5.png, id=291, 821.0675pt x 464.73625pt>
+ [12 <./images/Strategia3.png> <./images/Strategia4.png>] (code/Fastest.js)
+<./images/Strategia5.png, id=304, 821.0675pt x 464.73625pt>
 File: ./images/Strategia5.png Graphic file (type png)
 <use ./images/Strategia5.png>
-Package pdftex.def Info: ./images/Strategia5.png  used on input line 356.
+Package pdftex.def Info: ./images/Strategia5.png  used on input line 253.
 (pdftex.def)             Requested size: 455.24411pt x 257.66928pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [13 <./images/Strategia5.png>]
-<./images/Strategia6.png, id=310, 821.0675pt x 529.98pt>
+<./images/Strategia6.png, id=323, 821.0675pt x 529.98pt>
 File: ./images/Strategia6.png Graphic file (type png)
 <use ./images/Strategia6.png>
-Package pdftex.def Info: ./images/Strategia6.png  used on input line 368.
+Package pdftex.def Info: ./images/Strategia6.png  used on input line 265.
 (pdftex.def)             Requested size: 455.24411pt x 293.84315pt.
  [14 <./images/Strategia6.png>]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 376.
+(Font)              <9> on input line 273.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 376.
- [15]
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 391.
-
-(../../ServiceWorker/AttaccoXSS/index.html)
-(../../ServiceWorker/AttaccoXSS/script.js)
-(../../ServiceWorker/AttaccoXSS/hack.js) [16]
-(../../ServiceWorker/AttaccoXSS/install.js) [17]
-<./images/CompWeb.png, id=390, 721.19438pt x 100.12407pt>
+(Font)              <5> on input line 273.
+ [15] (code/index.html)
+(code/script.js) (code/hack.js) [16] (code/install.js) [17]
+<./images/CompWeb.png, id=403, 721.19438pt x 100.12407pt>
 File: ./images/CompWeb.png Graphic file (type png)
 <use ./images/CompWeb.png>
-Package pdftex.def Info: ./images/CompWeb.png  used on input line 404.
+Package pdftex.def Info: ./images/CompWeb.png  used on input line 301.
 (pdftex.def)             Requested size: 455.24411pt x 63.20222pt.
-<./images/CompMobile.png, id=391, 721.94719pt x 130.23656pt>
+<./images/CompMobile.png, id=404, 721.94719pt x 130.23656pt>
 File: ./images/CompMobile.png Graphic file (type png)
 <use ./images/CompMobile.png>
-Package pdftex.def Info: ./images/CompMobile.png  used on input line 411.
+Package pdftex.def Info: ./images/CompMobile.png  used on input line 308.
 (pdftex.def)             Requested size: 455.24411pt x 82.12497pt.
  [18 <./images/CompWeb.png> <./images/CompMobile.png>] [19] (ServiceWorker.lof)
 \tf@lof=\write5
 \openout5 = `ServiceWorker.lof'.
 
  [20]
-Underfull \hbox (badness 6141) in paragraph at lines 424--427
+Underfull \hbox (badness 6141) in paragraph at lines 321--324
 []\T1/lmr/m/n/10.95 Angular Uni-ver-si-ty (2018), \T1/lmr/m/it/10.95 An-gu-lar 
 Ser-vi-ce Wor-ker - Step-By-Step Gui-de for
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 424--427
+Underfull \hbox (badness 10000) in paragraph at lines 321--324
 \T1/lmr/m/it/10.95 tur-ning your Ap-pli-ca-tion in-to a PWA\T1/lmr/m/n/10.95 , 
 []$\T1/lmtt/m/n/10.95 https : / / blog . angular-[]university . io /
  []
 
 
-Underfull \hbox (badness 3009) in paragraph at lines 464--467
+Underfull \hbox (badness 3009) in paragraph at lines 361--364
 []\T1/lmr/m/n/10.95 Speedy Word-press, \T1/lmr/m/it/10.95 Gui-da com-ple-ta ai 
 Ser-vi-ce Wor-ker Ja-va-script\T1/lmr/m/n/10.95 , []$\T1/lmtt/m/n/10.95 https :
  / / www .
  []
 
 
-Underfull \hbox (badness 7759) in paragraph at lines 474--477
+Underfull \hbox (badness 7759) in paragraph at lines 371--374
 []\T1/lmr/m/n/10.95 SitePoint, \T1/lmr/m/it/10.95 Get-ting Star-ted with Ser-vi
 -ce Wor-kers\T1/lmr/m/n/10.95 , []$\T1/lmtt/m/n/10.95 https : / / www . sitepoi
 nt . com /
@@ -1010,56 +1007,56 @@ s been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.477 	
+l.374 	
        pdfTeX warning (ext4): destination with the same identifier (name{cite.}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.477 	
+l.374 	
        pdfTeX warning (ext4): destination with the same identifier (name{cite.}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.477 	
+l.374 	
        pdfTeX warning (ext4): destination with the same identifier (name{cite.}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.477 	
+l.374 	
        pdfTeX warning (ext4): destination with the same identifier (name{cite.}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.477 	
+l.374 	
        pdfTeX warning (ext4): destination with the same identifier (name{cite.}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.477 	
+l.374 	
        pdfTeX warning (ext4): destination with the same identifier (name{cite.}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.477 	
+l.374 	
        pdfTeX warning (ext4): destination with the same identifier (name{cite.}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.477 	
+l.374 	
        ]pdfTeX warning (ext4): destination with the same identifier (name{cite.
 }) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.478 	\bibitem{}
+l.375 	\bibitem{}
                  
-Underfull \hbox (badness 1803) in paragraph at lines 479--482
+Underfull \hbox (badness 1803) in paragraph at lines 376--379
 []\T1/lmr/m/n/10.95 jakearchibald Gi-thub (2017), \T1/lmr/m/it/10.95 Ser-vi-ce 
 wor-kers ex-plai-ned\T1/lmr/m/n/10.95 , []$\T1/lmtt/m/n/10.95 https : / / githu
 b . com / w3c /
@@ -1069,9 +1066,9 @@ pdfTeX warning (ext4): destination with the same identifier (name{cite.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.483 	\bibitem{}
+l.380 	\bibitem{}
                  
-Underfull \hbox (badness 2245) in paragraph at lines 484--487
+Underfull \hbox (badness 2245) in paragraph at lines 381--384
 []\T1/lmr/m/n/10.95 Lyza Dan-ger Gard-ner \T1/lmr/m/it/10.95 Ma-king A Ser-vi-c
 e Wor-ker: A Ca-se Stu-dy []$\T1/lmtt/m/n/10.95 https : / / www .
  []
@@ -1080,56 +1077,56 @@ pdfTeX warning (ext4): destination with the same identifier (name{cite.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.488 	\bibitem{}
+l.385 	\bibitem{}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{cite.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.493 	\bibitem{}
+l.390 	\bibitem{}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{cite.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.498 	\bibitem{}
+l.395 	\bibitem{}
                  
 
 Package natbib Warning: There were multiply defined citations.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 502.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 399.
 [22pdfTeX warning (ext4): destination with the same identifier (name{cite.}) ha
 s been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.502 \end{document}
+l.399 \end{document}
                     pdfTeX warning (ext4): destination with the same identifier
  (name{cite.}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.502 \end{document}
+l.399 \end{document}
                     ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 502.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 399.
  (ServiceWorker.aux
 
 Package natbib Warning: Citation(s) may have changed.
 (natbib)                Rerun to get citations correct.
 
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 502.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 502.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 399.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 399.
 Package rerunfilecheck Info: File `ServiceWorker.out' has not changed.
 (rerunfilecheck)             Checksum: 7E66DC68BE9BA4F6A56539880535CD80;1486.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 502.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 399.
  ) 
 Here is how much of TeX's memory you used:
- 9487 strings out of 493305
- 136203 string characters out of 3128932
+ 9535 strings out of 493305
+ 137487 string characters out of 3128932
  465868 words of memory out of 3000000
- 12661 multiletter control sequences out of 15000+200000
+ 12660 multiletter control sequences out of 15000+200000
  64706 words of font info for 50 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 28i,8n,40p,1339b,1151s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 28i,8n,40p,1339b,1137s stack positions out of 5000i,500n,10000p,200000b,50000s
 pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -1151,9 +1148,9 @@ Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Users/Daniele/AppData/
 Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Daniele/Ap
 pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtk10.pfb><C:/Users/Dani
 ele/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtt10.pfb>
-Output written on ServiceWorker.pdf (22 pages, 582159 bytes).
+Output written on ServiceWorker.pdf (22 pages, 583858 bytes).
 PDF statistics:
- 546 PDF objects out of 1000 (max. 8388607)
- 217 named destinations out of 1000 (max. 500000)
+ 561 PDF objects out of 1000 (max. 8388607)
+ 230 named destinations out of 1000 (max. 500000)
  238 words of extra memory for PDF output out of 10000 (max. 10000000)
 

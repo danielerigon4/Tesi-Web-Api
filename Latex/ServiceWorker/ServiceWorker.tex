@@ -144,28 +144,10 @@ Il ciclo di vita di un service worker è composto da quattro fasi:
 \subsection{Registrazione}
 
 Come prima cosa bisogna comunicare al browser l’esistenza di un ServiceWorker all’interno del sito web. Un ServiceWorker viene prima registrato utilizzando il metodo ServiceWorker.register() e per farlo basta inserire su tutte le pagine del sito uno script come il seguente:
-\begin{lstlisting}
-if ('serviceWorker' in navigator) { 
-	// Path che contiene il service worker navigator.serviceWorker.register('/service-worker.js').then(function(registration) { 			 		
-	console.log('Service worker installato correttamente, ecco lo scope:', registration.scope); }).catch(function(error) { 
-			console.log('Installazione service worker fallita:', error); 
-		});
-}
-\end{lstlisting}
+\lstinputlisting{code/Registrazione.js}
 Il codice inizia controllando il supporto da parte del browser verificando la presenza di navigator.serviceWorker. Se supportato, il ServiceWorker viene registrato per mezzo di navigator.serviceWorker.register che restituisce un oggetto Promise il quale si risolve con successo a registrazione avvenuta correttamente.
 service-worker.js è il file Javascript residente nella root del sito web e che contiene il codice del service worker, il cui codice è:
-\begin{lstlisting}
-// Evento install
-self.addEventListener('install', event => { // Codice da eseguire su installazione console.log("Service Worker Installato");
-});
-// Evento activate
-self.addEventListener('activate', event => { // Codice da eseguire su attivazione console.log("Service Worker Attivo");
-});
-// Evento fetch
-self.addEventListener('fetch', event => { // Codice da eseguire su fetch di risorse console.log("Richiesta URL: "+event.request.url);
-});
-\end{lstlisting}
-
+\lstinputlisting{code/Registrazione2.js}
 In questo modo viene registrato un ServiceWorker il quale viene semplicemente installato e ad ogni richiesta stampa in console un messaggio con la URL che il browser tenta di scaricare dal server web. Per controllare il caricamento di un Service Worker il codice di questo deve essere eseguito al di fuori delle normali pagine.
 
 Possono esserci diversi motivi per cui il Service Worker non si registra:
@@ -181,22 +163,7 @@ Il ServiceWorker viene scaricato immediatamente quando un utente accede per la p
 L'installazione viene tentata quando il file nuovo che è stato scaricato risulta diverso da un ServiceWorker esistente, o risulta essere diverso dal primo ServiceWorker rilevato per quella pagina/sito. Se è la prima volta che un ServiceWorker viene reso disponibile viene tentata l'installazione e, dopo un'installazione corretta, viene attivato. Se è disponibile un ServiceWorker esistente la nuova versione viene installata in background, ma non ancora attivata; si attiva solo quando non ci sono più pagine caricate che stanno ancora utilizzando il vecchio ServiceWorker. Non appena non ci sono più pagine da caricare il nuovo ServiceWorker si attiva.
 
 Conseguentemente all’installazione viene richiamato l’evento install: tale evento consente di effettuare il precaching, ovvero inserire in cache pagine e file statici del sito web prima di intercettarne le richieste. Per farlo occorre utilizzare gli oggetti Promise event e cache come segue:
-\begin{lstlisting}
-	'use strict';
-	// Array di configurazione del service worker
-	var config = {
-	version: 'versionesw1::',
-	// Risorse da inserire in cache immediatamente - Precaching
-	staticCacheItems: [ '/wp-includes/js/jquery/jquery.js', '/wp-content/themes/miotema/logo.png', '/wp-content/themes/miotema/fonts/opensans.woff', '/wp-content/themes/miotema/fonts/fontawesome-webfont.woff2',
-	],
-	};
-	// Funzione che restituisce una stringa da utilizzare come chiave per la cache
-	function cacheName (key, opts) { return `${opts.version}${key}`;
-	}
-	// Evento install
-	self.addEventListener('install', event => { event.waitUntil( // Inserisco in cache le URL configurate in config.staticCacheItems caches.open( cacheName('static', config) ).then(cache => cache.addAll(config.staticCacheItems)) // self.skipWaiting() evita l'attesa, il che significa che il service worker si attivera immediatamente non appena conclusa l'installazione .then( () => self.skipWaiting() ) ); console.log("Service Worker Installato");
-	});
-\end{lstlisting}
+\lstinputlisting{code/Installazione.js}
 Se si decidesse di aggiungere/eliminare nuove risorse da inserire in cache bisognerà avere l’accortezza di cambiare il nome della versione del ServiceWorker ed eliminare dalla cache le risorse già presenti.
 Una cosa molto importante da sapere è che le risorse da inserire in cache in fase di precaching devono esistere realmente sul server web altrimenti il ServiceWorker genererà un errore fatale e l’installazione non andrà a buon fine. 
 Il metodo skipWaiting() consente al ServiceWorker di passare allo stato di attivazione ad installazione conclusa e quindi essere subito operativo.
@@ -216,38 +183,14 @@ Grazie all’evento fetch il ServiceWorker diventa un vero e proprio strumento p
 Se il ServiceWorker è già stato installato ma una nuova versione è disponibile per l'aggiornamento o il caricamento della pagina, la nuova versione viene installata in background ma non sarà ancora attivata. Si attiva solo quando non ci sono più pagine caricate che stanno ancora utilizzando il vecchio servizio. Non appena non ci sono più pagine di questo tipo ancora caricate, il nuovo ServiceWorker si attiverà.
 
 Si dovrà aggiornare il listener install di eventi nel nuovo Service Worker, similmente a questo:
-\begin{lstlisting}
-self.addEventListener('install', function(event) {
-	event.waitUntil(
-		caches.open('v2').then(function(cache) {
-			return cache.addAll([
-				'/sw-test/',
-				'/sw-test/index.html',
-				'/sw-test/style.css',
-				'/sw-test/app.js',
-				'/sw-test/image-list.js',
-								
-				// include other new resources for the new version...
-			]);
-		})
-	);
-});
-\end{lstlisting}
+\lstinputlisting{code/Aggiornamento.js}
 Mentre accade questo è ancora la versione precedente (v1) quella responsabile per i recuperi, mentre la nuova versione (v2) si sta installando in background.
 Quando nessuna pagina sta utilizzando la versione corrente, il nuovo operatore si attiva e diventa responsabile dei recuperi.
 
 \subsection{Disintallare il Service Worker}
 
 Rimuovere/disinstallare un ServiceWorker è un’operazione semplice. È possibile eseguirla manualmente dal proprio browser oppure inserendo un semplice script al posto di quello di registrazione del service worker:
-
-\begin{lstlisting}
-	navigator.serviceWorker.getRegistrations().then(function(registrations) { 		
-		for(let registration of registrations) { 
-			registration.unregister() 
-		}
-	})
-\end{lstlisting}
-
+\lstinputlisting{code/Disinstallare.js}
 Naturalmente è necessario che la pagina contenente il codice di disinstallazione venga visitata dal browser, oppure è possibile rimuovere il ServiceWorker manualmente tramite DevTools.
 \newpage
 \section{Strategie di caching}
@@ -256,26 +199,9 @@ Diverse sono le strategie che possono essere adottate per migliorare le performa
 Di seguito l’elenco completo delle strategie con esempi di codice di implementazione. 
 \subsection{Network first}
 Questa strategia mira ad avere un contenuto sempre fresco scaricandolo dalla rete, fornendo la copia in cache solo in caso di problemi di connettività (ad esempio in caso di connessione offline).
-\begin{lstlisting}
-self.addEventListener('fetch', function(event) { 
-		event.respondWith(fetch(event.request).catch(function() { 
-			return caches.match(event.request); 
-		}) 
-	);
-});
-\end{lstlisting}
+\lstinputlisting{code/Networkfirst1.js}
 Una modifica interessante in questo caso potrebbe essere quella di aggiornare la copia in cache quando la risorsa viene scaricata dalla rete, cosicché in caso di errori di connessione viene restituita la copia più giovane.
-\begin{lstlisting}
-self.addEventListener('fetch', function(event){ 
-		event.respondWith(fetch(event.request).then(function(response) { 		
-			cache.put(event.request, response.clone()); 
-			return response; 
-		}).catch(function() { 
-			return caches.match(event.request); 
-		}) 
-	);
-});
-\end{lstlisting}
+\lstinputlisting{code/Networkfirst2.js}
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1\linewidth]{Strategia1}
@@ -285,15 +211,7 @@ self.addEventListener('fetch', function(event){
 \pagebreak
 \subsection{Cache first}
 Chiamata anche cache, falling back to network, questa strategia verifica se la risorsa è disponibile in cache. Se così fosse viene restituita la copia in cache. In caso contrario la risorsa viene scaricata dalla rete.
-\begin{lstlisting}
-self.addEventListener('fetch', function(event) {
-	event.respondWith(
-		caches.match(event.request).then(function(response) {
-			return response || fetch(event.request);
-		})
-	);
-});
-\end{lstlisting}
+\lstinputlisting{code/CacheFirst.js}
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1\linewidth]{Strategia2}
@@ -305,15 +223,9 @@ self.addEventListener('fetch', function(event) {
 È la strategia più banale in quanto viene simulato il normale comportamento del browser, ovvero scaricare le risorse direttamente dalla rete.
 
 Per applicare  questa strategia basta non inserire alcuna riga di codice all’interno dell’evento fetch:
-\begin{lstlisting}
-self.addEventListener('fetch', function(event) {});
-\end{lstlisting}
+\lstinputlisting{code/NetworkOnly1.js}
 o al limite inserire semplicemente la seguente riga:
-\begin{lstlisting}
-self.addEventListener('fetch', function(event) {
-	event.respondWith(fetch(event.request));
-});
-\end{lstlisting}
+\lstinputlisting{code/NetworkOnly2.js}
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1\linewidth]{Strategia3}
@@ -323,11 +235,7 @@ self.addEventListener('fetch', function(event) {
 \pagebreak
 \subsection{Cache only}
 Esattamente opposta alla strategia network only, in questo caso il service worker risponde solo con elementi conservati in cache. In caso di miss la risposta restituita al browser simulerà l’errore di connessione.
-\begin{lstlisting}
-self.addEventListener('fetch', function(event) {
-	event.respondWith(caches.match(event.request));
-});
-\end{lstlisting}
+\lstinputlisting{code/CacheOnly.js}
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1\linewidth]{Strategia4}
@@ -339,18 +247,7 @@ self.addEventListener('fetch', function(event) {
 Questa strategia mira a fornire all’utente la risposta più veloce. Il ServiceWorker avvia contemporaneamente una richiesta in cache ed una in rete. La prima che risponde verrà restituita all’utente.
 Questa soluzione può essere l’ideale per quei dispositivi con vecchi hard drive dove la lettura da disco può addirittura rivelarsi più lenta del fetch dalla rete. Per i dispositivi moderni è meglio utilizzare la strategia cache then network.
 Siccome il ServiceWorker può ritornare un solo Promise, occorre realizzare una funzione a cui passare un array di oggetti Promise, in questo caso cache e fetch, e risolverli quasi contemporaneamente ritornando quello che si risolve per primo.
-\begin{lstlisting}
-function promiseAny(promises) { 
-	return new Promise((resolve, reject) => { 
-		promises = promises.map(p => Promise.resolve(p)); 
-		promises.forEach(p => p.then(resolve)); 
-		promises.reduce((a, b) => a.catch(() => b)).catch(() => reject(Error("All failed"))); 
-	});
-};
-self.addEventListener('fetch', function(event) { 
-	event.respondWith( promiseAny([caches.match(event.request), fetch(event.request)]) );
-});
-\end{lstlisting}
+\lstinputlisting{code/Fastest.js}
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1\linewidth]{Strategia5}
@@ -388,13 +285,13 @@ Inoltre un Service Worker potrebbe non essere usato solamente per il caching, mi
 \newpage
 \section{Esempio di attacco}
 Supponiamo di avere questa pagina HTML che carica uno script per l'installazione di un Service Worker, pensando sia sicuro.
-\lstinputlisting{../../ServiceWorker/AttaccoXSS/index.html}
+\lstinputlisting{code/index.html}
 Il file script.js sarà il seguente:
-\lstinputlisting{../../ServiceWorker/AttaccoXSS/script.js}
+\lstinputlisting{code/script.js}
 Mentre hack.js, che intercetta ogni richiesta, sarà questo:
-\lstinputlisting{../../ServiceWorker/AttaccoXSS/hack.js}
+\lstinputlisting{code/hack.js}
 Infine il file che installerà il Service Worker malevolo sarà questo:
-\lstinputlisting{../../ServiceWorker/AttaccoXSS/install.js}
+\lstinputlisting{code/install.js}
 Ogni richiesta che verrà fatta sarà intercettata dal Service Worker (in questo caso uscirà il messaggio "Intercepted" nella pagina web) fino a che non sarà disinstallato e non verrà cancellata la cache.
 \newpage
 \section{Compatibilità web}

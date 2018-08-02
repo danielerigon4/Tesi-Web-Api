@@ -19,7 +19,7 @@
 \contentsline {section}{\numberline {3}Rischi e sicurezza}{9}{section.3}
 \contentsline {subsection}{\numberline {3.1}Esempio di un possibile attacco}{9}{subsection.3.1}
 \contentsline {subsubsection}{\numberline {3.1.1}Descrizione dell'attacco}{9}{subsubsection.3.1.1}
-\contentsline {subsubsection}{\numberline {3.1.2}Come difendersi}{10}{subsubsection.3.1.2}
+\contentsline {subsubsection}{\numberline {3.1.2}Come difendersi}{11}{subsubsection.3.1.2}
 \contentsline {section}{\numberline {4}Implementazione PaymentRequest API su una pagina d'esempio}{12}{section.4}
 \contentsline {subsection}{\numberline {4.1}Costruttore}{12}{subsection.4.1}
 \contentsline {subsection}{\numberline {4.2}Visualizzazione dell'interfaccia utente, elaborazione del pagamento e visualizzazione dei risultati}{13}{subsection.4.2}

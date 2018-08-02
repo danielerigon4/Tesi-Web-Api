@@ -120,7 +120,7 @@
 	
 	\subsection{Uso API}
 	\subsubsection{Ruolo dell'utente}
-	Gli utenti beneficiano del riutilizzo delle credenziali inserite nel browser o nelle app di pagamento. Quindi, quando si visita un sito Web che sfrutta la PaymentRequest API gli utenti avranno l'opportunità di sfruttare il riutilizzo semplificato delle credenziali archiviate.
+	Gli utenti beneficiano del riutilizzo delle informazioni inserite nel browser o nelle app di pagamento. Quindi, quando si visita un sito Web che sfrutta la PaymentRequest API gli utenti avranno l'opportunità di sfruttare il riutilizzo semplificato delle informazioni archiviate.
 
 	\subsubsection{Ruolo del commerciante}
 	L'API influisce sul front end (l'interfaccia dell'esperienza utente) e non sul back-end, pertanto il commerciante non dovrebbe dover apportare modifiche all'elaborazione back-end dei vari metodi di pagamento; questo sarà compito del fornitore della pagina di pagamento il quale sostituirà i moduli Web con le chiamate alla PaymentRequest API.
@@ -141,7 +141,7 @@
 	\end{itemize}
 	
 	\subsubsection{App di pagamento}
-	La PaymentRequest API, ovvero il browser, determina se un'app di pagamento "corrisponde" a una determinata transazione definendo un algoritmo che considera i metodi di pagamento accettati dal commerciante, dichiarati attraverso un elenco di identificativi del metodo di pagamento, passati attraverso l'API.
+	La PaymentRequest API determina se un'app di pagamento "corrisponde" a una determinata transazione definendo un algoritmo che considera i metodi di pagamento accettati dal commerciante, dichiarati attraverso un elenco di identificativi del metodo di pagamento, passati attraverso l'API.
 	Al fine di proteggere la privacy degli utenti i commercianti hanno accesso a informazioni molto limitate dell'utente. 
 	
 	Vediamo in che modo la PaymentRequest API influisce sul flusso dei metodi di pagamento che già supporta. Il normale flusso per gli utenti di solito implica qualcosa del genere:
@@ -207,7 +207,7 @@
 	\section{Rischi e sicurezza}
 	La PaymentRequest API aumenta la sicurezza poichè:
 	\begin{itemize}
-		\item I commercianti possono ottenere un checkout semplificato senza memorizzare le credenziali dell'utente, in quanto lo fa l'API, rendendo i commercianti meno vulnerabili agli attacchi;
+		\item I commercianti possono ottenere un checkout semplificato senza memorizzare le informazioni dell'utente, in quanto lo fa l'API, rendendo i commercianti meno vulnerabili agli attacchi;
 		\item La PaymentRequest API dovrebbe facilitare l'introduzione di metodi di pagamento più sicuri sul Web, come i pagamenti con carta tokenizzata;
 		\item I proprietari dei metodi di pagamento disporranno di meccanismi standard per autorizzare software specifici a implementare il loro metodo di pagamento, che il browser può verificare attraverso una firma digitale.
 	\end{itemize}
@@ -216,19 +216,23 @@
 	
 	\subsection{Esempio di un possibile attacco}
 	\subsubsection{Descrizione dell'attacco}
-	La sicurezza di usare la PaymentRequest API è che utilizza la gestione delle credenziali del browser che stiamo usando: se stiamo usando Chrome userà la gestione delle credenziali di Google, mentre se stiamo usando Edge userà Microsoft Pay (Nota: in questo caso è necessario anche autenticarsi con l'account Microsoft). \\
-	Sicuramente il livello di sicurezza è elevato ma non è immune ad un attacco XSS, che potrebbe attaccare similmente al Phishing. Una delle poche forme per attaccare questa API è il pishing in quanto non ci sono metodi che prendono in input password o credenziali, ma vengono gestiti altrove, senza quindi avere la possibilirà di essere intercettati.
-	L'API apre una finestra dove inserire le credenziali, sicura perchè non vengono scritte nel DOM. 
-	(Nota: viene aperta una sola pagina con l'API per volta; se si tenta di aprirne più di una resterà aperta solamente la prima e le altre non si apriranno; questo come ulteriore forma di sicurezza).
+	-- 
+	\\
+	SEZIONE PHISHING GENERALE 
 	\\
 	Con un attacco XSS, alla chiamata dell'API, invece di questa finestra potrebbe venirne aperta un'altra uguale a quella originale, gestita però dall'attaccante. Essendo identica la vittima sarà convinta di inserire le credenziali in un posto sicuro, mentre invece saranno inviate all'attaccante invece di essere salvate nel browser tramite l'API.
-	Sara possibile essere vittima di questo attacco solamente la prima volta che saranno inserite le credenziali in quanto l'API chiede l'inserimento delle credenziali solamente la prima volta, dopo saranno salvate e non verra piu chiesto l'inserimento da parte dell'utente.
-	Sia su Chrome che su Microsoft l'inserimento del codice CVV viene chiesto in una pagina successiva, dopo aver inserito tutte le credenziali e averle salvate nella pagina corrente. 
+	\\
+	--
+	\\
+	L'API apre una finestra dove inserire le informazioni, le quali però possono essere intercettate come verrà mostrato nell'esempio di seguito. 
+	L'API salva le informazioni dell'utente ma viene chiesto ogni volta di inserire il codice CVV come forma di sicurezza, quindi per l'attaccante sarà possibile in ogni sessione rubare le informazioni inserite dall'utente.
+	
+	--SPIEGARE COME VIENE CREATO L'OGGETTO, COME FUNZIONANO I METODI E COME POSSO USARLI PER ESTRARRE I DATI --
 	\begin{figure}[h]
 		\centering
 		\includegraphics[width=0.5\linewidth]{Chrome1}
-		\caption{Inserimento credenziali}
-		\label{fig: Inserimento credenziali}
+		\caption{Inserimento informazioni dell'utente}
+		\label{fig: Inserimento informazioni dell'utente}
 	\end{figure}
 	\begin{figure}[h]
 		\centering
@@ -237,8 +241,14 @@
 		\label{fig: Inserimento CVV}
 	\end{figure}
 	\pagebreak
-	\\
-	Un attaccante, per essere sicuro di ottenere anche quel codice potrebbe inserire il form nella prima pagina cosicchè l'utente ignaro, inviando le informazioni, manda tutte quelle utili all'attaccante.
+	Dopo l'elaborazione i numeri di carta di credito e CVV saranno visibili all'attaccante.
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=1\linewidth]{Informazioni}
+		\caption{Informazioni rubate}
+		\label{fig: Informazioni rubate}
+	\end{figure}
+	\pagebreak
 	\subsubsection{Come difendersi}
 	Vi sono diverse metodologie per difendersi da questi tipi di attacchi:
 	\begin{itemize}
@@ -305,7 +315,9 @@
 	\end{figure}
 	\newpage
 	\section{Conclusioni}
-	La PaymentRequest API è uno potente strumento per migliorare l'esperienza utente sul Web offrendo ai clienti un'esperienza di acquisto più piacevole, pur avendo delle vulnerabilità difficili da rompere ma dalle quali ci si puo difendere.
+	La PaymentRequest API è uno strumento per migliorare l'esperienza utente sul Web offrendo ai clienti un'esperienza di acquisto più piacevole, pur avendo delle vulnerabilità.
+	\newpage
+	\listoffigures
 	\newpage
 	\begin{thebibliography}{99}
 		\bibitem{}
@@ -356,8 +368,7 @@
 		\url{https://blogs.windows.com/msedgedev/2016/12/15/payment-request-api-edge/#UATsm3ejAT9oYtrj.97}
 		
 		\bibitem{}
-		MANCA LINK GUIDA GITHUB
+		Google Inc.(2018),
+		\url{https://googlechrome.github.io/samples/paymentrequest/credit-cards/}
 	\end{thebibliography}
-	\newpage
-	\listoffigures
 \end{document}
