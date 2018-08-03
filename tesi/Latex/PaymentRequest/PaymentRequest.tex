@@ -207,13 +207,11 @@
 	\section{Rischi e sicurezza}
 	La PaymentRequest API aumenta la sicurezza poichè:
 	\begin{itemize}
-		\item I commercianti possono ottenere un checkout semplificato senza memorizzare le informazioni dell'utente, in quanto lo fa l'API, rendendo i commercianti meno vulnerabili agli attacchi;
+		\item I commercianti possono ottenere un checkout semplificato senza memorizzare le informazioni dell'utente, in quanto lo fa l'API;
 		\item La PaymentRequest API dovrebbe facilitare l'introduzione di metodi di pagamento più sicuri sul Web, come i pagamenti con carta tokenizzata;
 		\item I proprietari dei metodi di pagamento disporranno di meccanismi standard per autorizzare software specifici a implementare il loro metodo di pagamento, che il browser può verificare attraverso una firma digitale.
 	\end{itemize}
-	I browser utilizzano una varietà di meccanismi per archiviare informazioni sensibili dell'utente, e attualmente W3C sta sviluppando nuove tecnologie per aumentarne la sicurezza.
-	Per quanto riguarda la memorizzazione delle informazioni delle app di pagamento in modo sicuro, questo è un dettaglio di implementazione che è diverso per ogni app di pagamento, e tale sicurezza è a carico del provider dell'app di pagamento.
-	
+
 	\subsection{Esempio di un possibile attacco}
 	\subsubsection{Descrizione dell'attacco}
 	L'API apre una finestra dove inserire le informazioni, le quali però possono essere intercettate come verrà mostrato nell'esempio di seguito. 
