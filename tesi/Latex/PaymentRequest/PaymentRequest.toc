@@ -1,28 +1,28 @@
 \babel@toc {italian}{}
 \babel@toc {italian}{}
-\contentsline {section}{\numberline {1}Overview Payment Request}{2}{section.1}
-\contentsline {subsection}{\numberline {1.1}Vantaggi}{2}{subsection.1.1}
-\contentsline {subsection}{\numberline {1.2}Come funziona}{2}{subsection.1.2}
-\contentsline {subsection}{\numberline {1.3}Uso API}{3}{subsection.1.3}
-\contentsline {subsubsection}{\numberline {1.3.1}Ruolo dell'utente}{3}{subsubsection.1.3.1}
-\contentsline {subsubsection}{\numberline {1.3.2}Ruolo del commerciante}{3}{subsubsection.1.3.2}
-\contentsline {subsubsection}{\numberline {1.3.3}Ruolo del browser}{3}{subsubsection.1.3.3}
-\contentsline {subsubsection}{\numberline {1.3.4}Metodi di pagamento}{4}{subsubsection.1.3.4}
-\contentsline {subsubsection}{\numberline {1.3.5}App di pagamento}{4}{subsubsection.1.3.5}
-\contentsline {subsubsection}{\numberline {1.3.6}Differenze tra metodo di pagamento e app di pagamento}{4}{subsubsection.1.3.6}
-\contentsline {section}{\numberline {2}Specifiche}{5}{section.2}
-\contentsline {subsection}{\numberline {2.1}Metodi}{5}{subsection.2.1}
-\contentsline {subsubsection}{\numberline {2.1.1}PaymentMethodData}{6}{subsubsection.2.1.1}
-\contentsline {subsubsection}{\numberline {2.1.2}PaymentDetails}{6}{subsubsection.2.1.2}
-\contentsline {subsubsection}{\numberline {2.1.3}PaymentOptions}{8}{subsubsection.2.1.3}
-\contentsline {subsubsection}{\numberline {2.1.4}PaymentRequest}{8}{subsubsection.2.1.4}
-\contentsline {section}{\numberline {3}Rischi e sicurezza}{9}{section.3}
-\contentsline {subsection}{\numberline {3.1}Esempio di un possibile attacco}{9}{subsection.3.1}
-\contentsline {subsubsection}{\numberline {3.1.1}Descrizione dell'attacco}{9}{subsubsection.3.1.1}
-\contentsline {subsubsection}{\numberline {3.1.2}Come difendersi}{11}{subsubsection.3.1.2}
-\contentsline {section}{\numberline {4}Implementazione PaymentRequest API su una pagina d'esempio}{12}{section.4}
-\contentsline {subsection}{\numberline {4.1}Costruttore}{12}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Visualizzazione dell'interfaccia utente, elaborazione del pagamento e visualizzazione dei risultati}{13}{subsection.4.2}
-\contentsline {subsection}{\numberline {4.3}Ascoltare gli eventi}{15}{subsection.4.3}
-\contentsline {section}{\numberline {5}Compatibilit\IeC {\`a} web}{16}{section.5}
-\contentsline {section}{\numberline {6}Conclusioni}{17}{section.6}
+\contentsline {section}{\numberline {1}Overview Payment Request}{3}{section.1}
+\contentsline {subsection}{\numberline {1.1}Vantaggi}{3}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Come funziona}{3}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}Uso API}{4}{subsection.1.3}
+\contentsline {subsubsection}{\numberline {1.3.1}Ruolo dell'utente}{4}{subsubsection.1.3.1}
+\contentsline {subsubsection}{\numberline {1.3.2}Ruolo del commerciante}{4}{subsubsection.1.3.2}
+\contentsline {subsubsection}{\numberline {1.3.3}Ruolo del browser}{4}{subsubsection.1.3.3}
+\contentsline {subsubsection}{\numberline {1.3.4}Metodi di pagamento}{5}{subsubsection.1.3.4}
+\contentsline {subsubsection}{\numberline {1.3.5}App di pagamento}{5}{subsubsection.1.3.5}
+\contentsline {subsubsection}{\numberline {1.3.6}Differenze tra metodo di pagamento e app di pagamento}{5}{subsubsection.1.3.6}
+\contentsline {section}{\numberline {2}Specifiche}{6}{section.2}
+\contentsline {subsection}{\numberline {2.1}Metodi}{6}{subsection.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}PaymentMethodData}{7}{subsubsection.2.1.1}
+\contentsline {subsubsection}{\numberline {2.1.2}PaymentDetails}{7}{subsubsection.2.1.2}
+\contentsline {subsubsection}{\numberline {2.1.3}PaymentOptions}{9}{subsubsection.2.1.3}
+\contentsline {subsubsection}{\numberline {2.1.4}PaymentRequest}{9}{subsubsection.2.1.4}
+\contentsline {section}{\numberline {3}Rischi e sicurezza}{10}{section.3}
+\contentsline {subsection}{\numberline {3.1}Esempio di un possibile attacco}{10}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}Descrizione dell'attacco}{10}{subsubsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.2}Come difendersi}{12}{subsubsection.3.1.2}
+\contentsline {section}{\numberline {4}Implementazione PaymentRequest API su una pagina d'esempio}{13}{section.4}
+\contentsline {subsection}{\numberline {4.1}Costruttore}{13}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Visualizzazione dell'interfaccia utente, elaborazione del pagamento e visualizzazione dei risultati}{14}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Ascoltare gli eventi}{16}{subsection.4.3}
+\contentsline {section}{\numberline {5}Compatibilit\IeC {\`a} web}{17}{section.5}
+\contentsline {section}{\numberline {6}Conclusioni}{18}{section.6}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.6.25)  3 AUG 2018 10:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.6.25)  17 SEP 2018 14:48
 entering extended mode
 **./Geolocation.tex
 (Geolocation.tex
@@ -826,19 +826,19 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 87.
 
-(Geolocation.toc
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [1
+
+{C:/Users/Daniele/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] (Geolocat
+ion.toc
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10.95> on input line 5.
 )
 \tf@toc=\write4
 \openout4 = `Geolocation.toc'.
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [1
-
-{C:/Users/Daniele/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
+[2] [3]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 99.
 LaTeX Font Info:    Try loading font information for T1+lmtt on input line 99.
@@ -854,23 +854,23 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <9> on input line 110.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 110.
- [3] (code/EsempioCompleto.js)
-<./images/geo1.png, id=93, 344.03531pt x 488.57532pt>
+ [4] (code/EsempioCompleto.js)
+<./images/geo1.png, id=97, 344.03531pt x 488.57532pt>
 File: ./images/geo1.png Graphic file (type png)
 <use ./images/geo1.png>
 Package pdftex.def Info: ./images/geo1.png  used on input line 116.
 (pdftex.def)             Requested size: 227.62206pt x 323.25095pt.
-<./images/geo2.png, id=94, 606.01407pt x 491.58656pt>
+<./images/geo2.png, id=98, 606.01407pt x 491.58656pt>
 File: ./images/geo2.png Graphic file (type png)
 <use ./images/geo2.png>
 Package pdftex.def Info: ./images/geo2.png  used on input line 125.
 (pdftex.def)             Requested size: 182.09486pt x 147.70963pt.
-<./images/geo3.png, id=95, 344.03531pt x 491.58656pt>
+<./images/geo3.png, id=99, 344.03531pt x 491.58656pt>
 File: ./images/geo3.png Graphic file (type png)
 <use ./images/geo3.png>
 Package pdftex.def Info: ./images/geo3.png  used on input line 133.
 (pdftex.def)             Requested size: 182.09486pt x 260.19458pt.
-<./images/geo4.png, id=96, 345.54094pt x 500.62032pt>
+<./images/geo4.png, id=100, 345.54094pt x 500.62032pt>
 File: ./images/geo4.png Graphic file (type png)
 <use ./images/geo4.png>
 Package pdftex.def Info: ./images/geo4.png  used on input line 142.
@@ -878,26 +878,26 @@ Package pdftex.def Info: ./images/geo4.png  used on input line 142.
 
 Underfull \vbox (badness 1337) has occurred while \output is active []
 
- [4 <./images/geo1.png>]
+ [5 <./images/geo1.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [5 <./images/geo2.png> <./images/geo3.png>]
+ [6 <./images/geo2.png> <./images/geo3.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [6 <./images/geo4.png>] (code/WatchPosition.js) (code/ClearPosition.js) [7]
-<./images/pos1.png, id=135, 447.92343pt x 169.38281pt>
+ [7 <./images/geo4.png>] (code/WatchPosition.js) (code/ClearPosition.js) [8]
+<./images/pos1.png, id=139, 447.92343pt x 169.38281pt>
 File: ./images/pos1.png Graphic file (type png)
 <use ./images/pos1.png>
 Package pdftex.def Info: ./images/pos1.png  used on input line 162.
 (pdftex.def)             Requested size: 455.24411pt x 172.15562pt.
 
 (code/script.js)
-<./images/Blocca.png, id=136, 453.19313pt x 156.585pt>
+<./images/Blocca.png, id=140, 453.19313pt x 156.585pt>
 File: ./images/Blocca.png Graphic file (type png)
 <use ./images/Blocca.png>
 Package pdftex.def Info: ./images/Blocca.png  used on input line 175.
 (pdftex.def)             Requested size: 455.24411pt x 157.29422pt.
-<./images/Consenti.png, id=137, 456.20438pt x 147.55125pt>
+<./images/Consenti.png, id=141, 456.20438pt x 147.55125pt>
 File: ./images/Consenti.png Graphic file (type png)
 <use ./images/Consenti.png>
 Package pdftex.def Info: ./images/Consenti.png  used on input line 183.
@@ -905,17 +905,17 @@ Package pdftex.def Info: ./images/Consenti.png  used on input line 183.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [8 <./images/pos1.png>] [9 <./images/Blocca.png> <./images/Consenti.png>]
-<./images/compatibility.png, id=158, 729.47531pt x 300.3722pt>
+ [9 <./images/pos1.png>] [10 <./images/Blocca.png> <./images/Consenti.png>]
+<./images/compatibility.png, id=162, 729.47531pt x 300.3722pt>
 File: ./images/compatibility.png Graphic file (type png)
 <use ./images/compatibility.png>
 Package pdftex.def Info: ./images/compatibility.png  used on input line 191.
 (pdftex.def)             Requested size: 455.24411pt x 187.45256pt.
- [10 <./images/compatibility.png>] [11] (Geolocation.lof)
+ [11 <./images/compatibility.png>] [12] (Geolocation.lof)
 \tf@lof=\write5
 \openout5 = `Geolocation.lof'.
 
- [12]
+ [13]
 Underfull \hbox (badness 1454) in paragraph at lines 212--215
 []\T1/lmr/m/n/10.95 W3C (2018), \T1/lmr/m/it/10.95 Geo-lo-ca-tion API Spe-ci-fi
 -ca-tion 2nd Edi-tion\T1/lmr/m/n/10.95 , []$\T1/lmtt/m/n/10.95 https : / / www 
@@ -950,7 +950,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 231--233
 Package natbib Warning: There were multiply defined citations.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 248.
-[13pdfTeX warning (ext4): destination with the same identifier (name{cite.}) ha
+[14pdfTeX warning (ext4): destination with the same identifier (name{cite.}) ha
 s been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1019,9 +1019,9 @@ Package rerunfilecheck Info: File `Geolocation.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 248.
  ) 
 Here is how much of TeX's memory you used:
- 9283 strings out of 493305
- 133354 string characters out of 3128932
- 322866 words of memory out of 3000000
+ 9284 strings out of 493305
+ 133361 string characters out of 3128932
+ 322868 words of memory out of 3000000
  12592 multiletter control sequences out of 15000+200000
  64706 words of font info for 50 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1042,9 +1042,9 @@ iKTeX 2.9/fonts/type1/public/lm/lmr9.pfb><C:/Users/Daniele/AppData/Local/Progra
 ms/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Users/Daniele/AppData/Local/
 Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtk10.pfb><C:/Users/Daniele/AppData/
 Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtt10.pfb>
-Output written on Geolocation.pdf (13 pages, 454976 bytes).
+Output written on Geolocation.pdf (14 pages, 456101 bytes).
 PDF statistics:
- 261 PDF objects out of 1000 (max. 8388607)
- 77 named destinations out of 1000 (max. 500000)
+ 265 PDF objects out of 1000 (max. 8388607)
+ 78 named destinations out of 1000 (max. 500000)
  121 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,0 +1,56 @@
+\babel@toc {italian}{}
+\babel@toc {italian}{}
+\contentsline {section}{\numberline {1}Introduzione}{4}{section.1}
+\contentsline {section}{\numberline {2}Geolocation}{4}{section.2}
+\contentsline {subsection}{\numberline {2.1}Overview}{4}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Specifiche}{4}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}Oggetto della geolocalizzazione}{4}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2}Metodi}{4}{subsubsection.2.2.2}
+\contentsline {subsection}{\numberline {2.3}Problemi sicurezza/privacy}{8}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Supporto compatibilit\IeC {\`a} web}{10}{subsection.2.4}
+\contentsline {subsubsection}{\numberline {2.4.1}Desktop e mobile}{10}{subsubsection.2.4.1}
+\contentsline {subsection}{\numberline {2.5}Conclusioni}{10}{subsection.2.5}
+\contentsline {section}{\numberline {3}PaymentRequest API}{11}{section.3}
+\contentsline {subsection}{\numberline {3.1}Overview Payment Request}{11}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}Vantaggi}{11}{subsubsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.2}Come funziona}{11}{subsubsection.3.1.2}
+\contentsline {subsubsection}{\numberline {3.1.3}Uso API}{13}{subsubsection.3.1.3}
+\contentsline {subsection}{\numberline {3.2}Specifiche}{14}{subsection.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}Metodi}{14}{subsubsection.3.2.1}
+\contentsline {subsection}{\numberline {3.3}Rischi e sicurezza}{17}{subsection.3.3}
+\contentsline {subsubsection}{\numberline {3.3.1}Esempio di un possibile attacco}{18}{subsubsection.3.3.1}
+\contentsline {subsection}{\numberline {3.4}Implementazione PaymentRequest API su una pagina d'esempio}{19}{subsection.3.4}
+\contentsline {subsubsection}{\numberline {3.4.1}Costruttore}{19}{subsubsection.3.4.1}
+\contentsline {subsubsection}{\numberline {3.4.2}Visualizzazione dell'interfaccia utente, elaborazione del pagamento e visualizzazione dei risultati}{20}{subsubsection.3.4.2}
+\contentsline {subsubsection}{\numberline {3.4.3}Ascoltare gli eventi}{23}{subsubsection.3.4.3}
+\contentsline {subsection}{\numberline {3.5}Compatibilit\IeC {\`a} web}{23}{subsection.3.5}
+\contentsline {subsubsection}{\numberline {3.5.1}Desktop}{23}{subsubsection.3.5.1}
+\contentsline {subsubsection}{\numberline {3.5.2}Mobile}{23}{subsubsection.3.5.2}
+\contentsline {subsection}{\numberline {3.6}Conclusioni}{23}{subsection.3.6}
+\contentsline {section}{\numberline {4}Service Worker}{24}{section.4}
+\contentsline {subsection}{\numberline {4.1}Overview}{24}{subsection.4.1}
+\contentsline {subsubsection}{\numberline {4.1.1}Impostare i service worker}{24}{subsubsection.4.1.1}
+\contentsline {subsubsection}{\numberline {4.1.2}Architettura di base}{24}{subsubsection.4.1.2}
+\contentsline {subsubsection}{\numberline {4.1.3}Casi d'uso}{25}{subsubsection.4.1.3}
+\contentsline {subsection}{\numberline {4.2}Ciclo di vita di un Service Worker}{26}{subsection.4.2}
+\contentsline {subsubsection}{\numberline {4.2.1}Registrazione}{26}{subsubsection.4.2.1}
+\contentsline {subsubsection}{\numberline {4.2.2}Installazione}{27}{subsubsection.4.2.2}
+\contentsline {subsubsection}{\numberline {4.2.3}Attivazione}{28}{subsubsection.4.2.3}
+\contentsline {subsubsection}{\numberline {4.2.4}Fetch}{28}{subsubsection.4.2.4}
+\contentsline {subsubsection}{\numberline {4.2.5}Aggiornare il Service Worker}{28}{subsubsection.4.2.5}
+\contentsline {subsubsection}{\numberline {4.2.6}Disintallare il Service Worker}{29}{subsubsection.4.2.6}
+\contentsline {subsection}{\numberline {4.3}Strategie di caching (le lascio o non servono?)}{30}{subsection.4.3}
+\contentsline {subsubsection}{\numberline {4.3.1}Network first}{30}{subsubsection.4.3.1}
+\contentsline {subsubsection}{\numberline {4.3.2}Cache first}{31}{subsubsection.4.3.2}
+\contentsline {subsubsection}{\numberline {4.3.3}Network only}{32}{subsubsection.4.3.3}
+\contentsline {subsubsection}{\numberline {4.3.4}Cache only}{33}{subsubsection.4.3.4}
+\contentsline {subsubsection}{\numberline {4.3.5}Fastest}{34}{subsubsection.4.3.5}
+\contentsline {subsubsection}{\numberline {4.3.6}Cache then network}{35}{subsubsection.4.3.6}
+\contentsline {subsection}{\numberline {4.4}Rischi e sicurezza}{35}{subsection.4.4}
+\contentsline {subsection}{\numberline {4.5}Esempio di attacco}{36}{subsection.4.5}
+\contentsline {subsection}{\numberline {4.6}Compatibilit\IeC {\`a} web}{38}{subsection.4.6}
+\contentsline {subsubsection}{\numberline {4.6.1}Desktop}{38}{subsubsection.4.6.1}
+\contentsline {subsubsection}{\numberline {4.6.2}Mobile}{38}{subsubsection.4.6.2}
+\contentsline {subsection}{\numberline {4.7}Conclusioni}{38}{subsection.4.7}
+\contentsline {section}{\numberline {5}Conclusioni}{39}{section.5}
+\contentsline {section}{\numberline {6}Bibliografia}{41}{section.6}

@@ -82,10 +82,10 @@
 \begin{document}
 \title{Tesi - Service Workers}
 \maketitle
-
-\tableofcontents
 \pagebreak
+\tableofcontents
 
+\newpage
 \section{Overview}
 Un ServiceWorker è uno script Javascript che utilizza le Promises per poter eseguire operazioni in modalità asincrona nel browser, avviate in background separato dalla pagina; pertanto non possono modificarne gli elementi del DOM come i normali script ma può comunicare con essi mediante “messaggi”.
 Un ServiceWorker si trova tra la nostra applicazione Web e la rete e, come un server proxy, può intercettare tutte le richieste a pagine web e file statici e rispondere secondo politiche che siamo noi stessi a decidere.
@@ -281,18 +281,22 @@ In una situazione XSS del genere il limite della direttiva cache di 24 ore garan
 Inoltre un Service Worker potrebbe non essere usato solamente per il caching, migliorando i tempi di risposta dell'applicazione o del sito, ma potrebbe anche essere usato per intercettare messaggi, modificandoli e restituendoli errati (similmente a man-in-the-middle).
 
 
-- Pro: vedere se i SW possono migliorare la sicurezza di una pagina, senza essere usati solo per fare caching.
+- Pro: - VEDERE SE I SW POSSONO MIGLIORARE LA SICUREZZA DI UNA PAGINA, SENZA ESSERE USATI SOLO PER FARE CACHING -
+
 \newpage
 \section{Esempio di attacco}
 Supponiamo di avere questa pagina HTML che carica uno script per l'installazione di un Service Worker, pensando sia sicuro.
 \lstinputlisting{code/index.html}
 Il file script.js sarà il seguente:
-\lstinputlisting{code/script.js}
+\lstinputlisting{code/scriptSW.js}
+\pagebreak
 Mentre hack.js, che intercetta ogni richiesta, sarà questo:
 \lstinputlisting{code/hack.js}
 Infine il file che installerà il Service Worker malevolo sarà questo:
 \lstinputlisting{code/install.js}
 Ogni richiesta che verrà fatta sarà intercettata dal Service Worker (in questo caso uscirà il messaggio "Intercepted" nella pagina web) fino a che non sarà disinstallato e non verrà cancellata la cache.
+
+- INSERIRE IMMAGINE CHE MOSTRA L'INTERCEPTED -
 \newpage
 \section{Compatibilità web}
 \subsection{Desktop}
