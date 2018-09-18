@@ -21,10 +21,7 @@
 \addtolength{\skip\footins}{3pc plus 5pt}
 \renewcommand{\arraystretch}{1.5}
 \pagestyle{plain}
-\author{Alessia Marostica}
-\title{Bozza tesi}
-\makeindex
-\usepackage{titlesec}
+
 
 
 \titleformat{\chapter}[display]
@@ -159,11 +156,11 @@
 
 \newpage
 \section{Introduzione}
-Scrivere qua l'abstract (quando è chiaro l'argomento della tesi)
-
---> idea generale
-\\
-Studiarne un piccolo set di API e capirne le vulnerabilità, partendo da quella piu semplice, Geolocation, che traccia la posizione dell'utente; passando poi a PaymentRequest, che salva le credenziali dell'utente cosi da non reinserirle sempre, mostrando che queste possono essere intercettate; arrivando poi ai SW, i quali migliorano l'esperienza utente attraverso il caching (e migliorano la sicurezza?), mostrando anche come possono essere utilizzati in modo malevolo (sfruttando le vulnerabilita web?).
+Negli ultimi decenni il World Wide Web è diventanto sempre più presente nella quotidianità di ogni individuo e, come la maggior parte delle cose, presenta aspetti positivi e negativi.
+Essendo il web un mondo veramente vasto da scoprire, sono altrettanti i rischi presenti al suo interno.
+L'obiettivo di questa tesi è spiegare come, studiando un piccolo set di API, siano state trovate delle vulnerabilità di sicurezza e privacy all'interno di queste mostrando come possano venire rubate le informazioni sensibili degli utenti ed essere usate poi da terzi.
+La tesi si divide in tre parti principali, corrispondenti alle tre API prese in esame.
+La prima, [che è anche la più semplice delle tre], è la Geolocation API, la quale, utilizzata nei siti web o nelle web app, serve a tracciare la posizione dell'utente, con possibili rischi di problemi di privacy; la seconda è la PaymentRequest API, la quale salva le credenziali dell'utente cosi da essere riutilizzate automaticamente senza doverle reinserirle ogni qualvolta le si usa, mostrando però che queste possono essere intercettate, e come possono essere rubate; l'ultimo argomento preso in esame, che è anche il più complesso, riguarda i Service Worker, i quali sono principalmente usati per il caching, migliorando cosi l'esperienza utente,[(e migliorano la sicurezza?)], però viene anche mostrato come questi possono essere utilizzati in modo malevolo intercettando le richieste di rete e rubando informazioni ad una potenziale vittima.
 \cleardoublepage
 \section{Geolocation}
 \subsection{Overview}
@@ -735,14 +732,16 @@ Purtroppo sono uno potente strumento anche per scopi malevoli, come illustrato a
 \newpage
 \cleardoublepage
 \section{Conclusioni}
-Abbiamo mostrato le vulnerabilita di un piccolo set di api e come difendersi (se si puo)
+La tesi ha mostrato come vi siano delle vulnerabilità nelle API web, prendendo un piccolo set di tre API, specificando per ognuna in modo approfondito una spiegazione generale, la sua struttura ed esempi pratici sui problemi di sicurezza e privacy.
+-> finire 
+
 \cleardoublepage
 \listoffigures
 \cleardoublepage
-\section{Bibliografia}
+\section{Sitografia}
 \begin{thebibliography}{99}
 	%geolocation
-		\bibitem{}
+	\bibitem{}
 	Connorshea, Chris David Mills, HeilKing, northvanhooser, erikadoyle, fscholz, Alhadis, teoli, FabioMagnoni (2018),
 	\emph{Features restricted to secure contexts, Mozilla Developer},
 	\url{https://developer.mozilla.org/en-US/docs/Web/API/Geolocation}
