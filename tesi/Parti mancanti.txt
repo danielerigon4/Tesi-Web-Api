@@ -1,6 +1,7 @@
 COSE MANCANTI/DA FARE:
 
 - Scrivere Introduzione
+- Dedica
 - PaymentRequest capitolo 3.3: come difendersi, pagina 23
 - Service Worker: le strategie di caching le lascio? pagina 35
 - Service Worker: fanno solo caching o aumentano anche sicurezza? pagina 40 -> non ho trovato niente
@@ -9,5 +10,5 @@ COSE MANCANTI/DA FARE:
 - Sistemare conclusione PaymentRequest
 - Devo scrivere meno codice nella tesi e rimandare ad una repository?
 - Scrivere conclusioni finali 
-- Ringraziamenti (ci vanno?)
+- Ringraziamenti
 - Sistemare impaginazione
