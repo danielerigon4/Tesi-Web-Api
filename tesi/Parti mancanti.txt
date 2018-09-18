@@ -3,10 +3,10 @@ COSE MANCANTI/DA FARE:
 - Scrivere Introduzione
 - PaymentRequest capitolo 3.3: come difendersi, pagina 23
 - Service Worker: le strategie di caching le lascio? pagina 35
-- Service Worker: fanno solo cahing o aumentano anche sicurezza? pagina 40 -> non ho trovato niente
-- Ultimare esempio di attacco Service Worker pagina 42
+- Service Worker: fanno solo caching o aumentano anche sicurezza? pagina 40 -> non ho trovato niente
 - esempio pratico con crawler (come si fa?)
-- Sistemare tutte le conclusioni dei capitoli 
+- Scrivere conclusione Geolocation
+- Sistemare conclusione PaymentRequest
 - Devo scrivere meno codice nella tesi e rimandare ad una repository?
 - Scrivere conclusioni finali 
 - Ringraziamenti (ci vanno?)

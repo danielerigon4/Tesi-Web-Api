@@ -161,6 +161,9 @@
 \section{Introduzione}
 Scrivere qua l'abstract (quando è chiaro l'argomento della tesi)
 
+--> idea generale
+\\
+Studiarne un piccolo set di API e capirne le vulnerabilità, partendo da quella piu semplice, Geolocation, che traccia la posizione dell'utente; passando poi a PaymentRequest, che salva le credenziali dell'utente cosi da non reinserirle sempre, mostrando che queste possono essere intercettate; arrivando poi ai SW, i quali migliorano l'esperienza utente attraverso il caching (e migliorano la sicurezza?), mostrando anche come possono essere utilizzati in modo malevolo (sfruttando le vulnerabilita web?).
 \cleardoublepage
 \section{Geolocation}
 \subsection{Overview}
@@ -272,6 +275,8 @@ Se l'utente acconsente all'utilizzo della posizione essa sarà calcolata e, risi
 	\label{fig: Desktop and mobile compatibility}
 \end{figure}
 \subsection{Conclusioni}
+La Geolocation API è una delle API più semplici.
+
 \cleardoublepage
 \newpage
 \section{PaymentRequest API}
@@ -490,7 +495,7 @@ Il prezzo potrebbe cambiare in base all'indirizzo di spedizione e alle opzioni d
 	\label{fig: Compatibilità mobile}
 \end{figure}
 \subsection{Conclusioni}
-La PaymentRequest API è uno strumento per migliorare l'esperienza utente sul Web offrendo ai clienti un'esperienza di acquisto più piacevole, pur avendo delle vulnerabilità.
+La PaymentRequest API è uno strumento per migliorare l'esperienza utente sul Web offrendo ai clienti un'esperienza di acquisto più piacevole, pur avendo delle vulnerabilità. (possono essere colmate?)
 \newpage
 \cleardoublepage
 \section{Service Worker}
@@ -701,8 +706,12 @@ Mentre hack.js, che intercetta ogni richiesta, sarà questo:
 Infine il file che installerà il Service Worker malevolo sarà questo:
 \lstinputlisting{code/install.js}
 Ogni richiesta che verrà fatta sarà intercettata dal Service Worker (in questo caso uscirà il messaggio "Intercepted" nella pagina web) fino a che non sarà disinstallato e non verrà cancellata la cache.
-
-- INSERIRE IMMAGINE CHE MOSTRA L'INTERCEPTED -
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{Intercepted}
+	\caption{Intercepted}
+	\label{fig: Intercepted}
+\end{figure}
 
 \newpage
 \subsection{Compatibilità web}
@@ -722,10 +731,11 @@ Ogni richiesta che verrà fatta sarà intercettata dal Service Worker (in questo
 \end{figure}
 \subsection{Conclusioni}
 Se realizzati per fare caching i Service Worker possono rendere la navigazione del sito web o dell'applicazione molto più veloce, senza rendere necessarie modifiche al sito o all'applicazione per raggiungere questo scopo. 
-Purtroppo sono uno potente strumento anche per scopi malevoli, come illustrato al punto 4.
+Purtroppo sono uno potente strumento anche per scopi malevoli, come illustrato al punto 4.4.
 \newpage
 \cleardoublepage
 \section{Conclusioni}
+Abbiamo mostrato le vulnerabilita di un piccolo set di api e come difendersi (se si puo)
 \cleardoublepage
 \listoffigures
 \cleardoublepage
