@@ -1,4 +1,5 @@
 \documentclass[11pt ,a4paper , twoside , openright ]{article}
+\usepackage{layouts}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
@@ -24,6 +25,7 @@
 \title{Bozza tesi}
 \makeindex
 \usepackage{titlesec}
+
 
 \titleformat{\chapter}[display]
 {\Huge\bfseries}
@@ -136,6 +138,10 @@
 		\vspace*{2.6cm} \normalsize
 		\textbf{Relatore}\\
 		Prof. Stefano Calzavara
+		
+		\vspace*{1.3cm} \normalsize
+		\textbf{Correlatore}\\
+		Prof. Marco Squarcina
 				
 		\vspace*{1.3cm} \normalsize
 		\textbf{Laureando}\\
@@ -148,14 +154,14 @@
 	\end{flushleft}
 
 \pagebreak
+\cleardoublepage
 \tableofcontents
 
 \newpage
 \section{Introduzione}
 Scrivere qua l'abstract (quando è chiaro l'argomento della tesi)
-URL ISSUE SU GIT: \url{https://github.com/secgroup/webapi/issues}
 
--> inserire libreria per far cominciare capitoli nella pagina a destra
+\cleardoublepage
 \section{Geolocation}
 \subsection{Overview}
 La Geolocation API viene utilizzata per ottenere la posizione geografica di un utente. 
@@ -182,7 +188,7 @@ Un esempio concreto potrebbe essere il seguente\footnote{viene chiesto il permes
 Che produrrà la seguente pagina:
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.4\linewidth]{geo1}
+	\includegraphics[width=0.5\linewidth]{geo1}
 	\caption{Pagina info Geolocation}
 	\label{fig: Pagina info Geolocation}
 \end{figure}
@@ -212,13 +218,15 @@ Se l'utente acconsente all'utilizzo della posizione verrà mostrato un messaggio
 	\caption{Accetto autorizzazione}
 	\label{fig: Accetto autorizzazione}
 \end{figure}
-\pagebreak
+\\
 \textbf{WatchPosition}
+\\
 Se la posizione cambia (perché il dispositivo si sposta o perché viene calcolata una posizione più accurata), si può settare una funzione che viene chiamata quando la posizione attuale si aggiorna. Basta usare la funzione watchPosition(), che ha gli stessi parametri di input di getCurrentPosition(). Questa funzione viene chiamata più volte così da permettere al browser di sapere sempre la posizione del dispositivo. La funzione di errore è opzionale come lo era per getCurrentPosition().
 \lstinputlisting{code/WatchPosition.js}
 Il metodo watchPosition() ritorna un ID numerico che può essere usato per identificare univocamente il controllo della posizione. 
-
+\\
 \textbf{ClearPosition}
+\\
 Viene usato il metodo clearWatch() per annullare il monitoraggio della posizione.
 \lstinputlisting{code/ClearPosition.js}
 
@@ -234,9 +242,11 @@ Un problem importante è che se l'utente non disabilita il tracciamento il brows
 \end{figure}
 \\
 Supponiamo che un utente malintenzionato abbia rilevato una vulnerabilità XSS in un sito Web; tutto ciò che dovra fare è fare in modo che la vittima esegua il seguente codice JavaScript per rubare la posizione.
+
 \lstinputlisting{code/script.js}
 Il codice utilizza le proprietà del DOM cords.latitude e cords.langitude per determinare rispettivamente la latitudine / longitudine e le memorizza in una variabile. Successivamente il codice JavaScript invia i dati al dominio dell'attaccante, in modo diverso a seconda di come è stato configurata la richiesta.
 \\
+\clearpage
 Se l'utente non consente all'utilizzo della posizione non succederà nulla nella pagina.
 \begin{figure}[h]
 	\centering
@@ -262,12 +272,12 @@ Se l'utente acconsente all'utilizzo della posizione essa sarà calcolata e, risi
 	\label{fig: Desktop and mobile compatibility}
 \end{figure}
 \subsection{Conclusioni}
+\cleardoublepage
 \newpage
-
 \section{PaymentRequest API}
 
 \subsection{Overview Payment Request}
-La PaymenteRequest API nasce con l'intento di creare esperienze di pagamento semplificate, in quanto ogni sito web ha il proprio sistema di pagamento e molti siti richiedono la ridigitazione manuale delle stesse informazioni più volte, le quali possono essere invece memorizzate e riutilizzate dall'API per completare più rapidamente le transazioni online.
+La PaymentRequest API nasce con l'intento di creare esperienze di pagamento semplificate, in quanto ogni sito web ha il proprio sistema di pagamento e molti siti richiedono la ridigitazione manuale delle stesse informazioni più volte, le quali possono essere invece memorizzate e riutilizzate dall'API per completare più rapidamente le transazioni online.
 
 \subsubsection{Vantaggi}
 \begin{itemize}
@@ -299,11 +309,11 @@ Al completamento l'app di pagamento restituisce i dati tramite l'API al commerci
 \textbf{Ruolo dell'utente}
 \\
 Gli utenti beneficiano del riutilizzo delle informazioni inserite nel browser o nelle app di pagamento. Quindi, quando si visita un sito Web che sfrutta la PaymentRequest API gli utenti avranno l'opportunità di sfruttare il riutilizzo semplificato delle informazioni archiviate.
-
+\\
 \textbf{Ruolo del commerciante}
 \\
 L'API influisce sul front end (l'interfaccia dell'esperienza utente) e non sul back-end, pertanto il commerciante non dovrebbe dover apportare modifiche all'elaborazione back-end dei vari metodi di pagamento; questo sarà compito del fornitore della pagina di pagamento il quale sostituirà i moduli Web con le chiamate alla PaymentRequest API.
-
+\\
 \textbf{Ruolo del browser}
 \\
 Il browser svolge diversi ruoli:
@@ -312,7 +322,6 @@ Il browser svolge diversi ruoli:
 	\item Visualizza l'interfaccia utente che consente all'utente di inserire le proprie informazioni;
 	\item Funge da canale per i dati da e verso il commerciante e da e verso l'utente.
 \end{itemize}
-
 \textbf{Metodi di pagamento}
 \\
 La PaymentRequest API è progettata per funzionare con un gran numero di metodi di pagamento, i quali vengono identificati attraverso due strade:
@@ -320,7 +329,6 @@ La PaymentRequest API è progettata per funzionare con un gran numero di metodi 
 	\item I metodi di pagamento definiti da W3C sono identificati come "basic-card" e sono composti da stringhe corte;
 	\item I metodi di pagamento definiti da altre parti sono identificati dagli URL.
 \end{itemize}
-
 \textbf{App di pagamento}
 \\
 La PaymentRequest API determina se un'app di pagamento "corrisponde" a una determinata transazione definendo un algoritmo che considera i metodi di pagamento accettati dal commerciante, dichiarati attraverso un elenco di identificativi del metodo di pagamento, passati attraverso l'API.
@@ -340,7 +348,6 @@ La PaymentRequest API consente un flusso migliorato:
 	\item Per i metodi di pagamento che prevedono il lancio di un'app o la visita a un sito Web, inviare l'utente a quell'app o sito; 
 	\item Pagamento completato; 
 \end{itemize}
-
 \textbf{Differenze tra metodo di pagamento e app di pagamento}
 \\
 Un'app di pagamento è il software che l'utente utilizza per pagare, la quale può supportare uno o più metodi di pagamento e può essere implementata utilizzando diverse tecnologie. I browser possono anche fungere da app di pagamento, memorizzando le credenziali dell'utente. In generale più app di pagamento possono implementare lo stesso metodo di pagamento. 
@@ -360,9 +367,11 @@ Per utilizzare l'API lo sviluppatore deve fornire e tenere traccia di una serie 
 
 \pagebreak
 \textbf{PaymentMethodData}
+\\
 PaymentMethodData contiene gli identificativi dei metodi di pagamento accettati dal sito Web e qualsiasi dato specifico del metodo di pagamento associato.
 \lstinputlisting{code/PaymentMethodData.js}
 \textbf{PaymentDetails}
+\\
 I details contengono informazioni sulla transazione che l'utente è invitato a completare.
 \lstinputlisting{code/PaymentDetails.js}
 \pagebreak
@@ -423,7 +432,7 @@ Dopo l'elaborazione i numeri di carta di credito e CVV saranno visibili all'atta
 \textbf{Come difendersi}
 \\
 -- E COSI E NON SI PUO FAR NIENTE? --
-
+\pagebreak
 \subsection{Implementazione PaymentRequest API su una pagina d'esempio}
 \subsubsection{Costruttore}
 L'oggetto PaymentRequest è costruito passando i seguenti parametri:
@@ -435,7 +444,6 @@ L'oggetto PaymentRequest è costruito passando i seguenti parametri:
 
 Nel seguente esempio stiamo consentendo agli utenti di pagare con qualsiasi carta di debito o di credito appartenente alle reti Visa, MasterCard o Amex. L'oggetto details contiene l'importo totale parziale, l'imposta sulle vendite e il totale dovuto; questi dettagli verranno mostrati all'utente nel portafoglio. Bisogna tenere presente che l'API non aggiunge elementi o calcola l'imposta sulle vendite, spetta al commerciante fornire le informazioni corrette. In questo esempio, stiamo vendendo un bene fisico, quindi chiediamo l'indirizzo di spedizione del cliente.
 \lstinputlisting{code/Costruttore.js}
-
 \subsubsection{Visualizzazione dell'interfaccia utente, elaborazione del pagamento e visualizzazione dei risultati}
 Una volta creato l'oggetto PaymentRequest è possibile attivare il browser per visualizzare il wallet con request.show(). 
 \begin{figure}[h]
@@ -444,7 +452,6 @@ Una volta creato l'oggetto PaymentRequest è possibile attivare il browser per v
 	\caption{Wallet dopo la chiamata request.show()}
 	\label{fig: Wallet dopo la chiamata request.show()}
 \end{figure}
-\\
 I clienti possono  selezionare le informazioni di pagamento, l'indirizzo di spedizione e altri campi appropriati e cliccare su Paga quando è pronto. A questo punto, gli utenti dovranno verificare la loro identità: in caso di esito positivo verrà soddisfatta la promise request.show() e verranno restituite al sito Web tutte le informazioni che il cliente ha fornito. Per il metodo di pagamento con carta di base l'oggetto risultante conterrà il nome del titolare della carta, il numero della carta, il mese di scadenza e altri campi pertinenti. Il commerciante può quindi utilizzare queste informazioni per elaborare la transazione sul back-end.
 Dopo che la risposta è tornata dal server, è possibile utilizzare result.complete('success') per visualizzare la schermata di successo o result.complete('fail') per indicare una transazione fallita.
 \lstinputlisting{code/PaymentShow.js}
@@ -462,7 +469,7 @@ Ed ecco i wallet in caso di successo e di fallimento.
 	\caption{Wallet in caso di fail}
 	\label{fig: Wallet in caso di fail}
 \end{figure}
-\pagebreak
+\clearpage
 \subsubsection{Ascoltare gli eventi}
 Il prezzo potrebbe cambiare in base all'indirizzo di spedizione e alle opzioni di spedizione selezionate dal cliente. È possibile ascoltare tali modifiche con gli eventi shippingaddresschange e shippingoptionchange per ricalcolare di conseguenza i prezzi.
 \lstinputlisting{code/Events.js}
@@ -482,11 +489,10 @@ Il prezzo potrebbe cambiare in base all'indirizzo di spedizione e alle opzioni d
 	\caption{Compatibilità mobile}
 	\label{fig: Compatibilità mobile}
 \end{figure}
-
 \subsection{Conclusioni}
 La PaymentRequest API è uno strumento per migliorare l'esperienza utente sul Web offrendo ai clienti un'esperienza di acquisto più piacevole, pur avendo delle vulnerabilità.
 \newpage
-
+\cleardoublepage
 \section{Service Worker}
 \subsection{Overview}
 Un ServiceWorker è uno script Javascript che utilizza le Promises per poter eseguire operazioni in modalità asincrona nel browser, avviate in background separato dalla pagina; pertanto non possono modificarne gli elementi del DOM come i normali script ma può comunicare con essi mediante “messaggi”.
@@ -549,6 +555,7 @@ Come prima cosa bisogna comunicare al browser l’esistenza di un ServiceWorker 
 \lstinputlisting{code/Registrazione.js}
 Il codice inizia controllando il supporto da parte del browser verificando la presenza di navigator.serviceWorker. Se supportato, il ServiceWorker viene registrato per mezzo di navigator.serviceWorker.register che restituisce un oggetto Promise il quale si risolve con successo a registrazione avvenuta correttamente.
 service-worker.js è il file Javascript residente nella root del sito web e che contiene il codice del service worker, il cui codice è:
+\pagebreak
 \lstinputlisting{code/Registrazione2.js}
 In questo modo viene registrato un ServiceWorker il quale viene semplicemente installato e ad ogni richiesta stampa in console un messaggio con la URL che il browser tenta di scaricare dal server web. Per controllare il caricamento di un Service Worker il codice di questo deve essere eseguito al di fuori delle normali pagine.
 
@@ -565,6 +572,7 @@ Il ServiceWorker viene scaricato immediatamente quando un utente accede per la p
 L'installazione viene tentata quando il file nuovo che è stato scaricato risulta diverso da un ServiceWorker esistente, o risulta essere diverso dal primo ServiceWorker rilevato per quella pagina/sito. Se è la prima volta che un ServiceWorker viene reso disponibile viene tentata l'installazione e, dopo un'installazione corretta, viene attivato. Se è disponibile un ServiceWorker esistente la nuova versione viene installata in background, ma non ancora attivata; si attiva solo quando non ci sono più pagine caricate che stanno ancora utilizzando il vecchio ServiceWorker. Non appena non ci sono più pagine da caricare il nuovo ServiceWorker si attiva.
 
 Conseguentemente all’installazione viene richiamato l’evento install: tale evento consente di effettuare il precaching, ovvero inserire in cache pagine e file statici del sito web prima di intercettarne le richieste. Per farlo occorre utilizzare gli oggetti Promise event e cache come segue:
+\pagebreak
 \lstinputlisting{code/Installazione.js}
 Se si decidesse di aggiungere/eliminare nuove risorse da inserire in cache bisognerà avere l’accortezza di cambiare il nome della versione del ServiceWorker ed eliminare dalla cache le risorse già presenti.
 Una cosa molto importante da sapere è che le risorse da inserire in cache in fase di precaching devono esistere realmente sul server web altrimenti il ServiceWorker genererà un errore fatale e l’installazione non andrà a buon fine. 
@@ -606,21 +614,19 @@ Una modifica interessante in questo caso potrebbe essere quella di aggiornare la
 \lstinputlisting{code/Networkfirst2.js}
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=1\linewidth]{Strategia1}
+	\includegraphics[width=0.7\linewidth]{Strategia1}
 	\caption{Network first}
 	\label{fig: Network first}
 \end{figure}
-\pagebreak
 \subsubsection{Cache first}
 Chiamata anche cache, falling back to network, questa strategia verifica se la risorsa è disponibile in cache. Se così fosse viene restituita la copia in cache. In caso contrario la risorsa viene scaricata dalla rete.
 \lstinputlisting{code/CacheFirst.js}
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=1\linewidth]{Strategia2}
+	\includegraphics[width=0.7\linewidth]{Strategia2}
 	\caption{Cache First}
 	\label{fig: Cache First}
 \end{figure}
-\pagebreak
 \subsubsection{Network only}
 È la strategia più banale in quanto viene simulato il normale comportamento del browser, ovvero scaricare le risorse direttamente dalla rete.
 
@@ -630,7 +636,7 @@ o al limite inserire semplicemente la seguente riga:
 \lstinputlisting{code/NetworkOnly2.js}
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=1\linewidth]{Strategia3}
+	\includegraphics[width=0.7\linewidth]{Strategia3}
 	\caption{Network only}
 	\label{fig: Network only}
 \end{figure}
@@ -640,35 +646,33 @@ Esattamente opposta alla strategia network only, in questo caso il service worke
 \lstinputlisting{code/CacheOnly.js}
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=1\linewidth]{Strategia4}
+	\includegraphics[width=0.7\linewidth]{Strategia4}
 	\caption{Cache Only}
 	\label{fig: Cache Only}
 \end{figure}
-\pagebreak
 \subsubsection{Fastest}
 Questa strategia mira a fornire all’utente la risposta più veloce. Il ServiceWorker avvia contemporaneamente una richiesta in cache ed una in rete. La prima che risponde verrà restituita all’utente.
 Questa soluzione può essere l’ideale per quei dispositivi con vecchi hard drive dove la lettura da disco può addirittura rivelarsi più lenta del fetch dalla rete. Per i dispositivi moderni è meglio utilizzare la strategia cache then network.
 Siccome il ServiceWorker può ritornare un solo Promise, occorre realizzare una funzione a cui passare un array di oggetti Promise, in questo caso cache e fetch, e risolverli quasi contemporaneamente ritornando quello che si risolve per primo.
+\pagebreak
 \lstinputlisting{code/Fastest.js}
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=1\linewidth]{Strategia5}
+	\includegraphics[width=0.7\linewidth]{Strategia5}
 	\caption{Fastest}
 	\label{fig: Fastest}
 \end{figure}
-\pagebreak
 \subsubsection{Cache then network}
 Questa strategia mira a fornire il contenuto dalla cache per una risposta molto rapida. Dopodiché in parallelo si avvia una richiesta in rete per scaricare una copia aggiornata della risorsa e sostituirla con quella in cache. La risorsa ricevuta dalla rete viene poi sostituita con quella presente sulla pagina.
 Per ottenere questo obiettivo occorre avere sia codice lato pagina che lato ServiceWorker. Questo perché il ServiceWorker deve rispondere subito e non può attendere il completamento di un secondo task senza rallentare l’intera operazione.
 Per ottenere qualcosa di analogo usando il solo ServiceWorker occorre utilizzare postMessage affinché la pagina comunichi al service worker la risorsa da interpellare con un secondo fetch, sia esso dalla cache o dalla rete. La complessità rimane uguale ma molto utile in caso si utilizzi il service worker per fare page caching.
-
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=1\linewidth]{Strategia6}
+	\includegraphics[width=0.7\linewidth]{Strategia6}
 	\caption{Cache then Network}
 	\label{fig: Cache then Network}
 \end{figure}
-
+\newpage
 \subsection{Rischi e sicurezza}
 Come già detto i Service Worker operano solo in contesti protetti, ma questo non vuol dire che l'ambiente sia sicuro al 100\% in quanto un ServiceWorker ha la possibilità di importare script da qualsiasi altra origine tramite la chiamata a importScripts, aumentando la capacità di un attaccante XSS di inserire il proprio codice javascript all'interno della pagina, potendo cosi rubare informazioni dell'utente, ad esempio all'inserimento di username e password in una data pagina e portarle fuori. La registrazione dei Service Worker specifica che essi devono essere eseguiti nella stessa origine dei loro chiamanti; il confronto dell'origine è una corrispondenza col prefisso più lungo degli URL serializzati compreso il percorso, quindi ad esempio https://example.com è differente da https://example.com.evil.com. Quindi un attaccante può effettivamente registrare un Service Worker malevolo. Per mitigare questo rischio il browser richiede che l'URL di registrazione del Service Worker provenga dall'origine stessa; quindi per registrare un Service Worker malevolo attraverso un attacco XSS l'utente malintenzionato ha bisogno di ospitare i propri script sul server.
 \\
@@ -684,7 +688,7 @@ Inoltre un Service Worker potrebbe non essere usato solamente per il caching, mi
 
 
 - Pro: - VEDERE SE I SW POSSONO MIGLIORARE LA SICUREZZA DI UNA PAGINA, SENZA ESSERE USATI SOLO PER FARE CACHING -
-
+\newpage
 \subsection{Esempio di attacco}
 Supponiamo di avere questa pagina HTML che carica uno script per l'installazione di un Service Worker, pensando sia sicuro.
 \lstinputlisting{code/index.html}
@@ -692,6 +696,7 @@ Il file script.js sarà il seguente:
 \lstinputlisting{code/scriptSW.js}
 
 Mentre hack.js, che intercetta ogni richiesta, sarà questo:
+\pagebreak
 \lstinputlisting{code/hack.js}
 Infine il file che installerà il Service Worker malevolo sarà questo:
 \lstinputlisting{code/install.js}
@@ -699,7 +704,7 @@ Ogni richiesta che verrà fatta sarà intercettata dal Service Worker (in questo
 
 - INSERIRE IMMAGINE CHE MOSTRA L'INTERCEPTED -
 
-\clearpage
+\newpage
 \subsection{Compatibilità web}
 \subsubsection{Desktop}
 \begin{figure}[h]
@@ -715,17 +720,15 @@ Ogni richiesta che verrà fatta sarà intercettata dal Service Worker (in questo
 	\caption{Compatibilità mobile}
 	\label{fig:Compatibilità mobile}
 \end{figure}
-
 \subsection{Conclusioni}
 Se realizzati per fare caching i Service Worker possono rendere la navigazione del sito web o dell'applicazione molto più veloce, senza rendere necessarie modifiche al sito o all'applicazione per raggiungere questo scopo. 
 Purtroppo sono uno potente strumento anche per scopi malevoli, come illustrato al punto 4.
-
 \newpage
+\cleardoublepage
 \section{Conclusioni}
-
-\newpage
+\cleardoublepage
 \listoffigures
-\newpage
+\cleardoublepage
 \section{Bibliografia}
 \begin{thebibliography}{99}
 	%geolocation

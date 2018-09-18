@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.6.25)  17 SEP 2018 16:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.6.25)  18 SEP 2018 10:27
 entering extended mode
 **./Finale.tex
 (Finale.tex
@@ -22,6 +22,88 @@ File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
+("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\layouts\layouts.
+sty"
+Package: layouts 2009/09/02 v2.6d graphical depiction of document elements
+\l@ylen=\skip43
+\layoutsbox=\box26
+\l@youtunitlength=\skip44
+\l@youtlinethick=\skip45
+\l@youtlinethickii=\skip46
+\l@ysetupparskip=\skip47
+\l@ysetupbaselineskip=\skip48
+\l@yonem=\skip49
+\l@yonex=\skip50
+\l@ylmarg=\skip51
+\l@yrmarg=\skip52
+\l@yitmindent=\skip53
+\l@ylblwidth=\skip54
+\l@ylblsep=\skip55
+\l@ylparindent=\skip56
+\l@ytsep=\skip57
+\l@ypskip=\skip58
+\l@yptsep=\skip59
+\l@ypsep=\skip60
+\l@yitmsep=\skip61
+\l@ytok=\toks14
+\l@youtpw=\count87
+\l@youtph=\count88
+\l@youthpi=\count89
+\l@youthpii=\count90
+\l@youthpiii=\count91
+\l@youthpiv=\count92
+\l@youthpv=\count93
+\l@youthpvi=\count94
+\l@youthpvii=\count95
+\l@youtparskip=\count96
+\l@youtvpi=\count97
+\l@youtvpii=\count98
+\l@youtvpiii=\count99
+\l@youtvpiv=\count100
+\l@youtvpv=\count101
+\l@youtvpvi=\count102
+\l@youtvpvii=\count103
+\l@youthdo=\count104
+\l@youthdi=\count105
+\l@youthdii=\count106
+\l@youthdiii=\count107
+\l@youthdiv=\count108
+\l@youthdv=\count109
+\l@youthdvi=\count110
+\l@youthdvii=\count111
+\l@youtvdo=\count112
+\l@youtvdi=\count113
+\l@youtvdii=\count114
+\l@youtvdiii=\count115
+\l@youtvdiv=\count116
+\l@youtvdv=\count117
+\l@youtvdvi=\count118
+\l@youtvdvii=\count119
+\l@youtvdviii=\count120
+\l@youtxci=\count121
+\l@youtxcii=\count122
+\l@youtxciii=\count123
+\l@youtxciv=\count124
+\l@youtxcv=\count125
+\l@youtxcvi=\count126
+\l@youtyci=\count127
+\l@youtycii=\count128
+\l@youtyciii=\count129
+\l@youtyciv=\count130
+\l@youtycv=\count131
+\l@youtycvi=\count132
+\l@youtycvii=\count133
+\l@youtycviii=\count134
+\l@youtxco=\count135
+\l@youtyco=\count136
+\l@ytempdima=\skip62
+\stockwidth=\skip63
+\stockheight=\skip64
+\trimedge=\skip65
+\trimtop=\skip66
+\uppermargin=\skip67
+\spinemargin=\skip68
+)
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\fontenc.sty
 "
 Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
@@ -32,8 +114,8 @@ LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\inputenc.st
 y"
 Package: inputenc 2015/03/17 v1.2c Input encoding file
-\inpenc@prehook=\toks14
-\inpenc@posthook=\toks15
+\inpenc@prehook=\toks15
+\inpenc@posthook=\toks16
  ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\utf8.def"
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 Now handling font encoding OML ...
@@ -434,7 +516,7 @@ Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\keyval.
 sty"
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks16
+\KV@toks@=\toks17
 )
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\generic\ifxetex\ifxete
 x.sty"
@@ -449,8 +531,8 @@ ns.sty"
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 )
 \@linkdim=\dimen103
-\Hy@linkcounter=\count87
-\Hy@pagecounter=\count88
+\Hy@linkcounter=\count137
+\Hy@pagecounter=\count138
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\pd1enc.
 def"
@@ -458,7 +540,7 @@ File: pd1enc.def 2018/02/06 v6.86b Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
-\Hy@SavedSpaceFactor=\count89
+\Hy@SavedSpaceFactor=\count139
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\00miktex\hyperre
 f.cfg"
@@ -471,7 +553,7 @@ Package hyperref Info: Plain pages OFF on input line 4524.
 Package hyperref Info: Backreferencing OFF on input line 4529.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4762.
-\c@Hy@tempcnt=\count90
+\c@Hy@tempcnt=\count140
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\url\url.sty"
 \Urlmuskip=\muskip10
@@ -479,7 +561,7 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5115.
 \XeTeXLinkMargin=\dimen104
-\Fld@menulength=\count91
+\Fld@menulength=\count141
 \Field@Width=\dimen105
 \Fld@charsize=\dimen106
 Package hyperref Info: Hyper figures OFF on input line 6369.
@@ -491,17 +573,17 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6394.
 Package hyperref Info: PDF/A mode OFF on input line 6399.
 LaTeX Info: Redefining \ref on input line 6439.
 LaTeX Info: Redefining \pageref on input line 6443.
-\Hy@abspage=\count92
-\c@Item=\count93
-\c@Hfootnote=\count94
+\Hy@abspage=\count142
+\c@Item=\count143
+\c@Hfootnote=\count144
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\hpdftex
 .def"
 File: hpdftex.def 2018/02/06 v6.86b Hyperref driver for pdfTeX
-\Fld@listcount=\count95
-\c@bookmark@seq@number=\count96
+\Fld@listcount=\count145
+\c@bookmark@seq@number=\count146
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\rerunfi
 lecheck.sty"
@@ -509,14 +591,14 @@ Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
-\Hy@SectionHShift=\skip43
+\Hy@SectionHShift=\skip69
 )
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\geometry\geometr
 y.sty"
 Package: geometry 2010/09/12 v5.6 Page Geometry
-\Gm@cnth=\count97
-\Gm@cntv=\count98
-\c@Gm@tempcnt=\count99
+\Gm@cnth=\count147
+\Gm@cntv=\count148
+\c@Gm@tempcnt=\count149
 \Gm@bindingoffset=\dimen107
 \Gm@wd@mp=\dimen108
 \Gm@odd@mp=\dimen109
@@ -525,17 +607,17 @@ Package: geometry 2010/09/12 v5.6 Page Geometry
 \Gm@layoutheight=\dimen112
 \Gm@layouthoffset=\dimen113
 \Gm@layoutvoffset=\dimen114
-\Gm@dimlist=\toks17
+\Gm@dimlist=\toks18
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\geometry\geometr
 y.cfg"))
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\natbib\natbib.st
 y"
 Package: natbib 2010/09/13 8.31b (PWD, AO)
-\bibhang=\skip44
-\bibsep=\skip45
+\bibhang=\skip70
+\bibsep=\skip71
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count100
+\c@NAT@ctr=\count150
 )
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\babel.st
 y"
@@ -561,21 +643,21 @@ Language: italian 2015/03/26 v1.3n Italian support from the babel system
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\babel.de
 f"
 File: babel.def 2018/02/14 3.18 Babel common definitions
-\babel@savecnt=\count101
+\babel@savecnt=\count151
 \U@D=\dimen115
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\txtbabel
 .def")
-\bbl@dirlevel=\count102
+\bbl@dirlevel=\count152
 )
-\it@lettering=\count103
-\it@doublequoteactive=\count104
-\it@ISOcompliance=\count105
+\it@lettering=\count153
+\it@doublequoteactive=\count154
+\it@ISOcompliance=\count155
 ))
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\etoolbox\etoolbo
 x.sty"
 Package: etoolbox 2018/02/11 v2.5e e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count106
+\etb@tempcnta=\count156
 )
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\color.s
 ty"
@@ -593,25 +675,25 @@ File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\listing
 s.sty"
-\lst@mode=\count107
-\lst@gtempboxa=\box26
-\lst@token=\toks18
-\lst@length=\count108
+\lst@mode=\count157
+\lst@gtempboxa=\box27
+\lst@token=\toks19
+\lst@length=\count158
 \lst@currlwidth=\dimen116
-\lst@column=\count109
-\lst@pos=\count110
+\lst@column=\count159
+\lst@pos=\count160
 \lst@lostspace=\dimen117
 \lst@width=\dimen118
-\lst@newlines=\count111
-\lst@lineno=\count112
+\lst@newlines=\count161
+\lst@lineno=\count162
 \lst@maxwidth=\dimen119
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\lstmisc
 .sty"
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-\c@lstnumber=\count113
-\lst@skipnumbers=\count114
-\lst@framebox=\box27
+\c@lstnumber=\count163
+\lst@skipnumbers=\count164
+\lst@framebox=\box28
 )
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\listing
 s.cfg"
@@ -643,9 +725,9 @@ Package graphics Info: Driver file: pdftex.def on input line 99.
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\footmisc\footmis
 c.sty"
 Package: footmisc 2011/06/06 v5.5b a miscellany of footnote facilities
-\FN@temptoken=\toks19
+\FN@temptoken=\toks20
 \footnotemargin=\dimen122
-\c@pp@next@reset=\count115
+\c@pp@next@reset=\count165
 Package footmisc Info: Declaring symbol style bringhurst on input line 855.
 Package footmisc Info: Declaring symbol style chicago on input line 863.
 Package footmisc Info: Declaring symbol style wiley on input line 872.
@@ -663,7 +745,7 @@ gf.sty"
 frcs.sty"
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\
 pgfutil-common.tex"
-\pgfutil@everybye=\toks20
+\pgfutil@everybye=\toks21
 \pgfutil@tempdima=\dimen123
 \pgfutil@tempdimb=\dimen124
 
@@ -671,7 +753,7 @@ pgfutil-common.tex"
 pgfutil-common-lists.tex"))
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\
 pgfutil-latex.def"
-\pgfutil@abb=\box28
+\pgfutil@abb=\box29
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ms\everyshi.sty"
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
@@ -692,12 +774,12 @@ Package: pgfsys 2014/07/09 v3.0.1a (rcs-revision 1.48)
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\
 pgfkeys.code.tex"
-\pgfkeys@pathtoks=\toks21
-\pgfkeys@temptoks=\toks22
+\pgfkeys@pathtoks=\toks22
+\pgfkeys@temptoks=\toks23
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\
 pgfkeysfiltered.code.tex"
-\pgfkeys@tmptoks=\toks23
+\pgfkeys@tmptoks=\toks24
 ))
 \pgf@x=\dimen125
 \pgf@y=\dimen126
@@ -709,13 +791,13 @@ pgfkeysfiltered.code.tex"
 \pgf@yc=\dimen132
 \w@pgf@writea=\write3
 \r@pgf@reada=\read1
-\c@pgf@counta=\count116
-\c@pgf@countb=\count117
-\c@pgf@countc=\count118
-\c@pgf@countd=\count119
-\t@pgf@toka=\toks24
-\t@pgf@tokb=\toks25
-\t@pgf@tokc=\toks26
+\c@pgf@counta=\count166
+\c@pgf@countb=\count167
+\c@pgf@countc=\count168
+\c@pgf@countd=\count169
+\t@pgf@toka=\toks25
+\t@pgf@tokb=\toks26
+\t@pgf@tokc=\toks27
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\systemlaye
 r\pgf.cfg"
@@ -734,8 +816,8 @@ File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\systemlaye
 r\pgfsyssoftpath.code.tex"
 File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
-\pgfsyssoftpath@smallbuffer@items=\count120
-\pgfsyssoftpath@bigbuffer@items=\count121
+\pgfsyssoftpath@smallbuffer@items=\count170
+\pgfsyssoftpath@bigbuffer@items=\count171
 )
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\systemlaye
 r\pgfsysprotocol.code.tex"
@@ -774,11 +856,11 @@ thutil.code.tex")
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
 thparser.code.tex"
 \pgfmath@dimen=\dimen133
-\pgfmath@count=\count122
-\pgfmath@box=\box29
-\pgfmath@toks=\toks27
-\pgfmath@stack@operand=\toks28
-\pgfmath@stack@operation=\toks29
+\pgfmath@count=\count172
+\pgfmath@box=\box30
+\pgfmath@toks=\toks28
+\pgfmath@stack@operand=\toks29
+\pgfmath@stack@operation=\toks30
 )
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
 thfunctions.code.tex"
@@ -800,7 +882,7 @@ thfunctions.misc.code.tex")
 thfunctions.integerarithmetics.code.tex")))
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
 thfloat.code.tex"
-\c@pgfmathroundto@lastzeros=\count123
+\c@pgfmathroundto@lastzeros=\count173
 ))
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
 \pgfcorepoints.code.tex"
@@ -835,10 +917,10 @@ File: pgfcorepathusage.code.tex 2014/11/02  (rcs-revision 1.24)
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
 \pgfcorescopes.code.tex"
 File: pgfcorescopes.code.tex 2015/05/08  (rcs-revision 1.46)
-\pgfpic=\box30
-\pgf@hbox=\box31
-\pgf@layerbox@main=\box32
-\pgf@picture@serial@count=\count124
+\pgfpic=\box31
+\pgf@hbox=\box32
+\pgf@layerbox@main=\box33
+\pgf@picture@serial@count=\count174
 )
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
 \pgfcoregraphicstate.code.tex"
@@ -873,7 +955,7 @@ File: pgfcorearrows.code.tex 2015/05/14  (rcs-revision 1.43)
 \pgfcoreshade.code.tex"
 File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
 \pgf@max=\dimen157
-\pgf@sys@shading@range@num=\count125
+\pgf@sys@shading@range@num=\count175
 )
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
 \pgfcoreimage.code.tex"
@@ -882,7 +964,7 @@ File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
 \pgfcoreexternal.code.tex"
 File: pgfcoreexternal.code.tex 2014/07/09  (rcs-revision 1.21)
-\pgfexternal@startupbox=\box33
+\pgfexternal@startupbox=\box34
 ))
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
 \pgfcorelayers.code.tex"
@@ -899,7 +981,7 @@ File: pgfcorepatterns.code.tex 2013/11/07  (rcs-revision 1.5)
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\modules\pg
 fmoduleshapes.code.tex"
 File: pgfmoduleshapes.code.tex 2014/03/21  (rcs-revision 1.35)
-\pgfnodeparttextbox=\box34
+\pgfnodeparttextbox=\box35
 )
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\modules\pg
 fmoduleplot.code.tex"
@@ -933,8 +1015,8 @@ Package: pgffor 2013/12/13 v3.0.1a (rcs-revision 1.25)
 th.code.tex")
 \pgffor@iter=\dimen160
 \pgffor@skip=\dimen161
-\pgffor@stack=\toks30
-\pgffor@toks=\toks31
+\pgffor@stack=\toks31
+\pgffor@toks=\toks32
 ))
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendla
 yer\tikz\tikz.code.tex"
@@ -943,7 +1025,7 @@ Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\libraries\
 pgflibraryplothandlers.code.tex"
 File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
-\pgf@plot@mark@count=\count126
+\pgf@plot@mark@count=\count176
 \pgfplotmarksize=\dimen162
 )
 \tikz@lastx=\dimen163
@@ -952,23 +1034,23 @@ File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
 \tikz@lastysaved=\dimen166
 \tikzleveldistance=\dimen167
 \tikzsiblingdistance=\dimen168
-\tikz@figbox=\box35
-\tikz@figbox@bg=\box36
-\tikz@tempbox=\box37
-\tikz@tempbox@bg=\box38
-\tikztreelevel=\count127
-\tikznumberofchildren=\count128
-\tikznumberofcurrentchild=\count129
-\tikz@fig@count=\count130
+\tikz@figbox=\box36
+\tikz@figbox@bg=\box37
+\tikz@tempbox=\box38
+\tikz@tempbox@bg=\box39
+\tikztreelevel=\count177
+\tikznumberofchildren=\count178
+\tikznumberofcurrentchild=\count179
+\tikz@fig@count=\count180
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\modules\pg
 fmodulematrix.code.tex"
 File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
-\pgfmatrixcurrentrow=\count131
-\pgfmatrixcurrentcolumn=\count132
-\pgf@matrix@numberofcolumns=\count133
+\pgfmatrixcurrentrow=\count181
+\pgfmatrixcurrentcolumn=\count182
+\pgf@matrix@numberofcolumns=\count183
 )
-\tikz@expandcount=\count134
+\tikz@expandcount=\count184
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendla
 yer\tikz\libraries\tikzlibrarytopaths.code.tex"
@@ -983,12 +1065,12 @@ Writing index file Finale.idx
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\titlesec\titlese
 c.sty"
 Package: titlesec 2016/03/21 v2.10.2 Sectioning titles
-\ttl@box=\box39
-\beforetitleunit=\skip46
-\aftertitleunit=\skip47
+\ttl@box=\box40
+\beforetitleunit=\skip72
+\aftertitleunit=\skip73
 \ttl@plus=\dimen169
 \ttl@minus=\dimen170
-\ttl@toksa=\toks32
+\ttl@toksa=\toks33
 \titlewidth=\dimen171
 \titlewidthlast=\dimen172
 \titlewidthfirst=\dimen173
@@ -996,8 +1078,8 @@ Package: titlesec 2016/03/21 v2.10.2 Sectioning titles
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\titlesec\ttlkeys
 .def"
 File: ttlkeys.def 2016/03/15
-\c@ttlp@side=\count135
-\ttlp@side=\count136
+\c@ttlp@side=\count185
+\ttlp@side=\count186
 )
 
 LaTeX Warning: Unused global option(s):
@@ -1115,26 +1197,33 @@ Package natbib Warning: Citation `' multiply defined.
 )
 \openout1 = `Finale.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 114.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 116.
  ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\t1lmr.fd"
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-\AtBeginShipoutBox=\box40
-Package hyperref Info: Link coloring OFF on input line 114.
+
+Package layouts Warning: Layout scale set to 0.5 on input line 116.
+
+\AtBeginShipoutBox=\box41
+
+Package hyperref Warning: Height of page (\stockheight) is invalid (0.0pt),
+(hyperref)                using 11in.
+
+Package hyperref Info: Link coloring OFF on input line 116.
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\nameref
 .sty"
@@ -1144,11 +1233,11 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 tlestring.sty"
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count137
+\c@section@level=\count187
 )
-LaTeX Info: Redefining \ref on input line 114.
-LaTeX Info: Redefining \pageref on input line 114.
-LaTeX Info: Redefining \nameref on input line 114.
+LaTeX Info: Redefining \ref on input line 116.
+LaTeX Info: Redefining \pageref on input line 116.
+LaTeX Info: Redefining \nameref on input line 116.
  (Finale.out) (Finale.out)
 \@outlinefile=\write5
 \openout5 = `Finale.out'.
@@ -1188,23 +1277,23 @@ LaTeX Info: Redefining \nameref on input line 114.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \it@ocap on input line 114.
-LaTeX Info: Redefining \it@ccap on input line 114.
+LaTeX Info: Redefining \it@ocap on input line 116.
+LaTeX Info: Redefining \it@ccap on input line 116.
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.
 mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count138
+\scratchcounter=\count188
 \scratchdimen=\dimen174
-\scratchbox=\box41
-\nofMPsegments=\count139
-\nofMParguments=\count140
-\everyMPshowfont=\toks33
-\MPscratchCnt=\count141
+\scratchbox=\box42
+\nofMPsegments=\count189
+\nofMParguments=\count190
+\everyMPshowfont=\toks34
+\MPscratchCnt=\count191
 \MPscratchDim=\dimen175
-\MPnumerator=\count142
-\makeMPintoPDFobject=\count143
-\everyMPtoPDFconversion=\toks34
+\MPnumerator=\count192
+\makeMPintoPDFobject=\count193
+\everyMPtoPDFconversion=\toks35
 )
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\epstopd
 f-base.sty"
@@ -1221,12 +1310,12 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
-\c@lstlisting=\count144
+\c@lstlisting=\count194
  ABD: EveryShipout initializing macros
 <CaFoscariLogo.png, id=222, 65.043pt x 65.846pt>
 File: CaFoscariLogo.png Graphic file (type png)
 <use CaFoscariLogo.png>
-Package pdftex.def Info: CaFoscariLogo.png  used on input line 117.
+Package pdftex.def Info: CaFoscariLogo.png  used on input line 119.
 (pdftex.def)             Requested size: 65.04283pt x 65.84581pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1234,7 +1323,9 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [1
 
 {C:/Users/Daniele/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./CaFosca
-riLogo.png>] (Finale.toc
+riLogo.png>] [2
+
+] (Finale.toc
 LaTeX Font Info:    Try loading font information for OT1+lmr on input line 5.
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\ot1lmr.fd"
@@ -1262,481 +1353,492 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 5.
 
-[2])
+[3])
 \tf@toc=\write6
 \openout6 = `Finale.toc'.
 
- [3]
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 156.
+ [4] [5] [6
+
+]
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
+nput line 174.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 174.
 
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 168.
-
 (code/GeolocationInNavigator.js
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 1.
 ) (code/Sintassi.js) (code/GetCurrentPosition.js)
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 179.
+(Font)              <9> on input line 185.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 179.
- [4] (code/EsempioCompleto.js)
-<./images/geo1.png, id=325, 344.03531pt x 488.57532pt>
+(Font)              <5> on input line 185.
+ [7] (code/EsempioCompleto.js)
+<./images/geo1.png, id=336, 344.03531pt x 488.57532pt>
 File: ./images/geo1.png Graphic file (type png)
 <use ./images/geo1.png>
-Package pdftex.def Info: ./images/geo1.png  used on input line 185.
-(pdftex.def)             Requested size: 182.09486pt x 258.60075pt.
-<./images/geo2.png, id=326, 606.01407pt x 491.58656pt>
+Package pdftex.def Info: ./images/geo1.png  used on input line 191.
+(pdftex.def)             Requested size: 227.62206pt x 323.25095pt.
+<./images/geo2.png, id=337, 606.01407pt x 491.58656pt>
 File: ./images/geo2.png Graphic file (type png)
 <use ./images/geo2.png>
-Package pdftex.def Info: ./images/geo2.png  used on input line 194.
+Package pdftex.def Info: ./images/geo2.png  used on input line 200.
 (pdftex.def)             Requested size: 182.09486pt x 147.70963pt.
-<./images/geo3.png, id=327, 344.03531pt x 491.58656pt>
+<./images/geo3.png, id=338, 344.03531pt x 491.58656pt>
 File: ./images/geo3.png Graphic file (type png)
 <use ./images/geo3.png>
-Package pdftex.def Info: ./images/geo3.png  used on input line 202.
+Package pdftex.def Info: ./images/geo3.png  used on input line 208.
 (pdftex.def)             Requested size: 182.09486pt x 260.19458pt.
-<./images/geo4.png, id=328, 345.54094pt x 500.62032pt>
+<./images/geo4.png, id=339, 345.54094pt x 500.62032pt>
 File: ./images/geo4.png Graphic file (type png)
 <use ./images/geo4.png>
-Package pdftex.def Info: ./images/geo4.png  used on input line 211.
+Package pdftex.def Info: ./images/geo4.png  used on input line 217.
 (pdftex.def)             Requested size: 182.09486pt x 263.82265pt.
- [5 <./images/geo1.png>]
+
+Underfull \vbox (badness 1337) has occurred while \output is active []
+
+ [8 <./images/geo1.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [6 <./images/geo2.png> <./images/geo3.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [7 <./images/geo4.png>] (code/WatchPosition.js) (code/ClearPosition.js)
-<./images/pos1.png, id=357, 447.92343pt x 169.38281pt>
+ [9 <./images/geo2.png> <./images/geo3.png>] (code/WatchPosition.js)
+(code/ClearPosition.js)
+<./images/pos1.png, id=362, 447.92343pt x 169.38281pt>
 File: ./images/pos1.png Graphic file (type png)
 <use ./images/pos1.png>
-Package pdftex.def Info: ./images/pos1.png  used on input line 231.
+Package pdftex.def Info: ./images/pos1.png  used on input line 239.
 (pdftex.def)             Requested size: 455.24411pt x 172.15562pt.
- (code/script.js
-[8 <./images/pos1.png>])
-<./images/Blocca.png, id=374, 453.19313pt x 156.585pt>
+ [10 <./images/geo4.png>] (code/script.js)
+Underfull \hbox (badness 10000) in paragraph at lines 247--249
+
+ []
+
+[11 <./images/pos1.png>]
+<./images/Blocca.png, id=388, 453.19313pt x 156.585pt>
 File: ./images/Blocca.png Graphic file (type png)
 <use ./images/Blocca.png>
-Package pdftex.def Info: ./images/Blocca.png  used on input line 243.
+Package pdftex.def Info: ./images/Blocca.png  used on input line 253.
 (pdftex.def)             Requested size: 455.24411pt x 157.29422pt.
-<./images/Consenti.png, id=375, 456.20438pt x 147.55125pt>
+<./images/Consenti.png, id=389, 456.20438pt x 147.55125pt>
 File: ./images/Consenti.png Graphic file (type png)
 <use ./images/Consenti.png>
-Package pdftex.def Info: ./images/Consenti.png  used on input line 251.
+Package pdftex.def Info: ./images/Consenti.png  used on input line 261.
 (pdftex.def)             Requested size: 455.24411pt x 147.24467pt.
- [9 <./images/Blocca.png> <./images/Consenti.png>]
-<./images/compatibility.png, id=386, 729.47531pt x 300.3722pt>
+ [12
+
+ <./images/Blocca.png> <./images/Consenti.png>]
+<./images/compatibility.png, id=396, 729.47531pt x 300.3722pt>
 File: ./images/compatibility.png Graphic file (type png)
 <use ./images/compatibility.png>
-Package pdftex.def Info: ./images/compatibility.png  used on input line 260.
+Package pdftex.def Info: ./images/compatibility.png  used on input line 270.
 (pdftex.def)             Requested size: 455.24411pt x 187.45256pt.
 
-[10
+[13
 
- <./images/compatibility.png>]
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 274.
+ <./images/compatibility.png>] [14
+
+]
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 284.
 
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\omslmr.fd"
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 274.
-<./images/SchemaPayment.png, id=392, 639.89063pt x 456.95718pt>
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 284.
+<./images/SchemaPayment.png, id=407, 639.89063pt x 456.95718pt>
 File: ./images/SchemaPayment.png Graphic file (type png)
 <use ./images/SchemaPayment.png>
-Package pdftex.def Info: ./images/SchemaPayment.png  used on input line 292.
+Package pdftex.def Info: ./images/SchemaPayment.png  used on input line 302.
 (pdftex.def)             Requested size: 455.24411pt x 325.10426pt.
 
-[11]
+[15]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [12 <./images/SchemaPayment.png>] [13] [14] (code/PaymentMethodData.js)
+ [16 <./images/SchemaPayment.png>] [17] [18] (code/PaymentMethodData.js)
 (code/PaymentDetails.js)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [15]
+ [19]
 (code/OpzioniSpedizione.js) (code/Tassa.js)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [16]
-(code/PaymentOptions.js) (code/PaymentRequest.js) [17]
-<./images/Chrome1.png, id=535, 386.19281pt x 339.51843pt>
+ [20]
+(code/PaymentOptions.js) (code/PaymentRequest.js) [21]
+<./images/Chrome1.png, id=550, 386.19281pt x 339.51843pt>
 File: ./images/Chrome1.png Graphic file (type png)
 <use ./images/Chrome1.png>
-Package pdftex.def Info: ./images/Chrome1.png  used on input line 403.
+Package pdftex.def Info: ./images/Chrome1.png  used on input line 412.
 (pdftex.def)             Requested size: 227.62206pt x 200.11209pt.
-<./images/Chrome2.png, id=536, 386.94562pt x 338.01282pt>
+<./images/Chrome2.png, id=551, 386.94562pt x 338.01282pt>
 File: ./images/Chrome2.png Graphic file (type png)
 <use ./images/Chrome2.png>
-Package pdftex.def Info: ./images/Chrome2.png  used on input line 409.
+Package pdftex.def Info: ./images/Chrome2.png  used on input line 418.
 (pdftex.def)             Requested size: 227.62206pt x 198.83784pt.
- [18 <./images/Chrome1.png> <./images/Chrome2.png>]
-<./images/Informazioni.png, id=543, 706.89093pt x 357.58594pt>
+ [22 <./images/Chrome1.png> <./images/Chrome2.png>]
+<./images/Informazioni.png, id=558, 706.89093pt x 357.58594pt>
 File: ./images/Informazioni.png Graphic file (type png)
 <use ./images/Informazioni.png>
-Package pdftex.def Info: ./images/Informazioni.png  used on input line 419.
+Package pdftex.def Info: ./images/Informazioni.png  used on input line 428.
 (pdftex.def)             Requested size: 455.24411pt x 230.28922pt.
- (code/Costruttore.js [19 <./images/Informazioni.png>])
-<./images/wallet1.png, id=557, 225.84375pt x 221.32687pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [23 <./images/Informazioni.png>] (code/Costruttore.js)
+<./images/wallet1.png, id=564, 225.84375pt x 221.32687pt>
 File: ./images/wallet1.png Graphic file (type png)
 <use ./images/wallet1.png>
-Package pdftex.def Info: ./images/wallet1.png  used on input line 443.
+Package pdftex.def Info: ./images/wallet1.png  used on input line 451.
 (pdftex.def)             Requested size: 227.62206pt x 223.08243pt.
- [20 <./images/wallet1.png>] (code/PaymentShow.js)
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [21]
-<./images/wallet2.png, id=605, 184.5294pt x 180.675pt>
+Underfull \vbox (badness 1142) has occurred while \output is active []
+
+ [24]
+(code/PaymentShow.js)
+Underfull \vbox (badness 3792) has occurred while \output is active []
+
+ [25 <./images/wallet1.png>]
+<./images/wallet2.png, id=620, 184.5294pt x 180.675pt>
 File: ./images/wallet2.png Graphic file (type png)
 <use ./images/wallet2.png>
-Package pdftex.def Info: ./images/wallet2.png  used on input line 455.
+Package pdftex.def Info: ./images/wallet2.png  used on input line 462.
 (pdftex.def)             Requested size: 227.62206pt x 222.8823pt.
-<./images/wallet3.png, id=606, 184.5294pt x 180.675pt>
+<./images/wallet3.png, id=621, 184.5294pt x 180.675pt>
 File: ./images/wallet3.png Graphic file (type png)
 <use ./images/wallet3.png>
-Package pdftex.def Info: ./images/wallet3.png  used on input line 461.
+Package pdftex.def Info: ./images/wallet3.png  used on input line 468.
 (pdftex.def)             Requested size: 227.62206pt x 222.8823pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [22 <./images/wallet2.png> <./images/wallet3.png>] (code/Events.js)
-<./images/Compatibilita1.png, id=613, 971.12813pt x 143.03438pt>
+ [26 <./images/wallet2.png> <./images/wallet3.png>]
+(code/Events.js)
+<./images/Compatibilita1.png, id=628, 971.12813pt x 143.03438pt>
 File: ./images/Compatibilita1.png Graphic file (type png)
 <use ./images/Compatibilita1.png>
-Package pdftex.def Info: ./images/Compatibilita1.png  used on input line 474.
+Package pdftex.def Info: ./images/Compatibilita1.png  used on input line 481.
 (pdftex.def)             Requested size: 455.24411pt x 67.04936pt.
-<./images/Compatibilita2.png, id=614, 971.12813pt x 118.94438pt>
+<./images/Compatibilita2.png, id=629, 971.12813pt x 118.94438pt>
 File: ./images/Compatibilita2.png Graphic file (type png)
 <use ./images/Compatibilita2.png>
-Package pdftex.def Info: ./images/Compatibilita2.png  used on input line 481.
+Package pdftex.def Info: ./images/Compatibilita2.png  used on input line 488.
 (pdftex.def)             Requested size: 455.24411pt x 55.75684pt.
- [23 <./images/Compatibilita1.png> <./images/Compatibilita2.png>]
-<./images/SwLifecycle.png, id=632, 581.17125pt x 870.25125pt>
+ [27
+
+ <./images/Compatibilita1.png> <./images/Compatibilita2.png>] [28
+
+]
+<./images/SwLifecycle.png, id=651, 581.17125pt x 870.25125pt>
 File: ./images/SwLifecycle.png Graphic file (type png)
 <use ./images/SwLifecycle.png>
-Package pdftex.def Info: ./images/SwLifecycle.png  used on input line 516.
+Package pdftex.def Info: ./images/SwLifecycle.png  used on input line 522.
 (pdftex.def)             Requested size: 273.14923pt x 409.01814pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[24] [25 <./images/SwLifecycle.png>] (code/Registrazione.js)
-(code/Registrazione2.js) [26] (code/Installazione.js [27])
-(code/Aggiornamento.js [28]) (code/Disinstallare.js) [29]
-(code/Networkfirst1.js) (code/Networkfirst2.js)
-<./images/Strategia1.png, id=727, 821.0675pt x 445.665pt>
+[29] [30 <./images/SwLifecycle.png>] (code/Registrazione.js)
+Underfull \vbox (badness 6808) has occurred while \output is active []
+
+ [31]
+(code/Registrazione2.js)
+Underfull \vbox (badness 4024) has occurred while \output is active []
+
+ [32]
+(code/Installazione.js) [33] (code/Aggiornamento.js) (code/Disinstallare.js)
+[34] (code/Networkfirst1.js) (code/Networkfirst2.js)
+<./images/Strategia1.png, id=746, 821.0675pt x 445.665pt>
 File: ./images/Strategia1.png Graphic file (type png)
 <use ./images/Strategia1.png>
-Package pdftex.def Info: ./images/Strategia1.png  used on input line 609.
-(pdftex.def)             Requested size: 455.24411pt x 247.09538pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [30]
-(code/CacheFirst.js)
-<./images/Strategia2.png, id=749, 821.0675pt x 439.6425pt>
+Package pdftex.def Info: ./images/Strategia1.png  used on input line 617.
+(pdftex.def)             Requested size: 318.66948pt x 172.96541pt.
+ [35 <./images/Strategia1.png>] (code/CacheFirst.js)
+<./images/Strategia2.png, id=770, 821.0675pt x 439.6425pt>
 File: ./images/Strategia2.png Graphic file (type png)
 <use ./images/Strategia2.png>
-Package pdftex.def Info: ./images/Strategia2.png  used on input line 619.
-(pdftex.def)             Requested size: 455.24411pt x 243.75626pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [31 <./images/Strategia1.png>] (code/NetworkOnly1.js) (code/NetworkOnly2.js)
-<./images/Strategia3.png, id=765, 821.0675pt x 319.1925pt>
+Package pdftex.def Info: ./images/Strategia2.png  used on input line 626.
+(pdftex.def)             Requested size: 318.66948pt x 170.62804pt.
+ (code/NetworkOnly1.js) (code/NetworkOnly2.js)
+<./images/Strategia3.png, id=771, 821.0675pt x 319.1925pt>
 File: ./images/Strategia3.png Graphic file (type png)
 <use ./images/Strategia3.png>
-Package pdftex.def Info: ./images/Strategia3.png  used on input line 633.
-(pdftex.def)             Requested size: 455.24411pt x 176.97372pt.
+Package pdftex.def Info: ./images/Strategia3.png  used on input line 639.
+(pdftex.def)             Requested size: 318.66948pt x 123.88063pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 6125) has occurred while \output is active []
 
- [32 <./images/Strategia2.png>] (code/CacheOnly.js)
-<./images/Strategia4.png, id=778, 821.0675pt x 321.2pt>
+ [36 <./images/Strategia2.png>] (code/CacheOnly.js)
+<./images/Strategia4.png, id=792, 821.0675pt x 321.2pt>
 File: ./images/Strategia4.png Graphic file (type png)
 <use ./images/Strategia4.png>
-Package pdftex.def Info: ./images/Strategia4.png  used on input line 643.
-(pdftex.def)             Requested size: 455.24411pt x 178.08676pt.
+Package pdftex.def Info: ./images/Strategia4.png  used on input line 649.
+(pdftex.def)             Requested size: 318.66948pt x 124.65976pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 6364) has occurred while \output is active []
 
- [33 <./images/Strategia3.png> <./images/Strategia4.png>] (code/Fastest.js)
-<./images/Strategia5.png, id=791, 821.0675pt x 464.73625pt>
+ [37 <./images/Strategia3.png> <./images/Strategia4.png>] (code/Fastest.js)
+<./images/Strategia5.png, id=806, 821.0675pt x 464.73625pt>
 File: ./images/Strategia5.png Graphic file (type png)
 <use ./images/Strategia5.png>
-Package pdftex.def Info: ./images/Strategia5.png  used on input line 655.
-(pdftex.def)             Requested size: 455.24411pt x 257.66928pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [34 <./images/Strategia5.png>]
-<./images/Strategia6.png, id=809, 821.0675pt x 529.98pt>
+Package pdftex.def Info: ./images/Strategia5.png  used on input line 661.
+(pdftex.def)             Requested size: 318.66948pt x 180.36708pt.
+<./images/Strategia6.png, id=807, 821.0675pt x 529.98pt>
 File: ./images/Strategia6.png Graphic file (type png)
 <use ./images/Strategia6.png>
-Package pdftex.def Info: ./images/Strategia6.png  used on input line 667.
-(pdftex.def)             Requested size: 455.24411pt x 293.84315pt.
- [35 <./images/Strategia6.png>] (code/index.html)
-(code/scriptSW.js [36]) (code/hack.js) (code/install.js) [37]
-<./images/CompWeb.png, id=884, 721.19438pt x 100.12407pt>
+Package pdftex.def Info: ./images/Strategia6.png  used on input line 671.
+(pdftex.def)             Requested size: 318.66948pt x 205.68858pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[38 <./images/Strategia5.png>] [39 <./images/Strategia6.png>] [40]
+(code/index.html) (code/scriptSW.js)
+Underfull \vbox (badness 1436) has occurred while \output is active []
+
+ [41]
+(code/hack.js) (code/install.js) [42]
+<./images/CompWeb.png, id=902, 721.19438pt x 100.12407pt>
 File: ./images/CompWeb.png Graphic file (type png)
 <use ./images/CompWeb.png>
-Package pdftex.def Info: ./images/CompWeb.png  used on input line 707.
+Package pdftex.def Info: ./images/CompWeb.png  used on input line 712.
 (pdftex.def)             Requested size: 455.24411pt x 63.20222pt.
-<./images/CompMobile.png, id=885, 721.94719pt x 130.23656pt>
+<./images/CompMobile.png, id=903, 721.94719pt x 130.23656pt>
 File: ./images/CompMobile.png Graphic file (type png)
 <use ./images/CompMobile.png>
-Package pdftex.def Info: ./images/CompMobile.png  used on input line 714.
+Package pdftex.def Info: ./images/CompMobile.png  used on input line 719.
 (pdftex.def)             Requested size: 455.24411pt x 82.12497pt.
- [38
+ [43 <./images/CompWeb.png> <./images/CompMobile.png>] [44
 
- <./images/CompWeb.png> <./images/CompMobile.png>] [39] (Finale.lof)
+] [45] [46
+
+] (Finale.lof)
 \tf@lof=\write7
 \openout7 = `Finale.lof'.
 
- [40] [41pdfTeX warning (ext4): destination with the same identifier (name{cite
-.}) has been already used, duplicate ignored
+ [47] [48
+
+] [49pdfTeX warning (ext4): destination with the same identifier (name{cite.}) 
+has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.796 	\bibitem{}
+l.799 	\bibitem{}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{cite.}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.796 	\bibitem{}
+l.799 	\bibitem{}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{cite.}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.796 	\bibitem{}
+l.799 	\bibitem{}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{cite.}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.796 	\bibitem{}
+l.799 	\bibitem{}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{cite.}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.796 	\bibitem{}
+l.799 	\bibitem{}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{cite.}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.796 	\bibitem{}
+l.799 	\bibitem{}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{cite.}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.796 	\bibitem{}
+l.799 	\bibitem{}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{cite.}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.796 	\bibitem{}
+l.799 	\bibitem{}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{cite.}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.796 	\bibitem{}
+l.799 	\bibitem{}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{cite.}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.796 	\bibitem{}
+l.799 	\bibitem{}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{cite.}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.796 	\bibitem{}
+l.799 	\bibitem{}
                  ]pdfTeX warning (ext4): destination with the same identifier (
 name{cite.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.796 	\bibitem{}
+l.799 	\bibitem{}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{cite.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.801 	\bibitem{}
+l.804 	\bibitem{}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{cite.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.805 	\bibitem{}
+l.808 	\bibitem{}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{cite.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.809 	\bibitem{}
+l.812 	\bibitem{}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{cite.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.814 	\bibitem{}
+l.817 	\bibitem{}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{cite.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.819 	\bibitem{}
+l.822 	\bibitem{}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{cite.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.824 	\bibitem{}
+l.827 	\bibitem{}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{cite.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.828 	\bibitem{}
+l.831 	\bibitem{}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{cite.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.833 	\bibitem{}
+l.836 	\bibitem{}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{cite.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.838 	\bibitem{}
+l.841 	\bibitem{}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{cite.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.843 	\bibitem{}
+l.846 	\bibitem{}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{cite.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.848 	\bibitem{}
-                  [42pdfTeX warning (ext4): destination with the same identifie
+l.851 	\bibitem{}
+                  [50pdfTeX warning (ext4): destination with the same identifie
 r (name{cite.}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.852 	
+l.855 	
        ]pdfTeX warning (ext4): destination with the same identifier (name{cite.
 }) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.853 	\bibitem{}
+l.856 	\bibitem{}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{cite.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.858 	\bibitem{}
+l.861 	\bibitem{}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{cite.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.863 	\bibitem{}
+l.866 	\bibitem{}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{cite.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.868 	\bibitem{}
+l.871 	\bibitem{}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{cite.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.873 	\bibitem{}
+l.876 	\bibitem{}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{cite.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.878 	\bibitem{}
+l.881 	\bibitem{}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{cite.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.883 	\bibitem{}
+l.886 	\bibitem{}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{cite.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.888 	\bibitem{}
+l.891 	\bibitem{}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{cite.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.893 	\bibitem{}
+l.896 	\bibitem{}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{cite.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.898 	\bibitem{}
+l.901 	\bibitem{}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{cite.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.903 	\bibitem{}
+l.906 	\bibitem{}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{cite.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.908 	\bibitem{}
+l.911 	\bibitem{}
                  
 
 Package natbib Warning: There were multiply defined citations.
 
-[43]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 912.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 912.
+[51]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 915.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 915.
  (Finale.aux
 
 Package natbib Warning: Citation(s) may have changed.
 (natbib)                Rerun to get citations correct.
 
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 912.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 912.
-
-
-Package rerunfilecheck Warning: File `Finale.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Finale.out':
-(rerunfilecheck)             Before: 8E33766296FF5F3AF1407F1CE3F1DBB7;3894
-(rerunfilecheck)             After:  C078D5BCCCCC7E331DF0A6B1CF8B3EE5;3923.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 912.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 915.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 915.
+Package rerunfilecheck Info: File `Finale.out' has not changed.
+(rerunfilecheck)             Checksum: C078D5BCCCCC7E331DF0A6B1CF8B3EE5;3923.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 915.
  ) 
 Here is how much of TeX's memory you used:
- 20169 strings out of 493305
- 364672 string characters out of 3128932
- 589801 words of memory out of 3000000
- 22745 multiletter control sequences out of 15000+200000
+ 20447 strings out of 493305
+ 368218 string characters out of 3128932
+ 664176 words of memory out of 3000000
+ 23011 multiletter control sequences out of 15000+200000
  72619 words of font info for 50 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,8n,54p,1332b,1826s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 55i,8n,54p,1332b,1139s stack positions out of 5000i,500n,10000p,200000b,50000s
 pdfTeX warning (dest): name{Hfootnote.3} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -1761,9 +1863,9 @@ ams/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Users/Daniele/AppData/Local
 /Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Daniele/A
 ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtk10.pfb><C:/Users/Dan
 iele/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtt10.pfb>
-Output written on Finale.pdf (43 pages, 1005487 bytes).
+Output written on Finale.pdf (51 pages, 1008981 bytes).
 PDF statistics:
- 1135 PDF objects out of 1200 (max. 8388607)
- 498 named destinations out of 1000 (max. 500000)
+ 1169 PDF objects out of 1200 (max. 8388607)
+ 506 named destinations out of 1000 (max. 500000)
  580 words of extra memory for PDF output out of 10000 (max. 10000000)
 
