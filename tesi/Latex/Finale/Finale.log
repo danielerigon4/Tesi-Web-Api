@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.6.25)  20 SEP 2018 10:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.6.25)  25 SEP 2018 17:17
 entering extended mode
 **./Finale.tex
 (Finale.tex
@@ -1128,102 +1128,36 @@ Package natbib Warning: Citation `' multiply defined.
 
 Package natbib Warning: Citation `' multiply defined.
 
-
-Package natbib Warning: Citation `' multiply defined.
-
-
-Package natbib Warning: Citation `' multiply defined.
-
-
-Package natbib Warning: Citation `' multiply defined.
-
-
-Package natbib Warning: Citation `' multiply defined.
-
-
-Package natbib Warning: Citation `' multiply defined.
-
-
-Package natbib Warning: Citation `' multiply defined.
-
-
-Package natbib Warning: Citation `' multiply defined.
-
-
-Package natbib Warning: Citation `' multiply defined.
-
-
-Package natbib Warning: Citation `' multiply defined.
-
-
-Package natbib Warning: Citation `' multiply defined.
-
-
-Package natbib Warning: Citation `' multiply defined.
-
-
-Package natbib Warning: Citation `' multiply defined.
-
-
-Package natbib Warning: Citation `' multiply defined.
-
-
-Package natbib Warning: Citation `' multiply defined.
-
-
-Package natbib Warning: Citation `' multiply defined.
-
-
-Package natbib Warning: Citation `' multiply defined.
-
-
-Package natbib Warning: Citation `' multiply defined.
-
-
-Package natbib Warning: Citation `' multiply defined.
-
-
-Package natbib Warning: Citation `' multiply defined.
-
-
-Package natbib Warning: Citation `' multiply defined.
-
-
-Package natbib Warning: Citation `' multiply defined.
-
-
-Package natbib Warning: Citation `' multiply defined.
-
 )
 \openout1 = `Finale.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 103.
-LaTeX Font Info:    ... okay on input line 103.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 103.
-LaTeX Font Info:    ... okay on input line 103.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 103.
-LaTeX Font Info:    ... okay on input line 103.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 103.
-LaTeX Font Info:    ... okay on input line 103.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 103.
-LaTeX Font Info:    ... okay on input line 103.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 103.
-LaTeX Font Info:    ... okay on input line 103.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 103.
-LaTeX Font Info:    ... okay on input line 103.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 103.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 101.
  ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\t1lmr.fd"
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 
-Package layouts Warning: Layout scale set to 0.5 on input line 103.
+Package layouts Warning: Layout scale set to 0.5 on input line 101.
 
 \AtBeginShipoutBox=\box41
 
 Package hyperref Warning: Height of page (\stockheight) is invalid (0.0pt),
 (hyperref)                using 11in.
 
-Package hyperref Info: Link coloring OFF on input line 103.
+Package hyperref Info: Link coloring OFF on input line 101.
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\nameref
 .sty"
@@ -1235,9 +1169,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count187
 )
-LaTeX Info: Redefining \ref on input line 103.
-LaTeX Info: Redefining \pageref on input line 103.
-LaTeX Info: Redefining \nameref on input line 103.
+LaTeX Info: Redefining \ref on input line 101.
+LaTeX Info: Redefining \pageref on input line 101.
+LaTeX Info: Redefining \nameref on input line 101.
  (Finale.out) (Finale.out)
 \@outlinefile=\write5
 \openout5 = `Finale.out'.
@@ -1277,8 +1211,8 @@ LaTeX Info: Redefining \nameref on input line 103.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \it@ocap on input line 103.
-LaTeX Info: Redefining \it@ccap on input line 103.
+LaTeX Info: Redefining \it@ocap on input line 101.
+LaTeX Info: Redefining \it@ccap on input line 101.
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.
 mkii"
@@ -1312,10 +1246,10 @@ G,.JBIG2,.JB2,.eps]
 )
 \c@lstlisting=\count194
  ABD: EveryShipout initializing macros
-<CaFoscariLogo.png, id=222, 65.043pt x 65.846pt>
+<CaFoscariLogo.png, id=218, 65.043pt x 65.846pt>
 File: CaFoscariLogo.png Graphic file (type png)
 <use CaFoscariLogo.png>
-Package pdftex.def Info: CaFoscariLogo.png  used on input line 106.
+Package pdftex.def Info: CaFoscariLogo.png  used on input line 104.
 (pdftex.def)             Requested size: 65.04283pt x 65.84581pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1357,211 +1291,320 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 \tf@toc=\write6
 \openout6 = `Finale.toc'.
 
- [4] [5] [6
-
-]
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 164.
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 164.
+ [4]
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 168.
 
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-(code/GeolocationInNavigator.js
+[5] [6
+
+]
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
+nput line 180.
+ (code/GeolocationInNavigator.js
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 1.
-) (code/Sintassi.js) (code/GetCurrentPosition.js)
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 175.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 175.
- [7] (code/EsempioCompleto.js)
-<./images/geo1.png, id=336, 344.03531pt x 488.57532pt>
-File: ./images/geo1.png Graphic file (type png)
-<use ./images/geo1.png>
-Package pdftex.def Info: ./images/geo1.png  used on input line 181.
-(pdftex.def)             Requested size: 227.62206pt x 323.25095pt.
-<./images/geo2.png, id=337, 606.01407pt x 491.58656pt>
-File: ./images/geo2.png Graphic file (type png)
-<use ./images/geo2.png>
-Package pdftex.def Info: ./images/geo2.png  used on input line 190.
-(pdftex.def)             Requested size: 182.09486pt x 147.70963pt.
-<./images/geo3.png, id=338, 344.03531pt x 491.58656pt>
-File: ./images/geo3.png Graphic file (type png)
-<use ./images/geo3.png>
-Package pdftex.def Info: ./images/geo3.png  used on input line 198.
-(pdftex.def)             Requested size: 182.09486pt x 260.19458pt.
-<./images/geo4.png, id=339, 345.54094pt x 500.62032pt>
-File: ./images/geo4.png Graphic file (type png)
-<use ./images/geo4.png>
-Package pdftex.def Info: ./images/geo4.png  used on input line 207.
-(pdftex.def)             Requested size: 182.09486pt x 263.82265pt.
+) (code/Sintassi.js)
+Underfull \vbox (badness 6157) has occurred while \output is active []
 
-Underfull \vbox (badness 1337) has occurred while \output is active []
-
- [8 <./images/geo1.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [9 <./images/geo2.png> <./images/geo3.png>] (code/WatchPosition.js)
-(code/ClearPosition.js)
-<./images/pos1.png, id=362, 447.92343pt x 169.38281pt>
-File: ./images/pos1.png Graphic file (type png)
-<use ./images/pos1.png>
-Package pdftex.def Info: ./images/pos1.png  used on input line 229.
-(pdftex.def)             Requested size: 455.24411pt x 172.15562pt.
- [10 <./images/geo4.png>] (code/script.js)
-Underfull \hbox (badness 10000) in paragraph at lines 237--239
+ [7]
+(code/metodiGeolocation.js) [8]
+Underfull \hbox (badness 10000) in paragraph at lines 210--211
 
  []
 
-[11 <./images/pos1.png>]
-<./images/Blocca.png, id=388, 453.19313pt x 156.585pt>
-File: ./images/Blocca.png Graphic file (type png)
-<use ./images/Blocca.png>
-Package pdftex.def Info: ./images/Blocca.png  used on input line 243.
-(pdftex.def)             Requested size: 455.24411pt x 157.29422pt.
-<./images/Consenti.png, id=389, 456.20438pt x 147.55125pt>
-File: ./images/Consenti.png Graphic file (type png)
-<use ./images/Consenti.png>
-Package pdftex.def Info: ./images/Consenti.png  used on input line 251.
-(pdftex.def)             Requested size: 455.24411pt x 147.24467pt.
- [12
+(code/EsempioCompleto.js)
+<./images/geo1.png, id=377, 381.67593pt x 475.02469pt>
+File: ./images/geo1.png Graphic file (type png)
+<use ./images/geo1.png>
+Package pdftex.def Info: ./images/geo1.png  used on input line 215.
+(pdftex.def)             Requested size: 227.62206pt x 283.29192pt.
+<./images/geo2.png, id=378, 618.05907pt x 494.59781pt>
+File: ./images/geo2.png Graphic file (type png)
+<use ./images/geo2.png>
+Package pdftex.def Info: ./images/geo2.png  used on input line 224.
+(pdftex.def)             Requested size: 182.09486pt x 145.7164pt.
+<./images/geo3.png, id=379, 384.6872pt x 467.49657pt>
+File: ./images/geo3.png Graphic file (type png)
+<use ./images/geo3.png>
+Package pdftex.def Info: ./images/geo3.png  used on input line 232.
+(pdftex.def)             Requested size: 182.09486pt x 221.2999pt.
+<./images/geo4.png, id=380, 381.67593pt x 459.21562pt>
+File: ./images/geo4.png Graphic file (type png)
+<use ./images/geo4.png>
+Package pdftex.def Info: ./images/geo4.png  used on input line 241.
+(pdftex.def)             Requested size: 182.09486pt x 219.08965pt.
 
- <./images/Blocca.png> <./images/Consenti.png>]
-<./images/compatibility.png, id=396, 729.47531pt x 300.3722pt>
+Underfull \hbox (badness 10000) in paragraph at lines 212--246
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [9 <./images/geo1.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [10 <./images/geo2.png> <./images/geo3.png>]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 249.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 249.
+<./images/pos1.png, id=402, 447.92343pt x 169.38281pt>
+File: ./images/pos1.png Graphic file (type png)
+<use ./images/pos1.png>
+Package pdftex.def Info: ./images/pos1.png  used on input line 254.
+(pdftex.def)             Requested size: 227.62206pt x 86.07393pt.
+ [11 <./images/geo4.png> <./images/pos1.png>] (code/script.js)
+Underfull \hbox (badness 10000) in paragraph at lines 262--264
+
+ []
+
+<./images/compatibility.png, id=414, 729.47531pt x 300.3722pt>
 File: ./images/compatibility.png Graphic file (type png)
 <use ./images/compatibility.png>
-Package pdftex.def Info: ./images/compatibility.png  used on input line 260.
+Package pdftex.def Info: ./images/compatibility.png  used on input line 268.
 (pdftex.def)             Requested size: 455.24411pt x 187.45256pt.
+[12 <./images/compatibility.png>]
 
-[13
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\begingroup' on input line 281.
 
- <./images/compatibility.png>] [14
 
-]
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 276.
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\<let>-command' on input line 281.
 
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\NAT@ctype' on input line 281.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\z@' on input line 281.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\let' on input line 281.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\let' on input line 281.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\@ifnextchar' on input line 281.
+
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 283.
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\omslmr.fd"
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 276.
-<./images/SchemaPayment.png, id=407, 639.89063pt x 456.95718pt>
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 283.
+<./images/SchemaPayment.png, id=431, 639.89063pt x 456.95718pt>
 File: ./images/SchemaPayment.png Graphic file (type png)
 <use ./images/SchemaPayment.png>
-Package pdftex.def Info: ./images/SchemaPayment.png  used on input line 294.
+Package pdftex.def Info: ./images/SchemaPayment.png  used on input line 301.
 (pdftex.def)             Requested size: 455.24411pt x 325.10426pt.
 
-[15]
+[13]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [16 <./images/SchemaPayment.png>] [17] [18] (code/PaymentMethodData.js)
-(code/PaymentDetails.js)
+ [14 <./images/SchemaPayment.png>] [15]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\begingroup' on input line 356.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\<let>-command' on input line 356.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\NAT@ctype' on input line 356.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\z@' on input line 356.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\let' on input line 356.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\let' on input line 356.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\@ifnextchar' on input line 356.
+
+[16] (code/PaymentMethodData.js) (code/PaymentDetails.js)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [19]
+ [17]
 (code/OpzioniSpedizione.js) (code/Tassa.js)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [20]
-(code/PaymentOptions.js) (code/PaymentRequest.js) [21]
-<./images/Chrome1.png, id=550, 386.19281pt x 339.51843pt>
+ [18]
+(code/PaymentOptions.js) (code/PaymentRequest.js)
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\begingroup' on input line 396.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\<let>-command' on input line 396.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\NAT@ctype' on input line 396.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\z@' on input line 396.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\let' on input line 396.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\let' on input line 396.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\@ifnextchar' on input line 396.
+
+[19] (code/Costruttore.js)
+<./images/wallet1.png, id=587, 225.84375pt x 221.32687pt>
+File: ./images/wallet1.png Graphic file (type png)
+<use ./images/wallet1.png>
+Package pdftex.def Info: ./images/wallet1.png  used on input line 411.
+(pdftex.def)             Requested size: 227.62206pt x 223.08243pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+(code/PaymentShow.js [20])
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [21 <./images/wallet1.png>]
+<./images/wallet2.png, id=643, 184.5294pt x 180.675pt>
+File: ./images/wallet2.png Graphic file (type png)
+<use ./images/wallet2.png>
+Package pdftex.def Info: ./images/wallet2.png  used on input line 422.
+(pdftex.def)             Requested size: 227.62206pt x 222.8823pt.
+<./images/wallet3.png, id=644, 184.5294pt x 180.675pt>
+File: ./images/wallet3.png Graphic file (type png)
+<use ./images/wallet3.png>
+Package pdftex.def Info: ./images/wallet3.png  used on input line 428.
+(pdftex.def)             Requested size: 227.62206pt x 222.8823pt.
+ [22 <./images/wallet2.png> <./images/wallet3.png>]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\begingroup' on input line 442.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\<let>-command' on input line 442.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\NAT@ctype' on input line 442.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\z@' on input line 442.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\let' on input line 442.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\let' on input line 442.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\@ifnextchar' on input line 442.
+
+<./images/Chrome1.png, id=652, 386.19281pt x 339.51843pt>
 File: ./images/Chrome1.png Graphic file (type png)
 <use ./images/Chrome1.png>
-Package pdftex.def Info: ./images/Chrome1.png  used on input line 404.
+Package pdftex.def Info: ./images/Chrome1.png  used on input line 450.
 (pdftex.def)             Requested size: 227.62206pt x 200.11209pt.
-<./images/Chrome2.png, id=551, 386.94562pt x 338.01282pt>
+<./images/Chrome2.png, id=653, 386.94562pt x 338.01282pt>
 File: ./images/Chrome2.png Graphic file (type png)
 <use ./images/Chrome2.png>
-Package pdftex.def Info: ./images/Chrome2.png  used on input line 410.
+Package pdftex.def Info: ./images/Chrome2.png  used on input line 456.
 (pdftex.def)             Requested size: 227.62206pt x 198.83784pt.
- [22 <./images/Chrome1.png> <./images/Chrome2.png>]
-<./images/Informazioni.png, id=558, 706.89093pt x 357.58594pt>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [23 <./images/Chrome1.png>]
+<./images/Informazioni.png, id=659, 706.89093pt x 357.58594pt>
 File: ./images/Informazioni.png Graphic file (type png)
 <use ./images/Informazioni.png>
-Package pdftex.def Info: ./images/Informazioni.png  used on input line 420.
+Package pdftex.def Info: ./images/Informazioni.png  used on input line 466.
 (pdftex.def)             Requested size: 455.24411pt x 230.28922pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [23 <./images/Informazioni.png>] (code/Costruttore.js)
-<./images/wallet1.png, id=564, 225.84375pt x 221.32687pt>
-File: ./images/wallet1.png Graphic file (type png)
-<use ./images/wallet1.png>
-Package pdftex.def Info: ./images/wallet1.png  used on input line 443.
-(pdftex.def)             Requested size: 227.62206pt x 223.08243pt.
-
-Underfull \vbox (badness 1142) has occurred while \output is active []
-
- [24]
-(code/PaymentShow.js)
-Underfull \vbox (badness 3792) has occurred while \output is active []
-
- [25 <./images/wallet1.png>]
-<./images/wallet2.png, id=620, 184.5294pt x 180.675pt>
-File: ./images/wallet2.png Graphic file (type png)
-<use ./images/wallet2.png>
-Package pdftex.def Info: ./images/wallet2.png  used on input line 454.
-(pdftex.def)             Requested size: 227.62206pt x 222.8823pt.
-<./images/wallet3.png, id=621, 184.5294pt x 180.675pt>
-File: ./images/wallet3.png Graphic file (type png)
-<use ./images/wallet3.png>
-Package pdftex.def Info: ./images/wallet3.png  used on input line 460.
-(pdftex.def)             Requested size: 227.62206pt x 222.8823pt.
- [26 <./images/wallet2.png> <./images/wallet3.png>]
-(code/Events.js)
-<./images/Compatibilita1.png, id=628, 971.12813pt x 143.03438pt>
+ [24 <./images/Chrome2.png> <./images/Informazioni.png>]
+<./images/Compatibilita1.png, id=666, 971.12813pt x 143.03438pt>
 File: ./images/Compatibilita1.png Graphic file (type png)
 <use ./images/Compatibilita1.png>
-Package pdftex.def Info: ./images/Compatibilita1.png  used on input line 473.
+Package pdftex.def Info: ./images/Compatibilita1.png  used on input line 480.
 (pdftex.def)             Requested size: 455.24411pt x 67.04936pt.
-<./images/Compatibilita2.png, id=629, 971.12813pt x 118.94438pt>
+<./images/Compatibilita2.png, id=667, 971.12813pt x 118.94438pt>
 File: ./images/Compatibilita2.png Graphic file (type png)
 <use ./images/Compatibilita2.png>
-Package pdftex.def Info: ./images/Compatibilita2.png  used on input line 480.
+Package pdftex.def Info: ./images/Compatibilita2.png  used on input line 487.
 (pdftex.def)             Requested size: 455.24411pt x 55.75684pt.
- [27
-
- <./images/Compatibilita1.png> <./images/Compatibilita2.png>] [28
+ [25 <./images/Compatibilita1.png> <./images/Compatibilita2.png>] [26
 
 ]
-<./images/SwLifecycle.png, id=651, 581.17125pt x 870.25125pt>
+<./images/SwLifecycle.png, id=683, 581.17125pt x 870.25125pt>
 File: ./images/SwLifecycle.png Graphic file (type png)
 <use ./images/SwLifecycle.png>
-Package pdftex.def Info: ./images/SwLifecycle.png  used on input line 514.
+Package pdftex.def Info: ./images/SwLifecycle.png  used on input line 521.
 (pdftex.def)             Requested size: 273.14923pt x 409.01814pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[29] [30 <./images/SwLifecycle.png>] (code/Registrazione.js)
+[27] [28 <./images/SwLifecycle.png>] (code/Registrazione.js)
 Underfull \vbox (badness 6808) has occurred while \output is active []
 
- [31]
+ [29]
 (code/Registrazione2.js)
 Underfull \vbox (badness 4024) has occurred while \output is active []
 
- [32]
-(code/Installazione.js) [33] (code/Aggiornamento.js) (code/Disinstallare.js)
-[34] (code/Networkfirst1.js) (code/Networkfirst2.js)
-<./images/Strategia1.png, id=746, 821.0675pt x 445.665pt>
+ [30]
+(code/Installazione.js) [31] (code/Aggiornamento.js) (code/Disinstallare.js)
+[32] (code/Networkfirst1.js) (code/Networkfirst2.js)
+<./images/Strategia1.png, id=778, 821.0675pt x 445.665pt>
 File: ./images/Strategia1.png Graphic file (type png)
 <use ./images/Strategia1.png>
-Package pdftex.def Info: ./images/Strategia1.png  used on input line 609.
+Package pdftex.def Info: ./images/Strategia1.png  used on input line 616.
 (pdftex.def)             Requested size: 318.66948pt x 172.96541pt.
- [35 <./images/Strategia1.png>] (code/CacheFirst.js)
-<./images/Strategia2.png, id=770, 821.0675pt x 439.6425pt>
+ [33 <./images/Strategia1.png>] (code/CacheFirst.js)
+<./images/Strategia2.png, id=802, 821.0675pt x 439.6425pt>
 File: ./images/Strategia2.png Graphic file (type png)
 <use ./images/Strategia2.png>
-Package pdftex.def Info: ./images/Strategia2.png  used on input line 618.
+Package pdftex.def Info: ./images/Strategia2.png  used on input line 625.
 (pdftex.def)             Requested size: 318.66948pt x 170.62804pt.
  (code/NetworkOnly1.js) (code/NetworkOnly2.js)
-<./images/Strategia3.png, id=771, 821.0675pt x 319.1925pt>
+<./images/Strategia3.png, id=803, 821.0675pt x 319.1925pt>
 File: ./images/Strategia3.png Graphic file (type png)
 <use ./images/Strategia3.png>
-Package pdftex.def Info: ./images/Strategia3.png  used on input line 631.
+Package pdftex.def Info: ./images/Strategia3.png  used on input line 638.
 (pdftex.def)             Requested size: 318.66948pt x 123.88063pt.
 
 
@@ -1570,282 +1613,170 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 Underfull \vbox (badness 6125) has occurred while \output is active []
 
- [36 <./images/Strategia2.png>] (code/CacheOnly.js)
-<./images/Strategia4.png, id=792, 821.0675pt x 321.2pt>
+ [34 <./images/Strategia2.png>] (code/CacheOnly.js)
+<./images/Strategia4.png, id=824, 821.0675pt x 321.2pt>
 File: ./images/Strategia4.png Graphic file (type png)
 <use ./images/Strategia4.png>
-Package pdftex.def Info: ./images/Strategia4.png  used on input line 641.
+Package pdftex.def Info: ./images/Strategia4.png  used on input line 648.
 (pdftex.def)             Requested size: 318.66948pt x 124.65976pt.
 
 Underfull \vbox (badness 6364) has occurred while \output is active []
 
- [37 <./images/Strategia3.png> <./images/Strategia4.png>] (code/Fastest.js)
-<./images/Strategia5.png, id=806, 821.0675pt x 464.73625pt>
+ [35 <./images/Strategia3.png> <./images/Strategia4.png>] (code/Fastest.js)
+<./images/Strategia5.png, id=837, 821.0675pt x 464.73625pt>
 File: ./images/Strategia5.png Graphic file (type png)
 <use ./images/Strategia5.png>
-Package pdftex.def Info: ./images/Strategia5.png  used on input line 653.
+Package pdftex.def Info: ./images/Strategia5.png  used on input line 660.
 (pdftex.def)             Requested size: 318.66948pt x 180.36708pt.
-<./images/Strategia6.png, id=807, 821.0675pt x 529.98pt>
+<./images/Strategia6.png, id=838, 821.0675pt x 529.98pt>
 File: ./images/Strategia6.png Graphic file (type png)
 <use ./images/Strategia6.png>
-Package pdftex.def Info: ./images/Strategia6.png  used on input line 663.
+Package pdftex.def Info: ./images/Strategia6.png  used on input line 670.
 (pdftex.def)             Requested size: 318.66948pt x 205.68858pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[38 <./images/Strategia5.png>] [39 <./images/Strategia6.png>] [40]
+[36 <./images/Strategia5.png>] [37 <./images/Strategia6.png>] [38]
 (code/index.html) (code/scriptSW.js)
 Underfull \vbox (badness 1436) has occurred while \output is active []
 
- [41]
+ [39]
 (code/hack.js) (code/install.js)
-<./images/Intercepted.png, id=888, 328.97906pt x 197.23688pt>
+<./images/Intercepted.png, id=920, 328.97906pt x 197.23688pt>
 File: ./images/Intercepted.png Graphic file (type png)
 <use ./images/Intercepted.png>
-Package pdftex.def Info: ./images/Intercepted.png  used on input line 698.
+Package pdftex.def Info: ./images/Intercepted.png  used on input line 705.
 (pdftex.def)             Requested size: 318.66948pt x 191.06068pt.
- [42 <./images/Intercepted.png>]
-<./images/CompWeb.png, id=904, 721.19438pt x 100.12407pt>
+ [40 <./images/Intercepted.png>]
+<./images/CompWeb.png, id=936, 721.19438pt x 100.12407pt>
 File: ./images/CompWeb.png Graphic file (type png)
 <use ./images/CompWeb.png>
-Package pdftex.def Info: ./images/CompWeb.png  used on input line 708.
+Package pdftex.def Info: ./images/CompWeb.png  used on input line 715.
 (pdftex.def)             Requested size: 455.24411pt x 63.20222pt.
-<./images/CompMobile.png, id=905, 721.94719pt x 130.23656pt>
+<./images/CompMobile.png, id=937, 721.94719pt x 130.23656pt>
 File: ./images/CompMobile.png Graphic file (type png)
 <use ./images/CompMobile.png>
-Package pdftex.def Info: ./images/CompMobile.png  used on input line 715.
+Package pdftex.def Info: ./images/CompMobile.png  used on input line 722.
 (pdftex.def)             Requested size: 455.24411pt x 82.12497pt.
- [43 <./images/CompWeb.png> <./images/CompMobile.png>] [44
+ [41 <./images/CompWeb.png> <./images/CompMobile.png>] [42
 
-] [45] [46
+] [43] [44
 
 ] (Finale.lof)
 \tf@lof=\write7
 \openout7 = `Finale.lof'.
 
- [47]
-[48
+ [45]
+[46
 
-] [49pdfTeX warning (ext4): destination with the same identifier (name{cite.}) 
-has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.798 	\bibitem{}
-                 pdfTeX warning (ext4): destination with the same identifier (n
-ame{cite.}) has been already used, duplicate ignored
+] (Finale.bbl) [47] [48pdfTeX warning (ext4): destination with the same identif
+ier (name{cite.}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.798 	\bibitem{}
-                 pdfTeX warning (ext4): destination with the same identifier (n
-ame{cite.}) has been already used, duplicate ignored
+l.799 	
+       pdfTeX warning (ext4): destination with the same identifier (name{cite.}
+) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.798 	\bibitem{}
-                 pdfTeX warning (ext4): destination with the same identifier (n
-ame{cite.}) has been already used, duplicate ignored
+l.799 	
+       pdfTeX warning (ext4): destination with the same identifier (name{cite.}
+) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.798 	\bibitem{}
-                 pdfTeX warning (ext4): destination with the same identifier (n
-ame{cite.}) has been already used, duplicate ignored
+l.799 	
+       pdfTeX warning (ext4): destination with the same identifier (name{cite.}
+) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.798 	\bibitem{}
-                 pdfTeX warning (ext4): destination with the same identifier (n
-ame{cite.}) has been already used, duplicate ignored
+l.799 	
+       pdfTeX warning (ext4): destination with the same identifier (name{cite.}
+) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.798 	\bibitem{}
-                 pdfTeX warning (ext4): destination with the same identifier (n
-ame{cite.}) has been already used, duplicate ignored
+l.799 	
+       pdfTeX warning (ext4): destination with the same identifier (name{cite.}
+) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.798 	\bibitem{}
-                 pdfTeX warning (ext4): destination with the same identifier (n
-ame{cite.}) has been already used, duplicate ignored
+l.799 	
+       pdfTeX warning (ext4): destination with the same identifier (name{cite.}
+) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.798 	\bibitem{}
-                 pdfTeX warning (ext4): destination with the same identifier (n
-ame{cite.}) has been already used, duplicate ignored
+l.799 	
+       pdfTeX warning (ext4): destination with the same identifier (name{cite.}
+) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.798 	\bibitem{}
-                 pdfTeX warning (ext4): destination with the same identifier (n
-ame{cite.}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.798 	\bibitem{}
-                 pdfTeX warning (ext4): destination with the same identifier (n
-ame{cite.}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.798 	\bibitem{}
-                 ]pdfTeX warning (ext4): destination with the same identifier (
-name{cite.}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.798 	\bibitem{}
-                 pdfTeX warning (ext4): destination with the same identifier (n
-ame{cite.}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.803 	\bibitem{}
-                 pdfTeX warning (ext4): destination with the same identifier (n
-ame{cite.}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.807 	\bibitem{}
-                 pdfTeX warning (ext4): destination with the same identifier (n
-ame{cite.}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.811 	\bibitem{}
-                 pdfTeX warning (ext4): destination with the same identifier (n
-ame{cite.}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.816 	\bibitem{}
-                 pdfTeX warning (ext4): destination with the same identifier (n
-ame{cite.}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.821 	\bibitem{}
-                 pdfTeX warning (ext4): destination with the same identifier (n
-ame{cite.}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.826 	\bibitem{}
-                 pdfTeX warning (ext4): destination with the same identifier (n
-ame{cite.}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.830 	\bibitem{}
-                 pdfTeX warning (ext4): destination with the same identifier (n
-ame{cite.}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.835 	\bibitem{}
-                 pdfTeX warning (ext4): destination with the same identifier (n
-ame{cite.}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.840 	\bibitem{}
-                 pdfTeX warning (ext4): destination with the same identifier (n
-ame{cite.}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.845 	\bibitem{}
-                 pdfTeX warning (ext4): destination with the same identifier (n
-ame{cite.}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.850 	\bibitem{}
-                  [50pdfTeX warning (ext4): destination with the same identifie
-r (name{cite.}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.854 	
+l.799 	
        ]pdfTeX warning (ext4): destination with the same identifier (name{cite.
 }) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.855 	\bibitem{}
+l.800 	\bibitem{}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{cite.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.860 	\bibitem{}
+l.805 	\bibitem{}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{cite.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.865 	\bibitem{}
+l.810 	\bibitem{}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{cite.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.870 	\bibitem{}
-                 pdfTeX warning (ext4): destination with the same identifier (n
-ame{cite.}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.875 	\bibitem{}
-                 pdfTeX warning (ext4): destination with the same identifier (n
-ame{cite.}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.880 	\bibitem{}
-                 pdfTeX warning (ext4): destination with the same identifier (n
-ame{cite.}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.885 	\bibitem{}
-                 pdfTeX warning (ext4): destination with the same identifier (n
-ame{cite.}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.890 	\bibitem{}
-                 pdfTeX warning (ext4): destination with the same identifier (n
-ame{cite.}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.895 	\bibitem{}
-                 pdfTeX warning (ext4): destination with the same identifier (n
-ame{cite.}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.900 	\bibitem{}
-                 pdfTeX warning (ext4): destination with the same identifier (n
-ame{cite.}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.905 	\bibitem{}
-                 pdfTeX warning (ext4): destination with the same identifier (n
-ame{cite.}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.910 	\bibitem{}
+l.815 	\bibitem{}
                  
 
 Package natbib Warning: There were multiply defined citations.
 
-[51]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 914.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 914.
+[49pdfTeX warning (ext4): destination with the same identifier (name{cite.}) ha
+s been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.819 \end{document}
+                    pdfTeX warning (ext4): destination with the same identifier
+ (name{cite.}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.819 \end{document}
+                    ]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 819.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 819.
  (Finale.aux
 
 Package natbib Warning: Citation(s) may have changed.
 (natbib)                Rerun to get citations correct.
 
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 914.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 914.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 819.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 819.
 Package rerunfilecheck Info: File `Finale.out' has not changed.
-(rerunfilecheck)             Checksum: CF6044EB6645897170B1F44073550A46;3921.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 914.
+(rerunfilecheck)             Checksum: 8C31A05848280871438F7DAB44044E70;3863.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 819.
  ) 
 Here is how much of TeX's memory you used:
- 20454 strings out of 493305
- 368375 string characters out of 3128932
- 664212 words of memory out of 3000000
- 23016 multiletter control sequences out of 15000+200000
+ 20510 strings out of 493305
+ 368729 string characters out of 3128932
+ 664567 words of memory out of 3000000
+ 23061 multiletter control sequences out of 15000+200000
  72619 words of font info for 50 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,8n,54p,1332b,1139s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 55i,8n,54p,1332b,1820s stack positions out of 5000i,500n,10000p,200000b,50000s
 pdfTeX warning (dest): name{Hfootnote.3} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -1855,9 +1786,9 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
 , replaced by a fixed one
 
-{C:/Users/Daniele/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.en
-c}{C:/Users/Daniele/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mat
-hsy.enc}<C:/Users/Daniele/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/
+{C:/Users/Daniele/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-maths
+y.enc}{C:/Users/Daniele/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm
+-ec.enc}<C:/Users/Daniele/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/
 lm/lmbx10.pfb><C:/Users/Daniele/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/p
 ublic/lm/lmbx12.pfb><C:/Users/Daniele/AppData/Local/Programs/MiKTeX 2.9/fonts/t
 ype1/public/lm/lmr10.pfb><C:/Users/Daniele/AppData/Local/Programs/MiKTeX 2.9/fo
@@ -1870,9 +1801,9 @@ ams/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Users/Daniele/AppData/Local
 /Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Daniele/A
 ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtk10.pfb><C:/Users/Dan
 iele/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtt10.pfb>
-Output written on Finale.pdf (51 pages, 1014170 bytes).
+Output written on Finale.pdf (49 pages, 988386 bytes).
 PDF statistics:
- 1172 PDF objects out of 1200 (max. 8388607)
- 507 named destinations out of 1000 (max. 500000)
- 585 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1197 PDF objects out of 1200 (max. 8388607)
+ 526 named destinations out of 1000 (max. 500000)
+ 567 words of extra memory for PDF output out of 10000 (max. 10000000)
 

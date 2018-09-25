@@ -1,29 +1,27 @@
 \babel@toc {italian}{}
 \babel@toc {italian}{}
-\contentsline {figure}{\numberline {1}{\ignorespaces Pagina info Geolocation}}{8}{figure.1}
-\contentsline {figure}{\numberline {2}{\ignorespaces Richiesta permesso}}{9}{figure.2}
-\contentsline {figure}{\numberline {3}{\ignorespaces Rifiuto autorizzazione}}{9}{figure.3}
-\contentsline {figure}{\numberline {4}{\ignorespaces Accetto autorizzazione}}{10}{figure.4}
+\contentsline {figure}{\numberline {1}{\ignorespaces Pagina info Geolocation}}{9}{figure.1}
+\contentsline {figure}{\numberline {2}{\ignorespaces Richiesta permesso}}{10}{figure.2}
+\contentsline {figure}{\numberline {3}{\ignorespaces Rifiuto autorizzazione}}{10}{figure.3}
+\contentsline {figure}{\numberline {4}{\ignorespaces Accetto autorizzazione}}{11}{figure.4}
 \contentsline {figure}{\numberline {5}{\ignorespaces Richiesta posizione}}{11}{figure.5}
-\contentsline {figure}{\numberline {6}{\ignorespaces Blocca autorizzazione}}{12}{figure.6}
-\contentsline {figure}{\numberline {7}{\ignorespaces Consenti autorizzazione}}{12}{figure.7}
-\contentsline {figure}{\numberline {8}{\ignorespaces Desktop and mobile compatibility}}{13}{figure.8}
-\contentsline {figure}{\numberline {9}{\ignorespaces Schema Payment Request API}}{16}{figure.9}
-\contentsline {figure}{\numberline {10}{\ignorespaces Inserimento informazioni dell'utente}}{22}{figure.10}
-\contentsline {figure}{\numberline {11}{\ignorespaces Inserimento CVV}}{22}{figure.11}
-\contentsline {figure}{\numberline {12}{\ignorespaces Informazioni rubate}}{23}{figure.12}
-\contentsline {figure}{\numberline {13}{\ignorespaces Wallet dopo la chiamata request.show()}}{25}{figure.13}
-\contentsline {figure}{\numberline {14}{\ignorespaces Wallet in caso di successo}}{26}{figure.14}
-\contentsline {figure}{\numberline {15}{\ignorespaces Wallet in caso di fail}}{26}{figure.15}
-\contentsline {figure}{\numberline {16}{\ignorespaces Compatibilit\IeC {\`a} desktop}}{27}{figure.16}
-\contentsline {figure}{\numberline {17}{\ignorespaces Compatibilit\IeC {\`a} mobile}}{27}{figure.17}
-\contentsline {figure}{\numberline {18}{\ignorespaces Ciclo di vita del Service Worker}}{30}{figure.18}
-\contentsline {figure}{\numberline {19}{\ignorespaces Network first}}{35}{figure.19}
-\contentsline {figure}{\numberline {20}{\ignorespaces Cache First}}{36}{figure.20}
-\contentsline {figure}{\numberline {21}{\ignorespaces Network only}}{37}{figure.21}
-\contentsline {figure}{\numberline {22}{\ignorespaces Cache Only}}{37}{figure.22}
-\contentsline {figure}{\numberline {23}{\ignorespaces Fastest}}{38}{figure.23}
-\contentsline {figure}{\numberline {24}{\ignorespaces Cache then Network}}{39}{figure.24}
-\contentsline {figure}{\numberline {25}{\ignorespaces Intercepted}}{42}{figure.25}
-\contentsline {figure}{\numberline {26}{\ignorespaces Compatibilit\IeC {\`a} web}}{43}{figure.26}
-\contentsline {figure}{\numberline {27}{\ignorespaces Compatibilit\IeC {\`a} mobile}}{43}{figure.27}
+\contentsline {figure}{\numberline {6}{\ignorespaces Compatibilit\IeC {\`a} Desktop e mobile}}{12}{figure.6}
+\contentsline {figure}{\numberline {7}{\ignorespaces Schema Payment Request API \cite {rif17}}}{14}{figure.7}
+\contentsline {figure}{\numberline {8}{\ignorespaces Wallet dopo la chiamata request.show()}}{21}{figure.8}
+\contentsline {figure}{\numberline {9}{\ignorespaces Wallet in caso di successo}}{22}{figure.9}
+\contentsline {figure}{\numberline {10}{\ignorespaces Wallet in caso di fail}}{22}{figure.10}
+\contentsline {figure}{\numberline {11}{\ignorespaces Inserimento informazioni dell'utente}}{23}{figure.11}
+\contentsline {figure}{\numberline {12}{\ignorespaces Inserimento CVV}}{24}{figure.12}
+\contentsline {figure}{\numberline {13}{\ignorespaces Informazioni rubate}}{24}{figure.13}
+\contentsline {figure}{\numberline {14}{\ignorespaces Compatibilit\IeC {\`a} desktop}}{25}{figure.14}
+\contentsline {figure}{\numberline {15}{\ignorespaces Compatibilit\IeC {\`a} mobile}}{25}{figure.15}
+\contentsline {figure}{\numberline {16}{\ignorespaces Ciclo di vita del Service Worker}}{28}{figure.16}
+\contentsline {figure}{\numberline {17}{\ignorespaces Network first}}{33}{figure.17}
+\contentsline {figure}{\numberline {18}{\ignorespaces Cache First}}{34}{figure.18}
+\contentsline {figure}{\numberline {19}{\ignorespaces Network only}}{35}{figure.19}
+\contentsline {figure}{\numberline {20}{\ignorespaces Cache Only}}{35}{figure.20}
+\contentsline {figure}{\numberline {21}{\ignorespaces Fastest}}{36}{figure.21}
+\contentsline {figure}{\numberline {22}{\ignorespaces Cache then Network}}{37}{figure.22}
+\contentsline {figure}{\numberline {23}{\ignorespaces Intercepted}}{40}{figure.23}
+\contentsline {figure}{\numberline {24}{\ignorespaces Compatibilit\IeC {\`a} web}}{41}{figure.24}
+\contentsline {figure}{\numberline {25}{\ignorespaces Compatibilit\IeC {\`a} mobile}}{41}{figure.25}

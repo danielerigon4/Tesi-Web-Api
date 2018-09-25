@@ -1,0 +1,113 @@
+\begin{thebibliography}{17}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[rif()]{rif12}
+What is payment request?
+\newblock \url{https://paymentrequest.show/}.
+
+\bibitem[Baloch()]{rif7}
+R.~Baloch.
+\newblock Html5 modern day attack and defense vector.
+\newblock \url{http://www.xss-payloads.com/papers/HTML5AttackVectors.pdf}.
+
+\bibitem[Developer({\natexlab{a}})]{rif1}
+M.~Developer.
+\newblock Payment request api, mozilla developer.
+\newblock {\natexlab{a}}.
+\newblock
+  \url{https://developer.mozilla.org/en-US/docs/Web/API/Payment_Request_API}.
+
+\bibitem[Developer({\natexlab{b}})]{rif2}
+M.~Developer.
+\newblock Features restricted to secure contexts.
+\newblock {\natexlab{b}}.
+\newblock \url{https://developer.mozilla.org/en-US/docs/Web/API/Geolocation}.
+
+\bibitem[Developer({\natexlab{c}})]{rif4}
+M.~Developer.
+\newblock Geolocation api.
+\newblock {\natexlab{c}}.
+\newblock
+  \url{https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API}.
+
+\bibitem[Developer(2018)]{rif9}
+M.~Developer.
+\newblock Payment request api.
+\newblock 2018.
+\newblock \url{https://w3c.github.io/payment-request/}.
+
+\bibitem[Developers()]{rif13}
+G.~Developers.
+\newblock Introduction to the payment request api.
+\newblock
+  \url{https://developers.google.com/web/ilt/pwa/introduction-to-the-payment-request-api}.
+
+\bibitem[Doty et~al.(2010)Doty, Mulligan, and Wilde]{rif6}
+N.~Doty, D.~K. Mulligan, and E.~Wilde.
+\newblock Privacy issues of the w3c geolocation api.
+\newblock 2010.
+
+\bibitem[Gaunt()]{rif11}
+M.~Gaunt.
+\newblock Deep dive into payment request api.
+\newblock
+  \url{https://developers.google.com/web/fundamentals/payments/merchant-guide/deep-dive-into-payment-request}.
+
+\bibitem[Inc.(2018)]{rif18}
+G.~Inc.
+\newblock Paymentrequest credit cards sample.
+\newblock 2018.
+\newblock
+  \url{https://googlechrome.github.io/samples/paymentrequest/credit-cards/}.
+
+\bibitem[Kitamura()]{rif14}
+E.~Kitamura.
+\newblock Bringing easy and fast checkout with payment request api.
+\newblock
+  \url{https://developers.google.com/web/updates/2016/07/payment-request}.
+
+\bibitem[Microsoft({\natexlab{a}})]{rif15}
+Microsoft.
+\newblock Payment request api.
+\newblock {\natexlab{a}}.
+\newblock
+  \url{https://docs.microsoft.com/en-us/microsoft-edge/dev-guide/windows-integration/payment-request-api}.
+
+\bibitem[Microsoft({\natexlab{b}})]{rif16}
+Microsoft.
+\newblock Payment request api samples.
+\newblock {\natexlab{b}}.
+\newblock
+  \url{https://developer.microsoft.com/en-us/microsoft-edge/testdrive/demos/paymentrequest/}.
+
+\bibitem[Microsoft({\natexlab{c}})]{rif17}
+Microsoft.
+\newblock Simpler web payments: Introducing the payment request api.
+\newblock {\natexlab{c}}.
+\newblock
+  \url{https://blogs.windows.com/msedgedev/2016/12/15/payment-request-api-edge/#UATsm3ejAT9oYtrj.97}.
+
+\bibitem[Rosa(2014)]{rif8}
+A.~D. Rosa.
+\newblock An introduction to the geolocation api.
+\newblock 2014.
+\newblock
+  \url{https://code.tutsplus.com/tutorials/an-introduction-to-the-geolocation-api--cms-20071}.
+
+\bibitem[University(2018)]{rif3}
+A.~University.
+\newblock Angular service worker - step-by-step guide for turning your
+  application into a pwa.
+\newblock 2018.
+\newblock \url{https://blog.angular-university.io/angular-service-worker/}.
+
+\bibitem[W3C(2018)]{rif5}
+W3C.
+\newblock Geolocation api specification 2nd edition.
+\newblock 2018.
+
+\end{thebibliography}

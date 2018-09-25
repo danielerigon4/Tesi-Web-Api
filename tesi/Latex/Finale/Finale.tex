@@ -24,8 +24,6 @@
 
 
 
-
-
 \lstset{ 
 	backgroundcolor=\color{white}, 
 	basicstyle=\footnotesize,
@@ -146,34 +144,70 @@
 
 \newpage
 \section{Introduzione}
-Negli ultimi decenni il World Wide Web è diventanto sempre più presente nella quotidianità di ogni individuo e, come la maggior parte delle cose, presenta aspetti positivi e negativi.
-Essendo il web un mondo veramente vasto da scoprire, sono altrettanti i rischi presenti al suo interno.
-L'obiettivo di questa tesi è spiegare come, studiando un piccolo set di API, siano state trovate delle vulnerabilità di sicurezza e privacy all'interno di queste mostrando come possano venire rubate le informazioni sensibili degli utenti ed essere usate poi da terzi.
-La tesi si divide in tre parti principali, corrispondenti alle tre API prese in esame.
-La prima, [che è anche la più semplice delle tre], è la Geolocation API, la quale, utilizzata nei siti web o nelle web app, serve a tracciare la posizione dell'utente, con possibili rischi di problemi di privacy; la seconda è la PaymentRequest API, la quale salva le credenziali dell'utente cosi da essere riutilizzate automaticamente senza doverle reinserirle ogni qualvolta le si usa, mostrando però che queste possono essere intercettate, e come possono essere rubate; l'ultimo argomento preso in esame, che è anche il più complesso, riguarda i Service Worker, i quali sono principalmente usati per il caching, migliorando cosi l'esperienza utente,[(e migliorano la sicurezza?)], però viene anche mostrato come questi possono essere utilizzati in modo malevolo intercettando le richieste di rete e rubando informazioni ad una potenziale vittima.
+Negli ultimi decenni il World Wide Web è diventanto sempre più presente nella quotidianità di ogni individuo e, come la maggior parte delle cose, presenta aspetti positivi e negativi;
+essendo il web un mondo vastissimo, sono numerosi i rischi presenti al suo interno.
+\\
+L'obiettivo di questa tesi è spiegare i problemi di sicurezza legati alle APIs Web prendendo come threat model un Web attacker il quale può avere due differenti scenari: il primo, più semplice, è un sito web personale nel quale immettiamo le informazioni, per quanto riguarda la PaymentRequest API \cite{rif1}, o accettiamo di condividere la nostra posizione nel caso della Geolocation API \cite{rif2}; il secondo scenario mostra come un Web attacker possa aggiungere propri contenuti all'interno di pagine web esterne al proprio sito riuscendo comunque a rubare informazioni sensibili.
+\\
+Le API sono delle interfacce che gli sviluppatori e i programmatori possono utilizzare per espandere le funzionalità di programmi o applicazioni, ad esempio facendo interagire due programmi, o due piattaforme, o un programma e una piattaforma, che altrimenti sarebbero state incompatibili.
+Un esempio sono le API di Google Maps, messe a disposizione di tutti gli sviluppatori che le volessero utilizzare per un loro programma o piattaforma web, ad esempio per realizzare mappe personalizzate o per integrarle in siti web per servizi di ricerca georeferenziati o usarle all'interno di applicazioni per smartphone e/o tablet.
+Un altro esempio sono le API di Facebook, le quali danno la possibilità agli sviluppatori di usare alcune delle proprie funzionalità per realizzare delle applicazioni da usare poi all'interno del social network, facilitando di molto la programmazione delle nuove app o funzionalità.
+\\
+Queste API facilitano di molto la programmazione e sono utili nell'integrazione di piattaforme differenti tra loro, ma presentano anche delle vulnerabilità.
+\\
+Questo problema viene studiato nella tesi prendendo in esame un piccolo set di API, mostrando come siano state trovate delle vulnerabilità di sicurezza e privacy all'interno di queste sottolineando come possano venire rubate da un web attacker le informazioni sensibili degli utenti ed essere usate poi da terzi.
+\\
+La tesi si divide in tre parti corrispondenti alle tre API prese in esame. 
+\\
+La prima è la Geolocation API la quale, utilizzata nei siti web o nelle web app, serve a tracciare la posizione dell'utente, con possibili rischi di problemi di privacy poichè un Web attacker potrebbe tracciare la posizione dell'utente e rubarla.
+\\
+La seconda API studiata è la PaymentRequest API, la quale salva le informazioni dell'utente, sia personali che di pagamento, cosi da poterle riutilizzare automaticamente senza doverle reinserirle ogni qualvolta se ne ha bisogno, mostrando però che queste possono essere intercettate e rubate da un Web attacker.
+\\
+L'ultimo argomento preso in esame, che è anche il più complesso, riguarda i Service Worker \cite{rif3}, i quali vengono usati principalmente per il caching in modo da migliorare l'esperienza utente, mostrando però anche come questi possano essere utilizzati in modo malevolo per rubare informazioni dell'utente intercettando le richieste di rete.
+\\
+Tutto il codice presente nella tesi è reperibile al seguente repository GitHub \url{https://github.com/danielerigon4/Tesi-Web-Api}.
 \cleardoublepage
+
+
 \section{Geolocation}
 \subsection{Overview}
 La Geolocation API viene utilizzata per ottenere la posizione geografica di un utente. 
 Poiché questo può compromettere la privacy la posizione non è disponibile a meno che l'utente non la approvi: su un dispositivo mobile avremo un set di coordinate provenienti dal sensore GPS mentre su un portatile potremo usare il posizionamento legato all’ip della connessione internet.
-
 \subsection{Specifiche}
 
 \subsubsection{Oggetto della geolocalizzazione}
-Le API di geolocalizzazione sono pubblicate tramite l'oggetto navigator.geolocation. Se l'oggetto esiste, il servizio di geolocalizzazione è disponibile. Per testare l'esistenza di tale oggetto:
+Nella Geolocation API la posizione viene resa nota utilizzando la proprietà \textit{navigator.geolocation} \cite{rif4} presente nell'oggetto \textit{Navigator}, un'interfaccia che rappresenta lo stato dell'utente. Se l'oggetto esiste, il servizio di geolocalizzazione è disponibile. Per testare l'esistenza di tale oggetto, così da avere disponibili i metodi di geolocalizzazione, bisogna verificare se l'oggetto esiste, nel modo:
 \lstinputlisting{code/GeolocationInNavigator.js}
 
 \subsubsection{Metodi}
-Ci sono solamente tre metodi a disposizione: getCurrentPosition, watchPosition e clearWatch. I primi due sono utili a ottenere la posizione corrente mentre il terzo serve ad annullare la ricerca della posizione corrente. 
+Ci sono solamente tre metodi a disposizione: \textit{getCurrentPosition}, \textit{watchPosition} e \textit{clearWatch}. I primi due sono utili a ottenere la posizione corrente mentre il terzo serve ad annullare la ricerca della posizione corrente. 
 La differenza tra i primi due va ricercata nella loro periodicità, mentre il primo metodo fornisce il dato una sola volta, il secondo si attiva automaticamente ogni qualvolta la posizione cambi, o ogni tot intervallo di tempo.
+\\
 La sintassi per invocare questi metodi è la seguente:
 \lstinputlisting{code/Sintassi.js}
+dove è obbligatoria solamente la callback in caso di successo \textit{success}, mentre gli altri due parametri sono opzionali.
+\\
+La \textit{successCallback} viene chiamata quando vi è un'operazione di successo alla chiamata di una nuova posizione.
+La \textit{errorCallback} viene chiamata quando vi sono uno o più errori, e vengono gestiti all'interno di questo metodo.
+\textit{Options} definisce i parametri in base ai quali vengono poi chiamate le callback di successo o fallimento.
+Un esempio concreto, preso da \cite{rif5}, è questo:
+\pagebreak
+\lstinputlisting{code/metodiGeolocation.js} 
+
 
 \textbf{GetCurrentPosition}
-\lstinputlisting{code/GetCurrentPosition.js}
-L'esempio chiama la funzione dosomething() quando la posizione viene calcolata. \\
-Un esempio concreto potrebbe essere il seguente\footnote{viene chiesto il permesso all'utente nell'uso della posizione quando si chiama il metodo GetCurrentPosition e WatchPosition; se negata apparirà un messaggio di errore in console, se consentita verranno mostrati i dati dell'utente}: \\
-\pagebreak
+\\
+Il metodo \textit{GetCuttentPosition} viene chiamato per ottenere la posizione corrente dell'utente, fornendo il dato ogni volta che viene chiamata.
+
+\textbf{WatchPosition}
+\\
+Il metodo \textit{WatchPosition} restituisce la posizione dell'utente ad ogni intervallo di tempo specificato.
+
+\textbf{ClearWatch}
+\\
+Il metodo \textit{clearWatch} viene chiamato per annullare il monitoraggio della posizione dell'utente.
+\newpage
+Un esempio \cite{rif8} dell'uso di questi metodi è il seguente: \\
 \lstinputlisting{code/EsempioCompleto.js}
 Che produrrà la seguente pagina:
 \begin{figure}[h]
@@ -209,75 +243,48 @@ Se l'utente acconsente all'utilizzo della posizione verrà mostrato un messaggio
 	\label{fig: Accetto autorizzazione}
 \end{figure}
 \\
-\textbf{WatchPosition}
-\\
-Se la posizione cambia (perché il dispositivo si sposta o perché viene calcolata una posizione più accurata), si può settare una funzione che viene chiamata quando la posizione attuale si aggiorna. Basta usare la funzione watchPosition(), che ha gli stessi parametri di input di getCurrentPosition(). Questa funzione viene chiamata più volte così da permettere al browser di sapere sempre la posizione del dispositivo. La funzione di errore è opzionale come lo era per getCurrentPosition().
-\lstinputlisting{code/WatchPosition.js}
-Il metodo watchPosition() ritorna un ID numerico che può essere usato per identificare univocamente il controllo della posizione. 
-\\
-\textbf{ClearPosition}
-\\
-Viene usato il metodo clearWatch() per annullare il monitoraggio della posizione.
-\lstinputlisting{code/ClearPosition.js}
 
-\subsection{Problemi sicurezza/privacy}
-Uno dei principali problemi con la Geolocation API è rappresentato dagli attacchi di cross-site scripting (XSS) dovuto al fatto che gli oggetti per tracciare le coordinate (latitudine e longitudine) risiedono all'interno del DOM, il quale è accessibile con JavaScript e attraverso il quale potrebbe essere rubata la posizione dell'utente. 
-Dato che gli utenti si fidano del sito web, si fidano anche della richiesta di posizione e la condividono.
-Un problem importante è che se l'utente non disabilita il tracciamento il browser continuerà a esporre la posizione dell'utente all'attaccante.
+
+\subsection{Problemi sicurezza/privacy} 
+Uno dei principali problemi della Geolocation API \cite{rif6} \cite{rif7} è rappresentato dal fatto che un Web Attacker può rubare la posizione ad un utente che accetta di condividerla all'interno del sito attaccante ignaro del fatto che non sia sicuro, oppure attraverso un cross-site scripting (XSS) \footnote{Tipo di vulnerabilità di sicurezza presente nelle applicazioni web. Questo attacco consente agli aggressori di inserire script sul lato client in pagine Web visualizzate da altri utenti, e questa vulnerabilità può essere usata dagli aggressori per bypassare i controlli di accesso, come ad esempio la same origin policy.} all'interno di un sito che considerato fidato. Gli oggetti per tracciare le coordinate (latitudine e longitudine) risiedono all'interno del DOM il quale è accessibile con JavaScript e attraverso il quale si possono prendere le informazioni sulla posizione dell'utente. 
+Nella maggior parte dei casi succede che la posizione viene richiesta e condivisa in quanto viene chiesta in siti web affidabili.
+Un problema importante è che se l'utente non disabilita il tracciamento della posizione il browser continuerà a esporla all'attaccante.
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=1\linewidth]{pos1}
+	\includegraphics[width=0.5\linewidth]{pos1}
 	\caption{Richiesta posizione}
 	\label{fig: Richiesta posizione}
 \end{figure}
+\pagebreak
 \\
-Supponiamo che un utente malintenzionato abbia rilevato una vulnerabilità XSS in un sito Web; tutto ciò che dovra fare è fare in modo che la vittima esegua il seguente codice JavaScript per rubare la posizione.
-
+Supponiamo che un utente malintenzionato abbia avuto modo di inserire una vulnerabilità XSS in un sito Web; tutto ciò che dovra fare è fare in modo che la vittima esegua il seguente codice JavaScript per rubare la posizione.
 \lstinputlisting{code/script.js}
-Il codice utilizza le proprietà del DOM cords.latitude e cords.langitude per determinare rispettivamente la latitudine / longitudine e le memorizza in una variabile. Successivamente il codice JavaScript invia i dati al dominio dell'attaccante, in modo diverso a seconda di come è stato configurata la richiesta.
+Il codice utilizza le proprietà del DOM \textit{cords.latitude} e \textit{cords.langitude} per determinare rispettivamente la latitudine e longitudine, memorizzandole in una variabile, inviandole poi all'attaccante. 
 \\
-\clearpage
-Se l'utente non consente all'utilizzo della posizione non succederà nulla nella pagina.
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=1\linewidth]{Blocca}
-	\caption{Blocca autorizzazione}
-	\label{fig: Blocca autorizzazione}
-\end{figure}
-\\
-Se l'utente acconsente all'utilizzo della posizione essa sarà calcolata e, risiedendo nel DOM, può esser facilmente rubata.
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=1\linewidth]{Consenti}
-	\caption{Consenti autorizzazione}
-	\label{fig: Consenti autorizzazione}
-\end{figure}
-\clearpage
 \subsection{Supporto compatibilità web}
 \subsubsection{Desktop e mobile}
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1\linewidth]{compatibility}
-	\caption{Desktop and mobile compatibility}
-	\label{fig: Desktop and mobile compatibility}
+	\caption{Compatibilità Desktop e mobile}
+	\label{fig: Compatibilità Desktop e mobile}
 \end{figure}
 \subsection{Conclusioni}
-La Geolocation API è una delle API più semplici.
+%La Geolocation API è una delle API più semplici.
 
-\cleardoublepage
 \newpage
 \section{PaymentRequest API}
 
 \subsection{Overview Payment Request}
-La PaymentRequest API nasce con l'intento di creare esperienze di pagamento semplificate, in quanto ogni sito web ha il proprio sistema di pagamento e molti siti richiedono la ridigitazione manuale delle stesse informazioni più volte, le quali possono essere invece memorizzate e riutilizzate dall'API per completare più rapidamente le transazioni online.
+La PaymentRequest API \cite{rif9} nasce con l'intento di creare esperienze di pagamento semplificate, in quanto ogni sito web ha il proprio sistema di pagamento e molti siti richiedono la ridigitazione manuale delle stesse informazioni più volte, le quali possono essere invece memorizzate e riutilizzate dall'API per completare più rapidamente le transazioni online.
 
-\subsubsection{Vantaggi}
+\subsubsection{Vantaggi \cite{rif13}}
 \begin{itemize}
 	\item \textbf{Esperienza di acquisto rapida:} gli utenti immettono i propri dati una sola volta nel browser, e dopo averli inseriti non è più necessario reinserirli su siti diversi;
 	\item \textbf{Esperienza coerente su ogni sito che supporta l'API:} poiché la pagina di pagamento è controllata dal browser si può personalizzare l'esperienza utente, ad esempio includendo la localizzazione per impostare automaticamente la lingua preferita dell'utente o altre features;
-	\item \textbf{Gestione delle credenziali:} gli utenti possono gestire le loro carte di credito e gli indirizzi di spedizione direttamente nel browser. Un browser può anche sincronizzare queste "credenziali" tra dispositivi, rendendo più semplice per gli utenti passare dal desktop al cellulare e viceversa quando si acquistano oggetti;
+	\item \textbf{Gestione delle informazioni:} gli utenti possono gestire le loro carte di credito e gli indirizzi di spedizione direttamente nel browser. Un browser può anche sincronizzare queste informazioni tra dispositivi, rendendo più semplice per gli utenti passare dal desktop al cellulare e viceversa quando si acquistano oggetti;
 	\item \textbf{Gestione coerente degli errori:} il browser può controllare la validità dei numeri delle carte e può comunicare all'utente se una carta è scaduta o sta per scadere, può suggerire automaticamente quale carta utilizzare in base ai modelli di utilizzo passati o alle restrizioni del commerciante, o consentire all'utente di dire quale sia la carta predefinita/preferita;
-	\item \textbf{Esperienza utente migliorata:} meno tipizzazione, coerenza tra i siti Web, tra browser e sistemi operativi e nuove funzionalità del browser per semplificare il checkout, ecc;
+	\item \textbf{Esperienza utente migliorata:} coerenza tra i siti Web, tra browser e sistemi operativi e nuove funzionalità del browser per semplificare il checkout, ecc;
 	\item \textbf{Miglioramento della sicurezza:} la PaymentRequest API ha il potenziale per ridurre le opportunità di frode e può facilitare l'adozione di metodi di pagamento più sicuri. Purtroppo ci sono dei problemi di sicurezza analizzati al capitolo 4; 
 	\item \textbf{Responsabilità inferiore:} in passato, per creare un'esperienza utente semplificata, i commercianti dovevano memorizzare le credenziali di pagamento degli utenti. Questo non è più necessario, il che può aiutare a ridurre la responsabilità del commerciante nei confronti del cliente.
 \end{itemize}
@@ -292,7 +299,7 @@ Al completamento l'app di pagamento restituisce i dati tramite l'API al commerci
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1\linewidth]{SchemaPayment}
-	\caption{Schema Payment Request API}
+	\caption{Schema Payment Request API \cite{rif17}}
 	\label{fig:Schema Payment}
 \end{figure}
 \pagebreak
@@ -346,7 +353,7 @@ Un'app di pagamento è il software che l'utente utilizza per pagare, la quale pu
 Vi sono casi importanti in cui è disponibile una sola app di pagamento autorizzata a supportare un metodo di pagamento, mentre ci sono casi in cui più app di pagamento possono servire diversi metodi di pagamento. In questo caso non è il commerciante che deve preoccuparsi dell'integrazione software, ma deve solamente richiedere le informazioni attraverso la PaymentRequest API.
 
 \subsection{Specifiche}
-\subsubsection{Metodi}
+\subsubsection{Metodi \cite{rif1}}
 Per utilizzare l'API lo sviluppatore deve fornire e tenere traccia di una serie di informazioni chiave, le quali vengono passate al costruttore PaymentRequest come argomenti e successivamente utilizzate per aggiornare la richiesta di pagamento visualizzata all'utente. Queste informazioni sono:
 \begin{itemize}
 	\item \textbf{PaymentMethodData:} rappresenta i metodi di pagamento che il sito supporta;
@@ -360,16 +367,16 @@ Per utilizzare l'API lo sviluppatore deve fornire e tenere traccia di una serie 
 \pagebreak
 \textbf{PaymentMethodData}
 \\
-PaymentMethodData contiene gli identificativi dei metodi di pagamento accettati dal sito Web e qualsiasi dato specifico del metodo di pagamento associato.
+PaymentMethodData \cite{rif11} contiene gli identificativi dei metodi di pagamento accettati dal sito Web e qualsiasi dato specifico del metodo di pagamento associato.
 \lstinputlisting{code/PaymentMethodData.js}
 \textbf{PaymentDetails}
 \\
-I details contengono informazioni sulla transazione che l'utente è invitato a completare.
+I details \cite{rif14} contengono informazioni sulla transazione che l'utente è invitato a completare.
 \lstinputlisting{code/PaymentDetails.js}
 \pagebreak
 \textbf{Opzioni di spedizione}
 \\
-Qui vediamo un esempio di come aggiungere due opzioni di spedizione ai details.
+Qui vediamo un esempio di come aggiungere due opzioni di spedizione ai details. \cite{rif16}
 \lstinputlisting{code/OpzioniSpedizione.js}
 
 \flushleft\textbf{Modifiche condizionali alla richiesta di pagamento}
@@ -385,6 +392,45 @@ Options contiene informazioni che lo sviluppatore ha bisogno dall'utente per ese
 Dopo aver raccolto tutti i bit di informazioni prerequisite, ora possiamo costruirne uno PaymentRequest e richiedere che il browser lo presenti all'utente.
 \lstinputlisting{code/PaymentRequest.js}
 
+
+\subsection{Implementazione PaymentRequest API su una pagina d'esempio \cite{rif15}}
+\subsubsection{Costruttore}
+L'oggetto PaymentRequest è costruito passando i seguenti parametri:
+\begin{itemize}
+	\item \textbf{methodData:} una serie di identificativi del metodo di pagamento e tutti i dati pertinenti. Un identificativo del metodo di pagamento è una stringa che identifica un metodo di pagamento supportato;
+	\item \textbf{details:} contiene le informazioni sulla transazione, come gli elementi pubblicitari in un ordine;
+	\item \textbf{options:} contiene informazioni aggiuntive che il Wallet potrebbe dover raccogliere.
+\end{itemize}
+
+Nel seguente esempio stiamo consentendo agli utenti di pagare con qualsiasi carta di debito o di credito appartenente alle reti Visa, MasterCard o Amex. L'oggetto details contiene l'importo totale parziale, l'imposta sulle vendite e il totale dovuto; questi dettagli verranno mostrati all'utente nel portafoglio. Bisogna tenere presente che l'API non aggiunge elementi o calcola l'imposta sulle vendite, spetta al commerciante fornire le informazioni corrette. In questo esempio, stiamo vendendo un bene fisico, quindi chiediamo l'indirizzo di spedizione del cliente.
+\lstinputlisting{code/Costruttore.js}
+\subsubsection{Visualizzazione dell'interfaccia utente, elaborazione del pagamento e visualizzazione dei risultati}
+Una volta creato l'oggetto PaymentRequest è possibile attivare il browser per visualizzare il wallet con request.show() \cite{rif12}. 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\linewidth]{wallet1}
+	\caption{Wallet dopo la chiamata request.show()}
+	\label{fig: Wallet dopo la chiamata request.show()}
+\end{figure}
+I clienti possono  selezionare le informazioni di pagamento, l'indirizzo di spedizione e altri campi appropriati e cliccare su Paga quando è pronto. A questo punto, gli utenti dovranno verificare la loro identità: in caso di esito positivo verrà soddisfatta la promise request.show() e verranno restituite al sito Web tutte le informazioni che il cliente ha fornito. Per il metodo di pagamento con carta di base l'oggetto risultante conterrà il nome del titolare della carta, il numero della carta, il mese di scadenza e altri campi pertinenti. Il commerciante può quindi utilizzare queste informazioni per elaborare la transazione sul back-end.
+Dopo che la risposta è tornata dal server, è possibile utilizzare result.complete('success') per visualizzare la schermata di successo o result.complete('fail') per indicare una transazione fallita.
+\lstinputlisting{code/PaymentShow.js}
+\pagebreak
+Ed ecco i wallet in caso di successo e di fallimento.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\linewidth]{wallet2}
+	\caption{Wallet in caso di successo}
+	\label{fig: Wallet in caso di successo}
+\end{figure}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\linewidth]{wallet3}
+	\caption{Wallet in caso di fail}
+	\label{fig: Wallet in caso di fail}
+\end{figure}
+
+
 \subsection{Rischi e sicurezza}
 La PaymentRequest API aumenta la sicurezza poichè:
 \begin{itemize}
@@ -393,7 +439,7 @@ La PaymentRequest API aumenta la sicurezza poichè:
 	\item I proprietari dei metodi di pagamento disporranno di meccanismi standard per autorizzare software specifici a implementare il loro metodo di pagamento, che il browser può verificare attraverso una firma digitale.
 \end{itemize}
 
-\subsubsection{Esempio di un possibile attacco}
+\subsubsection{Esempio di un possibile attacco \cite{rif18}}
 \textbf{Descrizione dell'attacco}
 \\
 L'API apre una finestra dove inserire le informazioni, le quali però possono essere intercettate come verrà mostrato nell'esempio di seguito. 
@@ -425,46 +471,7 @@ Dopo l'elaborazione i numeri di carta di credito e CVV saranno visibili all'atta
 \\
 -- E COSI E NON SI PUO FAR NIENTE? --
 \pagebreak
-\subsection{Implementazione PaymentRequest API su una pagina d'esempio}
-\subsubsection{Costruttore}
-L'oggetto PaymentRequest è costruito passando i seguenti parametri:
-\begin{itemize}
-	\item \textbf{methodData:} una serie di identificativi del metodo di pagamento e tutti i dati pertinenti. Un identificativo del metodo di pagamento è una stringa che identifica un metodo di pagamento supportato;
-	\item \textbf{details:} contiene le informazioni sulla transazione, come gli elementi pubblicitari in un ordine;
-	\item \textbf{options:} contiene informazioni aggiuntive che il Wallet potrebbe dover raccogliere.
-\end{itemize}
 
-Nel seguente esempio stiamo consentendo agli utenti di pagare con qualsiasi carta di debito o di credito appartenente alle reti Visa, MasterCard o Amex. L'oggetto details contiene l'importo totale parziale, l'imposta sulle vendite e il totale dovuto; questi dettagli verranno mostrati all'utente nel portafoglio. Bisogna tenere presente che l'API non aggiunge elementi o calcola l'imposta sulle vendite, spetta al commerciante fornire le informazioni corrette. In questo esempio, stiamo vendendo un bene fisico, quindi chiediamo l'indirizzo di spedizione del cliente.
-\lstinputlisting{code/Costruttore.js}
-\subsubsection{Visualizzazione dell'interfaccia utente, elaborazione del pagamento e visualizzazione dei risultati}
-Una volta creato l'oggetto PaymentRequest è possibile attivare il browser per visualizzare il wallet con request.show(). 
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.5\linewidth]{wallet1}
-	\caption{Wallet dopo la chiamata request.show()}
-	\label{fig: Wallet dopo la chiamata request.show()}
-\end{figure}
-I clienti possono  selezionare le informazioni di pagamento, l'indirizzo di spedizione e altri campi appropriati e cliccare su Paga quando è pronto. A questo punto, gli utenti dovranno verificare la loro identità: in caso di esito positivo verrà soddisfatta la promise request.show() e verranno restituite al sito Web tutte le informazioni che il cliente ha fornito. Per il metodo di pagamento con carta di base l'oggetto risultante conterrà il nome del titolare della carta, il numero della carta, il mese di scadenza e altri campi pertinenti. Il commerciante può quindi utilizzare queste informazioni per elaborare la transazione sul back-end.
-Dopo che la risposta è tornata dal server, è possibile utilizzare result.complete('success') per visualizzare la schermata di successo o result.complete('fail') per indicare una transazione fallita.
-\lstinputlisting{code/PaymentShow.js}
-\pagebreak
-Ed ecco i wallet in caso di successo e di fallimento.
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.5\linewidth]{wallet2}
-	\caption{Wallet in caso di successo}
-	\label{fig: Wallet in caso di successo}
-\end{figure}
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.5\linewidth]{wallet3}
-	\caption{Wallet in caso di fail}
-	\label{fig: Wallet in caso di fail}
-\end{figure}
-\clearpage
-\subsubsection{Ascoltare gli eventi}
-Il prezzo potrebbe cambiare in base all'indirizzo di spedizione e alle opzioni di spedizione selezionate dal cliente. È possibile ascoltare tali modifiche con gli eventi shippingaddresschange e shippingoptionchange per ricalcolare di conseguenza i prezzi.
-\lstinputlisting{code/Events.js}
 
 \subsection{Compatibilità web}
 \subsubsection{Desktop}
@@ -728,114 +735,12 @@ La tesi ha mostrato come vi siano delle vulnerabilità nelle API web, prendendo 
 \cleardoublepage
 \listoffigures
 \cleardoublepage
-\section{Sitografia}
+\section{Sitografia}	
+
+\bibliography{Referenze}
 \begin{thebibliography}{99}
-	%geolocation
-	\bibitem{}
-	Connorshea, Chris David Mills, HeilKing, northvanhooser, erikadoyle, fscholz, Alhadis, teoli, FabioMagnoni (2018),
-	\emph{Features restricted to secure contexts, Mozilla Developer},
-	\url{https://developer.mozilla.org/en-US/docs/Web/API/Geolocation}
-	
-	\bibitem{}
-	heppy, Nisarg-Shah, tacsipacsi, chrisdavidmills, andysh, aneditor, smalllong, edent, divyanshu013, erikadoyle, VAggrippino, bsvensson, ewape, jpmedley, bjohnson, jsx, mugsydylan, Sebastianz, bizzybetz, shaneriley, atrama, nikifor, openjck, teoli, rebloor, Jeremie, jswisher, GARAAD, Zupper, jyz19880823, krishnachandra, markg, kohei.yoshino, kscarfone, SarahWalrus, BrandonLove, kmaglione, wlach, trevorh, ronj, ethertank, lmorchard, DavidWalsh, JohnKarahalis, mikerhodes, dflanagan, fcheslack, eberon, inma610, paul.irish, sebmozilla, dynamis, Steffen, stevep98, Dougt, Soupdragon, Chtitux, Bzbarsky
-	\emph{Geolocation API, Mozilla Developer},
-	\url{https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API}
-	
-	\bibitem{}
-	W3C (2018), 
-	\emph{Geolocation API Specification 2nd Edition},
-	\url{https://www.w3.org/TR/geolocation-API/}
-	
-	\bibitem{}
-	Ioannis Krontiris, Andreas Albers and Kai Rannenberg,
-	\emph{W3C Geolocation API calls for
-		Better User Privacy Protection}, 
-	Chair of Mobile Business and Multilateral Security, Goethe University, Frankfurt, Germany
-	
-	\bibitem{}
-	Doty, Nick, Mulligan, Deirdre K., Wilde, Erik (2010),
-	\emph{Privacy Issues of the W3C Geolocation API}, UC Berkeley School of Information, \url{https://escholarship.org/uc/item/0rp834wf}
-	
-	\bibitem{}
-	Ruadhán O'Donoghue (2013),
-	\emph{HTML5 for the Mobile Web – a guide to the Geolocation API}, \url{https://mobiforge.com/design-development/html5-mobile-web-a-guide-geolocation-api}
-	
-	\bibitem{}
-	OccupyTheWeb, WonderHowTo (2015),
-	\emph{How to Find the Exact Location of Any IP Address}, \url{https://null-byte.wonderhowto.com/how-to/hack-like-pro-find-exact-location-any-ip-address-0161964/}
-	
-	\bibitem{}
-	Kipkay(2017), 
-	\emph{Trace Any IP Address}, \url{https://internet.gadgethacks.com/how-to/trace-any-ip-address-1916/}
-	
-	\bibitem{}
-	Aurelio De Rosa (2014),
-	\emph{An Introduction to the Geolocation API},
-	\url{https://code.tutsplus.com/tutorials/an-introduction-to-the-geolocation-api--cms-20071}
-	
-	\bibitem{}
-	Rafay Baloch, HTML5,
-	\emph{HTML5 Modern Day Attack And Defense Vector},
-	\url{http://www.xss-payloads.com/papers/HTML5AttackVectors.pdf}
-	
-	%payment request
-	
-	\bibitem{}
-	Sheppy, poshaughnessy, jpmedley, echenley, chrisdavidmills, marcoscaceres, riking, amZotti, andersnorgaard, erikadoyle, agektmr, reaktivo, dgashmdn
-	\emph{Payment Request API, Mozilla Developer},
-	\url{https://developer.mozilla.org/en-US/docs/Web/API/Payment_Request_API}
-	
-	\bibitem{}
-	W3C (2018),
-	\emph{W3C Payment Request API, Mozilla Developer},
-	\url{https://w3c.github.io/payment-request/}
-	
-	\bibitem{}
-	Natasja Bolton
-	\emph{One more nail in the coffin for iFrames?}, 
-	\url{https://sysnetgs.com/2016/06/one-nail-coffin-iframes/}
-	
-	\bibitem{}
-	Matt Gaunt
-	\emph{Deep Dive into the Payment Request API}, 
-	\url{https://developers.google.com/web/fundamentals/payments/deep-dive-into-payment-request}
-	
-	\bibitem{}
-	\emph{What is Payment Request?},
-	\url{https://paymentrequest.show/}
-	
-	\bibitem{}
-	\emph{Introduction to the Payment Request API},
-	\url{https://developers.google.com/web/ilt/pwa/introduction-to-the-payment-request-api}
-	
-	\bibitem{}
-	Eiji Kitamura,
-	\emph{Bringing Easy and Fast Checkout with Payment Request API},
-	\url{https://developers.google.com/web/updates/2016/07/payment-request}
-	
-	\bibitem{}
-	Microsoft,
-	\emph{Payment Request API},
-	\url{https://docs.microsoft.com/en-us/microsoft-edge/dev-guide/windows-integration/payment-request-api}
-	
-	\bibitem{}
-	Microsoft,
-	\emph{Payment Request API samples},
-	\url{https://developer.microsoft.com/en-us/microsoft-edge/testdrive/demos/paymentrequest/}
-	
-	\bibitem{}
-	\emph{Simpler web payments: Introducing the Payment Request API},
-	\url{https://blogs.windows.com/msedgedev/2016/12/15/payment-request-api-edge/#UATsm3ejAT9oYtrj.97}
-	
-	\bibitem{}
-	Google Inc.(2018),
-	\url{https://googlechrome.github.io/samples/paymentrequest/credit-cards/}
-	
+
 	%service worker
-	\bibitem{}
-	Angular University (2018),
-	\emph{Angular Service Worker - Step-By-Step Guide for turning your Application into a PWA},
-	\url{https://blog.angular-university.io/angular-service-worker/}
 	
 	\bibitem{}
 	Angular University (),
