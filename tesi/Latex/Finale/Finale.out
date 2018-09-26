@@ -18,7 +18,7 @@
 \BOOKMARK [2][-]{subsection.3.3}{Implementazione PaymentRequest API su una pagina d'esempio rif15}{section.3}% 18
 \BOOKMARK [3][-]{subsubsection.3.3.1}{Costruttore}{subsection.3.3}% 19
 \BOOKMARK [3][-]{subsubsection.3.3.2}{Visualizzazione dell'interfaccia utente, elaborazione del pagamento e visualizzazione dei risultati}{subsection.3.3}% 20
-\BOOKMARK [2][-]{subsection.3.4}{Rischi e sicurezza}{section.3}% 21
+\BOOKMARK [2][-]{subsection.3.4}{Rischi e sicurezza rif19}{section.3}% 21
 \BOOKMARK [3][-]{subsubsection.3.4.1}{Esempio di un possibile attacco rif18}{subsection.3.4}% 22
 \BOOKMARK [2][-]{subsection.3.5}{Compatibilit\340 web}{section.3}% 23
 \BOOKMARK [3][-]{subsubsection.3.5.1}{Desktop}{subsection.3.5}% 24
@@ -36,18 +36,12 @@
 \BOOKMARK [3][-]{subsubsection.4.2.4}{Fetch}{subsection.4.2}% 36
 \BOOKMARK [3][-]{subsubsection.4.2.5}{Aggiornare il Service Worker}{subsection.4.2}% 37
 \BOOKMARK [3][-]{subsubsection.4.2.6}{Disintallare il Service Worker}{subsection.4.2}% 38
-\BOOKMARK [2][-]{subsection.4.3}{Strategie di caching \(le lascio o non servono?\)}{section.4}% 39
-\BOOKMARK [3][-]{subsubsection.4.3.1}{Network first}{subsection.4.3}% 40
-\BOOKMARK [3][-]{subsubsection.4.3.2}{Cache first}{subsection.4.3}% 41
-\BOOKMARK [3][-]{subsubsection.4.3.3}{Network only}{subsection.4.3}% 42
-\BOOKMARK [3][-]{subsubsection.4.3.4}{Cache only}{subsection.4.3}% 43
-\BOOKMARK [3][-]{subsubsection.4.3.5}{Fastest}{subsection.4.3}% 44
-\BOOKMARK [3][-]{subsubsection.4.3.6}{Cache then network}{subsection.4.3}% 45
-\BOOKMARK [2][-]{subsection.4.4}{Rischi e sicurezza}{section.4}% 46
-\BOOKMARK [2][-]{subsection.4.5}{Esempio di attacco}{section.4}% 47
-\BOOKMARK [2][-]{subsection.4.6}{Compatibilit\340 web}{section.4}% 48
-\BOOKMARK [3][-]{subsubsection.4.6.1}{Desktop}{subsection.4.6}% 49
-\BOOKMARK [3][-]{subsubsection.4.6.2}{Mobile}{subsection.4.6}% 50
-\BOOKMARK [2][-]{subsection.4.7}{Conclusioni}{section.4}% 51
-\BOOKMARK [1][-]{section.5}{Conclusioni}{}% 52
-\BOOKMARK [1][-]{section.6}{Sitografia}{}% 53
+\BOOKMARK [2][-]{subsection.4.3}{Caching}{section.4}% 39
+\BOOKMARK [2][-]{subsection.4.4}{Rischi e sicurezza}{section.4}% 40
+\BOOKMARK [2][-]{subsection.4.5}{Esempio di attacco}{section.4}% 41
+\BOOKMARK [2][-]{subsection.4.6}{Compatibilit\340 web}{section.4}% 42
+\BOOKMARK [3][-]{subsubsection.4.6.1}{Desktop}{subsection.4.6}% 43
+\BOOKMARK [3][-]{subsubsection.4.6.2}{Mobile}{subsection.4.6}% 44
+\BOOKMARK [2][-]{subsection.4.7}{Conclusioni}{section.4}% 45
+\BOOKMARK [1][-]{section.5}{Conclusioni}{}% 46
+\BOOKMARK [1][-]{section.6}{Sitografia}{}% 47

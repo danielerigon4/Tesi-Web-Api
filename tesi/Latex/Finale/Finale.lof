@@ -10,18 +10,13 @@
 \contentsline {figure}{\numberline {8}{\ignorespaces Wallet dopo la chiamata request.show()}}{21}{figure.8}
 \contentsline {figure}{\numberline {9}{\ignorespaces Wallet in caso di successo}}{22}{figure.9}
 \contentsline {figure}{\numberline {10}{\ignorespaces Wallet in caso di fail}}{22}{figure.10}
-\contentsline {figure}{\numberline {11}{\ignorespaces Inserimento informazioni dell'utente}}{23}{figure.11}
-\contentsline {figure}{\numberline {12}{\ignorespaces Inserimento CVV}}{24}{figure.12}
-\contentsline {figure}{\numberline {13}{\ignorespaces Informazioni rubate}}{24}{figure.13}
-\contentsline {figure}{\numberline {14}{\ignorespaces Compatibilit\IeC {\`a} desktop}}{25}{figure.14}
-\contentsline {figure}{\numberline {15}{\ignorespaces Compatibilit\IeC {\`a} mobile}}{25}{figure.15}
-\contentsline {figure}{\numberline {16}{\ignorespaces Ciclo di vita del Service Worker}}{28}{figure.16}
-\contentsline {figure}{\numberline {17}{\ignorespaces Network first}}{33}{figure.17}
-\contentsline {figure}{\numberline {18}{\ignorespaces Cache First}}{34}{figure.18}
-\contentsline {figure}{\numberline {19}{\ignorespaces Network only}}{35}{figure.19}
-\contentsline {figure}{\numberline {20}{\ignorespaces Cache Only}}{35}{figure.20}
-\contentsline {figure}{\numberline {21}{\ignorespaces Fastest}}{36}{figure.21}
-\contentsline {figure}{\numberline {22}{\ignorespaces Cache then Network}}{37}{figure.22}
-\contentsline {figure}{\numberline {23}{\ignorespaces Intercepted}}{40}{figure.23}
-\contentsline {figure}{\numberline {24}{\ignorespaces Compatibilit\IeC {\`a} web}}{41}{figure.24}
-\contentsline {figure}{\numberline {25}{\ignorespaces Compatibilit\IeC {\`a} mobile}}{41}{figure.25}
+\contentsline {figure}{\numberline {11}{\ignorespaces Metodo show() richiamato pi\IeC {\`u} volte}}{23}{figure.11}
+\contentsline {figure}{\numberline {12}{\ignorespaces Inserimento informazioni dell'utente}}{24}{figure.12}
+\contentsline {figure}{\numberline {13}{\ignorespaces Inserimento CVV}}{24}{figure.13}
+\contentsline {figure}{\numberline {14}{\ignorespaces Informazioni rubate}}{25}{figure.14}
+\contentsline {figure}{\numberline {15}{\ignorespaces Compatibilit\IeC {\`a} desktop}}{27}{figure.15}
+\contentsline {figure}{\numberline {16}{\ignorespaces Compatibilit\IeC {\`a} mobile}}{27}{figure.16}
+\contentsline {figure}{\numberline {17}{\ignorespaces Ciclo di vita del Service Worker}}{30}{figure.17}
+\contentsline {figure}{\numberline {18}{\ignorespaces Intercepted}}{38}{figure.18}
+\contentsline {figure}{\numberline {19}{\ignorespaces Compatibilit\IeC {\`a} web}}{39}{figure.19}
+\contentsline {figure}{\numberline {20}{\ignorespaces Compatibilit\IeC {\`a} mobile}}{39}{figure.20}

@@ -1,38 +1,20 @@
-- Sistemare introduzione: struttura ->  - motivazione OK
-										- definizione del problema e scope OK
-										- struttura del documento OK
-										- definire il threat model, non lo dico mai da nessuna parte della tesi OK
-										- Mettere codice con un link a repository GitHub OK 
-
-- Inserire riferimenti bibliografici/sitografici. <-
+- Inserire riferimenti bibliografici/sitografici. ORDINARLI 
  
-- Aumentare parte rischi e sicurezza per ogni sezione <-
+- Aumentare parte rischi e sicurezza per ogni sezione 
 
 - Geolocation: 
-	pagina 7: spiegare codice (success, error, options) OK
-	pagina 7: sistemare lessico dei metodi OK 
-	pagina 7: case? OK 
-	pagina 11: spiegare se l'api usa l'api direttamente dal proprio sito o potrebbe avere un link o altro da un sito fidato, tipo facebook, amazon, ecc OK
-	pagina 12: levare OK 
-	pagina 13: conclusione <-
-	
-	
+	pagina 13: conclusione 
+		
 - PaymentRequest:
-	pagina 15: non sono credenziali OK
-	pagina 15: non è tipizzazione OK
-	pagina 21: spiegare tutto meglio
-	pagina 22: spiegare bene l'attacco e vedere se effettivamente puo fare cosi con l'API
-	pagina 23: ci si puo difendere?
-	pagina 24-26: va prima dell'esempio di attacco OK
-	pagina 27: levare eventi OK
-	pagina 27: Conclusione <-
+	pagina 24: ci si puo difendere?
+	pagina 27: Conclusione 
 	
 - Service Worker: 
-	pagina 35: fare overview delle strategia di caching quando dico che i SW fanno caching, ma non spiegarle cosi in profondita
-	pagina 39: spiegare bene l'attacco, non si capisce tanto
-	pagina 40: fSW anno solo caching o aumentano anche sicurezza? Non ho trovato niente
-	pagina 41: spiegare meglio l'esempio d'attacco 
-	pagina 43: conclusione <-
+	ovunque Service Worker, non service worker 
+	pagina 36: sistemare parte rischi e sicurezza
+	pagina 39: sistemare ultima parte spiegazione 
+	pagina 40: SW fanno solo caching o aumentano anche sicurezza? Non ho trovato niente
+	pagina 43: conclusione 
 	
 - Esempio pratico con crawler (come si fa?)
 
@@ -43,7 +25,5 @@
 - Ringraziamenti
 
 - Sistemare impaginazione
-
-- Sistemare repositoty git (mettere tutto nel docuemnto iniziale della pagina per far capire la tesi) OK 
 
 - inserire caratteri speciali (accentati ecc) nel codice 

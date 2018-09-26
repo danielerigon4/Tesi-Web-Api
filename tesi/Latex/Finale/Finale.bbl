@@ -1,4 +1,4 @@
-\begin{thebibliography}{17}
+\begin{thebibliography}{18}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -104,6 +104,12 @@ A.~University.
   application into a pwa.
 \newblock 2018.
 \newblock \url{https://blog.angular-university.io/angular-service-worker/}.
+
+\bibitem[W3C()]{rif19}
+W3C.
+\newblock Paymentrequest privacy and security considerations.
+\newblock
+  \url{https://w3c.github.io/payment-request/#privacy-and-security-considerations}.
 
 \bibitem[W3C(2018)]{rif5}
 W3C.

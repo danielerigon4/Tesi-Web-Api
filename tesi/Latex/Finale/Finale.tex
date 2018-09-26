@@ -21,6 +21,7 @@
 \addtolength{\skip\footins}{3pc plus 5pt}
 \renewcommand{\arraystretch}{1.5}
 \pagestyle{plain}
+\usepackage{comment}
 
 
 
@@ -321,13 +322,13 @@ Il browser svolge diversi ruoli:
 	\item Visualizza l'interfaccia utente che consente all'utente di inserire le proprie informazioni;
 	\item Funge da canale per i dati da e verso il commerciante e da e verso l'utente.
 \end{itemize}
-\textbf{Metodi di pagamento}
-\\
-La PaymentRequest API è progettata per funzionare con un gran numero di metodi di pagamento, i quali vengono identificati attraverso due strade:
-\begin{itemize}
-	\item I metodi di pagamento definiti da W3C sono identificati come "basic-card" e sono composti da stringhe corte;
-	\item I metodi di pagamento definiti da altre parti sono identificati dagli URL.
-\end{itemize}
+%\textbf{Metodi di pagamento}
+%\\
+%La PaymentRequest API è progettata per funzionare con un gran numero di metodi di pagamento, i quali vengono identificati attraverso due strade:
+%\begin{itemize}
+%	\item I metodi di pagamento definiti da W3C sono identificati come "basic-card" e sono composti da stringhe corte;
+%	\item I metodi di pagamento definiti da altre parti sono identificati dagli URL.
+%\end{itemize}
 \textbf{App di pagamento}
 \\
 La PaymentRequest API determina se un'app di pagamento "corrisponde" a una determinata transazione definendo un algoritmo che considera i metodi di pagamento accettati dal commerciante, dichiarati attraverso un elenco di identificativi del metodo di pagamento, passati attraverso l'API.
@@ -412,6 +413,8 @@ Una volta creato l'oggetto PaymentRequest è possibile attivare il browser per v
 	\caption{Wallet dopo la chiamata request.show()}
 	\label{fig: Wallet dopo la chiamata request.show()}
 \end{figure}
+\\
+\pagebreak
 I clienti possono  selezionare le informazioni di pagamento, l'indirizzo di spedizione e altri campi appropriati e cliccare su Paga quando è pronto. A questo punto, gli utenti dovranno verificare la loro identità: in caso di esito positivo verrà soddisfatta la promise request.show() e verranno restituite al sito Web tutte le informazioni che il cliente ha fornito. Per il metodo di pagamento con carta di base l'oggetto risultante conterrà il nome del titolare della carta, il numero della carta, il mese di scadenza e altri campi pertinenti. Il commerciante può quindi utilizzare queste informazioni per elaborare la transazione sul back-end.
 Dopo che la risposta è tornata dal server, è possibile utilizzare result.complete('success') per visualizzare la schermata di successo o result.complete('fail') per indicare una transazione fallita.
 \lstinputlisting{code/PaymentShow.js}
@@ -431,45 +434,68 @@ Ed ecco i wallet in caso di successo e di fallimento.
 \end{figure}
 
 
-\subsection{Rischi e sicurezza}
-La PaymentRequest API aumenta la sicurezza poichè:
+\subsection{Rischi e sicurezza \cite{rif19}} 
+
+La PaymentRequest API cerca di garantire la sicurezza dei dati sensibili nei seguenti modi:
+
 \begin{itemize}
-	\item I commercianti possono ottenere un checkout semplificato senza memorizzare le informazioni dell'utente, in quanto lo fa l'API;
-	\item La PaymentRequest API dovrebbe facilitare l'introduzione di metodi di pagamento più sicuri sul Web, come i pagamenti con carta tokenizzata;
-	\item I proprietari dei metodi di pagamento disporranno di meccanismi standard per autorizzare software specifici a implementare il loro metodo di pagamento, che il browser può verificare attraverso una firma digitale.
+\item Per garantire che gli utenti non condividano inavvertitamente informazioni sensibili con una certa origine, l'API richiede che il proprio metodo show() venga attivato solo tramite la volontà da parte dell'utente, ad esempio con un clic. Inoltre, per evitare un'esperienza utente confusa, questa specifica limita la visualizzazione di una finestra alla volta del metodo show() così da non rischiare di inserire dati in più pagine, le quali potrebbero risultare untrusted. 
+Se infatti si prova ad aprire più di una finestra dell'API accadrà la seguente situazione:
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\linewidth]{Buy}
+	\caption{Metodo show() richiamato più volte}
+	\label{fig: Metodo show() richiamato più volte}
+\end{figure}
+
+
+\item La PaymentRequest API è disponibile solamente su HTTPS, quindi lavora solamente in contesti sicuri per aumentare la sicurezza dell'inserimento delle informazioni. 
+
+\item I commercianti possono delegare la memorizzazione delle informazioni ai fornitori di servizi di pagamento o al browser, senza avere l'onere di memorizzare le informazioni sensibili dell'utente. Inoltre, ovviamente, le informazioni dell'utente non devono essere condivise con uno sviluppatore senza l'autorizzazione dell'utente.
 \end{itemize}
 
-\subsubsection{Esempio di un possibile attacco \cite{rif18}}
+Purtroppo un possibile rischio potrebbe essere quello di essere vittima di phishing nel caso fossimo in una pagina untrusted, ovvero viene aperta una pagina identica a quella in cui siamo e tutte le credenziali che inseriamo vengono mandate all'attaccante invece che al sito dove pensiamo di essere. 
+Un altro possibile rischio invece potrebbe essere quello di essere vittima di un attacco XSS, ovvero un tipo di attacco nel quale degli script dannosi vengono inseriti lato server all'interno di siti affidabili, dove l'utente è ignaro di questo.
+Questo tipo di attacco verrà spiegato nel prossimo paragrafo.
+
+\subsubsection{Esempio di un possibile attacco \cite{rif18}} 
 \textbf{Descrizione dell'attacco}
 \\
-L'API apre una finestra dove inserire le informazioni, le quali però possono essere intercettate come verrà mostrato nell'esempio di seguito. 
-L'API salva le informazioni dell'utente ma viene chiesto ogni volta di inserire il codice CVV come forma di sicurezza, quindi per l'attaccante sarà possibile in ogni sessione rubare le informazioni inserite dall'utente.
-Alla richiesta di avvio di un processo di pagamento viene creato l'oggetto PaymentRequest nel quale vengono inseriti tutti i dati che l'utente inserisce. Una volta che l'utente ha approvato una richiesta di pagamento viene restituito un PaymentResponse per approvare tale richiesta. L'oggetto PaymentRequest, creato in precedenza e contenente i dati dell'utente, passa però attraverso il DOM, e quindi può essere intercettato. Ad esempio nel campo details.cardNumber si può leggere il numero di carta di credito, mentre in details.cardSecurityCode si può leggere il codice CVV; entrambi sono mostrati nell'esempio in Figura 4.
+Supponiamo di essere all'interno di un sito affidabile, come Amazon o Facebook, e supponiamo di essere in una pagina di pagamento, come può essere il carrello su Amazon o il pagamento per un'inserzione su Facebook.
+Se un attaccante riesce a inserire degli script all'interno di queste pagine riuscirà a ribare le informazioni di pagamento di un utente.
+Quando l'utente cliccherà sulla voce "paga", in una delle due piattaforme le quali sono considerate affidabili, verrà eseguito lo script malevolo, invece di quello trusted del sito.
+L'utente inserirà tutte le informazioni necessarie al pagamento ma queste verranno mandate e/o visualizzate dall'attaccante.
+Come mostrato nell'esempio in figura 14 in questo modo tutte le informazioni possono essere visualizzate dall'attaccante.
+Alla richiesta di avvio di un processo di pagamento, ovvero dopo la chiamata al metodo show(), viene creato l'oggetto PaymentRequest nel quale vengono inseriti tutti i dati che l'utente inserisce. 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.5\linewidth]{Chrome1}
 	\caption{Inserimento informazioni dell'utente}
 	\label{fig: Inserimento informazioni dell'utente}
 \end{figure}
+\\
+\pagebreak
+Una volta che l'utente ha approvato una richiesta di pagamento viene restituito un PaymentResponse per approvare tale richiesta. 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.5\linewidth]{Chrome2}
 	\caption{Inserimento CVV}
 	\label{fig: Inserimento CVV}
 \end{figure}
+\\
 \pagebreak
-\\
-Dopo l'elaborazione i numeri di carta di credito e CVV saranno visibili all'attaccante.
-\\
+L'oggetto PaymentRequest, creato in precedenza e contenente i dati dell'utente, passa però attraverso il DOM, e quindi può essere intercettato e può essere visualizzato ogni campo inserito dall'utente. Ad esempio nel campo details.cardNumber si può leggere il numero di carta di credito, mentre in details.cardSecurityCode si può leggere il codice CVV; entrambi sono mostrati nell'esempio nella figura seguente.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1\linewidth]{Informazioni}
 	\caption{Informazioni rubate}
 	\label{fig: Informazioni rubate}
 \end{figure}
+\newpage
+
 \textbf{Come difendersi}
-\\
--- E COSI E NON SI PUO FAR NIENTE? --
+
 \pagebreak
 
 
@@ -526,16 +552,11 @@ Per quanto riguarda i ServiceWorker generalmente vengono eseguiti questi passagg
 \subsubsection{Casi d'uso}
 I Service Worker sono destinati anche ad altri usi:
 \begin{itemize}
-	\item Sincronizzazione dei dati in background;
+	\item Sincronizzazione dei dati in background: viene avviato un Service Worker anche quando nessun utente si trova sul sito, quindi le cache possono essere aggiornate, ecc;
 	\item Risposta a richieste di risorse da altre origini;
-	\item Ricezione di aggiornamenti centralizzati a dati costosi da calcolare in modo che più pagine possano utilizzare un set di dati;
-	\item Modelli personalizzati basati su determinati pattern URL;
+	\item Caching;
 	\item Miglioramenti delle prestazioni, ad esempio prelettura delle risorse che l'utente probabilmente avrà bisogno nel prossimo futuro.
-\end{itemize}
-Altre specifiche sono utilizzate dal Service Context, ad esempio:
-\begin{itemize}
-	\item Sincronizzazione in background : avvia un operatore di servizio anche quando nessun utente si trova sul sito, quindi le cache possono essere aggiornate, ecc;
-	\item Reagire per inviare messaggi : si può avviare un Service Worker per inviare agli utenti un messaggio per comunicare loro che sono disponibili nuovi contenuti;
+	\item Reagire per inviare messaggi: si può avviare un Service Worker per inviare agli utenti un messaggio per comunicare loro che sono disponibili nuovi contenuti;
 	\item Reagendo ad orari e date particolari.
 \end{itemize}
 
@@ -550,7 +571,7 @@ Il ciclo di vita di un service worker è composto da quattro fasi:
 
 \subsubsection{Registrazione}
 
-Come prima cosa bisogna comunicare al browser l’esistenza di un ServiceWorker all’interno del sito web. Un ServiceWorker viene prima registrato utilizzando il metodo ServiceWorker.register() e per farlo basta inserire su tutte le pagine del sito uno script come il seguente:
+Come prima cosa bisogna comunicare al browser l’esistenza di un ServiceWorker all’interno del sito web. Un Service Worker viene prima registrato utilizzando il metodo ServiceWorker.register() e per farlo basta inserire su tutte le pagine del sito uno script come il seguente:
 \lstinputlisting{code/Registrazione.js}
 Il codice inizia controllando il supporto da parte del browser verificando la presenza di navigator.serviceWorker. Se supportato, il ServiceWorker viene registrato per mezzo di navigator.serviceWorker.register che restituisce un oggetto Promise il quale si risolve con successo a registrazione avvenuta correttamente.
 service-worker.js è il file Javascript residente nella root del sito web e che contiene il codice del service worker, il cui codice è:
@@ -562,7 +583,7 @@ Possono esserci diversi motivi per cui il Service Worker non si registra:
 \begin{itemize}
 	\item Non si sta eseguendo l'applicazione tramite HTTPS;
 	\item Il path del Service Worker non è scritto correttamente: deve essere scritto in relazione all'origine, non alla directory radice dell'app;
-	\item Il Service Worker a cui ci si riferisce ha un'origine diversa da quella della tua app.
+	\item Il Service Worker a cui ci si riferisce ha un'origine diversa da quella dell'app.
 \end{itemize}
 
 \subsubsection{Installazione}
@@ -602,9 +623,26 @@ Rimuovere/disinstallare un ServiceWorker è un’operazione semplice. È possibi
 \lstinputlisting{code/Disinstallare.js}
 Naturalmente è necessario che la pagina contenente il codice di disinstallazione venga visitata dal browser, oppure è possibile rimuovere il ServiceWorker manualmente tramite DevTools.
 \newpage
-\subsection{Strategie di caching (le lascio o non servono?)}
-Diverse sono le strategie che possono essere adottate per migliorare le performance di un sito web mediante i service worker. A seconda del sito e del contesto è possibile adottare una strategia piuttosto che l’altra.
+\subsection{Caching}
+Diverse sono le strategie che possono essere adottate per migliorare le performance di un sito web mediante i service worker. A seconda del sito e del contesto è possibile adottare una strategia piuttosto che l’altra:
+\begin{itemize}
+	\item \textbf{Network first} \\
+	Questa strategia mira ad avere un contenuto sempre fresco scaricandolo dalla rete, fornendo la copia in cache solo in caso di problemi di connettività, ad esempio in caso di connessione offline;
+	\item \textbf{Cache first} \\
+	Questa strategia verifica se la risorsa è disponibile in cache: se così fosse viene restituita la copia in cache, in caso contrario la risorsa viene scaricata dalla rete;
+	\item \textbf{Network only} \\
+	Viene simulato il normale comportamento del browser, ovvero scaricare le risorse direttamente dalla rete;
+	\item \textbf{Cache only} \\
+	In questo caso il Service Worker risponde solo con elementi conservati in cache: in caso di miss la risposta restituita al browser simulerà l’errore di connessione;
+	\item \textbf{Fastest} \\
+	Questa strategia mira a fornire all’utente la risposta più veloce: il Service Worker avvia contemporaneamente una richiesta in cache ed una in rete e la prima che risponde verrà restituita all’utente.
+	Questa soluzione può essere l’ideale per quei dispositivi con vecchi hard drive dove la lettura da disco può  rivelarsi più lenta del fetch dalla rete, mentre per i dispositivi moderni è meglio utilizzare la strategia cache then network.
+	\item \textbf{Cache then network} \\
+	Questa strategia mira a fornire il contenuto dalla cache per una risposta molto rapida avviando una richiesta in rete scaricando una copia aggiornata della risorsa e sostituendola con quella in cache; la risorsa ricevuta dalla rete viene poi sostituita con quella presente sulla pagina.
+\end{itemize}
 È importante sottolineare che il ServiceWorker non utilizza cache a meno che non siamo noi a dirlo, quindi di default il comportamento nella fase di fetch delle risorse sarà quello nativo del browser.
+
+\begin{comment}
 Di seguito l’elenco completo delle strategie con esempi di codice di implementazione. 
 \subsubsection{Network first}
 Questa strategia mira ad avere un contenuto sempre fresco scaricandolo dalla rete, fornendo la copia in cache solo in caso di problemi di connettività (ad esempio in caso di connessione offline).
@@ -671,6 +709,7 @@ Per ottenere qualcosa di analogo usando il solo ServiceWorker occorre utilizzare
 	\caption{Cache then Network}
 	\label{fig: Cache then Network}
 \end{figure}
+\end{comment}
 \newpage
 \subsection{Rischi e sicurezza}
 Come già detto i Service Worker operano solo in contesti protetti, ma questo non vuol dire che l'ambiente sia sicuro al 100\% in quanto un ServiceWorker ha la possibilità di importare script da qualsiasi altra origine tramite la chiamata a importScripts, aumentando la capacità di un attaccante XSS di inserire il proprio codice javascript all'interno della pagina, potendo cosi rubare informazioni dell'utente, ad esempio all'inserimento di username e password in una data pagina e portarle fuori. La registrazione dei Service Worker specifica che essi devono essere eseguiti nella stessa origine dei loro chiamanti; il confronto dell'origine è una corrispondenza col prefisso più lungo degli URL serializzati compreso il percorso, quindi ad esempio https://example.com è differente da https://example.com.evil.com. Quindi un attaccante può effettivamente registrare un Service Worker malevolo. Per mitigare questo rischio il browser richiede che l'URL di registrazione del Service Worker provenga dall'origine stessa; quindi per registrare un Service Worker malevolo attraverso un attacco XSS l'utente malintenzionato ha bisogno di ospitare i propri script sul server.
@@ -683,7 +722,7 @@ Un possibile scenario potrebbe essere questo: se la pagina ha una vulnerabilità
 \end{itemize}
 In una situazione XSS del genere il limite della direttiva cache di 24 ore garantisce che un Service Worker malevolo o compromesso sopravviverà a un massimo di 24 ore, o meno in base a come è impostato il sito. Una possibile mitigazione del problema potrebbe essere accorciare la vita dei Service Worker, ovviamente in modo ragionevole altrimenti non sarebbero sfruttate le potenzialità.
 \\
-Inoltre un Service Worker potrebbe non essere usato solamente per il caching, migliorando i tempi di risposta dell'applicazione o del sito, ma potrebbe anche essere usato per intercettare messaggi, modificandoli e restituendoli errati (similmente a man-in-the-middle).
+Inoltre un Service Worker potrebbe non essere usato solamente per il caching, migliorando i tempi di risposta dell'applicazione o del sito, ma potrebbe anche essere usato per intercettare messaggi, modificandoli e restituendoli errati similmente a man-in-the-middle, come viene mostrato nell'esempio al paragrafo seguente.
 
 
 - Pro: - VEDERE SE I SW POSSONO MIGLIORARE LA SICUREZZA DI UNA PAGINA, SENZA ESSERE USATI SOLO PER FARE CACHING -
@@ -693,13 +732,12 @@ Supponiamo di avere questa pagina HTML che carica uno script per l'installazione
 \lstinputlisting{code/index.html}
 Il file script.js sarà il seguente:
 \lstinputlisting{code/scriptSW.js}
-
-Mentre hack.js, che intercetta ogni richiesta, sarà questo:
 \pagebreak
+Mentre hack.js, che intercetta ogni richiesta, sarà questo:
 \lstinputlisting{code/hack.js}
 Infine il file che installerà il Service Worker malevolo sarà questo:
 \lstinputlisting{code/install.js}
-Ogni richiesta che verrà fatta sarà intercettata dal Service Worker (in questo caso uscirà il messaggio "Intercepted" nella pagina web) fino a che non sarà disinstallato e non verrà cancellata la cache.
+Ogni richiesta che verrà fatta sarà intercettata dal Service Worker (in questo esempio verrà mostrato il messaggio "Intercepted" nella pagina we ma ovviamente un Web Attacker potrebbe intercettare queste richieste per fare danni --- SISTEMA ---- ) fino a che non sarà disinstallato e non verrà cancellata la cache.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.7\linewidth]{Intercepted}
