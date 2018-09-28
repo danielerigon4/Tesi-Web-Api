@@ -1,7 +1,5 @@
-- Inserire riferimenti bibliografici/sitografici. ORDINARLI 
+- Ordinare riferimenti bibliografici 
  
-- Aumentare parte rischi e sicurezza per ogni sezione 
-
 - Geolocation: 
 	pagina 13: conclusione 
 		
@@ -10,7 +8,6 @@
 	pagina 27: Conclusione 
 	
 - Service Worker: 
-	ovunque Service Worker, non service worker 
 	pagina 36: sistemare parte rischi e sicurezza
 	pagina 39: sistemare ultima parte spiegazione 
 	pagina 40: SW fanno solo caching o aumentano anche sicurezza? Non ho trovato niente
@@ -20,7 +17,7 @@
 
 - Conclusioni finali 
 
-- Dedica
+- Dedica (?)
 
 - Ringraziamenti
 

@@ -1,4 +1,4 @@
-\begin{thebibliography}{18}
+\begin{thebibliography}{28}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -14,6 +14,12 @@ R.~Baloch.
 \newblock Html5 modern day attack and defense vector.
 \newblock \url{http://www.xss-payloads.com/papers/HTML5AttackVectors.pdf}.
 
+\bibitem[Bevacqua(2015)]{rif28}
+N.~Bevacqua.
+\newblock Making a simple site work offline with serviceworker.
+\newblock 2015.
+\newblock \url{https://css-tricks.com/serviceworker-for-offline/}.
+
 \bibitem[Developer({\natexlab{a}})]{rif1}
 M.~Developer.
 \newblock Payment request api, mozilla developer.
@@ -27,10 +33,31 @@ M.~Developer.
 \newblock {\natexlab{b}}.
 \newblock \url{https://developer.mozilla.org/en-US/docs/Web/API/Geolocation}.
 
-\bibitem[Developer({\natexlab{c}})]{rif4}
+\bibitem[Developer({\natexlab{c}})]{rif20}
+M.~Developer.
+\newblock Service worker concepts and usage.
+\newblock {\natexlab{c}}.
+\newblock
+  \url{https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API}.
+
+\bibitem[Developer({\natexlab{d}})]{rif22}
+M.~Developer.
+\newblock Setting up to play with service workers.
+\newblock {\natexlab{d}}.
+\newblock
+  \url{https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers}.
+
+\bibitem[Developer({\natexlab{e}})]{rif27}
+M.~Developer.
+\newblock Promise.
+\newblock {\natexlab{e}}.
+\newblock
+  \url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise}.
+
+\bibitem[Developer({\natexlab{f}})]{rif4}
 M.~Developer.
 \newblock Geolocation api.
-\newblock {\natexlab{c}}.
+\newblock {\natexlab{f}}.
 \newblock
   \url{https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API}.
 
@@ -51,11 +78,19 @@ N.~Doty, D.~K. Mulligan, and E.~Wilde.
 \newblock Privacy issues of the w3c geolocation api.
 \newblock 2010.
 
-\bibitem[Gaunt()]{rif11}
+\bibitem[Gaunt({\natexlab{a}})]{rif11}
 M.~Gaunt.
 \newblock Deep dive into payment request api.
+\newblock {\natexlab{a}}.
 \newblock
   \url{https://developers.google.com/web/fundamentals/payments/merchant-guide/deep-dive-into-payment-request}.
+
+\bibitem[Gaunt({\natexlab{b}})]{rif25}
+M.~Gaunt.
+\newblock Service workers: an introduction.
+\newblock {\natexlab{b}}.
+\newblock
+  \url{https://developers.google.com/web/fundamentals/primers/service-workers/}.
 
 \bibitem[Inc.(2018)]{rif18}
 G.~Inc.
@@ -63,6 +98,12 @@ G.~Inc.
 \newblock 2018.
 \newblock
   \url{https://googlechrome.github.io/samples/paymentrequest/credit-cards/}.
+
+\bibitem[jakearchibald Github(2017)]{rif26}
+jakearchibald Github.
+\newblock Service worker explained.
+\newblock 2017.
+\newblock \url{https://github.com/w3c/ServiceWorker/blob/master/explainer.md}.
 
 \bibitem[Kitamura()]{rif14}
 E.~Kitamura.
@@ -91,12 +132,22 @@ Microsoft.
 \newblock
   \url{https://blogs.windows.com/msedgedev/2016/12/15/payment-request-api-edge/#UATsm3ejAT9oYtrj.97}.
 
+\bibitem[Partners()]{rif23}
+G.~Partners.
+\newblock Tecnologie web avanzate: Service worker.
+\newblock \url{https://support.google.com/partners/answer/7336697?hl=it}.
+
 \bibitem[Rosa(2014)]{rif8}
 A.~D. Rosa.
 \newblock An introduction to the geolocation api.
 \newblock 2014.
 \newblock
   \url{https://code.tutsplus.com/tutorials/an-introduction-to-the-geolocation-api--cms-20071}.
+
+\bibitem[University()]{rif21}
+A.~University.
+\newblock Service workers - practical guided introduction.
+\newblock \url{https://blog.angular-university.io/service-workers/}.
 
 \bibitem[University(2018)]{rif3}
 A.~University.
@@ -111,9 +162,21 @@ W3C.
 \newblock
   \url{https://w3c.github.io/payment-request/#privacy-and-security-considerations}.
 
-\bibitem[W3C(2018)]{rif5}
+\bibitem[W3C(2018{\natexlab{a}})]{rif29}
+W3C.
+\newblock Service workers nightly.
+\newblock 2018{\natexlab{a}}.
+\newblock \url{https://w3c.github.io/ServiceWorker/#security-considerations}.
+
+\bibitem[W3C(2018{\natexlab{b}})]{rif5}
 W3C.
 \newblock Geolocation api specification 2nd edition.
-\newblock 2018.
+\newblock 2018{\natexlab{b}}.
+
+\bibitem[Wordpress()]{rif24}
+S.~Wordpress.
+\newblock Guida completa ai service worker javascript.
+\newblock
+  \url{https://www.speedywordpress.it/guida-completa-ai-service-worker-javascript/}.
 
 \end{thebibliography}
