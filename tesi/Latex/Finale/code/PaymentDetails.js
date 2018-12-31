@@ -13,7 +13,7 @@ const details = {
     ],
     total: {
         label: "Total due",
-        /* The total is USD$65.00 here because we need to add shipping (below). The selected shipping costs USD $5.00.*/
-        amount: { currency: "USD", value: "65.00" },
+        /* Il totale è $60.00 perché dobbiamo aggiungere i costi di spedizione di $5.00.*/
+        amount: { currency: "USD", value: "60.00" },
     },
 };

@@ -1,5 +1,7 @@
 function showPosition(position){
-    var pos="Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
+    var latitude = position.coords.latitude;
+    var longitude = position.coords.longitude;
+    var pos= "Latitude: " + latitude + "<br>Longitude: " + longitude;
     document.getElementById("mydiv").innerHTML = pos;
 }
 function getLocation(){

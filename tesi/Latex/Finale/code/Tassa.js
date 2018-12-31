@@ -1,9 +1,9 @@
-// Credit card incurs a $3.00 processing fee.
+// La carta di credito comporta una commissione di $3.00 
 const creditCardFee = {
     label: "Credit card processing fee",
     amount: { currency: "USD", value: "3.00" },
 };
-// Modifiers apply when the user chooses to pay with a credit card.
+//  I modifiers si applicano quando l'utente sceglie di pagare con una carta di credito
 const modifiers = [
     {
         additionalDisplayItems: [creditCardFee],

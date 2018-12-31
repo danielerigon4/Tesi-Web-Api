@@ -1,4 +1,6 @@
-- Ordinare riferimenti bibliografici 
+- Abstract
+
+- Ordinare riferimenti bibliografici e sistemare la parte grafica dei riferimenti
  
 - Geolocation: 
 	pagina 13: conclusione 
@@ -24,3 +26,13 @@
 - Sistemare impaginazione
 
 - inserire caratteri speciali (accentati ecc) nel codice 
+
+
+CRAWLER:
+selenium
+puppetter
+
+treat model:
+- benevolo che fa cose buone
+- benevolo ma non so ci sono cose cattive
+- cattivo che fa cose cattive 

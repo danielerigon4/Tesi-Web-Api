@@ -7,7 +7,7 @@ self.addEventListener('install', function(event) {
 				'/sw-test/style.css',
 				'/sw-test/app.js',
 				'/sw-test/image-list.js',
-				// include other new resources for the new version...
+				...
 			]);
 		})
 	);

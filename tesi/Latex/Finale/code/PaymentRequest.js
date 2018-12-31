@@ -1,7 +1,6 @@
 async function doPaymentRequest() {
     try{
         const request = new PaymentRequest(methodData, details, options);
-        // See below for a detailed example of handling these events
         request.onshippingaddresschange = ev => ev.updateWith(details);
         request.onshippingoptionchange = ev => ev.updateWith(details);
         const response = await request.show();
@@ -20,7 +19,7 @@ async function validateResponse(response){
             await response.complete("fail");
         }
     } catch (err){
-            // Something went wrong
+            // Qualcosa è andato storto
             await response.complete("fail");
         }
 }

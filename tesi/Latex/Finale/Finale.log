@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.6.25)  28 SEP 2018 10:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.6.25)  26 DEC 2018 16:38
 entering extended mode
 **./Finale.tex
 (Finale.tex
@@ -1060,6 +1060,15 @@ File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
 sty"
 \CommentStream=\write4
  Excluding comment 'comment')
+("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\listing
+sutf8.sty"
+Package: listingsutf8 2016/05/16 v1.3 Allow UTF-8 in listings input (HO)
+
+("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\strin
+genc.sty"
+Package: stringenc 2016/05/16 v1.11 Convert strings between diff. encodings (HO
+)
+))
 \@indexfile=\write5
 \openout5 = `Finale.idx'.
 
@@ -1092,34 +1101,34 @@ LaTeX Warning: Unused global option(s):
 (Finale.aux)
 \openout1 = `Finale.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 102.
-LaTeX Font Info:    ... okay on input line 102.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 102.
-LaTeX Font Info:    ... okay on input line 102.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 102.
-LaTeX Font Info:    ... okay on input line 102.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 102.
-LaTeX Font Info:    ... okay on input line 102.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 102.
-LaTeX Font Info:    ... okay on input line 102.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 102.
-LaTeX Font Info:    ... okay on input line 102.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 102.
-LaTeX Font Info:    ... okay on input line 102.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 102.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 103.
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\t1lmr.fd"
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 
-Package layouts Warning: Layout scale set to 0.5 on input line 102.
+Package layouts Warning: Layout scale set to 0.5 on input line 103.
 
 \AtBeginShipoutBox=\box41
 
 Package hyperref Warning: Height of page (\stockheight) is invalid (0.0pt),
 (hyperref)                using 11in.
 
-Package hyperref Info: Link coloring OFF on input line 102.
+Package hyperref Info: Link coloring OFF on input line 103.
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\nameref
 .sty"
@@ -1131,9 +1140,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count187
 )
-LaTeX Info: Redefining \ref on input line 102.
-LaTeX Info: Redefining \pageref on input line 102.
-LaTeX Info: Redefining \nameref on input line 102.
+LaTeX Info: Redefining \ref on input line 103.
+LaTeX Info: Redefining \pageref on input line 103.
+LaTeX Info: Redefining \nameref on input line 103.
  (Finale.out) (Finale.out)
 \@outlinefile=\write6
 \openout6 = `Finale.out'.
@@ -1173,8 +1182,8 @@ LaTeX Info: Redefining \nameref on input line 102.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \it@ocap on input line 102.
-LaTeX Info: Redefining \it@ccap on input line 102.
+LaTeX Info: Redefining \it@ocap on input line 103.
+LaTeX Info: Redefining \it@ccap on input line 103.
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.
 mkii"
@@ -1211,7 +1220,7 @@ G,.JBIG2,.JB2,.eps]
 <CaFoscariLogo.png, id=194, 65.043pt x 65.846pt>
 File: CaFoscariLogo.png Graphic file (type png)
 <use CaFoscariLogo.png>
-Package pdftex.def Info: CaFoscariLogo.png  used on input line 105.
+Package pdftex.def Info: CaFoscariLogo.png  used on input line 106.
 (pdftex.def)             Requested size: 65.04283pt x 65.84581pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1254,7 +1263,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 \openout7 = `Finale.toc'.
 
  [4]
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 169.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 173.
 
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
@@ -1264,42 +1273,60 @@ File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 
 ]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 181.
- (code/GeolocationInNavigator.js
+nput line 185.
+
+("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\latin1.def"
+File: latin1.def 2015/03/17 v1.2c Input encoding file
+)
+("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\se-ut
+f8.def"
+File: se-utf8.def 2016/05/16 v1.11 stringenc: UTF-8
+)
+("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\se-is
+o-8859-1.def"
+File: se-iso-8859-1.def 2016/05/16 v1.11 stringenc: ISO-8859-1
+)
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 1.
-) (code/Sintassi.js)
-Underfull \vbox (badness 6157) has occurred while \output is active []
+
+("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\latin1.def"
+File: latin1.def 2015/03/17 v1.2c Input encoding file
+)
+Underfull \vbox (badness 4279) has occurred while \output is active []
 
  [7]
-(code/metodiGeolocation.js) [8]
-Underfull \hbox (badness 10000) in paragraph at lines 211--212
+("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\latin1.def"
+File: latin1.def 2015/03/17 v1.2c Input encoding file
+) [8]
+Underfull \hbox (badness 10000) in paragraph at lines 214--215
 
  []
 
-(code/EsempioCompleto.js)
-<./images/geo1.png, id=365, 381.67593pt x 475.02469pt>
+("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\latin1.def"
+File: latin1.def 2015/03/17 v1.2c Input encoding file
+)
+<./images/geo1.png, id=351, 381.67593pt x 475.02469pt>
 File: ./images/geo1.png Graphic file (type png)
 <use ./images/geo1.png>
-Package pdftex.def Info: ./images/geo1.png  used on input line 216.
+Package pdftex.def Info: ./images/geo1.png  used on input line 219.
 (pdftex.def)             Requested size: 227.62206pt x 283.29192pt.
-<./images/geo2.png, id=366, 618.05907pt x 494.59781pt>
+<./images/geo2.png, id=352, 618.05907pt x 494.59781pt>
 File: ./images/geo2.png Graphic file (type png)
 <use ./images/geo2.png>
-Package pdftex.def Info: ./images/geo2.png  used on input line 225.
+Package pdftex.def Info: ./images/geo2.png  used on input line 228.
 (pdftex.def)             Requested size: 182.09486pt x 145.7164pt.
-<./images/geo3.png, id=367, 384.6872pt x 467.49657pt>
+<./images/geo3.png, id=353, 384.6872pt x 467.49657pt>
 File: ./images/geo3.png Graphic file (type png)
 <use ./images/geo3.png>
-Package pdftex.def Info: ./images/geo3.png  used on input line 233.
+Package pdftex.def Info: ./images/geo3.png  used on input line 236.
 (pdftex.def)             Requested size: 182.09486pt x 221.2999pt.
-<./images/geo4.png, id=368, 381.67593pt x 459.21562pt>
+<./images/geo4.png, id=354, 381.67593pt x 459.21562pt>
 File: ./images/geo4.png Graphic file (type png)
 <use ./images/geo4.png>
-Package pdftex.def Info: ./images/geo4.png  used on input line 242.
+Package pdftex.def Info: ./images/geo4.png  used on input line 245.
 (pdftex.def)             Requested size: 182.09486pt x 219.08965pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 213--247
+Underfull \hbox (badness 10000) in paragraph at lines 216--250
 
  []
 
@@ -1311,64 +1338,67 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [10 <./images/geo2.png> <./images/geo3.png>]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 250.
+(Font)              <9> on input line 253.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 250.
-<./images/pos1.png, id=390, 447.92343pt x 169.38281pt>
+(Font)              <5> on input line 253.
+<./images/pos1.png, id=376, 447.92343pt x 169.38281pt>
 File: ./images/pos1.png Graphic file (type png)
 <use ./images/pos1.png>
-Package pdftex.def Info: ./images/pos1.png  used on input line 255.
+Package pdftex.def Info: ./images/pos1.png  used on input line 258.
 (pdftex.def)             Requested size: 227.62206pt x 86.07393pt.
- [11 <./images/geo4.png> <./images/pos1.png>] (code/script.js)
-Underfull \hbox (badness 10000) in paragraph at lines 263--265
+ [11 <./images/geo4.png> <./images/pos1.png>] ("C:\Users\Daniele\AppData\Local\
+Programs\MiKTeX 2.9\tex\latex\base\latin1.def"
+File: latin1.def 2015/03/17 v1.2c Input encoding file
+)
+Underfull \hbox (badness 10000) in paragraph at lines 266--268
 
  []
 
-<./images/compatibility.png, id=402, 729.47531pt x 300.3722pt>
+<./images/compatibility.png, id=388, 729.47531pt x 300.3722pt>
 File: ./images/compatibility.png Graphic file (type png)
 <use ./images/compatibility.png>
-Package pdftex.def Info: ./images/compatibility.png  used on input line 269.
+Package pdftex.def Info: ./images/compatibility.png  used on input line 272.
 (pdftex.def)             Requested size: 455.24411pt x 187.45256pt.
 [12 <./images/compatibility.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\begingroup' on input line 282.
+(hyperref)                removing `\begingroup' on input line 285.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<let>-command' on input line 282.
+(hyperref)                removing `\<let>-command' on input line 285.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\NAT@ctype' on input line 282.
+(hyperref)                removing `\NAT@ctype' on input line 285.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\z@' on input line 282.
+(hyperref)                removing `\z@' on input line 285.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\let' on input line 282.
+(hyperref)                removing `\let' on input line 285.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\let' on input line 282.
+(hyperref)                removing `\let' on input line 285.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@ifnextchar' on input line 282.
+(hyperref)                removing `\@ifnextchar' on input line 285.
 
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 284.
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 287.
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\omslmr.fd"
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 284.
-<./images/SchemaPayment.png, id=419, 639.89063pt x 456.95718pt>
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 287.
+<./images/SchemaPayment.png, id=407, 639.89063pt x 456.95718pt>
 File: ./images/SchemaPayment.png Graphic file (type png)
 <use ./images/SchemaPayment.png>
-Package pdftex.def Info: ./images/SchemaPayment.png  used on input line 302.
+Package pdftex.def Info: ./images/SchemaPayment.png  used on input line 305.
 (pdftex.def)             Requested size: 455.24411pt x 325.10426pt.
 
 [13]
@@ -1377,78 +1407,96 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [14 <./images/SchemaPayment.png>] [15]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\begingroup' on input line 357.
+(hyperref)                removing `\begingroup' on input line 360.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<let>-command' on input line 357.
+(hyperref)                removing `\<let>-command' on input line 360.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\NAT@ctype' on input line 357.
+(hyperref)                removing `\NAT@ctype' on input line 360.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\z@' on input line 357.
+(hyperref)                removing `\z@' on input line 360.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\let' on input line 357.
+(hyperref)                removing `\let' on input line 360.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\let' on input line 357.
+(hyperref)                removing `\let' on input line 360.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@ifnextchar' on input line 357.
+(hyperref)                removing `\@ifnextchar' on input line 360.
 
 
 Underfull \vbox (badness 1546) has occurred while \output is active []
 
  [16]
-(code/PaymentMethodData.js) (code/PaymentDetails.js)
+("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\latin1.def"
+File: latin1.def 2015/03/17 v1.2c Input encoding file
+) ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\latin1.de
+f"
+File: latin1.def 2015/03/17 v1.2c Input encoding file
+)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [17]
-(code/OpzioniSpedizione.js) (code/Tassa.js)
+("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\latin1.def"
+File: latin1.def 2015/03/17 v1.2c Input encoding file
+) ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\latin1.de
+f"
+File: latin1.def 2015/03/17 v1.2c Input encoding file
+)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [18]
-(code/PaymentOptions.js) (code/PaymentRequest.js)
+("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\latin1.def"
+File: latin1.def 2015/03/17 v1.2c Input encoding file
+) ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\latin1.de
+f"
+File: latin1.def 2015/03/17 v1.2c Input encoding file
+)
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\begingroup' on input line 397.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<let>-command' on input line 397.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\NAT@ctype' on input line 397.
+(hyperref)                removing `\begingroup' on input line 400.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\z@' on input line 397.
+(hyperref)                removing `\<let>-command' on input line 400.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\let' on input line 397.
+(hyperref)                removing `\NAT@ctype' on input line 400.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\let' on input line 397.
+(hyperref)                removing `\z@' on input line 400.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@ifnextchar' on input line 397.
+(hyperref)                removing `\let' on input line 400.
 
-[19] (code/Costruttore.js)
-<./images/wallet1.png, id=575, 225.84375pt x 221.32687pt>
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\let' on input line 400.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\@ifnextchar' on input line 400.
+
+[19]
+("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\latin1.def"
+File: latin1.def 2015/03/17 v1.2c Input encoding file
+)
+<./images/wallet1.png, id=562, 225.84375pt x 221.32687pt>
 File: ./images/wallet1.png Graphic file (type png)
 <use ./images/wallet1.png>
-Package pdftex.def Info: ./images/wallet1.png  used on input line 412.
+Package pdftex.def Info: ./images/wallet1.png  used on input line 415.
 (pdftex.def)             Requested size: 227.62206pt x 223.08243pt.
 
 
@@ -1458,88 +1506,90 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [20]
-(code/PaymentShow.js)
+("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\latin1.def"
+File: latin1.def 2015/03/17 v1.2c Input encoding file
+)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [21 <./images/wallet1.png>]
-<./images/wallet2.png, id=631, 184.5294pt x 180.675pt>
+<./images/wallet2.png, id=618, 184.5294pt x 180.675pt>
 File: ./images/wallet2.png Graphic file (type png)
 <use ./images/wallet2.png>
-Package pdftex.def Info: ./images/wallet2.png  used on input line 425.
+Package pdftex.def Info: ./images/wallet2.png  used on input line 428.
 (pdftex.def)             Requested size: 227.62206pt x 222.8823pt.
-<./images/wallet3.png, id=632, 184.5294pt x 180.675pt>
+<./images/wallet3.png, id=619, 184.5294pt x 180.675pt>
 File: ./images/wallet3.png Graphic file (type png)
 <use ./images/wallet3.png>
-Package pdftex.def Info: ./images/wallet3.png  used on input line 431.
+Package pdftex.def Info: ./images/wallet3.png  used on input line 434.
 (pdftex.def)             Requested size: 227.62206pt x 222.8823pt.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\begingroup' on input line 437.
+(hyperref)                removing `\begingroup' on input line 440.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<let>-command' on input line 437.
+(hyperref)                removing `\<let>-command' on input line 440.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\NAT@ctype' on input line 437.
+(hyperref)                removing `\NAT@ctype' on input line 440.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\z@' on input line 437.
+(hyperref)                removing `\z@' on input line 440.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\let' on input line 437.
+(hyperref)                removing `\let' on input line 440.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\let' on input line 437.
+(hyperref)                removing `\let' on input line 440.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@ifnextchar' on input line 437.
+(hyperref)                removing `\@ifnextchar' on input line 440.
 
 [22 <./images/wallet2.png> <./images/wallet3.png>]
-<./images/Buy.png, id=640, 682.80093pt x 342.5297pt>
+<./images/Buy.png, id=627, 682.80093pt x 342.5297pt>
 File: ./images/Buy.png Graphic file (type png)
 <use ./images/Buy.png>
-Package pdftex.def Info: ./images/Buy.png  used on input line 447.
+Package pdftex.def Info: ./images/Buy.png  used on input line 449.
 (pdftex.def)             Requested size: 227.62206pt x 114.18498pt.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\begingroup' on input line 462.
+(hyperref)                removing `\begingroup' on input line 464.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<let>-command' on input line 462.
+(hyperref)                removing `\<let>-command' on input line 464.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\NAT@ctype' on input line 462.
+(hyperref)                removing `\NAT@ctype' on input line 464.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\z@' on input line 462.
+(hyperref)                removing `\z@' on input line 464.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\let' on input line 462.
+(hyperref)                removing `\let' on input line 464.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\let' on input line 462.
+(hyperref)                removing `\let' on input line 464.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@ifnextchar' on input line 462.
+(hyperref)                removing `\@ifnextchar' on input line 464.
 
-<./images/Chrome1.png, id=642, 385.44pt x 338.76563pt>
+<./images/Chrome1.png, id=629, 385.44pt x 338.76563pt>
 File: ./images/Chrome1.png Graphic file (type png)
 <use ./images/Chrome1.png>
-Package pdftex.def Info: ./images/Chrome1.png  used on input line 473.
+Package pdftex.def Info: ./images/Chrome1.png  used on input line 475.
 (pdftex.def)             Requested size: 227.62206pt x 200.05606pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1548,122 +1598,35 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 Underfull \vbox (badness 3088) has occurred while \output is active []
 
  [23 <./images/Buy.png>]
-<./images/Chrome2.png, id=648, 386.94562pt x 338.01282pt>
+<./images/Chrome2.png, id=635, 386.94562pt x 338.01282pt>
 File: ./images/Chrome2.png Graphic file (type png)
 <use ./images/Chrome2.png>
-Package pdftex.def Info: ./images/Chrome2.png  used on input line 482.
+Package pdftex.def Info: ./images/Chrome2.png  used on input line 484.
 (pdftex.def)             Requested size: 227.62206pt x 198.83784pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [24 <./images/Chrome1.png> <./images/Chrome2.png>]
-<./images/Informazioni.png, id=655, 706.89093pt x 357.58594pt>
+<./images/Informazioni.png, id=642, 706.89093pt x 357.58594pt>
 File: ./images/Informazioni.png Graphic file (type png)
 <use ./images/Informazioni.png>
-Package pdftex.def Info: ./images/Informazioni.png  used on input line 491.
+Package pdftex.def Info: ./images/Informazioni.png  used on input line 493.
 (pdftex.def)             Requested size: 455.24411pt x 230.28922pt.
- [25 <./images/Informazioni.png>]
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [26]
-<./images/Compatibilita1.png, id=666, 971.12813pt x 143.03438pt>
+ [25 <./images/Informazioni.png>]
+<./images/Compatibilita1.png, id=649, 971.12813pt x 143.03438pt>
 File: ./images/Compatibilita1.png Graphic file (type png)
 <use ./images/Compatibilita1.png>
 Package pdftex.def Info: ./images/Compatibilita1.png  used on input line 506.
 (pdftex.def)             Requested size: 455.24411pt x 67.04936pt.
-<./images/Compatibilita2.png, id=667, 971.12813pt x 118.94438pt>
+<./images/Compatibilita2.png, id=650, 971.12813pt x 118.94438pt>
 File: ./images/Compatibilita2.png Graphic file (type png)
 <use ./images/Compatibilita2.png>
 Package pdftex.def Info: ./images/Compatibilita2.png  used on input line 513.
 (pdftex.def)             Requested size: 455.24411pt x 55.75684pt.
-
-[27 <./images/Compatibilita1.png> <./images/Compatibilita2.png>] [28
-
-]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\begingroup' on input line 522.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<let>-command' on input line 522.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\NAT@ctype' on input line 522.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\z@' on input line 522.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\let' on input line 522.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\let' on input line 522.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@ifnextchar' on input line 522.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\begingroup' on input line 522.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<let>-command' on input line 522.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\NAT@ctype' on input line 522.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\z@' on input line 522.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\let' on input line 522.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\let' on input line 522.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@ifnextchar' on input line 522.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\begingroup' on input line 522.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<let>-command' on input line 522.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\NAT@ctype' on input line 522.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\z@' on input line 522.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\let' on input line 522.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\let' on input line 522.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@ifnextchar' on input line 522.
-
+ [26 <./images/Compatibilita1.png> <./images/Compatibilita2.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\begingroup' on input line 528.
@@ -1692,7 +1655,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\@ifnextchar' on input line 528.
 
-<./images/SwLifecycle.png, id=688, 581.17125pt x 870.25125pt>
+<./images/SwLifecycle.png, id=667, 581.17125pt x 870.25125pt>
 File: ./images/SwLifecycle.png Graphic file (type png)
 <use ./images/SwLifecycle.png>
 Package pdftex.def Info: ./images/SwLifecycle.png  used on input line 547.
@@ -1700,101 +1663,30 @@ Package pdftex.def Info: ./images/SwLifecycle.png  used on input line 547.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[29]
+[27
 
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\begingroup' on input line 563.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<let>-command' on input line 563.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\NAT@ctype' on input line 563.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\z@' on input line 563.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\let' on input line 563.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\let' on input line 563.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@ifnextchar' on input line 563.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\begingroup' on input line 563.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<let>-command' on input line 563.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\NAT@ctype' on input line 563.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\z@' on input line 563.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\let' on input line 563.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\let' on input line 563.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@ifnextchar' on input line 563.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\begingroup' on input line 563.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<let>-command' on input line 563.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\NAT@ctype' on input line 563.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\z@' on input line 563.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\let' on input line 563.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\let' on input line 563.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@ifnextchar' on input line 563.
-
-[30 <./images/SwLifecycle.png>] (code/Registrazione.js)
+] [28 <./images/SwLifecycle.png>]
+("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\latin1.def"
+File: latin1.def 2015/03/17 v1.2c Input encoding file
+)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [31]
-(code/Registrazione2.js)
-Underfull \vbox (badness 4024) has occurred while \output is active []
+ [29]
+("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\latin1.def"
+File: latin1.def 2015/03/17 v1.2c Input encoding file
+)
+Underfull \vbox (badness 6188) has occurred while \output is active []
 
- [32]
-(code/Installazione.js) [33] (code/Aggiornamento.js) (code/Disinstallare.js)
-[34] Excluding 'comment' comment. [35]
+ [30]
+("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\latin1.def"
+File: latin1.def 2015/03/17 v1.2c Input encoding file
+) [31]
+("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\latin1.def"
+File: latin1.def 2015/03/17 v1.2c Input encoding file
+) ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\latin1.de
+f"
+File: latin1.def 2015/03/17 v1.2c Input encoding file
+) [32] Excluding 'comment' comment. [33]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\begingroup' on input line 714.
@@ -1823,56 +1715,67 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\@ifnextchar' on input line 714.
 
-[36] (code/index.html) (code/scriptSW.js)
+[34]
+("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\latin1.def"
+File: latin1.def 2015/03/17 v1.2c Input encoding file
+) ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\latin1.de
+f"
+File: latin1.def 2015/03/17 v1.2c Input encoding file
+)
 Underfull \vbox (badness 4608) has occurred while \output is active []
 
- [37]
-(code/hack.js) (code/install.js)
-<./images/Intercepted.png, id=851, 328.97906pt x 197.23688pt>
+ [35]
+("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\latin1.def"
+File: latin1.def 2015/03/17 v1.2c Input encoding file
+) ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\latin1.de
+f"
+File: latin1.def 2015/03/17 v1.2c Input encoding file
+)
+<./images/Intercepted.png, id=835, 328.97906pt x 197.23688pt>
 File: ./images/Intercepted.png Graphic file (type png)
 <use ./images/Intercepted.png>
 Package pdftex.def Info: ./images/Intercepted.png  used on input line 743.
 (pdftex.def)             Requested size: 318.66948pt x 191.06068pt.
- [38 <./images/Intercepted.png>]
-<./images/CompWeb.png, id=867, 721.19438pt x 100.12407pt>
+ [36 <./images/Intercepted.png>]
+<./images/CompWeb.png, id=851, 721.19438pt x 100.12407pt>
 File: ./images/CompWeb.png Graphic file (type png)
 <use ./images/CompWeb.png>
 Package pdftex.def Info: ./images/CompWeb.png  used on input line 753.
 (pdftex.def)             Requested size: 455.24411pt x 63.20222pt.
-<./images/CompMobile.png, id=868, 721.94719pt x 130.23656pt>
+<./images/CompMobile.png, id=852, 721.94719pt x 130.23656pt>
 File: ./images/CompMobile.png Graphic file (type png)
 <use ./images/CompMobile.png>
 Package pdftex.def Info: ./images/CompMobile.png  used on input line 760.
 (pdftex.def)             Requested size: 455.24411pt x 82.12497pt.
- [39 <./images/CompWeb.png> <./images/CompMobile.png>] [40
+ [37 <./images/CompWeb.png> <./images/CompMobile.png>] [38
 
-] [41] [42
+] [39] [40
 
 ] (Finale.lof)
 \tf@lof=\write8
 \openout8 = `Finale.lof'.
 
- [43]
-[44
+ [41] [42
 
-] (Finale.bbl [45]) [46]
+] (Finale.bbl [43]) [44]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 778.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 778.
- (Finale.aux)
+
+(Finale.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 778.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 778.
 Package rerunfilecheck Info: File `Finale.out' has not changed.
-(rerunfilecheck)             Checksum: E2080F983CF5DA1697FDBF0F7DF09A57;3438.
+(rerunfilecheck)             Checksum: E37C4E0D8B5A5B7FDB066045B0D039C1;3402.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 778.
  ) 
 Here is how much of TeX's memory you used:
- 20461 strings out of 493305
- 367469 string characters out of 3128932
- 665510 words of memory out of 3000000
- 23084 multiletter control sequences out of 15000+200000
+ 20654 strings out of 493305
+ 372477 string characters out of 3128932
+ 675030 words of memory out of 3000000
+ 23268 multiletter control sequences out of 15000+200000
  72619 words of font info for 50 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,8n,54p,1201b,1139s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 55i,8n,54p,1201b,1568s stack positions out of 5000i,500n,10000p,200000b,50000s
 pdfTeX warning (dest): name{Hfootnote.3} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -1897,9 +1800,9 @@ ams/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Users/Daniele/AppData/Local
 /Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Daniele/A
 ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtk10.pfb><C:/Users/Dan
 iele/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtt10.pfb>
-Output written on Finale.pdf (46 pages, 883724 bytes).
+Output written on Finale.pdf (44 pages, 886693 bytes).
 PDF statistics:
- 1102 PDF objects out of 1200 (max. 8388607)
- 476 named destinations out of 1000 (max. 500000)
+ 1086 PDF objects out of 1200 (max. 8388607)
+ 473 named destinations out of 1000 (max. 500000)
  494 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -25,11 +25,11 @@
 \BOOKMARK [3][-]{subsubsection.3.5.2}{Mobile}{subsection.3.5}% 25
 \BOOKMARK [2][-]{subsection.3.6}{Conclusioni}{section.3}% 26
 \BOOKMARK [1][-]{section.4}{Service Worker}{}% 27
-\BOOKMARK [2][-]{subsection.4.1}{Overview rif23 rif24 rif25}{section.4}% 28
+\BOOKMARK [2][-]{subsection.4.1}{Overview}{section.4}% 28
 \BOOKMARK [3][-]{subsubsection.4.1.1}{Impostare i Service Worker rif22}{subsection.4.1}% 29
 \BOOKMARK [3][-]{subsubsection.4.1.2}{Architettura di base}{subsection.4.1}% 30
 \BOOKMARK [3][-]{subsubsection.4.1.3}{Casi d'uso}{subsection.4.1}% 31
-\BOOKMARK [2][-]{subsection.4.2}{Ciclo di vita di un Service Worker rif20 rif21 rif26}{section.4}% 32
+\BOOKMARK [2][-]{subsection.4.2}{Ciclo di vita di un Service Worker}{section.4}% 32
 \BOOKMARK [3][-]{subsubsection.4.2.1}{Registrazione}{subsection.4.2}% 33
 \BOOKMARK [3][-]{subsubsection.4.2.2}{Installazione}{subsection.4.2}% 34
 \BOOKMARK [3][-]{subsubsection.4.2.3}{Attivazione}{subsection.4.2}% 35
