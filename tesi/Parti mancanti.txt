@@ -1,9 +1,7 @@
 - Abstract
 
 - Ordinare riferimenti bibliografici e sistemare la parte grafica dei riferimenti
- 
-- Geolocation: 
-	pagina 13: conclusione 
+
 		
 - PaymentRequest:
 	pagina 24: ci si puo difendere?
@@ -25,12 +23,13 @@
 
 - Sistemare impaginazione
 
-- inserire caratteri speciali (accentati ecc) nel codice 
-
-
 CRAWLER:
-selenium
-puppetter
+selenium 
+https://www.youtube.com/watch?v=zjo9yFHoUl8
+https://www.makeuseof.com/tag/make-web-crawler-selenium/
+https://medium.com/the-andela-way/introduction-to-web-scraping-using-selenium-7ec377a8cf72
+
+puppetter https://antoinevastel.com/crawler/2018/09/17/simple-crawler-puppeteer.html
 
 treat model:
 - benevolo che fa cose buone
