@@ -1,47 +1,44 @@
-\BOOKMARK [1][-]{section.1}{Introduzione}{}% 1
-\BOOKMARK [1][-]{section.2}{Geolocation}{}% 2
-\BOOKMARK [2][-]{subsection.2.1}{Overview}{section.2}% 3
-\BOOKMARK [2][-]{subsection.2.2}{Specifiche}{section.2}% 4
-\BOOKMARK [3][-]{subsubsection.2.2.1}{Oggetto della geolocalizzazione}{subsection.2.2}% 5
-\BOOKMARK [3][-]{subsubsection.2.2.2}{Metodi}{subsection.2.2}% 6
-\BOOKMARK [2][-]{subsection.2.3}{Problemi sicurezza/privacy}{section.2}% 7
-\BOOKMARK [2][-]{subsection.2.4}{Supporto compatibilit\340 web}{section.2}% 8
-\BOOKMARK [3][-]{subsubsection.2.4.1}{Desktop e mobile}{subsection.2.4}% 9
-\BOOKMARK [2][-]{subsection.2.5}{Conclusioni}{section.2}% 10
-\BOOKMARK [1][-]{section.3}{PaymentRequest API}{}% 11
-\BOOKMARK [2][-]{subsection.3.1}{Overview Payment Request}{section.3}% 12
-\BOOKMARK [3][-]{subsubsection.3.1.1}{Vantaggi rif13}{subsection.3.1}% 13
-\BOOKMARK [3][-]{subsubsection.3.1.2}{Come funziona}{subsection.3.1}% 14
-\BOOKMARK [3][-]{subsubsection.3.1.3}{Uso API}{subsection.3.1}% 15
-\BOOKMARK [2][-]{subsection.3.2}{Specifiche}{section.3}% 16
-\BOOKMARK [3][-]{subsubsection.3.2.1}{Metodi rif1}{subsection.3.2}% 17
-\BOOKMARK [2][-]{subsection.3.3}{Implementazione PaymentRequest API su una pagina d'esempio rif15}{section.3}% 18
-\BOOKMARK [3][-]{subsubsection.3.3.1}{Costruttore}{subsection.3.3}% 19
-\BOOKMARK [3][-]{subsubsection.3.3.2}{Visualizzazione dell'interfaccia utente, elaborazione del pagamento e visualizzazione dei risultati}{subsection.3.3}% 20
-\BOOKMARK [2][-]{subsection.3.4}{Rischi e sicurezza rif19}{section.3}% 21
-\BOOKMARK [3][-]{subsubsection.3.4.1}{Esempio di un possibile attacco rif18}{subsection.3.4}% 22
-\BOOKMARK [2][-]{subsection.3.5}{Compatibilit\340 web}{section.3}% 23
-\BOOKMARK [3][-]{subsubsection.3.5.1}{Desktop}{subsection.3.5}% 24
-\BOOKMARK [3][-]{subsubsection.3.5.2}{Mobile}{subsection.3.5}% 25
-\BOOKMARK [2][-]{subsection.3.6}{Conclusioni}{section.3}% 26
-\BOOKMARK [1][-]{section.4}{Service Worker}{}% 27
-\BOOKMARK [2][-]{subsection.4.1}{Overview}{section.4}% 28
-\BOOKMARK [3][-]{subsubsection.4.1.1}{Impostare i Service Worker rif22}{subsection.4.1}% 29
-\BOOKMARK [3][-]{subsubsection.4.1.2}{Architettura di base}{subsection.4.1}% 30
-\BOOKMARK [3][-]{subsubsection.4.1.3}{Casi d'uso}{subsection.4.1}% 31
-\BOOKMARK [2][-]{subsection.4.2}{Ciclo di vita di un Service Worker}{section.4}% 32
-\BOOKMARK [3][-]{subsubsection.4.2.1}{Registrazione}{subsection.4.2}% 33
-\BOOKMARK [3][-]{subsubsection.4.2.2}{Installazione}{subsection.4.2}% 34
-\BOOKMARK [3][-]{subsubsection.4.2.3}{Attivazione}{subsection.4.2}% 35
-\BOOKMARK [3][-]{subsubsection.4.2.4}{Fetch}{subsection.4.2}% 36
-\BOOKMARK [3][-]{subsubsection.4.2.5}{Aggiornare il Service Worker}{subsection.4.2}% 37
-\BOOKMARK [3][-]{subsubsection.4.2.6}{Disintallare il Service Worker}{subsection.4.2}% 38
-\BOOKMARK [2][-]{subsection.4.3}{Caching}{section.4}% 39
-\BOOKMARK [2][-]{subsection.4.4}{Rischi e sicurezza rif29}{section.4}% 40
-\BOOKMARK [2][-]{subsection.4.5}{Esempio di attacco}{section.4}% 41
-\BOOKMARK [2][-]{subsection.4.6}{Compatibilit\340 web}{section.4}% 42
-\BOOKMARK [3][-]{subsubsection.4.6.1}{Desktop}{subsection.4.6}% 43
-\BOOKMARK [3][-]{subsubsection.4.6.2}{Mobile}{subsection.4.6}% 44
-\BOOKMARK [2][-]{subsection.4.7}{Conclusioni}{section.4}% 45
-\BOOKMARK [1][-]{section.5}{Conclusioni}{}% 46
-\BOOKMARK [1][-]{section.6}{Sitografia}{}% 47
+\BOOKMARK [0][-]{chapter.1}{Introduzione}{}% 1
+\BOOKMARK [0][-]{chapter.2}{Geolocation}{}% 2
+\BOOKMARK [1][-]{section.2.1}{Overview}{chapter.2}% 3
+\BOOKMARK [1][-]{section.2.2}{Specifiche}{chapter.2}% 4
+\BOOKMARK [2][-]{subsection.2.2.1}{Oggetto della geolocalizzazione}{section.2.2}% 5
+\BOOKMARK [2][-]{subsection.2.2.2}{Metodi}{section.2.2}% 6
+\BOOKMARK [1][-]{section.2.3}{Rischi e sicurezza}{chapter.2}% 7
+\BOOKMARK [1][-]{section.2.4}{Compatibilit\340 web}{chapter.2}% 8
+\BOOKMARK [2][-]{subsection.2.4.1}{Desktop e mobile}{section.2.4}% 9
+\BOOKMARK [1][-]{section.2.5}{Conclusioni}{chapter.2}% 10
+\BOOKMARK [0][-]{chapter.3}{PaymentRequest API}{}% 11
+\BOOKMARK [1][-]{section.3.1}{Overview}{chapter.3}% 12
+\BOOKMARK [2][-]{subsection.3.1.1}{Vantaggi}{section.3.1}% 13
+\BOOKMARK [2][-]{subsection.3.1.2}{Come funziona}{section.3.1}% 14
+\BOOKMARK [2][-]{subsection.3.1.3}{Uso API}{section.3.1}% 15
+\BOOKMARK [1][-]{section.3.2}{Specifiche}{chapter.3}% 16
+\BOOKMARK [2][-]{subsection.3.2.1}{Metodi}{section.3.2}% 17
+\BOOKMARK [2][-]{subsection.3.2.2}{Implementazione su pagina d'esempio rif15}{section.3.2}% 18
+\BOOKMARK [1][-]{section.3.3}{Rischi e sicurezza}{chapter.3}% 19
+\BOOKMARK [2][-]{subsection.3.3.1}{Esempio di un possibile attacco}{section.3.3}% 20
+\BOOKMARK [1][-]{section.3.4}{Compatibilit\340 web}{chapter.3}% 21
+\BOOKMARK [2][-]{subsection.3.4.1}{Desktop}{section.3.4}% 22
+\BOOKMARK [2][-]{subsection.3.4.2}{Mobile}{section.3.4}% 23
+\BOOKMARK [1][-]{section.3.5}{Conclusioni}{chapter.3}% 24
+\BOOKMARK [0][-]{chapter.4}{Service Worker}{}% 25
+\BOOKMARK [1][-]{section.4.1}{Overview}{chapter.4}% 26
+\BOOKMARK [2][-]{subsection.4.1.1}{Impostare i Service Worker}{section.4.1}% 27
+\BOOKMARK [2][-]{subsection.4.1.2}{Architettura di base}{section.4.1}% 28
+\BOOKMARK [2][-]{subsection.4.1.3}{Casi d'uso}{section.4.1}% 29
+\BOOKMARK [1][-]{section.4.2}{Ciclo di vita di un Service Worker}{chapter.4}% 30
+\BOOKMARK [2][-]{subsection.4.2.1}{Registrazione}{section.4.2}% 31
+\BOOKMARK [2][-]{subsection.4.2.2}{Installazione}{section.4.2}% 32
+\BOOKMARK [2][-]{subsection.4.2.3}{Attivazione}{section.4.2}% 33
+\BOOKMARK [2][-]{subsection.4.2.4}{Fetch}{section.4.2}% 34
+\BOOKMARK [2][-]{subsection.4.2.5}{Aggiornare il Service Worker}{section.4.2}% 35
+\BOOKMARK [2][-]{subsection.4.2.6}{Disintallare il Service Worker}{section.4.2}% 36
+\BOOKMARK [1][-]{section.4.3}{Caching}{chapter.4}% 37
+\BOOKMARK [1][-]{section.4.4}{Rischi e sicurezza}{chapter.4}% 38
+\BOOKMARK [2][-]{subsection.4.4.1}{Esempio di attacco}{section.4.4}% 39
+\BOOKMARK [1][-]{section.4.5}{Compatibilit\340 web}{chapter.4}% 40
+\BOOKMARK [2][-]{subsection.4.5.1}{Desktop}{section.4.5}% 41
+\BOOKMARK [2][-]{subsection.4.5.2}{Mobile}{section.4.5}% 42
+\BOOKMARK [1][-]{section.4.6}{Conclusioni}{chapter.4}% 43
+\BOOKMARK [0][-]{chapter.5}{Conclusioni}{}% 44

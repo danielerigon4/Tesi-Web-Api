@@ -1,27 +1,8 @@
-- Abstract
+o pagina 44: SW aumentano sicurezza?
 
-- Ordinare riferimenti bibliografici e sistemare la parte grafica dei riferimenti
+- bibliografia alla fine
 
-		
-- PaymentRequest:
-	pagina 24: ci si puo difendere?
-	pagina 27: Conclusione 
-	
-- Service Worker: 
-	pagina 36: sistemare parte rischi e sicurezza
-	pagina 39: sistemare ultima parte spiegazione 
-	pagina 40: SW fanno solo caching o aumentano anche sicurezza? Non ho trovato niente
-	pagina 43: conclusione 
-	
-- Esempio pratico con crawler (come si fa?)
-
-- Conclusioni finali 
-
-- Dedica (?)
-
-- Ringraziamenti
-
-- Sistemare impaginazione
+- Crawler
 
 CRAWLER:
 selenium 
@@ -31,7 +12,3 @@ https://medium.com/the-andela-way/introduction-to-web-scraping-using-selenium-7e
 
 puppetter https://antoinevastel.com/crawler/2018/09/17/simple-crawler-puppeteer.html
 
-treat model:
-- benevolo che fa cose buone
-- benevolo ma non so ci sono cose cattive
-- cattivo che fa cose cattive 
