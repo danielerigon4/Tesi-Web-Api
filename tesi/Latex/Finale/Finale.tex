@@ -7,8 +7,6 @@
 \usepackage{lmodern}
 \usepackage{hyperref}
 \usepackage[a4paper,top=3cm,bottom=3cm,left=2.5cm,right=2.5cm]{geometry}
-\usepackage[square,numbers]{natbib}
-\bibliographystyle{abbrvnat}
 \usepackage[italian]{babel}
 \usepackage[usenames]{color} 
 \usepackage{graphicx}
@@ -26,6 +24,9 @@
 \usepackage{emptypage}
 \usepackage[Conny]{fncychap}
 \usepackage{minitoc}
+\usepackage{natbib}
+\bibliographystyle{unsrt} 
+
 
 \lstset{ 
 	backgroundcolor=\color{white}, 
@@ -143,7 +144,7 @@
 	\end{flushright}
 	\cleardoublepage
 	\begin{center}
-		\textbf{Abstract}
+		\textbf{ABSTRACT}
 	\end{center}
 	\begin{flushleft}
 		Nel corso degli ultimi decenni la tecnologia è diventata sempre più presente nella quotidinità di ogni individuo, che riguardi lavoro, svago o vita quotidiana, e in particolar modo Internet.
@@ -160,7 +161,7 @@
 	\cleardoublepage
 	\dominitoc
 	\tableofcontents
-
+	
 	\cleardoublepage
 	\chapter{Introduzione}
 	
@@ -172,7 +173,7 @@
 	\\
 	È stata condotta una ricerca individuale, supervisionata e corretta dal mio relatore, riguardo i problemi di sicurezza di ognuna delle tre APIs studiate.
 	\\
-	La tesi è articolata in tre capitoli: nel primo viene spiegata la \textit{Geolocation API} \footnote{Mozilla Developer, \url{https://developer.mozilla.org/en-US/docs/Web/API/Geolocation}} la quale, utilizzata nei siti web o nelle web app, serve a tracciare la posizione dell'utente, con possibili rischi di problemi di privacy poichè un Web attacker potrebbe tracciare la posizione dell'utente e rubarla; nel secondo mi sono occupato della \textit{PaymentRequest API} \footnote{Mozilla Developer, \url{https://developer.mozilla.org/en-US/docs/Web/API/Payment_Request_API}} la quale salva le informazioni dell'utente, sia personali che di pagamento, cosi da poterle riutilizzare automaticamente senza doverle reinserirle ogni qualvolta se ne ha bisogno, mostrando però che queste possono anche essere intercettate e rubate da un Web attacker; nella terza ed ultima parte, che è anche la più complessa, l'attenzione verte sui \textit{Service Worker} i quali vengono usati principalmente per il caching in modo da migliorare l'esperienza utente, mostrando però anche come questi possano essere utilizzati in modo malevolo per rubare informazioni dell'utente intercettando le richieste di rete.
+	La tesi è articolata in tre capitoli: nel primo viene spiegata la \textit{Geolocation API} \cite{rif2} la quale, utilizzata nei siti web o nelle web app, serve a tracciare la posizione dell'utente, con possibili rischi di problemi di privacy poichè un Web attacker potrebbe tracciare la posizione dell'utente e rubarla; nel secondo mi sono occupato della \textit{PaymentRequest API} \cite{rif1} la quale salva le informazioni dell'utente, sia personali che di pagamento, cosi da poterle riutilizzare automaticamente senza doverle reinserirle ogni qualvolta se ne ha bisogno, mostrando però che queste possono anche essere intercettate e rubate da un Web attacker; nella terza ed ultima parte, che è anche la più complessa, l'attenzione verte sui \textit{Service Worker} i quali vengono usati principalmente per il caching in modo da migliorare l'esperienza utente, mostrando però anche come questi possano essere utilizzati in modo malevolo per rubare informazioni dell'utente intercettando le richieste di rete.
 	\\
 	In ognuna di queste sezioni viene fatta una panoramica dell'API considerata, si entra nel dettaglio a spiegare le specifiche e i metodi principali e in ultima analisi vengono analizzati i problemi relativi alla sicurezza.
 	\\
@@ -195,7 +196,7 @@
 	\section{Specifiche}
 	
 	\subsection{Oggetto della geolocalizzazione}
-	Nella Geolocation API la posizione viene resa nota utilizzando la proprietà \textit{navigator.geolocation} \footnote{Mozilla Developer, \url{https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API}} presente nell'oggetto \textit{Navigator}, un'interfaccia che rappresenta lo stato dell'utente. Se l'oggetto esiste, il servizio di geolocalizzazione è disponibile. Per testare l'esistenza di tale oggetto, così da avere disponibili i metodi di geolocalizzazione, bisogna verificare se l'oggetto esiste, nel modo:
+	Nella Geolocation API la posizione viene resa nota utilizzando la proprietà \textit{navigator.geolocation} \cite{rif4} presente nell'oggetto \textit{Navigator}, un'interfaccia che rappresenta lo stato dell'utente. Se l'oggetto esiste, il servizio di geolocalizzazione è disponibile. Per testare l'esistenza di tale oggetto, così da avere disponibili i metodi di geolocalizzazione, bisogna verificare se l'oggetto esiste, nel modo:
 	\lstinputlisting{code/GeolocationInNavigator.js}
 	
 	\subsection{Metodi}
@@ -209,10 +210,8 @@
 	La \textit{successCallback} viene chiamata quando vi è un'operazione di successo alla chiamata di una nuova posizione.
 	La \textit{errorCallback} viene chiamata quando vi sono uno o più errori, e vengono gestiti all'interno di questo metodo.
 	\textit{Options} definisce i parametri in base ai quali vengono poi chiamate le callback di successo o fallimento.
-	Un esempio concreto, preso da W3C \footnote{W3C, \url{https://www.w3.org/TR/geolocation-API/}}, è questo:
-	\pagebreak
+	Un esempio concreto, preso da W3C \cite{rif5}, è questo:
 	\lstinputlisting{code/metodiGeolocation.js} 
-	
 	\textbf{GetCurrentPosition}
 	\\
 	Il metodo \textit{GetCuttentPosition} viene chiamato per ottenere la posizione corrente dell'utente, fornendo il dato ogni volta che viene chiamata.
@@ -225,7 +224,7 @@
 	\\
 	Il metodo \textit{ClearWatch} viene chiamato per annullare il monitoraggio della posizione dell'utente.
 	\newpage
-	Un esempio \footnote{Aurelio De Rosa, \url{https://code.tutsplus.com/tutorials/an-introduction-to-the-geolocation-api--cms-20071}} dell'uso di questi metodi è il seguente: \\
+	Un esempio \cite{rif8} dell'uso di questi metodi è il seguente: \\
 	\lstinputlisting{code/EsempioCompleto.js}
 	Che produrrà la seguente pagina:
 	\begin{figure}[h]
@@ -264,7 +263,7 @@
 	
 	
 	\section{Rischi e sicurezza} 
-	Uno dei principali problemi della Geolocation API \footnote{Privacy Issues of the W3C Geolocation API \url{https://escholarship.org/uc/item/0rp834wf}, \\ HTML5 Modern Day Attack And Defense Vector  \url{http://www.xss-payloads.com/papers/HTML5AttackVectors.pdf}} è rappresentato dal fatto che un Web Attacker può rubare la posizione ad un utente che accetta di condividerla all'interno del sito attaccante ignaro del fatto che non sia sicuro, oppure attraverso un cross-site scripting (XSS) \footnote{Tipo di vulnerabilità di sicurezza presente nelle applicazioni web. Questo attacco consente agli aggressori di inserire script sul lato client in pagine Web visualizzate da altri utenti, e questa vulnerabilità può essere usata dagli aggressori per bypassare i controlli di accesso, come ad esempio la same origin policy.} all'interno di un sito considerato fidato. Gli oggetti per tracciare le coordinate (latitudine e longitudine) risiedono all'interno del DOM il quale è accessibile con JavaScript e attraverso il quale si possono prendere le informazioni sulla posizione dell'utente. 
+	Uno dei principali problemi della Geolocation API \cite{rif6} \cite{rif7} è rappresentato dal fatto che un Web Attacker può rubare la posizione ad un utente che accetta di condividerla all'interno del sito attaccante ignaro del fatto che non sia sicuro, oppure attraverso un cross-site scripting (XSS) \footnote{Tipo di vulnerabilità di sicurezza presente nelle applicazioni web. Questo attacco consente agli aggressori di inserire script sul lato client in pagine Web visualizzate da altri utenti, e questa vulnerabilità può essere usata dagli aggressori per bypassare i controlli di accesso, come ad esempio la same origin policy.} all'interno di un sito considerato fidato. Gli oggetti per tracciare le coordinate (latitudine e longitudine) risiedono all'interno del DOM il quale è accessibile con JavaScript e attraverso il quale si possono prendere le informazioni sulla posizione dell'utente. 
 	Nella maggior parte dei casi succede che la posizione viene richiesta e condivisa in quanto viene chiesta in siti web affidabili.
 	Un problema importante è che se l'utente non disabilita il tracciamento della posizione il browser continuerà a esporla all'attaccante.
 	\begin{figure}[h]
@@ -304,9 +303,9 @@
 	\chapter{PaymentRequest API}
 	
 	\section{Overview}
-	La PaymentRequest API \footnote{Mozilla Developer, \url{https://w3c.github.io/payment-request/}} nasce con l'intento di creare esperienze di pagamento semplificate, in quanto ogni sito web ha il proprio sistema di pagamento e molti siti richiedono la ridigitazione manuale delle stesse informazioni più volte, le quali possono essere invece memorizzate e riutilizzate dall'API per completare più rapidamente le transazioni online.
+	La PaymentRequest API \cite{rif9} nasce con l'intento di creare esperienze di pagamento semplificate, in quanto ogni sito web ha il proprio sistema di pagamento e molti siti richiedono la ridigitazione manuale delle stesse informazioni più volte, le quali possono essere invece memorizzate e riutilizzate dall'API per completare più rapidamente le transazioni online.
 	
-	\subsection[Vantaggi]{Vantaggi\footnote{Google Developers, \url{https://developers.google.com/web/ilt/pwa/introduction-to-the-payment-request-api}}}
+	\subsection[Vantaggi]{Vantaggi \cite{rif13}}
 	\begin{itemize}
 		\item \textbf{Esperienza di acquisto rapida:} gli utenti immettono i propri dati una sola volta nel browser, e dopo averli inseriti non è più necessario reinserirli su siti diversi;
 		\item \textbf{Esperienza coerente su ogni sito che supporta l'API:} poiché la pagina di pagamento è controllata dal browser si può personalizzare l'esperienza utente, ad esempio includendo la localizzazione per impostare automaticamente la lingua preferita dell'utente o altre features;
@@ -314,7 +313,7 @@
 		\item \textbf{Gestione coerente degli errori:} il browser può controllare la validità dei numeri delle carte e può comunicare all'utente se una carta è scaduta o sta per scadere, può suggerire automaticamente quale carta utilizzare in base ai modelli di utilizzo passati o alle restrizioni del commerciante, o consentire all'utente di dire quale sia la carta predefinita/preferita;
 		\item \textbf{Esperienza utente migliorata:} coerenza tra i siti Web, tra browser e sistemi operativi e nuove funzionalità del browser per semplificare il checkout, ecc;
 		\item \textbf{Miglioramento della sicurezza:} la PaymentRequest API ha il potenziale per ridurre le opportunità di frode e può facilitare l'adozione di metodi di pagamento più sicuri. Purtroppo ci sono dei problemi di sicurezza analizzati al paragrafo 3.4; 
-		\item \textbf{Responsabilità inferiore:} in passato, per creare un'esperienza utente semplificata, i commercianti dovevano memorizzare le credenziali di pagamento degli utenti. Questo non è più necessario, il che può aiutare a ridurre la responsabilità del commerciante nei confronti del cliente.
+		\item \textbf{Responsabilità inferiore:} in passato, per creare un'esperienza utente semplificata, i commercianti dovevano memorizzare le credenziali di pagamento degli utenti. \\Questo non è più necessario, il che può aiutare a ridurre la responsabilità del commerciante nei confronti del cliente.
 	\end{itemize}
 	
 	\subsection{Come funziona}	
@@ -381,7 +380,7 @@
 	Vi sono casi importanti in cui è disponibile una sola app di pagamento autorizzata a supportare un metodo di pagamento, mentre ci sono casi in cui più app di pagamento possono servire diversi metodi di pagamento. In questo caso non è il commerciante che deve preoccuparsi dell'integrazione software, ma deve solamente richiedere le informazioni attraverso la PaymentRequest API.
 	
 	\section{Specifiche}
-	\subsection[Metodi]{Metodi\footnote{Mozilla Developer, \url{https://developer.mozilla.org/en-US/docs/Web/API/Payment_Request_API}}}
+	\subsection[Metodi]{Metodi \cite{rif1}}
 	Per utilizzare l'API lo sviluppatore deve fornire e tenere traccia di una serie di informazioni chiave, le quali vengono passate al costruttore PaymentRequest come argomenti e successivamente utilizzate per aggiornare la richiesta di pagamento visualizzata all'utente. Queste informazioni sono:
 	\begin{itemize}
 		\item \textbf{PaymentMethodData:} rappresenta i metodi di pagamento che il sito supporta;
@@ -395,16 +394,16 @@
 	\pagebreak
 	\textbf{PaymentMethodData}
 	\\
-	\textit{PaymentMethodData} \footnote{Matt Gaunt, \url{https://developers.google.com/web/fundamentals/payments/merchant-guide/deep-dive-into-payment-request}} contiene gli identificativi dei metodi di pagamento accettati dal sito Web e qualsiasi dato specifico del metodo di pagamento associato.
+	\textit{PaymentMethodData} \cite{rif11} contiene gli identificativi dei metodi di pagamento accettati dal sito Web e qualsiasi dato specifico del metodo di pagamento associato.
 	\lstinputlisting{code/PaymentMethodData.js}
 	\textbf{PaymentDetails}
 	\\
-	I \textit{details} \footnote{Eiji Kitamura, \url{https://developers.google.com/web/updates/2016/07/payment-request}} contengono informazioni sulla transazione che l'utente è invitato a completare.
+	I \textit{details} \cite{rif14} contengono informazioni sulla transazione che l'utente è invitato a completare.
 	\lstinputlisting{code/PaymentDetails.js}
 	\pagebreak
 	\textbf{Opzioni di spedizione}
 	\\
-	Qui vediamo un esempio di come aggiungere due opzioni di spedizione ai \textit{details} \footnote{Microsoft, \url{https://developer.microsoft.com/en-us/microsoft-edge/testdrive/demos/paymentrequest/}}.
+	Qui vediamo un esempio di come aggiungere due opzioni di spedizione ai \textit{details} \cite{rif16}.
 	\lstinputlisting{code/OpzioniSpedizione.js}
 	
 	\flushleft\textbf{Modifiche condizionali alla richiesta di pagamento}
@@ -419,9 +418,10 @@
 	\textbf{PaymentRequest} \\
 	Dopo aver raccolto tutti i bit di informazioni prerequisite, ora possiamo costruirne uno \textit{PaymentRequest} e richiedere che il browser lo presenti all'utente.
 	\lstinputlisting{code/PaymentRequest.js}
+	\pagebreak
 	
-	
-	\subsection{Implementazione su pagina d'esempio \cite{rif15}}
+	\subsection{Implementazione su pagina d'esempio}
+	%rif15
 	\subsubsection{Costruttore}
 	L'oggetto \textit{PaymentRequest} è costruito passando i seguenti parametri:
 	\begin{itemize}
@@ -433,7 +433,7 @@
 	Nel seguente esempio stiamo consentendo agli utenti di pagare con qualsiasi carta di debito o di credito appartenente alle reti Visa, MasterCard o Amex. L'oggetto \textit{details} contiene l'importo totale parziale, l'imposta sulle vendite e il totale dovuto; questi dettagli verranno mostrati all'utente nel portafoglio. Bisogna tenere presente che l'API non aggiunge elementi o calcola l'imposta sulle vendite, spetta al commerciante fornire le informazioni corrette. In questo esempio, stiamo vendendo un bene fisico, quindi chiediamo l'indirizzo di spedizione del cliente.
 	\lstinputlisting{code/Costruttore.js}
 	\subsubsection{Visualizzazione dell'interfaccia utente, elaborazione del pagamento e visualizzazione dei risultati}
-	Una volta creato l'oggetto \textit{PaymentRequest} è possibile attivare il browser per visualizzare il wallet con \textit{request.show()} \cite{rif12}. 
+	Una volta creato l'oggetto \textit{PaymentRequest} è possibile attivare il browser per visualizzare il wallet con \textit{request.show()} \cite{rif2}. 
 	\begin{figure}[h]
 		\centering
 		\includegraphics[width=0.5\linewidth]{wallet1}
@@ -441,7 +441,7 @@
 		\label{fig: Wallet dopo la chiamata request.show()}
 	\end{figure}
 	\\
-	\pagebreak
+	
 	I clienti possono  selezionare le informazioni di pagamento, l'indirizzo di spedizione e altri campi appropriati e cliccare su Paga quando è pronto. A questo punto, gli utenti dovranno verificare la loro identità: in caso di esito positivo verrà soddisfatta la promise \textit{request.show()} e verranno restituite al sito Web tutte le informazioni che il cliente ha fornito. Per il metodo di pagamento con carta di base l'oggetto risultante conterrà il nome del titolare della carta, il numero della carta, il mese di scadenza e altri campi pertinenti. Il commerciante può quindi utilizzare queste informazioni per elaborare la transazione sul back-end.
 	Dopo che la risposta è tornata dal server, è possibile utilizzare \textit{result.complete('success')} per visualizzare la schermata di successo o \textit{result.complete('fail')} per indicare una transazione fallita.
 	\lstinputlisting{code/PaymentShow.js}
@@ -459,9 +459,9 @@
 		\caption{Wallet in caso di fail}
 		\label{fig: Wallet in caso di fail}
 	\end{figure}
+	\pagebreak
 	
-	
-	\section[Rischi e sicurezza]{Rischi e sicurezza\footnote{W3C, \url{https://w3c.github.io/payment-request/\#privacy-and-security-considerations}}} 
+	\section[Rischi e sicurezza]{Rischi e sicurezza \cite{rif19}} 
 	La PaymentRequest API cerca di garantire la sicurezza dei dati sensibili nei seguenti modi:
 	
 	\begin{itemize}
@@ -486,7 +486,7 @@
 	
 	Chiaramente esistono diversi modi per mitigare questi rischi, ad esempio attraverso soluzioni di salvaguardia tecnologica e/o attraverso la consapevolezza dell'utente di tali rischi.
 	
-	\subsection[Esempio di un possibile attacco]{Esempio di un possibile attacco \footnote{Google Inc., \url{https://googlechrome.github.io/samples/paymentrequest/credit-cards/}}} 
+	\subsection[Esempio di un possibile attacco]{Esempio di un possibile attacco \cite{rif18}} 
 	\textbf{Descrizione dell'attacco}
 	\\
 	Supponiamo di essere all'interno di un sito affidabile, come Amazon o Facebook, e supponiamo di essere in una pagina di pagamento, come può essere il carrello su Amazon o il pagamento per un'inserzione su Facebook.
@@ -502,7 +502,6 @@
 		\label{fig: Inserimento informazioni dell'utente}
 	\end{figure}
 	\\
-	\pagebreak
 	Una volta che l'utente ha approvato una richiesta di pagamento viene restituito un \textit{PaymentResponse} per approvare tale richiesta. 
 	\begin{figure}[h]
 		\centering
@@ -519,7 +518,6 @@
 		\caption{Informazioni rubate}
 		\label{fig: Informazioni rubate}
 	\end{figure}
-	\pagebreak
 	\section{Compatibilità web}
 	\subsection{Desktop}
 	\begin{figure}[h]
@@ -547,12 +545,12 @@
 	\cleardoublepage
 	\chapter{Service Worker}
 	\section{Overview}
-	Un Service Worker \footnote{Google Partners, \url{https://support.google.com/partners/answer/7336697?hl=it}, \\ Speedy Wordpress, \url{https://www.speedywordpress.it/guida-completa-ai-service-worker-javascript/},\\ Matt Gaunt, \url{https://developers.google.com/web/fundamentals/primers/service-workers/}} è uno script Javascript che utilizza le \textit{Promises} \footnote{Mozilla Developer, \url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise}} per poter eseguire operazioni in modalità asincrona nel browser, avviate in background separato dalla pagina; pertanto non possono modificarne gli elementi del DOM come i normali script ma può comunicare con essi mediante “messaggi”.
+	Un Service Worker \cite{rif23} \cite{rif24} \cite{rif25} è uno script Javascript che utilizza le \textit{Promises} \cite{rif27} per poter eseguire operazioni in modalità asincrona nel browser, avviate in background separato dalla pagina; pertanto non possono modificarne gli elementi del DOM come i normali script ma può comunicare con essi mediante “messaggi”.
 	Un Service Worker si trova tra la nostra applicazione Web e la rete e, come un server proxy, può intercettare tutte le richieste a pagine web e file statici e rispondere secondo politiche che siamo noi stessi a decidere.
-	I Service Worker sono pensati per consentire la creazione di esperienze offline efficaci \footnote{Nicolas Bevacqua, \url{https://css-tricks.com/serviceworker-for-offline/}}, intercettare le richieste di rete e intraprendere azioni appropriate in base al fatto che la rete sia disponibile o meno e aggiornare le risorse che risiedono sul server, oltre a consentire l'accesso alle notifiche push e alle API di sincronizzazione in background.
+	I Service Worker sono pensati per consentire la creazione di esperienze offline efficaci \cite{rif28}, intercettare le richieste di rete e intraprendere azioni appropriate in base al fatto che la rete sia disponibile o meno e aggiornare le risorse che risiedono sul server, oltre a consentire l'accesso alle notifiche push e alle API di sincronizzazione in background.
 	È il browser che in qualsiasi momento deciderà se il Service Worker dovrebbe essere o meno in esecuzione così da risparmiare risorse, specialmente sui dispositivi mobili. Per questo può essere che se non facciamo alcuna richiesta HTTP per un certo periodo di tempo o non riceviamo alcuna notifica per un po' è possibile che il browser spenga il Service Worker. Se attiviamo una richiesta HTTP che deve essere gestita dal Service Worker il browser la attiverà di nuovo, nel caso in cui non fosse ancora in esecuzione. 
 	
-	\subsection[Impostare i Service Worker]{Impostare i Service Worker \footnote{Mozilla Developer, \url{https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers}}}
+	\subsection[Impostare i Service Worker]{Impostare i Service Worker \cite{rif22}}
 	Molte funzionalità dei Service Worker oggi sono abilitate di default, ma nel caso non lo fossero bisogna abilitarle nel browser:
 	\begin{itemize}
 		\item Firefox: su \url{about:config} impostare \textit{dom.serviceWorkers.enabled} su true, riavvia il browser;
@@ -588,7 +586,7 @@
 	\end{itemize}
 	
 	\section{Ciclo di vita di un Service Worker}
-	Il ciclo di vita di un Service Worker \footnote{Mozilla Developer, \url{https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API}, \\ Angular University, \url{https://blog.angular-university.io/service-workers/}, \\ jakearchibald Github, \url{https://github.com/w3c/ServiceWorker/blob/master/explainer.md}} è composto da quattro fasi:
+	Il ciclo di vita di un Service Worker \cite{rif20} \cite{rif21} \cite{rif26} è composto da quattro fasi:
 	\begin{itemize}
 		\item \textbf{Registrazione}: il Service Worker viene scaricato dal browser, analizzato ed eseguito;
 		\item \textbf{Installazione}: il Service Worker viene installato;
@@ -738,8 +736,8 @@
 	\end{figure}
 	\end{comment}
 	\newpage
-	\section[Rischi e sicurezza]{Rischi e sicurezza\footnote{W3C, \url{https://w3c.github.io/ServiceWorker/\#security-considerations}}}
-	\footnote{\url{https://alf.nu/ServiceWorker}}Come già detto i Service Worker operano solo in contesti protetti, ma questo non vuol dire che l'ambiente sia sicuro al 100\% in quanto un Service Worker ha la possibilità di importare script da qualsiasi altra origine tramite la chiamata a \textit{importScripts}, aumentando la capacità di un attaccante XSS di inserire il proprio codice javascript all'interno della pagina, potendo cosi rubare informazioni dell'utente, ad esempio all'inserimento di username e password in una data pagina, e portarle fuori. La registrazione dei Service Worker specifica che essi devono essere eseguiti nella stessa origine dei loro chiamanti; il confronto dell'origine è una corrispondenza col prefisso più lungo degli URL serializzati compreso il percorso, quindi ad esempio \textit{https://example.com} è differente da \textit{https://example.evil.com}, quindi un attaccante può effettivamente registrare un Service Worker malevolo. Per mitigare questo rischio il browser richiede che l'URL di registrazione del Service Worker provenga dall'origine stessa; quindi per registrare un Service Worker malevolo attraverso un attacco XSS l'utente malintenzionato ha bisogno di ospitare i propri script sul server.
+	\section[Rischi e sicurezza]{Rischi e sicurezza \cite{rif29}\footnote{\url{https://alf.nu/ServiceWorker}}}
+	Come già detto i Service Worker operano solo in contesti protetti, ma questo non vuol dire che l'ambiente sia sicuro al 100\% in quanto un Service Worker ha la possibilità di importare script da qualsiasi altra origine tramite la chiamata a \textit{importScripts}, aumentando la capacità di un attaccante XSS di inserire il proprio codice javascript all'interno della pagina, potendo cosi rubare informazioni dell'utente, ad esempio all'inserimento di username e password in una data pagina, e portarle fuori. La registrazione dei Service Worker specifica che essi devono essere eseguiti nella stessa origine dei loro chiamanti; il confronto dell'origine è una corrispondenza col prefisso più lungo degli URL serializzati compreso il percorso, quindi ad esempio \textit{https://example.com} è differente da \textit{https://example.evil.com}, quindi un attaccante può effettivamente registrare un Service Worker malevolo. Per mitigare questo rischio il browser richiede che l'URL di registrazione del Service Worker provenga dall'origine stessa; quindi per registrare un Service Worker malevolo attraverso un attacco XSS l'utente malintenzionato ha bisogno di ospitare i propri script sul server.
 	\\
 	\begin{comment}
 	Un possibile scenario potrebbe essere questo: se la pagina ha una vulnerabilità XSS ha anche un endpoint JSONP \footnote{Utilizzato per richiedere dati da un server che risiede in un dominio diverso da quello del client; consente la condivisione dei dati aggirando la politica della stessa origine} e l'utente malintenzionato potrebbe utilizzarlo per:
@@ -818,21 +816,21 @@
 		\\
 		Un grazie anche al mio correlatore Dott. Marco Squarcina che ha saputo darmi consigli fondamentali per riuscire ad andare avanti in alcuni punti della tesi che altrimenti non avrei saputo risolvere da solo.
 		\\
-		Non possono mancare in questo elenco tutte le persone con le quali ho iniziato e trascorso il mio percorso di studi e con le quali ho instaurato un rapporto di amicizia, forse aiutato da tutti i momenti di terrore trascorsi nella stessa stanza in alcuni esami.
+		Non possono mancare in questo elenco tutti i miei compagni di corso con i quali ho trascorso questi anni nelle aule dell'università tra risate, scene uniche e indimenticabili e terrore durante qualche esame, con i quali ho instaurato un rapporto di amicizia che spero duri nel tempo.
 		\\
-		Dovrei scrivere un'altra tesi se scrivessi ad una ad una tutte le persone che, in diverse forme, mi hanno aiutato a superare tutti i problemi e i periodi di questi anni universitari. Sicuramente uno dei motivi per cui sono arrivato fino a qua è stato anche grazie al continuo "Ce la fai, non mollare!" in risposta ai miei "Lascio stare tutto, non sono capace". 
+		Una dose importante di ringraziamenti va a tutti quei miei amici che, dicendomi la giusta dose di parole nei momenti opportuni ma aiutandomi altrettante volte e soprattutto spendendo gran parte del loro tempo per darmi una mano, sono riuscite a farmi compiere questo percorso. Grazie davvero.
+		\\
+		Dovrei scrivere un'altra tesi se scrivessi ad una ad una tutte le persone che, in diverse forme, mi hanno aiutato a superare tutti i problemi e i brutti periodi di questi anni universitari. Sicuramente uno dei motivi per cui sono arrivato fino a qua è stato anche grazie al continuo "Ce la fai, non mollare!" in risposta ai miei "Lascio stare tutto, non sono capace". 
 		\\
 		Per ultimi, ma non meno importanti, i miei genitori.
 		Non so se troverò mai le parole giuste per ringraziarvi, però vorrei che questo traguardo ripagasse, per quanto possibile, tutti i sacrifici che hanno fatto per me, e che fosse un premio anche per loro.
-		Un grande grazie a tutta la mia famiglia per esserci sempre, per sostenermi in ogni cosa che faccio, e sicuramente senza i vostri consigli e le vostre critiche non sarei la persona che sono oggi.
+		Un grande grazie a tutta la mia famiglia per esserci sempre, per sostenermi in ogni cosa io faccia, e sicuramente senza i vostri consigli e le vostre critiche non sarei la persona che sono oggi.
 		Grazie per avermi fatto arrivare a questo punto di arrivo e contemporaneamente di partenza della mia vita.
 	\end{flushleft}
 \cleardoublepage
 \listoffigures
 \cleardoublepage
-\begin{flushright}
-	Bibliografia
-\end{flushright}
 	%\section{Sitografia}	
-	%\bibliography{Referenze}
+	
+	\bibliography{Referenze}
 \end{document}

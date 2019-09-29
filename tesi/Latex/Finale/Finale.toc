@@ -6,10 +6,10 @@
 \contentsline {section}{\numberline {2.2}Specifiche}{11}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Oggetto della geolocalizzazione}{11}{subsection.2.2.1}
 \contentsline {subsection}{\numberline {2.2.2}Metodi}{11}{subsection.2.2.2}
-\contentsline {section}{\numberline {2.3}Rischi e sicurezza}{16}{section.2.3}
-\contentsline {section}{\numberline {2.4}Compatibilit\IeC {\`a} web}{17}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}Desktop e mobile}{17}{subsection.2.4.1}
-\contentsline {section}{\numberline {2.5}Conclusioni}{18}{section.2.5}
+\contentsline {section}{\numberline {2.3}Rischi e sicurezza}{15}{section.2.3}
+\contentsline {section}{\numberline {2.4}Compatibilit\IeC {\`a} web}{16}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Desktop e mobile}{16}{subsection.2.4.1}
+\contentsline {section}{\numberline {2.5}Conclusioni}{17}{section.2.5}
 \contentsline {chapter}{\numberline {3}PaymentRequest API}{19}{chapter.3}
 \contentsline {section}{\numberline {3.1}Overview}{19}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}Vantaggi}{19}{subsection.3.1.1}
@@ -17,32 +17,32 @@
 \contentsline {subsection}{\numberline {3.1.3}Uso API}{21}{subsection.3.1.3}
 \contentsline {section}{\numberline {3.2}Specifiche}{22}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Metodi}{22}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Implementazione su pagina d'esempio \cite {rif15}}{25}{subsection.3.2.2}
-\contentsline {subsubsection}{Costruttore}{25}{subsubsection*.1}
-\contentsline {subsubsection}{Visualizzazione dell'interfaccia utente, elaborazione del pagamento e visualizzazione dei risultati}{26}{subsubsection*.2}
-\contentsline {section}{\numberline {3.3}Rischi e sicurezza}{28}{section.3.3}
+\contentsline {subsection}{\numberline {3.2.2}Implementazione su pagina d'esempio}{26}{subsection.3.2.2}
+\contentsline {subsubsection}{Costruttore}{26}{subsubsection*.1}
+\contentsline {subsubsection}{Visualizzazione dell'interfaccia utente, elaborazione del pagamento e visualizzazione dei risultati}{27}{subsubsection*.2}
+\contentsline {section}{\numberline {3.3}Rischi e sicurezza}{29}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}Esempio di un possibile attacco}{29}{subsection.3.3.1}
-\contentsline {section}{\numberline {3.4}Compatibilit\IeC {\`a} web}{33}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Desktop}{33}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}Mobile}{33}{subsection.3.4.2}
-\contentsline {section}{\numberline {3.5}Conclusioni}{33}{section.3.5}
-\contentsline {chapter}{\numberline {4}Service Worker}{35}{chapter.4}
-\contentsline {section}{\numberline {4.1}Overview}{35}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Impostare i Service Worker}{35}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Architettura di base}{36}{subsection.4.1.2}
-\contentsline {subsection}{\numberline {4.1.3}Casi d'uso}{36}{subsection.4.1.3}
-\contentsline {section}{\numberline {4.2}Ciclo di vita di un Service Worker}{36}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Registrazione}{37}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Installazione}{39}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}Attivazione}{40}{subsection.4.2.3}
-\contentsline {subsection}{\numberline {4.2.4}Fetch}{40}{subsection.4.2.4}
-\contentsline {subsection}{\numberline {4.2.5}Aggiornare il Service Worker}{41}{subsection.4.2.5}
-\contentsline {subsection}{\numberline {4.2.6}Disintallare il Service Worker}{41}{subsection.4.2.6}
-\contentsline {section}{\numberline {4.3}Caching}{42}{section.4.3}
-\contentsline {section}{\numberline {4.4}Rischi e sicurezza}{43}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}Esempio di attacco}{44}{subsection.4.4.1}
-\contentsline {section}{\numberline {4.5}Compatibilit\IeC {\`a} web}{46}{section.4.5}
-\contentsline {subsection}{\numberline {4.5.1}Desktop}{46}{subsection.4.5.1}
-\contentsline {subsection}{\numberline {4.5.2}Mobile}{46}{subsection.4.5.2}
-\contentsline {section}{\numberline {4.6}Conclusioni}{46}{section.4.6}
-\contentsline {chapter}{\numberline {5}Conclusioni}{47}{chapter.5}
+\contentsline {section}{\numberline {3.4}Compatibilit\IeC {\`a} web}{31}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Desktop}{31}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Mobile}{31}{subsection.3.4.2}
+\contentsline {section}{\numberline {3.5}Conclusioni}{32}{section.3.5}
+\contentsline {chapter}{\numberline {4}Service Worker}{33}{chapter.4}
+\contentsline {section}{\numberline {4.1}Overview}{33}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Impostare i Service Worker}{33}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Architettura di base}{34}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}Casi d'uso}{35}{subsection.4.1.3}
+\contentsline {section}{\numberline {4.2}Ciclo di vita di un Service Worker}{35}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Registrazione}{35}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Installazione}{36}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Attivazione}{37}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.4}Fetch}{37}{subsection.4.2.4}
+\contentsline {subsection}{\numberline {4.2.5}Aggiornare il Service Worker}{38}{subsection.4.2.5}
+\contentsline {subsection}{\numberline {4.2.6}Disintallare il Service Worker}{38}{subsection.4.2.6}
+\contentsline {section}{\numberline {4.3}Caching}{39}{section.4.3}
+\contentsline {section}{\numberline {4.4}Rischi e sicurezza}{40}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Esempio di attacco}{41}{subsection.4.4.1}
+\contentsline {section}{\numberline {4.5}Compatibilit\IeC {\`a} web}{43}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}Desktop}{43}{subsection.4.5.1}
+\contentsline {subsection}{\numberline {4.5.2}Mobile}{43}{subsection.4.5.2}
+\contentsline {section}{\numberline {4.6}Conclusioni}{43}{section.4.6}
+\contentsline {chapter}{\numberline {5}Conclusioni}{45}{chapter.5}

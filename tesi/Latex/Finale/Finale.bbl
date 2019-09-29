@@ -1,182 +1,151 @@
-\begin{thebibliography}{28}
-\providecommand{\natexlab}[1]{#1}
-\providecommand{\url}[1]{\texttt{#1}}
-\expandafter\ifx\csname urlstyle\endcsname\relax
-  \providecommand{\doi}[1]{doi: #1}\else
-  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+\begin{thebibliography}{10}
 
-\bibitem[rif()]{rif12}
-What is payment request?
-\newblock \url{https://paymentrequest.show/}.
+\bibitem{rif2}
+Mozilla Developer.
+\newblock Features restricted to secure contexts.
+\newblock \url{https://developer.mozilla.org/en-US/docs/Web/API/Geolocation}.
 
-\bibitem[Baloch()]{rif7}
-R.~Baloch.
-\newblock Html5 modern day attack and defense vector.
-\newblock \url{http://www.xss-payloads.com/papers/HTML5AttackVectors.pdf}.
-
-\bibitem[Bevacqua(2015)]{rif28}
-N.~Bevacqua.
-\newblock Making a simple site work offline with serviceworker.
-\newblock 2015.
-\newblock \url{https://css-tricks.com/serviceworker-for-offline/}.
-
-\bibitem[Developer({\natexlab{a}})]{rif1}
-M.~Developer.
+\bibitem{rif1}
+Mozilla Developer.
 \newblock Payment request api, mozilla developer.
-\newblock {\natexlab{a}}.
 \newblock
   \url{https://developer.mozilla.org/en-US/docs/Web/API/Payment_Request_API}.
 
-\bibitem[Developer({\natexlab{b}})]{rif2}
-M.~Developer.
-\newblock Features restricted to secure contexts.
-\newblock {\natexlab{b}}.
-\newblock \url{https://developer.mozilla.org/en-US/docs/Web/API/Geolocation}.
-
-\bibitem[Developer({\natexlab{c}})]{rif20}
-M.~Developer.
-\newblock Service worker concepts and usage.
-\newblock {\natexlab{c}}.
-\newblock
-  \url{https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API}.
-
-\bibitem[Developer({\natexlab{d}})]{rif22}
-M.~Developer.
-\newblock Setting up to play with service workers.
-\newblock {\natexlab{d}}.
-\newblock
-  \url{https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers}.
-
-\bibitem[Developer({\natexlab{e}})]{rif27}
-M.~Developer.
-\newblock Promise.
-\newblock {\natexlab{e}}.
-\newblock
-  \url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise}.
-
-\bibitem[Developer({\natexlab{f}})]{rif4}
-M.~Developer.
+\bibitem{rif4}
+Mozilla Developer.
 \newblock Geolocation api.
-\newblock {\natexlab{f}}.
 \newblock
   \url{https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API}.
 
-\bibitem[Developer(2018)]{rif9}
-M.~Developer.
-\newblock Payment request api.
+\bibitem{rif5}
+W3C.
+\newblock Geolocation api specification 2nd edition.
 \newblock 2018.
-\newblock \url{https://w3c.github.io/payment-request/}.
+\newblock \url{https://www.w3.org/TR/geolocation-API/}.
 
-\bibitem[Developers()]{rif13}
-G.~Developers.
-\newblock Introduction to the payment request api.
-\newblock
-  \url{https://developers.google.com/web/ilt/pwa/introduction-to-the-payment-request-api}.
-
-\bibitem[Doty et~al.(2010)Doty, Mulligan, and Wilde]{rif6}
-N.~Doty, D.~K. Mulligan, and E.~Wilde.
-\newblock Privacy issues of the w3c geolocation api.
-\newblock 2010.
-
-\bibitem[Gaunt({\natexlab{a}})]{rif11}
-M.~Gaunt.
-\newblock Deep dive into payment request api.
-\newblock {\natexlab{a}}.
-\newblock
-  \url{https://developers.google.com/web/fundamentals/payments/merchant-guide/deep-dive-into-payment-request}.
-
-\bibitem[Gaunt({\natexlab{b}})]{rif25}
-M.~Gaunt.
-\newblock Service workers: an introduction.
-\newblock {\natexlab{b}}.
-\newblock
-  \url{https://developers.google.com/web/fundamentals/primers/service-workers/}.
-
-\bibitem[Inc.(2018)]{rif18}
-G.~Inc.
-\newblock Paymentrequest credit cards sample.
-\newblock 2018.
-\newblock
-  \url{https://googlechrome.github.io/samples/paymentrequest/credit-cards/}.
-
-\bibitem[jakearchibald Github(2017)]{rif26}
-jakearchibald Github.
-\newblock Service worker explained.
-\newblock 2017.
-\newblock \url{https://github.com/w3c/ServiceWorker/blob/master/explainer.md}.
-
-\bibitem[Kitamura()]{rif14}
-E.~Kitamura.
-\newblock Bringing easy and fast checkout with payment request api.
-\newblock
-  \url{https://developers.google.com/web/updates/2016/07/payment-request}.
-
-\bibitem[Microsoft({\natexlab{a}})]{rif15}
-Microsoft.
-\newblock Payment request api.
-\newblock {\natexlab{a}}.
-\newblock
-  \url{https://docs.microsoft.com/en-us/microsoft-edge/dev-guide/windows-integration/payment-request-api}.
-
-\bibitem[Microsoft({\natexlab{b}})]{rif16}
-Microsoft.
-\newblock Payment request api samples.
-\newblock {\natexlab{b}}.
-\newblock
-  \url{https://developer.microsoft.com/en-us/microsoft-edge/testdrive/demos/paymentrequest/}.
-
-\bibitem[Microsoft({\natexlab{c}})]{rif17}
-Microsoft.
-\newblock Simpler web payments: Introducing the payment request api.
-\newblock {\natexlab{c}}.
-\newblock
-  \url{https://blogs.windows.com/msedgedev/2016/12/15/payment-request-api-edge/#UATsm3ejAT9oYtrj.97}.
-
-\bibitem[Partners()]{rif23}
-G.~Partners.
-\newblock Tecnologie web avanzate: Service worker.
-\newblock \url{https://support.google.com/partners/answer/7336697?hl=it}.
-
-\bibitem[Rosa(2014)]{rif8}
-A.~D. Rosa.
+\bibitem{rif8}
+Aurelio~De Rosa.
 \newblock An introduction to the geolocation api.
 \newblock 2014.
 \newblock
   \url{https://code.tutsplus.com/tutorials/an-introduction-to-the-geolocation-api--cms-20071}.
 
-\bibitem[University()]{rif21}
-A.~University.
-\newblock Service workers - practical guided introduction.
-\newblock \url{https://blog.angular-university.io/service-workers/}.
+\bibitem{rif6}
+Nick Doty, Deirdre~K. Mulligan, and Erik Wilde.
+\newblock Privacy issues of the w3c geolocation api.
+\newblock 2010.
+\newblock \url{https://escholarship.org/uc/item/0rp834wf}.
 
-\bibitem[University(2018)]{rif3}
-A.~University.
-\newblock Angular service worker - step-by-step guide for turning your
-  application into a pwa.
+\bibitem{rif7}
+Rafay Baloch.
+\newblock Html5 modern day attack and defense vector.
+\newblock \url{http://www.xss-payloads.com/papers/HTML5AttackVectors.pdf}.
+
+\bibitem{rif9}
+Mozilla Developer.
+\newblock Payment request api.
 \newblock 2018.
-\newblock \url{https://blog.angular-university.io/angular-service-worker/}.
+\newblock \url{https://w3c.github.io/payment-request/}.
 
-\bibitem[W3C()]{rif19}
+\bibitem{rif13}
+Google Developers.
+\newblock Introduction to the payment request api.
+\newblock
+  \url{https://developers.google.com/web/ilt/pwa/introduction-to-the-payment-request-api}.
+
+\bibitem{rif17}
+Microsoft.
+\newblock Simpler web payments: Introducing the payment request api.
+\newblock
+  \url{https://blogs.windows.com/msedgedev/2016/12/15/payment-request-api-edge/#UATsm3ejAT9oYtrj.97}.
+
+\bibitem{rif11}
+Matt Gaunt.
+\newblock Deep dive into payment request api.
+\newblock
+  \url{https://developers.google.com/web/fundamentals/payments/merchant-guide/deep-dive-into-payment-request}.
+
+\bibitem{rif14}
+Eiji Kitamura.
+\newblock Bringing easy and fast checkout with payment request api.
+\newblock
+  \url{https://developers.google.com/web/updates/2016/07/payment-request}.
+
+\bibitem{rif16}
+Microsoft.
+\newblock Payment request api samples.
+\newblock
+  \url{https://developer.microsoft.com/en-us/microsoft-edge/testdrive/demos/paymentrequest/}.
+
+\bibitem{rif19}
 W3C.
 \newblock Paymentrequest privacy and security considerations.
 \newblock
   \url{https://w3c.github.io/payment-request/#privacy-and-security-considerations}.
 
-\bibitem[W3C(2018{\natexlab{a}})]{rif29}
-W3C.
-\newblock Service workers nightly.
-\newblock 2018{\natexlab{a}}.
-\newblock \url{https://w3c.github.io/ServiceWorker/#security-considerations}.
+\bibitem{rif18}
+Google Inc.
+\newblock Paymentrequest credit cards sample.
+\newblock 2018.
+\newblock
+  \url{https://googlechrome.github.io/samples/paymentrequest/credit-cards/}.
 
-\bibitem[W3C(2018{\natexlab{b}})]{rif5}
-W3C.
-\newblock Geolocation api specification 2nd edition.
-\newblock 2018{\natexlab{b}}.
+\bibitem{rif23}
+Google Partners.
+\newblock Tecnologie web avanzate: Service worker.
+\newblock \url{https://support.google.com/partners/answer/7336697?hl=it}.
 
-\bibitem[Wordpress()]{rif24}
-S.~Wordpress.
+\bibitem{rif24}
+Speedy Wordpress.
 \newblock Guida completa ai service worker javascript.
 \newblock
   \url{https://www.speedywordpress.it/guida-completa-ai-service-worker-javascript/}.
+
+\bibitem{rif25}
+Matt Gaunt.
+\newblock Service workers: an introduction.
+\newblock
+  \url{https://developers.google.com/web/fundamentals/primers/service-workers/}.
+
+\bibitem{rif27}
+Mozilla Developer.
+\newblock Promise.
+\newblock
+  \url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise}.
+
+\bibitem{rif28}
+Nicolas Bevacqua.
+\newblock Making a simple site work offline with serviceworker.
+\newblock 2015.
+\newblock \url{https://css-tricks.com/serviceworker-for-offline/}.
+
+\bibitem{rif22}
+Mozilla Developer.
+\newblock Setting up to play with service workers.
+\newblock
+  \url{https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers}.
+
+\bibitem{rif20}
+Mozilla Developer.
+\newblock Service worker concepts and usage.
+\newblock
+  \url{https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API}.
+
+\bibitem{rif21}
+Angular University.
+\newblock Service workers - practical guided introduction.
+\newblock \url{https://blog.angular-university.io/service-workers/}.
+
+\bibitem{rif26}
+jakearchibald Github.
+\newblock Service worker explained.
+\newblock 2017.
+\newblock \url{https://github.com/w3c/ServiceWorker/blob/master/explainer.md}.
+
+\bibitem{rif29}
+W3C.
+\newblock Service workers nightly.
+\newblock 2018.
+\newblock \url{https://w3c.github.io/ServiceWorker/#security-considerations}.
 
 \end{thebibliography}

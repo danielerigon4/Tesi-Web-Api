@@ -4,12 +4,12 @@
 \contentsline {xchapter}{Introduzione}{9}{chapter.1}
 \addvspace {10\p@ }
 \contentsline {xchapter}{Geolocation}{11}{chapter.2}
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Pagina info Geolocation}}{14}{figure.2.1}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Richiesta permesso}}{15}{figure.2.2}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Rifiuto autorizzazione}}{15}{figure.2.3}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Accetto autorizzazione}}{16}{figure.2.4}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Richiesta posizione}}{17}{figure.2.5}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Compatibilit\IeC {\`a} Desktop e mobile}}{17}{figure.2.6}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Pagina info Geolocation}}{13}{figure.2.1}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Richiesta permesso}}{14}{figure.2.2}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Rifiuto autorizzazione}}{14}{figure.2.3}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Accetto autorizzazione}}{15}{figure.2.4}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Richiesta posizione}}{16}{figure.2.5}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Compatibilit\IeC {\`a} Desktop e mobile}}{16}{figure.2.6}
 \addvspace {10\p@ }
 \contentsline {xchapter}{PaymentRequest API}{19}{chapter.3}
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Schema Payment Request API \cite {rif17}}}{20}{figure.3.1}
@@ -18,15 +18,15 @@
 \contentsline {figure}{\numberline {3.4}{\ignorespaces Wallet in caso di fail}}{28}{figure.3.4}
 \contentsline {figure}{\numberline {3.5}{\ignorespaces Metodo show() richiamato pi\IeC {\`u} volte}}{29}{figure.3.5}
 \contentsline {figure}{\numberline {3.6}{\ignorespaces Inserimento informazioni dell'utente}}{30}{figure.3.6}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Inserimento CVV}}{31}{figure.3.7}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Informazioni rubate}}{32}{figure.3.8}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Compatibilit\IeC {\`a} desktop}}{33}{figure.3.9}
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Compatibilit\IeC {\`a} mobile}}{33}{figure.3.10}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Inserimento CVV}}{30}{figure.3.7}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Informazioni rubate}}{31}{figure.3.8}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Compatibilit\IeC {\`a} desktop}}{31}{figure.3.9}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Compatibilit\IeC {\`a} mobile}}{31}{figure.3.10}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Service Worker}{35}{chapter.4}
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Ciclo di vita del Service Worker}}{37}{figure.4.1}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Intercepted}}{45}{figure.4.2}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Compatibilit\IeC {\`a} web}}{46}{figure.4.3}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Compatibilit\IeC {\`a} mobile}}{46}{figure.4.4}
+\contentsline {xchapter}{Service Worker}{33}{chapter.4}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Ciclo di vita del Service Worker}}{34}{figure.4.1}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Intercepted}}{42}{figure.4.2}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Compatibilit\IeC {\`a} web}}{43}{figure.4.3}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Compatibilit\IeC {\`a} mobile}}{43}{figure.4.4}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Conclusioni}{47}{chapter.5}
+\contentsline {xchapter}{Conclusioni}{45}{chapter.5}

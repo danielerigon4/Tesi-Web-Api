@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.6.25)  11 JUN 2019 18:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.6.25)  29 SEP 2019 17:45
 entering extended mode
 **./Finale.tex
 (Finale.tex
@@ -624,14 +624,6 @@ Package: geometry 2010/09/12 v5.6 Page Geometry
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\geometry\geometr
 y.cfg"))
-("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\natbib\natbib.st
-y"
-Package: natbib 2010/09/13 8.31b (PWD, AO)
-\bibhang=\skip72
-\bibsep=\skip73
-LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count151
-)
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\babel.st
 y"
 Package: babel 2018/02/14 3.18 The Babel package
@@ -656,21 +648,21 @@ Language: italian 2015/03/26 v1.3n Italian support from the babel system
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\babel.de
 f"
 File: babel.def 2018/02/14 3.18 Babel common definitions
-\babel@savecnt=\count152
+\babel@savecnt=\count151
 \U@D=\dimen120
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\txtbabel
 .def")
-\bbl@dirlevel=\count153
+\bbl@dirlevel=\count152
 )
-\it@lettering=\count154
-\it@doublequoteactive=\count155
-\it@ISOcompliance=\count156
+\it@lettering=\count153
+\it@doublequoteactive=\count154
+\it@ISOcompliance=\count155
 ))
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\etoolbox\etoolbo
 x.sty"
 Package: etoolbox 2018/02/11 v2.5e e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count157
+\etb@tempcnta=\count156
 )
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\color.s
 ty"
@@ -712,7 +704,7 @@ c.sty"
 Package: footmisc 2011/06/06 v5.5b a miscellany of footnote facilities
 \FN@temptoken=\toks20
 \footnotemargin=\dimen123
-\c@pp@next@reset=\count158
+\c@pp@next@reset=\count157
 Package footmisc Info: Declaring symbol style bringhurst on input line 855.
 Package footmisc Info: Declaring symbol style chicago on input line 863.
 Package footmisc Info: Declaring symbol style wiley on input line 872.
@@ -776,10 +768,10 @@ pgfkeysfiltered.code.tex"
 \pgf@yc=\dimen133
 \w@pgf@writea=\write3
 \r@pgf@reada=\read1
-\c@pgf@counta=\count159
-\c@pgf@countb=\count160
-\c@pgf@countc=\count161
-\c@pgf@countd=\count162
+\c@pgf@counta=\count158
+\c@pgf@countb=\count159
+\c@pgf@countc=\count160
+\c@pgf@countd=\count161
 \t@pgf@toka=\toks25
 \t@pgf@tokb=\toks26
 \t@pgf@tokc=\toks27
@@ -801,8 +793,8 @@ File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\systemlaye
 r\pgfsyssoftpath.code.tex"
 File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
-\pgfsyssoftpath@smallbuffer@items=\count163
-\pgfsyssoftpath@bigbuffer@items=\count164
+\pgfsyssoftpath@smallbuffer@items=\count162
+\pgfsyssoftpath@bigbuffer@items=\count163
 )
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\systemlaye
 r\pgfsysprotocol.code.tex"
@@ -841,7 +833,7 @@ thutil.code.tex")
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
 thparser.code.tex"
 \pgfmath@dimen=\dimen134
-\pgfmath@count=\count165
+\pgfmath@count=\count164
 \pgfmath@box=\box29
 \pgfmath@toks=\toks28
 \pgfmath@stack@operand=\toks29
@@ -867,7 +859,7 @@ thfunctions.misc.code.tex")
 thfunctions.integerarithmetics.code.tex")))
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
 thfloat.code.tex"
-\c@pgfmathroundto@lastzeros=\count166
+\c@pgfmathroundto@lastzeros=\count165
 ))
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
 \pgfcorepoints.code.tex"
@@ -905,7 +897,7 @@ File: pgfcorescopes.code.tex 2015/05/08  (rcs-revision 1.46)
 \pgfpic=\box30
 \pgf@hbox=\box31
 \pgf@layerbox@main=\box32
-\pgf@picture@serial@count=\count167
+\pgf@picture@serial@count=\count166
 )
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
 \pgfcoregraphicstate.code.tex"
@@ -940,7 +932,7 @@ File: pgfcorearrows.code.tex 2015/05/14  (rcs-revision 1.43)
 \pgfcoreshade.code.tex"
 File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
 \pgf@max=\dimen158
-\pgf@sys@shading@range@num=\count168
+\pgf@sys@shading@range@num=\count167
 )
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
 \pgfcoreimage.code.tex"
@@ -1010,7 +1002,7 @@ Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\libraries\
 pgflibraryplothandlers.code.tex"
 File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
-\pgf@plot@mark@count=\count169
+\pgf@plot@mark@count=\count168
 \pgfplotmarksize=\dimen163
 )
 \tikz@lastx=\dimen164
@@ -1023,19 +1015,19 @@ File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
 \tikz@figbox@bg=\box36
 \tikz@tempbox=\box37
 \tikz@tempbox@bg=\box38
-\tikztreelevel=\count170
-\tikznumberofchildren=\count171
-\tikznumberofcurrentchild=\count172
-\tikz@fig@count=\count173
+\tikztreelevel=\count169
+\tikznumberofchildren=\count170
+\tikznumberofcurrentchild=\count171
+\tikz@fig@count=\count172
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\modules\pg
 fmodulematrix.code.tex"
 File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
-\pgfmatrixcurrentrow=\count174
-\pgfmatrixcurrentcolumn=\count175
-\pgf@matrix@numberofcolumns=\count176
+\pgfmatrixcurrentrow=\count173
+\pgfmatrixcurrentcolumn=\count174
+\pgf@matrix@numberofcolumns=\count175
 )
-\tikz@expandcount=\count177
+\tikz@expandcount=\count176
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendla
 yer\tikz\libraries\tikzlibrarytopaths.code.tex"
@@ -1051,24 +1043,24 @@ Package: listingsutf8 2016/05/16 v1.3 Allow UTF-8 in listings input (HO)
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\listing
 s.sty"
-\lst@mode=\count178
+\lst@mode=\count177
 \lst@gtempboxa=\box39
 \lst@token=\toks33
-\lst@length=\count179
+\lst@length=\count178
 \lst@currlwidth=\dimen170
-\lst@column=\count180
-\lst@pos=\count181
+\lst@column=\count179
+\lst@pos=\count180
 \lst@lostspace=\dimen171
 \lst@width=\dimen172
-\lst@newlines=\count182
-\lst@lineno=\count183
+\lst@newlines=\count181
+\lst@lineno=\count182
 \lst@maxwidth=\dimen173
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\lstmisc
 .sty"
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-\c@lstnumber=\count184
-\lst@skipnumbers=\count185
+\c@lstnumber=\count183
+\lst@skipnumbers=\count184
 \lst@framebox=\box40
 )
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\listing
@@ -1090,13 +1082,13 @@ pages
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\fncychap\fncycha
 p.sty"
 Package: fncychap 2007/07/30 v1.34 LaTeX package (Revised chapters)
-\RW=\skip74
-\mylen=\skip75
-\myhi=\skip76
-\px=\skip77
-\py=\skip78
-\pyy=\skip79
-\pxx=\skip80
+\RW=\skip72
+\mylen=\skip73
+\myhi=\skip74
+\px=\skip75
+\py=\skip76
+\pyy=\skip77
+\pxx=\skip78
 )
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\minitoc\minitoc.
 sty"
@@ -1109,8 +1101,8 @@ Package: mtcmess 2006/03/14
 Package minitoc Info: I0001
 (minitoc)             *** minitoc package, version 62 ***.
 \tf@mtc=\write5
-\mtcindent=\skip81
-\mtcskipamount=\skip82
+\mtcindent=\skip79
+\mtcskipamount=\skip80
 Package minitoc Info: I0005
 (minitoc)             compatible with hyperref.
 Package minitoc Info: I0023
@@ -1136,11 +1128,11 @@ Package minitoc Info: I0031
 
 \openout5 = `Finale.mtc0'.
 
-\c@mtc=\count186
-\c@minitocdepth=\count187
-\c@ptc=\count188
-\c@parttocdepth=\count189
-\ptcindent=\skip83
+\c@mtc=\count185
+\c@minitocdepth=\count186
+\c@ptc=\count187
+\c@parttocdepth=\count188
+\ptcindent=\skip81
 Package minitoc Info: I0010
 (minitoc)             The english language is selected.
 (minitoc)              on input line 4910.
@@ -1153,6 +1145,14 @@ File: english.mld 2006/01/13
 mld"
 File: english.mld 2006/01/13
 ))
+("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\natbib\natbib.st
+y"
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip82
+\bibsep=\skip83
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count189
+)
 \@indexfile=\write6
 \openout6 = `Finale.idx'.
 
@@ -1161,34 +1161,34 @@ Writing index file Finale.idx
 (Finale.aux)
 \openout1 = `Finale.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 99.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 100.
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\t1lmr.fd"
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 
-Package layouts Warning: Layout scale set to 0.5 on input line 99.
+Package layouts Warning: Layout scale set to 0.5 on input line 100.
 
 \AtBeginShipoutBox=\box43
 
 Package hyperref Warning: Height of page (\stockheight) is invalid (0.0pt),
 (hyperref)                using 11in.
 
-Package hyperref Info: Link coloring OFF on input line 99.
+Package hyperref Info: Link coloring OFF on input line 100.
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\nameref
 .sty"
@@ -1200,9 +1200,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count190
 )
-LaTeX Info: Redefining \ref on input line 99.
-LaTeX Info: Redefining \pageref on input line 99.
-LaTeX Info: Redefining \nameref on input line 99.
+LaTeX Info: Redefining \ref on input line 100.
+LaTeX Info: Redefining \pageref on input line 100.
+LaTeX Info: Redefining \nameref on input line 100.
  (Finale.out) (Finale.out)
 \@outlinefile=\write7
 \openout7 = `Finale.out'.
@@ -1242,8 +1242,8 @@ LaTeX Info: Redefining \nameref on input line 99.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \it@ocap on input line 99.
-LaTeX Info: Redefining \it@ccap on input line 99.
+LaTeX Info: Redefining \it@ocap on input line 100.
+LaTeX Info: Redefining \it@ccap on input line 100.
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.
 mkii"
@@ -1309,7 +1309,7 @@ Package minitoc(hints) Warning: W0023
 <CaFoscariLogo.png, id=182, 65.043pt x 65.846pt>
 File: CaFoscariLogo.png Graphic file (type png)
 <use CaFoscariLogo.png>
-Package pdftex.def Info: CaFoscariLogo.png  used on input line 102.
+Package pdftex.def Info: CaFoscariLogo.png  used on input line 103.
 (pdftex.def)             Requested size: 65.04283pt x 65.84581pt.
 [1
 
@@ -1319,26 +1319,26 @@ riLogo.png>] [2
 ] [3] [4
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 154.
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 155.
 
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\omslmr.fd"
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 154
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 155
 .
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\omslmsy.fd"
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 154.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 155.
 
 [5] [6
 
 ]
 Package minitoc Info: I0024
-(minitoc)             PREPARING MINITOCS FROM Finale.toc on input line 162.
+(minitoc)             PREPARING MINITOCS FROM Finale.toc on input line 163.
 Package minitoc Info: I0033
 (minitoc)             Writing Finale.mtc1.
 \openout5 = `Finale.mtc1'.
@@ -1382,9 +1382,6 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 5.
 
-
-Package natbib Warning: Citation `rif15' on page 7 undefined on input line 20.
-
 [7
 
 ])
@@ -1394,21 +1391,21 @@ Package natbib Warning: Citation `rif15' on page 7 undefined on input line 20.
  [8]
 Capitolo 1.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 167.
+(Font)              <9> on input line 168.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 167.
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 175.
-
-("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
-File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
+(Font)              <5> on input line 168.
 [9
 
 
-] [10]
+]
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 188.
+
+ ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+) [10]
 Capitolo 2.
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 199.
+nput line 200.
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\latin1.def"
 File: latin1.def 2015/03/17 v1.2c Input encoding file
 )
@@ -1422,297 +1419,226 @@ File: se-iso-8859-1.def 2016/05/16 v1.11 stringenc: ISO-8859-1
 )
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 1.
- [11
+
+("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\latin1.def"
+File: latin1.def 2015/03/17 v1.2c Input encoding file
+) [11
 
 
 ]
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\latin1.def"
 File: latin1.def 2015/03/17 v1.2c Input encoding file
 ) [12]
-("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\latin1.def"
-File: latin1.def 2015/03/17 v1.2c Input encoding file
-) [13]
-Overfull \hbox (39.12065pt too wide) in paragraph at lines 228--228
-[][]\T1/lmr/m/n/9 Aurelio De Ro-sa, []$\T1/lmtt/m/n/9 https : / / code . tutspl
-us . com / tutorials / an-[]introduction-[]to-[]the-[]geolocation-[]api-[]-[]cm
-s-[]20071$[]| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 228--229
+Underfull \hbox (badness 10000) in paragraph at lines 227--228
 
  []
 
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\latin1.def"
 File: latin1.def 2015/03/17 v1.2c Input encoding file
 )
-<./images/geo1.png, id=354, 381.67593pt x 475.02469pt>
+<./images/geo1.png, id=344, 381.67593pt x 475.02469pt>
 File: ./images/geo1.png Graphic file (type png)
 <use ./images/geo1.png>
-Package pdftex.def Info: ./images/geo1.png  used on input line 233.
+Package pdftex.def Info: ./images/geo1.png  used on input line 232.
 (pdftex.def)             Requested size: 227.62206pt x 283.29192pt.
-<./images/geo2.png, id=355, 618.05907pt x 494.59781pt>
+<./images/geo2.png, id=345, 618.05907pt x 494.59781pt>
 File: ./images/geo2.png Graphic file (type png)
 <use ./images/geo2.png>
-Package pdftex.def Info: ./images/geo2.png  used on input line 242.
+Package pdftex.def Info: ./images/geo2.png  used on input line 241.
 (pdftex.def)             Requested size: 182.09486pt x 145.7164pt.
-<./images/geo3.png, id=356, 384.6872pt x 467.49657pt>
+<./images/geo3.png, id=346, 384.6872pt x 467.49657pt>
 File: ./images/geo3.png Graphic file (type png)
 <use ./images/geo3.png>
-Package pdftex.def Info: ./images/geo3.png  used on input line 250.
+Package pdftex.def Info: ./images/geo3.png  used on input line 249.
 (pdftex.def)             Requested size: 182.09486pt x 221.2999pt.
-<./images/geo4.png, id=357, 381.67593pt x 459.21562pt>
+<./images/geo4.png, id=347, 381.67593pt x 459.21562pt>
 File: ./images/geo4.png Graphic file (type png)
 <use ./images/geo4.png>
-Package pdftex.def Info: ./images/geo4.png  used on input line 259.
+Package pdftex.def Info: ./images/geo4.png  used on input line 258.
 (pdftex.def)             Requested size: 182.09486pt x 219.08965pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 230--264
+Underfull \hbox (badness 10000) in paragraph at lines 229--263
 
  []
 
-[14 <./images/geo1.png>]
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [15 <./images/geo2.png> <./images/geo3.png>]
-<./images/pos1.png, id=380, 447.92343pt x 169.38281pt>
+ [13 <./images/geo1.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [14 <./images/geo2.png> <./images/geo3.png>]
+<./images/pos1.png, id=370, 447.92343pt x 169.38281pt>
 File: ./images/pos1.png Graphic file (type png)
 <use ./images/pos1.png>
-Package pdftex.def Info: ./images/pos1.png  used on input line 272.
+Package pdftex.def Info: ./images/pos1.png  used on input line 271.
 (pdftex.def)             Requested size: 227.62206pt x 86.07393pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[16 <./images/geo4.png>]
+[15 <./images/geo4.png>]
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\latin1.def"
 File: latin1.def 2015/03/17 v1.2c Input encoding file
 )
-Underfull \hbox (badness 10000) in paragraph at lines 280--282
+Underfull \hbox (badness 10000) in paragraph at lines 279--281
 
  []
 
-<./images/compatibility.png, id=389, 729.47531pt x 300.3722pt>
+<./images/compatibility.png, id=379, 729.47531pt x 300.3722pt>
 File: ./images/compatibility.png Graphic file (type png)
 <use ./images/compatibility.png>
-Package pdftex.def Info: ./images/compatibility.png  used on input line 286.
+Package pdftex.def Info: ./images/compatibility.png  used on input line 285.
 (pdftex.def)             Requested size: 455.24411pt x 187.45256pt.
-[17 <./images/pos1.png> <./images/compatibility.png>] [18]
-Capitolo 3.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 309.
-
-Overfull \hbox (28.42952pt too wide) in paragraph at lines 309--309
-[][]\T1/lmr/m/n/9 Google De-ve-lo-pers, []$\T1/lmtt/m/n/9 https : / / developer
-s . google . com / web / ilt / pwa / introduction-[]to-[]the-[]payment-[]reques
-t-[]api$[]| 
- []
-
-[19
-
+[16 <./images/pos1.png> <./images/compatibility.png>] [17] [18
 
 ]
-<./images/SchemaPayment.png, id=422, 639.89063pt x 456.95718pt>
+Capitolo 3.
+[19
+
+]
+<./images/SchemaPayment.png, id=414, 639.89063pt x 456.95718pt>
 File: ./images/SchemaPayment.png Graphic file (type png)
 <use ./images/SchemaPayment.png>
-Package pdftex.def Info: ./images/SchemaPayment.png  used on input line 329.
+Package pdftex.def Info: ./images/SchemaPayment.png  used on input line 328.
 (pdftex.def)             Requested size: 455.24411pt x 325.10426pt.
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Package natbib Warning: Citation `rif17' on page 20 undefined on input line 330
-.
+ [20 <./images/SchemaPayment.png>] [21]
+Underfull \vbox (badness 1072) has occurred while \output is active []
 
-[20 <./images/SchemaPayment.png>] [21] [22]
-Underfull \hbox (badness 10000) in paragraph at lines 398--398
-[][]\T1/lmr/m/n/9 Matt Gaunt, []$\T1/lmtt/m/n/9 https : / / developers . google
- . com / web / fundamentals / payments / merchant-[]guide /
- []
-
-("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\latin1.def"
-File: latin1.def 2015/03/17 v1.2c Input encoding file
-) ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\latin1.de
-f"
-File: latin1.def 2015/03/17 v1.2c Input encoding file
-) [23]
-Underfull \hbox (badness 10000) in paragraph at lines 407--407
-[][]\T1/lmr/m/n/9 Microsoft, []$\T1/lmtt/m/n/9 https : / / developer . microsof
-t . com / en-[]us / microsoft-[]edge / testdrive / demos /
- []
-
-("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\latin1.def"
-File: latin1.def 2015/03/17 v1.2c Input encoding file
-) ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\latin1.de
-f"
-File: latin1.def 2015/03/17 v1.2c Input encoding file
-) [24]
+ [22]
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\latin1.def"
 File: latin1.def 2015/03/17 v1.2c Input encoding file
 ) ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\latin1.de
 f"
 File: latin1.def 2015/03/17 v1.2c Input encoding file
 )
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Package natbib Warning: Citation `rif15' on page 25 undefined on input line 424
-.
+ [23]
+("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\latin1.def"
+File: latin1.def 2015/03/17 v1.2c Input encoding file
+) ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\latin1.de
+f"
+File: latin1.def 2015/03/17 v1.2c Input encoding file
+)
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
+ [24]
+("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\latin1.def"
+File: latin1.def 2015/03/17 v1.2c Input encoding file
+) ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\latin1.de
+f"
+File: latin1.def 2015/03/17 v1.2c Input encoding file
+)
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\begingroup' on input line 424.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<let>-command' on input line 424.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\NAT@ctype' on input line 424.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\z@' on input line 424.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\let' on input line 424.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\let' on input line 424.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@ifnextchar' on input line 424.
-
-[25]
+ [25]
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\latin1.def"
 File: latin1.def 2015/03/17 v1.2c Input encoding file
 )
-
-Package natbib Warning: Citation `rif12' on page 26 undefined on input line 436
-.
-
-<./images/wallet1.png, id=574, 225.84375pt x 221.32687pt>
+<./images/wallet1.png, id=561, 225.84375pt x 221.32687pt>
 File: ./images/wallet1.png Graphic file (type png)
 <use ./images/wallet1.png>
 Package pdftex.def Info: ./images/wallet1.png  used on input line 439.
 (pdftex.def)             Requested size: 227.62206pt x 223.08243pt.
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1142) has occurred while \output is active []
 
  [26]
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\latin1.def"
 File: latin1.def 2015/03/17 v1.2c Input encoding file
-)
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [27 <./images/wallet1.png>]
-<./images/wallet2.png, id=630, 184.5294pt x 180.675pt>
+) [27 <./images/wallet1.png>]
+<./images/wallet2.png, id=618, 184.5294pt x 180.675pt>
 File: ./images/wallet2.png Graphic file (type png)
 <use ./images/wallet2.png>
 Package pdftex.def Info: ./images/wallet2.png  used on input line 452.
 (pdftex.def)             Requested size: 227.62206pt x 222.8823pt.
-<./images/wallet3.png, id=631, 184.5294pt x 180.675pt>
+<./images/wallet3.png, id=619, 184.5294pt x 180.675pt>
 File: ./images/wallet3.png Graphic file (type png)
 <use ./images/wallet3.png>
 Package pdftex.def Info: ./images/wallet3.png  used on input line 458.
 (pdftex.def)             Requested size: 227.62206pt x 222.8823pt.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 464.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 464.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 464.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [28 <./images/wallet2.png> <./images/wallet3.png>]
-<./images/Buy.png, id=641, 682.80093pt x 342.5297pt>
+<./images/Buy.png, id=627, 682.80093pt x 342.5297pt>
 File: ./images/Buy.png Graphic file (type png)
 <use ./images/Buy.png>
 Package pdftex.def Info: ./images/Buy.png  used on input line 473.
 (pdftex.def)             Requested size: 227.62206pt x 114.18498pt.
-<./images/Chrome1.png, id=644, 385.44pt x 338.76563pt>
+<./images/Chrome1.png, id=629, 385.44pt x 338.76563pt>
 File: ./images/Chrome1.png Graphic file (type png)
 <use ./images/Chrome1.png>
 Package pdftex.def Info: ./images/Chrome1.png  used on input line 500.
 (pdftex.def)             Requested size: 227.62206pt x 200.05606pt.
  [29 <./images/Buy.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [30 <./images/Chrome1.png>]
-<./images/Chrome2.png, id=656, 386.94562pt x 338.01282pt>
+<./images/Chrome2.png, id=637, 386.94562pt x 338.01282pt>
 File: ./images/Chrome2.png Graphic file (type png)
 <use ./images/Chrome2.png>
-Package pdftex.def Info: ./images/Chrome2.png  used on input line 509.
+Package pdftex.def Info: ./images/Chrome2.png  used on input line 508.
 (pdftex.def)             Requested size: 227.62206pt x 198.83784pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [31 <./images/Chrome2.png>]
-<./images/Informazioni.png, id=663, 706.89093pt x 357.58594pt>
+ [30 <./images/Chrome1.png> <./images/Chrome2.png>]
+<./images/Informazioni.png, id=644, 706.89093pt x 357.58594pt>
 File: ./images/Informazioni.png Graphic file (type png)
 <use ./images/Informazioni.png>
-Package pdftex.def Info: ./images/Informazioni.png  used on input line 518.
+Package pdftex.def Info: ./images/Informazioni.png  used on input line 517.
 (pdftex.def)             Requested size: 455.24411pt x 230.28922pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [32 <./images/Informazioni.png>]
-<./images/Compatibilita1.png, id=669, 971.12813pt x 143.03438pt>
+<./images/Compatibilita1.png, id=645, 971.12813pt x 143.03438pt>
 File: ./images/Compatibilita1.png Graphic file (type png)
 <use ./images/Compatibilita1.png>
-Package pdftex.def Info: ./images/Compatibilita1.png  used on input line 527.
+Package pdftex.def Info: ./images/Compatibilita1.png  used on input line 525.
 (pdftex.def)             Requested size: 455.24411pt x 67.04936pt.
-<./images/Compatibilita2.png, id=670, 971.12813pt x 118.94438pt>
+<./images/Compatibilita2.png, id=646, 971.12813pt x 118.94438pt>
 File: ./images/Compatibilita2.png Graphic file (type png)
 <use ./images/Compatibilita2.png>
-Package pdftex.def Info: ./images/Compatibilita2.png  used on input line 534.
+Package pdftex.def Info: ./images/Compatibilita2.png  used on input line 532.
 (pdftex.def)             Requested size: 455.24411pt x 55.75684pt.
- [33 <./images/Compatibilita1.png> <./images/Compatibilita2.png>] [34
-
-]
+ [31 <./images/Informazioni.png> <./images/Compatibilita1.png> <./images/Compat
+ibilita2.png>] [32]
 Capitolo 4.
+[33
 
-Underfull \hbox (badness 3826) in paragraph at lines 550--550
-[][]\T1/lmr/m/n/9 Mozilla De-ve-lo-per, []$\T1/lmtt/m/n/9 https : / / developer
- . mozilla . org / en-[]US / docs / Web / JavaScript / Reference / Global _
- []
-
-[35
 
 ]
-<./images/SwLifecycle.png, id=705, 581.17125pt x 870.25125pt>
+<./images/SwLifecycle.png, id=679, 581.17125pt x 870.25125pt>
 File: ./images/SwLifecycle.png Graphic file (type png)
 <use ./images/SwLifecycle.png>
-Package pdftex.def Info: ./images/SwLifecycle.png  used on input line 574.
+Package pdftex.def Info: ./images/SwLifecycle.png  used on input line 572.
 (pdftex.def)             Requested size: 273.14923pt x 409.01814pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[36]
+ [34 <./images/SwLifecycle.png>]
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\latin1.def"
 File: latin1.def 2015/03/17 v1.2c Input encoding file
-) [37 <./images/SwLifecycle.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [38]
+) [35]
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\latin1.def"
 File: latin1.def 2015/03/17 v1.2c Input encoding file
 )
 Underfull \vbox (badness 6110) has occurred while \output is active []
 
- [39]
+ [36]
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\latin1.def"
 File: latin1.def 2015/03/17 v1.2c Input encoding file
-) [40]
+) [37]
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\latin1.def"
 File: latin1.def 2015/03/17 v1.2c Input encoding file
 ) ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\latin1.de
 f"
 File: latin1.def 2015/03/17 v1.2c Input encoding file
-) [41] Excluding 'comment' comment. [42] Excluding 'comment' comment.
-[43]
+) [38] Excluding 'comment' comment. [39]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <14.4> on input line 739.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 739.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 739.
+ Excluding 'comment' comment.
+[40]
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\latin1.def"
 File: latin1.def 2015/03/17 v1.2c Input encoding file
 ) ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\latin1.de
@@ -1721,59 +1647,55 @@ File: latin1.def 2015/03/17 v1.2c Input encoding file
 )
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [44]
+ [41]
 ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\latin1.def"
 File: latin1.def 2015/03/17 v1.2c Input encoding file
 ) ("C:\Users\Daniele\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\latin1.de
 f"
 File: latin1.def 2015/03/17 v1.2c Input encoding file
 )
-<./images/Intercepted.png, id=866, 328.97906pt x 197.23688pt>
+<./images/Intercepted.png, id=835, 328.97906pt x 197.23688pt>
 File: ./images/Intercepted.png Graphic file (type png)
 <use ./images/Intercepted.png>
-Package pdftex.def Info: ./images/Intercepted.png  used on input line 770.
+Package pdftex.def Info: ./images/Intercepted.png  used on input line 768.
 (pdftex.def)             Requested size: 318.66948pt x 191.06068pt.
- [45 <./images/Intercepted.png>]
-<./images/CompWeb.png, id=882, 721.19438pt x 100.12407pt>
+ [42 <./images/Intercepted.png>]
+<./images/CompWeb.png, id=851, 721.19438pt x 100.12407pt>
 File: ./images/CompWeb.png Graphic file (type png)
 <use ./images/CompWeb.png>
-Package pdftex.def Info: ./images/CompWeb.png  used on input line 780.
+Package pdftex.def Info: ./images/CompWeb.png  used on input line 778.
 (pdftex.def)             Requested size: 455.24411pt x 63.20222pt.
-<./images/CompMobile.png, id=883, 721.94719pt x 130.23656pt>
+<./images/CompMobile.png, id=852, 721.94719pt x 130.23656pt>
 File: ./images/CompMobile.png Graphic file (type png)
 <use ./images/CompMobile.png>
-Package pdftex.def Info: ./images/CompMobile.png  used on input line 787.
+Package pdftex.def Info: ./images/CompMobile.png  used on input line 785.
 (pdftex.def)             Requested size: 455.24411pt x 82.12497pt.
- [46 <./images/CompWeb.png> <./images/CompMobile.png>]
+ [43 <./images/CompWeb.png> <./images/CompMobile.png>] [44
+
+]
 Capitolo 5.
-[47
+[45
 
+] [46
 
-] [48
+] [47] [48
 
-] [49] [50
-
-] (Finale.lof
-
-Package natbib Warning: Citation `rif17' on page 51 undefined on input line 15.
-
-
-)
+] (Finale.lof)
 \tf@lof=\write9
 \openout9 = `Finale.lof'.
 
- [51
+ [49
 
-] [52
+] [50
 
-]
+] (Finale.bbl [51
 
-Package natbib Warning: There were undefined citations.
-
+])
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
 (minitoc)             Creating the Finale.maf file.
 \openout5 = `Finale.maf'.
+
 
 
 Package minitoc(hints) Warning: W0078
@@ -1785,86 +1707,26 @@ Package minitoc(hints) Warning: W0024
 (minitoc(hints))                Some hints have been written 
 (minitoc(hints))                in the Finale.log file.
 
-[53]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 838.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 838.
+[52]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 836.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 836.
  (Finale.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 838.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 838.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 836.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 836.
 Package rerunfilecheck Info: File `Finale.out' has not changed.
-(rerunfilecheck)             Checksum: BC76FF83EDCC9979B89BABC555AC7D9D;2866.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 838.
+(rerunfilecheck)             Checksum: B44B7BE739A633A9F4A7264E048F0383;2860.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 836.
  ) 
 Here is how much of TeX's memory you used:
- 22174 strings out of 493305
- 392915 string characters out of 3128932
- 697177 words of memory out of 3000000
- 24560 multiletter control sequences out of 15000+200000
- 93374 words of font info for 65 fonts, out of 3000000 for 9000
+ 22251 strings out of 493305
+ 394037 string characters out of 3128932
+ 693894 words of memory out of 3000000
+ 24630 multiletter control sequences out of 15000+200000
+ 89765 words of font info for 62 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,8n,54p,1295b,2240s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{Hfootnote.24} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.23} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.22} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.21} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.20} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.19} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.18} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.17} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.16} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.15} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.14} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.13} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.12} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.11} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.10} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.9} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.8} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.7} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.6} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.5} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.4} has been referenced but does not exist
-, replaced by a fixed one
+ 55i,8n,54p,1236b,1568s stack positions out of 5000i,500n,10000p,200000b,50000s
+pdfTeX warning (dest): name{Hfootnote.4} has been referenced but does not exi
+st, replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.3} has been referenced but does not exist
 , replaced by a fixed one
@@ -1893,9 +1755,9 @@ ele/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtk10.pfb><C:/User
 s/Daniele/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtt10.pfb><C
 :/Users/Daniele/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtt9.p
 fb>
-Output written on Finale.pdf (53 pages, 955624 bytes).
+Output written on Finale.pdf (52 pages, 941842 bytes).
 PDF statistics:
- 1086 PDF objects out of 1200 (max. 8388607)
- 471 named destinations out of 1000 (max. 500000)
+ 1099 PDF objects out of 1200 (max. 8388607)
+ 475 named destinations out of 1000 (max. 500000)
  470 words of extra memory for PDF output out of 10000 (max. 10000000)
 
