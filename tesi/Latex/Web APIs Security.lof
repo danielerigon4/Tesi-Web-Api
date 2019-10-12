@@ -1,0 +1,22 @@
+\babel@toc {italian}{}
+\babel@toc {italian}{}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Introduzione}{1}{chapter.1}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Geolocation API}{3}{chapter.2}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Geolocation API - Implementazione pagina d'esempio\cite {rif8}\relax }}{4}{figure.caption.1}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Geolocation API - Richiesta permesso posizione\cite {rif8}\relax }}{5}{figure.caption.2}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Geolocation API - Rifiuto autorizzazione\cite {rif8}\relax }}{5}{figure.caption.3}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Geolocation API - Accettazione autorizzazione\cite {rif8}\relax }}{6}{figure.caption.4}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Payment Request API}{9}{chapter.3}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces PaymentRequest API - Messaggio di errore generato dal metodo show() \cite {rif12}\relax }}{10}{figure.caption.5}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces PaymentRequest API - Inserimento credenziali da parte dell'utente\cite {rif30}\relax }}{11}{figure.caption.6}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces PaymentRequest API - Attacco XSS\cite {rif30}\relax }}{12}{figure.caption.7}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces PaymentRequest API - Informazioni rubate\relax }}{13}{figure.caption.8}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Service Worker}{15}{chapter.4}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Sevice Worker API - Utilizzo Service Worker in una pagina web\cite {rif24}\relax }}{15}{figure.caption.9}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Service Worker API - Intercettazione di ogni richiesta da parte del Service Worker\relax }}{18}{figure.caption.10}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Conclusioni}{19}{chapter.5}

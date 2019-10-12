@@ -1,0 +1,131 @@
+\begin{thebibliography}{10}
+
+\bibitem{rif2}
+Mozilla Developer.
+\newblock Features restricted to secure contexts.
+\newblock \url{https://developer.mozilla.org/en-US/docs/Web/API/Geolocation}.
+
+\bibitem{rif1}
+Mozilla Developer.
+\newblock Payment request api, mozilla developer.
+\newblock
+  \url{https://developer.mozilla.org/en-US/docs/Web/API/Payment_Request_API}.
+
+\bibitem{rif5}
+Mozilla Developer.
+\newblock Service worker api.
+\newblock
+  \url{https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API}.
+
+\bibitem{rif4}
+Mozilla Developer.
+\newblock Geolocation api.
+\newblock
+  \url{https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API}.
+
+\bibitem{rif8}
+Aurelio~De Rosa.
+\newblock An introduction to the geolocation api.
+\newblock 2014.
+\newblock
+  \url{https://code.tutsplus.com/tutorials/an-introduction-to-the-geolocation-api--cms-20071}.
+
+\bibitem{rif28}
+Rocco Balzamà.
+\newblock Cosa è il cross-site scripting (xss) e come difendersi da un
+  attacco.
+\newblock
+  \url{https://www.roccobalzama.it/cosa-e-il-cross-site-scripting-xss-e-come-difendersi-da-un-attacco/}.
+
+\bibitem{rif7}
+Rafay Baloch.
+\newblock Html5 modern day attack and defense vector.
+\newblock \url{http://www.xss-payloads.com/papers/HTML5AttackVectors.pdf}.
+
+\bibitem{rif9}
+Mozilla Developer.
+\newblock Payment request api.
+\newblock 2018.
+\newblock \url{https://w3c.github.io/payment-request/}.
+
+\bibitem{rif13}
+Google Developers.
+\newblock Introduction to the payment request api.
+\newblock
+  \url{https://developers.google.com/web/ilt/pwa/introduction-to-the-payment-request-api}.
+
+\bibitem{rif11}
+Matt Gaunt.
+\newblock Deep dive into payment request api.
+\newblock
+  \url{https://developers.google.com/web/fundamentals/payments/merchant-guide/deep-dive-into-payment-request}.
+
+\bibitem{rif14}
+Eiji Kitamura.
+\newblock Bringing easy and fast checkout with payment request api.
+\newblock
+  \url{https://developers.google.com/web/updates/2016/07/payment-request}.
+
+\bibitem{rif16}
+Microsoft.
+\newblock Payment request api samples.
+\newblock
+  \url{https://developer.microsoft.com/en-us/microsoft-edge/testdrive/demos/paymentrequest/}.
+
+\bibitem{rif12}
+What is payment request?
+\newblock \url{https://paymentrequest.show/}.
+
+\bibitem{rif30}
+Microsoft.
+\newblock Simpler web payments: Introducing the payment request api.
+\newblock
+  \url{https://blogs.windows.com/msedgedev/2016/12/15/payment-request-api-edge/#5CwWwToEm9YiVdyQ.97}.
+
+\bibitem{rif19}
+W3C.
+\newblock Paymentrequest privacy and security considerations.
+\newblock
+  \url{https://w3c.github.io/payment-request/#privacy-and-security-considerations}.
+
+\bibitem{rif25}
+Matt Gaunt.
+\newblock Service workers: an introduction.
+\newblock
+  \url{https://developers.google.com/web/fundamentals/primers/service-workers/}.
+
+\bibitem{rif24}
+Speedy Wordpress.
+\newblock Guida completa ai service worker javascript.
+\newblock
+  \url{https://www.speedywordpress.it/guida-completa-ai-service-worker-javascript/}.
+
+\bibitem{rif20}
+Mozilla Developer.
+\newblock Service worker concepts and usage.
+\newblock
+  \url{https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API}.
+
+\bibitem{rif21}
+Angular University.
+\newblock Service workers - practical guided introduction.
+\newblock \url{https://blog.angular-university.io/service-workers/}.
+
+\bibitem{rif26}
+jakearchibald Github.
+\newblock Service worker explained.
+\newblock 2017.
+\newblock \url{https://github.com/w3c/ServiceWorker/blob/master/explainer.md}.
+
+\bibitem{rif29}
+W3C.
+\newblock Service workers nightly.
+\newblock 2018.
+\newblock \url{https://w3c.github.io/ServiceWorker/#security-considerations}.
+
+\bibitem{rif27}
+Erling Ellingsen.
+\newblock Serviceworker is dangerous.
+\newblock \url{https://alf.nu/ServiceWorker}.
+
+\end{thebibliography}
